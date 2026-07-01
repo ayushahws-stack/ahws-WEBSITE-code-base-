@@ -1,0 +1,314 @@
+@import './Academics.css';
+
+.curriculum-page {
+  overflow: hidden;
+}
+
+/* =========================================================
+   1. Hallmark of Our SPROUT Curriculum (Arrow & Circle Rows)
+   ========================================================= */
+.sprout-hallmark-container {
+  margin: 48px 0 64px;
+  text-align: center;
+}
+
+.hallmark-header-tag {
+  color: #3888c7;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  font-style: italic;
+}
+
+.hallmark-main-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 40px;
+}
+
+.hallmark-main-title span {
+  color: #3888c7;
+}
+
+.hallmark-list {
+  max-width: 920px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.hallmark-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+/* Dotted Circle Badge */
+.hallmark-circle {
+  width: 135px;
+  height: 135px;
+  min-width: 135px;
+  border-radius: 50%;
+  border: 3px dashed #e66a4e;
+  background: var(--white);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 12px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #2c3e50;
+  line-height: 1.35;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hallmark-circle:hover {
+  transform: scale(1.06) rotate(3deg);
+  box-shadow: 0 10px 24px rgba(230, 106, 78, 0.2);
+}
+
+/* Arrow / Chevron Banner Box Base */
+.hallmark-arrow-box {
+  flex: 1;
+  background: #ffffff;
+  border: 2px solid #3888c7;
+  padding: 22px 36px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #2c3e50;
+  line-height: 1.6;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 4px 16px rgba(56, 136, 199, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* For non-reverse rows: Circle is 1st (Left), Arrow is 2nd (Right) - Arrow tip points LEFT to circle */
+.hallmark-row:not(.reverse) .hallmark-arrow-box {
+  border-radius: 0 12px 12px 0;
+  clip-path: polygon(25px 0%, 100% 0%, 100% 100%, 25px 100%, 0% 50%);
+  padding-left: 48px;
+  padding-right: 24px;
+}
+
+/* For reverse rows: Arrow is 1st (Left), Circle is 2nd (Right) - Arrow tip points RIGHT to circle */
+.hallmark-row.reverse .hallmark-arrow-box {
+  border-radius: 12px 0 0 12px;
+  clip-path: polygon(0% 0%, calc(100% - 25px) 0%, 100% 50%, calc(100% - 25px) 100%, 0% 100%);
+  padding-right: 48px;
+  padding-left: 24px;
+}
+
+.hallmark-arrow-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(56, 136, 199, 0.18);
+  background: linear-gradient(135deg, #ffffff, #f0f7fc);
+}
+
+/* Responsive Hallmark */
+@media (max-width: 768px) {
+  .hallmark-row, .hallmark-row.reverse {
+    flex-direction: column !important;
+    gap: 12px;
+  }
+  
+  .hallmark-circle {
+    width: 120px;
+    height: 120px;
+    min-width: 120px;
+    font-size: 0.88rem;
+  }
+  
+  .hallmark-arrow-box, 
+  .hallmark-row:not(.reverse) .hallmark-arrow-box, 
+  .hallmark-row.reverse .hallmark-arrow-box {
+    clip-path: none !important;
+    border-radius: 12px !important;
+    padding: 16px 20px !important;
+    font-size: 0.95rem;
+    width: 100%;
+  }
+}
+
+
+/* =========================================================
+   2. 7 Layers of SPROUT Curriculum (Numbered 3D Flip Cards)
+   ========================================================= */
+.sprout-layers-section {
+  margin-top: 64px;
+}
+
+.sprout-layers-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.sprout-layers-header .sub-section-title {
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: #1b492b;
+}
+
+.sprout-layers-header .sub-section-desc {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  max-width: 750px;
+  margin: 8px auto 0;
+}
+
+/* Grid layout for 7 layers: 4 in top row, 3 in bottom row */
+.sprout-7layers-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sprout-7layers-grid .layer-item-wrapper:nth-child(n+5) {
+  /* bottom 3 items centered visually */
+}
+
+/* Wrapper with Number + Card */
+.layer-item-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  perspective: 1000px;
+}
+
+/* Big Number on Left */
+.layer-big-number {
+  font-size: 4.5rem;
+  font-weight: 900;
+  color: #1b492b;
+  line-height: 1;
+  user-select: none;
+  font-family: var(--font-heading, sans-serif);
+  min-width: 40px;
+}
+
+/* Flip Container */
+.sprout-flip-card {
+  flex: 1;
+  height: 250px;
+  position: relative;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.sprout-flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.sprout-flip-card.flipped .sprout-flip-inner {
+  transform: rotateY(180deg);
+}
+
+/* Front & Back Common Styles */
+.sprout-flip-front,
+.sprout-flip-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 20px;
+  border: 3px solid #82b541;
+  background: linear-gradient(145deg, #f3f9eb, #e2f0d9);
+  padding: 20px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 8px 24px rgba(46, 91, 63, 0.12);
+}
+
+/* Capsule top badge header */
+.sprout-capsule-badge {
+  background: var(--white);
+  border: 2px solid #82b541;
+  border-radius: 30px;
+  padding: 4px 16px;
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: #1b492b;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.sprout-card-icon {
+  font-size: 3rem;
+  margin: 6px 0;
+}
+
+.sprout-card-title {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #1b492b;
+  margin-bottom: 4px;
+}
+
+.sprout-flip-hint {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #558b2f;
+  background: rgba(255,255,255,0.8);
+  padding: 3px 12px;
+  border-radius: 12px;
+}
+
+/* Back of Card */
+.sprout-flip-back {
+  transform: rotateY(180deg);
+  background: linear-gradient(145deg, #1b492b, #2e5b3f);
+  border-color: #558b2f;
+  color: var(--white);
+  justify-content: center;
+  padding: 20px 18px;
+}
+
+.sprout-flip-back h5 {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #aed581;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.sprout-flip-back p {
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: #f1f8e9;
+  margin: 0;
+}
+
+/* Responsive Grid for 7 Layers */
+@media (max-width: 1024px) {
+  .sprout-7layers-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .sprout-7layers-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .sprout-flip-card {
+    height: 230px;
+  }
+}

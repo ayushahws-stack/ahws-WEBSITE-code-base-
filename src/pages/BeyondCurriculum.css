@@ -1,0 +1,345 @@
+@import './Academics.css';
+
+.beyond-curriculum-page {
+  overflow: hidden;
+}
+
+/* ── Section 1: SPROUT Enrichment Pillars ── */
+.enrichment-pillars-section {
+  padding: 80px 0;
+  background: var(--white);
+}
+
+.enrichment-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-bottom: 48px;
+}
+
+.enrichment-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 32px 24px;
+  text-align: center;
+  transition: all 0.35s ease;
+  box-shadow: 0 4px 16px rgba(0, 33, 71, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.enrichment-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #3888c7, #82b541);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.enrichment-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 33, 71, 0.12);
+  border-color: #3888c7;
+}
+
+.enrichment-card:hover::after {
+  opacity: 1;
+}
+
+.enrichment-icon {
+  font-size: 2.8rem;
+  margin-bottom: 16px;
+  display: inline-block;
+  width: 76px;
+  height: 76px;
+  line-height: 76px;
+  background: linear-gradient(135deg, rgba(56, 136, 199, 0.08), rgba(130, 181, 65, 0.12));
+  border-radius: 50%;
+}
+
+.enrichment-card h4 {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+.enrichment-card p {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  line-height: 1.65;
+}
+
+/* 21st Century Skills Box */
+.skills-21c-box {
+  background: linear-gradient(135deg, #002147, #1a3a6b);
+  border-radius: 20px;
+  padding: 36px 32px;
+  color: var(--white);
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 33, 71, 0.15);
+}
+
+.skills-21c-box h3 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  margin-bottom: 24px;
+  color: #ffc700;
+  letter-spacing: 0.5px;
+}
+
+.skills-21c-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.skill-21c-pill {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 199, 0, 0.4);
+  padding: 14px 20px;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--white);
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  user-select: none;
+}
+
+.pill-emoji {
+  font-size: 1.25rem;
+  transition: transform 0.35s ease;
+  display: inline-block;
+}
+
+.skill-21c-pill:hover {
+  background: #FFC700;
+  color: #002147;
+  border-color: #FFC700;
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 12px 30px rgba(255, 199, 0, 0.5);
+}
+
+.skill-21c-pill:hover .pill-emoji {
+  transform: scale(1.3) rotate(-8deg);
+}
+
+@media (max-width: 992px) {
+  .skills-21c-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .skills-21c-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Section 2: Co-Scholastic & Special Programs (2x2 Grid) ── */
+.special-programs-section {
+  padding: 80px 0;
+  background: #f4f7fa;
+}
+
+.special-programs-section .section-title {
+  color: #002147 !important;
+  font-size: 2.2rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+  display: block;
+  opacity: 1 !important;
+  visibility: visible !important;
+  text-align: center;
+}
+
+.special-programs-section .acad-subtitle {
+  color: #2c3e50 !important;
+  font-size: 1.1rem;
+  font-weight: 500;
+  max-width: 850px;
+  margin: 0 auto 48px;
+  line-height: 1.7;
+  opacity: 1 !important;
+  visibility: visible !important;
+  text-align: center;
+}
+
+.programs-grid-2x2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.program-card-v2 {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: 0 6px 20px rgba(0, 33, 71, 0.06);
+  transition: all 0.35s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.program-card-v2:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 32px rgba(0, 33, 71, 0.12);
+  border-color: #3888c7;
+}
+
+.program-image-v2 img {
+  transition: transform 0.5s ease;
+}
+
+.program-card-v2:hover .program-image-v2 img {
+  transform: scale(1.05);
+}
+
+.program-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.program-icon-v2 {
+  font-size: 2rem;
+}
+
+.program-tag {
+  background: linear-gradient(135deg, rgba(56, 136, 199, 0.1), rgba(130, 181, 65, 0.15));
+  color: #1a568c;
+  font-size: 0.78rem;
+  font-weight: 800;
+  padding: 4px 14px;
+  border-radius: 50px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.program-card-content h3 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+.program-card-content p {
+  color: var(--text-muted);
+  font-size: 0.94rem;
+  line-height: 1.7;
+}
+
+/* ── Section 3: Sports Portfolio ── */
+.sports-section {
+  padding: 80px 0;
+  background: var(--white);
+}
+
+.sports-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.sport-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+}
+
+.sport-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 24px rgba(0, 33, 71, 0.1);
+  border-color: #3888c7;
+}
+
+.sport-icon {
+  font-size: 2.8rem;
+  margin-bottom: 12px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sport-card h4 {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+
+.sport-tag {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 50px;
+  background: #f0f4f8;
+  color: #4a5568;
+}
+
+.sport-tag.type-quick {
+  background: #e3f2fd;
+  color: #1565c0;
+}
+
+.sport-tag.type-stamina {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.sport-tag.type-dynamism {
+  background: #fff3e0;
+  color: #e65100;
+}
+
+.sport-tag.type-defence {
+  background: #f3e5f5;
+  color: #7b1fa2;
+}
+
+.sport-tag.type-strategy {
+  background: #fff8e1;
+  color: #f57f17;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 1024px) {
+  .enrichment-grid, .sports-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .skills-21c-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .programs-grid-2x2, .enrichment-grid, .sports-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .skills-21c-grid {
+    grid-template-columns: 1fr;
+  }
+}

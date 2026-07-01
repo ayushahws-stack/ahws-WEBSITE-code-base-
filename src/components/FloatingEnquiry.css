@@ -1,0 +1,223 @@
+/* ── Floating Enquiry Button ── */
+.floating-enquiry-btn {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 9999;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  background: linear-gradient(135deg, var(--primary) 0%, #1a3a6b 100%);
+  color: var(--white);
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 8px 32px rgba(0,33,71,0.35);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  overflow: hidden;
+  transform-origin: right center;
+}
+
+.floating-enquiry-btn:hover {
+  width: auto;
+  border-radius: 50px;
+  padding: 0 24px;
+  transform: scale(1.05);
+  box-shadow: 0 12px 40px rgba(0,33,71,0.45);
+}
+
+.floating-label {
+  display: none;
+  font-size: 0.9rem;
+  font-weight: 700;
+  white-space: nowrap;
+  font-family: var(--font-main);
+}
+
+.floating-enquiry-btn:hover .floating-label {
+  display: inline;
+}
+
+.floating-enquiry-btn.active {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--text-muted);
+  font-size: 1.2rem;
+}
+
+/* ── Backdrop ── */
+.floating-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 9998;
+  animation: fadeIn 0.3s ease;
+}
+
+/* ── Panel ── */
+.floating-panel {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 9999;
+  width: 380px;
+  max-height: 80vh;
+  overflow-y: auto;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 20px 60px rgba(0,33,71,0.25);
+  transform: translate(-50%, -50%) scale(0.95);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.floating-panel.open {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  pointer-events: all;
+}
+
+.floating-panel-header {
+  background: linear-gradient(135deg, var(--primary) 0%, #1a3a6b 100%);
+  color: var(--white);
+  padding: 24px;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.floating-panel-header h3 {
+  font-size: 1.2rem;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.floating-panel-header p {
+  font-size: 0.85rem;
+  opacity: 0.8;
+  line-height: 1.5;
+}
+
+/* ── Form ── */
+.floating-form {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.fl-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-family: var(--font-main);
+  font-size: 0.9rem;
+  transition: var(--transition);
+  background: var(--white);
+  color: var(--text-dark);
+}
+
+.fl-input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(0, 33, 71, 0.1);
+}
+
+.fl-submit {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, var(--secondary) 0%, var(--accent) 100%);
+  color: var(--primary);
+  font-family: var(--font-main);
+  font-size: 1rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.fl-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(255,199,0,0.4);
+}
+
+.fl-submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ── Success ── */
+.floating-success {
+  padding: 40px 24px;
+  text-align: center;
+}
+
+.success-icon {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.floating-success h4 {
+  font-size: 1.3rem;
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+
+.floating-success p {
+  color: var(--text-muted);
+}
+
+/* ── Footer ── */
+.floating-panel-footer {
+  padding: 16px 24px;
+  text-align: center;
+  border-top: 1px solid var(--border);
+  background: var(--light-bg);
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+}
+
+.floating-panel-footer p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.floating-panel-footer a {
+  color: var(--primary);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.floating-panel-footer a:hover {
+  color: var(--accent);
+}
+
+/* ── Animations ── */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ── Mobile ── */
+@media (max-width: 640px) {
+  .floating-panel {
+    width: 90%;
+  }
+
+  .floating-enquiry-btn {
+    bottom: 20px;
+    right: 20px;
+    width: 56px;
+    height: 56px;
+  }
+}
