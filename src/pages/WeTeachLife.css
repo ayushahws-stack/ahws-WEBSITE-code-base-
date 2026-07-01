@@ -1,0 +1,296 @@
+/* =============================================
+   WeTeachLife.css  — "We Teach Life" page styles
+   ============================================= */
+
+/* ── Scroll-in base ── */
+.wtl-intro,
+.wtl-section {
+  opacity: 0;
+  transform: translateY(36px);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+}
+.wtl-visible {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* ── Intro strip ── */
+.wtl-intro {
+  background: linear-gradient(135deg, #f0f4ff 0%, #fffbe8 100%);
+  padding: 72px 0 56px;
+  border-bottom: 3px solid #FFC700;
+}
+.wtl-intro-inner {
+  display: flex;
+  align-items: flex-start;
+  gap: 32px;
+}
+.wtl-intro-icon {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 24px rgba(0,33,71,0.12);
+}
+.wtl-intro-heading {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 900;
+  color: #002147;
+  margin-bottom: 16px;
+  letter-spacing: -1px;
+}
+.wtl-intro-text p {
+  font-size: 1.08rem;
+  color: #2a2a3e;
+  line-height: 1.85;
+  margin-bottom: 12px;
+}
+.wtl-intro-text em {
+  font-style: normal;
+  font-weight: 700;
+  color: #002147;
+  border-bottom: 2px solid #FFC700;
+}
+
+/* ── Quick nav pills ── */
+.wtl-nav {
+  background: #002147;
+  padding: 16px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 20px rgba(0,33,71,0.25);
+}
+.wtl-nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+}
+.wtl-nav-pill {
+  display: inline-block;
+  padding: 6px 16px;
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  border-radius: 50px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 0.25s, color 0.25s;
+  white-space: nowrap;
+}
+.wtl-nav-pill:hover {
+  background: #FFC700;
+  color: #002147;
+}
+
+/* ── Main content area ── */
+.wtl-main {
+  padding-bottom: 0;
+}
+
+/* ── Sections ── */
+.wtl-section {
+  padding: 80px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+.wtl-section:nth-child(even) {
+  background: #f8f9fc;
+}
+.wtl-section-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+.wtl-section--reverse .wtl-section-inner {
+  direction: rtl;
+}
+.wtl-section--reverse .wtl-text-side,
+.wtl-section--reverse .wtl-image-side {
+  direction: ltr;
+}
+
+/* ── Text side ── */
+.wtl-icon-wrap {
+  width: 64px;
+  height: 64px;
+  background: #fff;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 16px rgba(0,33,71,0.10);
+  margin-bottom: 16px;
+}
+.wtl-section-title {
+  font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+  font-weight: 800;
+  color: #002147;
+  margin-bottom: 12px;
+  letter-spacing: -0.5px;
+}
+.wtl-divider {
+  width: 60px;
+  height: 4px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+.wtl-quote {
+  border-left: 4px solid #FFC700;
+  padding: 14px 20px;
+  background: #fffbe8;
+  border-radius: 0 12px 12px 0;
+  margin-bottom: 24px;
+  font-size: 1rem;
+  font-style: italic;
+  color: #002147;
+  line-height: 1.7;
+}
+.wtl-quote-mark {
+  font-size: 2rem;
+  font-weight: 900;
+  color: #FFC700;
+  line-height: 0;
+  vertical-align: -12px;
+  margin-right: 4px;
+}
+.wtl-quote-by {
+  display: block;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: #002147;
+  margin-top: 10px;
+  letter-spacing: 0.3px;
+}
+.wtl-body {
+  font-size: 1.02rem;
+  color: #3a3a4e;
+  line-height: 1.85;
+  margin-bottom: 16px;
+}
+
+/* ── Image side ── */
+.wtl-image-side {
+  position: relative;
+}
+.wtl-image-frame {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 16px 56px rgba(0,33,71,0.16);
+  aspect-ratio: 4/3;
+  background: linear-gradient(135deg, #e8eef8, #fff5cc);
+}
+.wtl-image-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+.wtl-image-frame:hover img {
+  transform: scale(1.04);
+}
+.wtl-image-frame.wtl-image-placeholder::after {
+  content: '📷 Image coming soon';
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: #aaa;
+  background: #f5f5f5;
+}
+.wtl-image-badge {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  padding: 6px 16px;
+  border-radius: 50px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+}
+
+/* ── CTA strip ── */
+.wtl-cta {
+  background: linear-gradient(135deg, #002147 0%, #003a7a 100%);
+  padding: 80px 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.wtl-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FFC700' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  opacity: 0.4;
+}
+.wtl-cta-inner {
+  position: relative;
+  z-index: 1;
+}
+.wtl-cta-title {
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 16px;
+  letter-spacing: -0.5px;
+}
+.wtl-cta-sub {
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.8);
+  max-width: 600px;
+  margin: 0 auto 32px;
+  line-height: 1.7;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .wtl-section-inner {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .wtl-section--reverse .wtl-section-inner {
+    direction: ltr;
+  }
+  .wtl-image-side {
+    order: -1;
+  }
+  .wtl-intro-inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .wtl-intro-icon {
+    margin-bottom: 8px;
+  }
+}
+@media (max-width: 600px) {
+  .wtl-section {
+    padding: 52px 0;
+  }
+  .wtl-nav-pill {
+    font-size: 0.74rem;
+    padding: 5px 12px;
+  }
+  .wtl-cta {
+    padding: 56px 0;
+  }
+}

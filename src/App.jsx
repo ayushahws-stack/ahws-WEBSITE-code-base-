@@ -20,6 +20,7 @@ import Committees from './pages/Committees'
 import Infrastructure from './pages/Infrastructure'
 import Curriculum from './pages/Curriculum'
 import BeyondCurriculum from './pages/BeyondCurriculum'
+import WeTeachLife from './pages/WeTeachLife'
 import AnnouncementTicker from './components/AnnouncementTicker'
 import FloatingEnquiry from './components/FloatingEnquiry'
 import SEO from './components/SEO'
@@ -66,6 +67,7 @@ function App() {
         <Route path="/academics" element={<Curriculum />} />
         <Route path="/curriculum" element={<Curriculum />} />
         <Route path="/beyond-curriculum" element={<BeyondCurriculum />} />
+        <Route path="/we-teach-life" element={<WeTeachLife />} />
         <Route path="/results" element={<Results />} />
         <Route path="/fee-structure" element={<FeeStructure />} />
         <Route path="/careers" element={<Careers />} />
