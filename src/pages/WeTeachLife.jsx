@@ -197,7 +197,6 @@ export default function WeTeachLife() {
     <>
       <PageBanner
         title="We Teach Life"
-        image="./images/school_kids.png"
       />
 
       {/* Intro hero strip */}
