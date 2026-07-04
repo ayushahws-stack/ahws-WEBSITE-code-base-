@@ -87,6 +87,9 @@
   text-decoration: none;
   transition: background 0.25s, color 0.25s;
   white-space: nowrap;
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
 }
 .wtl-nav-pill:hover {
   background: #FFC700;

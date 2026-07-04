@@ -231,7 +231,18 @@ export default function WeTeachLife() {
           <ul className="wtl-nav-list">
             {sections.map(s => (
               <li key={s.id}>
-                <a href={`#${s.id}`} className="wtl-nav-pill">{s.label}</a>
+                <button 
+                  onClick={() => {
+                    const el = document.getElementById(s.id);
+                    if (el) {
+                      const y = el.getBoundingClientRect().top + window.scrollY - 80; // Offset for sticky nav
+                      window.scrollTo({ top: y, behavior: 'smooth' });
+                    }
+                  }} 
+                  className="wtl-nav-pill"
+                >
+                  {s.label}
+                </button>
               </li>
             ))}
           </ul>
