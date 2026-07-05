@@ -154,7 +154,6 @@ function LifeSection({ section, index }) {
       <div className="container wtl-section-inner">
         {/* Text side */}
         <div className="wtl-text-side">
-          <div className="wtl-icon-wrap">{section.icon}</div>
           <h2 className="wtl-section-title">{section.label}</h2>
           <div className="wtl-divider" style={{ background: `linear-gradient(90deg, ${section.accent}, ${section.accent === '#002147' ? '#FFC700' : '#002147'})` }} />
           <blockquote className="wtl-quote">
