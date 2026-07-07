@@ -1,4 +1,4 @@
-import './MandatoryDisclosure.css'
+﻿import './MandatoryDisclosure.css'
 import PageBanner from '../components/PageBanner'
 
 export default function MandatoryDisclosure() {
@@ -48,9 +48,9 @@ export default function MandatoryDisclosure() {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr><td>1</td><td>COPIES OF AFFILIATION/UPGRADATION LETTER AND RECENT EXTENSION OF AFFILIATION, IF ANY</td><td><a href="./documents%20website/AHWS%20Mandatory%20disclosures/affililation%20letter%20upto%202030.pdf" target="_blank" rel="noopener noreferrer" className="md-link">View Document</a></td></tr>
+                  <tr><td>1</td><td>COPIES OF AFFILIATION/UPGRADATION LETTER AND RECENT EXTENSION OF AFFILIATION, IF ANY</td><td><a href="./documents%20website/AHWS%20Mandatory%20disclosures/affiliation%20letter%20upto%202030.pdf" target="_blank" rel="noopener noreferrer" className="md-link">View Document</a></td></tr>
                   <tr><td>2</td><td>COPIES OF SOCIETIES/TRUST/COMPANY REGISTRATION/RENEWAL CERTIFICATE, AS APPLICABLE</td><td><a href="./documents%20website/AHWS%20Mandatory%20disclosures/society%20registration.jpg" target="_blank" rel="noopener noreferrer" className="md-link">View Document</a></td></tr>
-                  <tr><td>3</td><td>COPY OF NO OBJECTION CERTIFICATE (NOC) ISSUED, IF APPLICABLE, BY THE STATE GOVT./UT</td><td><a href="./documents%20website/AHWS%20Mandatory%20disclosures/copy%20of%20NOCissued%20by%20state%20govt.jpg" target="_blank" rel="noopener noreferrer" className="md-link">View Document</a></td></tr>
+                  <tr><td>3</td><td>COPY OF NO OBJECTION CERTIFICATE (NOC) ISSUED, IF APPLICABLE, BY THE STATE GOVT./UT</td><td><a href="./documents%20website/AHWS%20Mandatory%20disclosures/copy%20of%20NOC%20issued%20by%20state%20govt.jpg" target="_blank" rel="noopener noreferrer" className="md-link">View Document</a></td></tr>
                   <tr><td>4</td><td>COPIES OF RECOGNITION CERTIFICATE UNDER RTE ACT, 2009, AND IT'S RENEWAL IF APPLICABLE</td><td><a href="./documents%20website/AHWS%20Mandatory%20disclosures/recognition%20letters.pdf" target="_blank" rel="noopener noreferrer" className="md-link">View Document</a></td></tr>
                   <tr><td>5</td><td>COPY OF VALID BUILDING SAFETY CERTIFICATE AS PER THE NATIONAL BUILDING CODE</td><td><a href="./documents%20website/AHWS%20Mandatory%20disclosures/Building%20Safety%20Certificate.pdf" target="_blank" rel="noopener noreferrer" className="md-link">View Document</a></td></tr>
                   <tr><td>6</td><td>COPY OF VALID FIRE SAFETY CERTIFICATE ISSUED BY THE COMPETENT AUTHORITY</td><td><a href="./documents%20website/AHWS%20Mandatory%20disclosures/Fire%20certificate.pdf" target="_blank" rel="noopener noreferrer" className="md-link">View Document</a></td></tr>

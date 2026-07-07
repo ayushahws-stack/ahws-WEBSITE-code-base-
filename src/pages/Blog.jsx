@@ -1,4 +1,4 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 import './Blog.css'
 import PageBanner from '../components/PageBanner'
 
@@ -84,7 +84,7 @@ export default function Blog() {
 
   return (
     <main className="blog-page">
-      <PageBanner title="School Blogs" image="./WEBSITE GALLERY/other images/Kids walting to school .png" />
+      <PageBanner title="School Blogs" image="./WEBSITE GALLERY/other images/Kids walking to school .png" />
 
       <section className="blog-section">
         <div className="container">
@@ -117,7 +117,7 @@ export default function Blog() {
                 <div className="blog-content">
                   <h3 className="blog-title">{blog.title}</h3>
                   <p className="blog-excerpt">{blog.excerpt}</p>
-                  <button className="blog-read-more">Read More <span>→</span></button>
+                  <button className="blog-read-more">Read More <span>â†’</span></button>
                 </div>
               </div>
             ))}
@@ -131,7 +131,7 @@ export default function Blog() {
                 disabled={currentPage === 1}
                 onClick={() => handlePageChange(currentPage - 1)}
               >
-                ← Previous
+                â† Previous
               </button>
 
               <div className="pagination-numbers">
@@ -151,7 +151,7 @@ export default function Blog() {
                 disabled={currentPage === totalPages}
                 onClick={() => handlePageChange(currentPage + 1)}
               >
-                Next →
+                Next â†’
               </button>
             </div>
           )}
