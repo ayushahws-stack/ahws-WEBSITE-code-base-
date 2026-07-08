@@ -1,4 +1,4 @@
-﻿import { useInView } from 'react-intersection-observer'
+import { useInView } from 'react-intersection-observer'
 import './BeyondCurriculum.css'
 import PageBanner from '../components/PageBanner'
 
@@ -11,12 +11,12 @@ export default function BeyondCurriculum() {
 
   // Enrichment Pillars (From SPROUT PPT Slide 6)
   const enrichmentPillars = [
-    { icon: 'ðŸ› ï¸', title: 'Kaushal Vikas & Kaushal Bodh', desc: 'Experiential & competency-based skill development preparing students with practical real-world abilities.' },
-    { icon: 'ðŸŽ¨', title: 'Art Integrated Education', desc: 'Music, movement, visual arts, and theatrical expression integrated into daily academic concepts.' },
-    { icon: 'ðŸ’–', title: 'Value-Based Education', desc: 'Instilling empathy, kindness, gratitude, integrity, and social responsibility from early childhood.' },
-    { icon: 'ðŸ—£ï¸', title: 'Language & Phonics', desc: 'Comprehensive listening, speaking, reading, and writing programs fostering multi-lingual fluency.' },
-    { icon: 'ðŸ‘¨â€ðŸ‘©â€ðŸ‘§', title: 'Parent Partnership', desc: 'Active parent involvement through regular workshops, feedback forums, and collaborative events.' },
-    { icon: 'ðŸ†', title: 'Co-Scholastic & Clubs', desc: 'Diverse student clubs building leadership, public speaking, enterprise, and talent discovery.' },
+    { icon: '🛠️', title: 'Kaushal Vikas & Kaushal Bodh', desc: 'Experiential & competency-based skill development preparing students with practical real-world abilities.' },
+    { icon: '🎨', title: 'Art Integrated Education', desc: 'Music, movement, visual arts, and theatrical expression integrated into daily academic concepts.' },
+    { icon: '💖', title: 'Value-Based Education', desc: 'Instilling empathy, kindness, gratitude, integrity, and social responsibility from early childhood.' },
+    { icon: '🗣️', title: 'Language & Phonics', desc: 'Comprehensive listening, speaking, reading, and writing programs fostering multi-lingual fluency.' },
+    { icon: '👨‍👩‍👧', title: 'Parent Partnership', desc: 'Active parent involvement through regular workshops, feedback forums, and collaborative events.' },
+    { icon: '🏆', title: 'Co-Scholastic & Clubs', desc: 'Diverse student clubs building leadership, public speaking, enterprise, and talent discovery.' },
   ]
 
   const facultyStats = [
@@ -41,33 +41,33 @@ export default function BeyondCurriculum() {
       type: 'Quick Games',
       categoryClass: 'type-quick'
     },
-    { icon: 'ðŸ', name: 'Cricket', type: 'Stamina-Based', categoryClass: 'type-stamina' },
-    { icon: 'âš½', name: 'Football', type: 'Stamina-Based', categoryClass: 'type-stamina' },
-    { icon: 'ðŸ¸', name: 'Badminton', type: 'Quick Games', categoryClass: 'type-quick' },
-    { icon: 'ðŸŽ¾', name: 'Tennis', type: 'Quick Games', categoryClass: 'type-quick' },
-    { icon: 'ðŸ€', name: 'Basketball', type: 'Dynamism-Based', categoryClass: 'type-dynamism' },
-    { icon: 'ðŸ', name: 'Volleyball', type: 'Dynamism-Based', categoryClass: 'type-dynamism' },
-    { icon: 'ðŸ¥‹', name: 'Taekwondo', type: 'Self-Defence', categoryClass: 'type-defence' },
-    { icon: 'â™Ÿï¸', name: 'Chess', type: 'Strategic Thinking', categoryClass: 'type-strategy' },
+    { icon: '🏏', name: 'Cricket', type: 'Stamina-Based', categoryClass: 'type-stamina' },
+    { icon: '⚽', name: 'Football', type: 'Stamina-Based', categoryClass: 'type-stamina' },
+    { icon: '🏸', name: 'Badminton', type: 'Quick Games', categoryClass: 'type-quick' },
+    { icon: '🎾', name: 'Tennis', type: 'Quick Games', categoryClass: 'type-quick' },
+    { icon: '🏀', name: 'Basketball', type: 'Dynamism-Based', categoryClass: 'type-dynamism' },
+    { icon: '🏐', name: 'Volleyball', type: 'Dynamism-Based', categoryClass: 'type-dynamism' },
+    { icon: '🥋', name: 'Taekwondo', type: 'Self-Defence', categoryClass: 'type-defence' },
+    { icon: '♟️', name: 'Chess', type: 'Strategic Thinking', categoryClass: 'type-strategy' },
   ]
 
   const coScholasticPrograms = [
     {
-      icon: 'ðŸš€',
-      title: 'Decode Startup â€” Entrepreneurial Leadership',
+      icon: '🚀',
+      title: 'Decode Startup — Entrepreneurial Leadership',
       tag: 'Enterprise & Leadership',
       desc: 'Our signature Decode Startup program helps students grow into future leaders by enabling them to design, implement, and present business ideas to actual investors. Upon approval, concepts receive initial seed funding to turn ideas into feasible startup ventures.',
       image: './WEBSITE GALLERY/other images/smart class room with 3D modes in the smart screen .jpeg'
     },
     {
-      icon: 'ðŸŽ™ï¸',
-      title: 'Wordsworth â€” Digital Language Lab',
+      icon: '🎙️',
+      title: 'Wordsworth — Digital Language Lab',
       tag: 'Linguistic Excellence',
       desc: 'Equipped with Words Worth, the most innovative language learning software, offering grade-specific content for extensive practice in vocabulary, pronunciation, spelling correction, and elimination of mother tongue interference (MTI).',
       image: './WEBSITE GALLERY/other images/Computer lab.jpg'
     },
     {
-      icon: 'ðŸŽ­',
+      icon: '🎭',
       title: 'Theater & Performing Arts',
       tag: 'Stage Exposure & Empathy',
       desc: 'Uniquely formulated to empower students to overcome stage fear, instill unshakeable self-confidence, and master emotional expressiveness. Young performers tackle social issues on stage to build deep human empathy and community awareness.',
@@ -75,21 +75,21 @@ export default function BeyondCurriculum() {
       imagePosition: 'center 20%'
     },
     {
-      icon: 'ðŸŽ¨',
+      icon: '🎨',
       title: 'Creativity & Expression through Art',
       tag: 'Visual Arts',
       desc: 'Our Arts program empowers students to express themselves freely, build confidence, and develop their unique creativity. Young artists explore various mediums, bringing imagination to life.',
       image: './WEBSITE GALLERY/other images/kid making art.jpeg'
     },
     {
-      icon: 'ðŸ¤–',
+      icon: '🤖',
       title: 'Robotics & STEM Innovation',
       tag: 'Tech & Innovation',
       desc: 'Hands-on learning with robotic kits, microcontrollers, and coding activities that empower students to master STEM skills, logical reasoning, and digital enterprise.',
       image: './images/Robotics 2.jpeg'
     },
     {
-      icon: 'ðŸ†',
+      icon: '🏆',
       title: 'Sports & Athletics Excellence',
       tag: 'Fitness & Sportsmanship',
       desc: 'Comprehensive sports training under certified coaches. From track and field to tactical team sports, students build endurance, leadership, and sportsmanship.',
@@ -101,7 +101,7 @@ export default function BeyondCurriculum() {
     <main className="beyond-curriculum-page">
       <PageBanner title="Beyond Curriculum" image="./WEBSITE GALLERY/other images/Kids walking to school .png" />
 
-      {/* â”€â”€ Section 1: SPROUT Enrichment Pillars â”€â”€ */}
+      {/* ── Section 1: SPROUT Enrichment Pillars ── */}
       <section className="enrichment-pillars-section">
         <div className="container">
           <h2 className="section-title">SPROUT Enrichment Pillars</h2>
@@ -122,21 +122,21 @@ export default function BeyondCurriculum() {
           <div className="skills-21c-box" style={{ marginTop: '56px' }}>
             <h3>21st Century Competencies (The 4 C's Framework)</h3>
             <div className="skills-21c-grid">
-              <div className="skill-21c-pill"><span className="pill-emoji">ðŸŽ¨</span> Creativity &amp; Innovation</div>
-              <div className="skill-21c-pill"><span className="pill-emoji">ðŸ¤</span> Collaboration &amp; Teamwork</div>
-              <div className="skill-21c-pill"><span className="pill-emoji">ðŸ’¬</span> Communication &amp; Expression</div>
-              <div className="skill-21c-pill"><span className="pill-emoji">ðŸ§ </span> Critical Thinking &amp; Problem Solving</div>
+              <div className="skill-21c-pill"><span className="pill-emoji">🎨</span> Creativity &amp; Innovation</div>
+              <div className="skill-21c-pill"><span className="pill-emoji">🤝</span> Collaboration &amp; Teamwork</div>
+              <div className="skill-21c-pill"><span className="pill-emoji">💬</span> Communication &amp; Expression</div>
+              <div className="skill-21c-pill"><span className="pill-emoji">🧠</span> Critical Thinking &amp; Problem Solving</div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* â”€â”€ Section 2: Co-Scholastic & Special Programs â”€â”€ */}
+      {/* ── Section 2: Co-Scholastic & Special Programs ── */}
       <section className="special-programs-section bg-light">
         <div className="container">
           <h2 className="section-title">Co-Scholastic &amp; Special Programs</h2>
           <div className="divider-line" />
-          <p className="acad-subtitle">Transformative programs that build confidence, creativity, and enterprise â€” preparing students not just for exams, but for life.</p>
+          <p className="acad-subtitle">Transformative programs that build confidence, creativity, and enterprise — preparing students not just for exams, but for life.</p>
           <div ref={programsRef} className={`programs-grid-2x2 ${programsInView ? 'in-view' : ''}`}>
             {coScholasticPrograms.map((prog, i) => (
               <div key={i} className="program-card-v2">
@@ -159,7 +159,7 @@ export default function BeyondCurriculum() {
         </div>
       </section>
 
-      {/* â”€â”€ Section 3: Sports Portfolio â”€â”€ */}
+      {/* ── Section 3: Sports Portfolio ── */}
       <section className="sports-section">
         <div className="container">
           <h2 className="section-title">Sports</h2>
@@ -177,7 +177,7 @@ export default function BeyondCurriculum() {
         </div>
       </section>
 
-      {/* â”€â”€ Section 4: Distinguished Faculty & Guidance â”€â”€ */}
+      {/* ── Section 4: Distinguished Faculty & Guidance ── */}
       <section className="acad-faculty bg-light">
         <div className="container">
           <h2 className="section-title acad-faculty-title">Our Distinguished Faculty</h2>
@@ -191,7 +191,7 @@ export default function BeyondCurriculum() {
             ))}
           </div>
           <p className="acad-faculty-desc">
-            Our educators are the backbone of AHWS. Every faculty member holds a postgraduate or doctoral degree in their respective discipline and is trained in modern pedagogical techniques, ICT integration, and inclusive education. We have <strong>11 PGT specialists</strong>, <strong>5 TGT teachers</strong>, and <strong>9 PRT educators</strong> â€” each supported by continuous professional development workshops, mindfulness training, and AI/tech upskilling sessions. Our in-house Counsellor, <strong>Dr. Rashmi Bajaj Singh</strong>, brings over <strong>28 years of experience</strong> in guidance and holistic student development.
+            Our educators are the backbone of AHWS. Every faculty member holds a postgraduate or doctoral degree in their respective discipline and is trained in modern pedagogical techniques, ICT integration, and inclusive education. We have <strong>11 PGT specialists</strong>, <strong>5 TGT teachers</strong>, and <strong>9 PRT educators</strong> — each supported by continuous professional development workshops, mindfulness training, and AI/tech upskilling sessions. Our in-house Counsellor, <strong>Dr. Rashmi Bajaj Singh</strong>, brings over <strong>28 years of experience</strong> in guidance and holistic student development.
           </p>
         </div>
       </section>

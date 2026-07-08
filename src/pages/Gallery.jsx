@@ -1,15 +1,15 @@
-﻿import { useState } from 'react'
+import { useState } from 'react'
 import './Gallery.css'
 import PageBanner from '../components/PageBanner'
 
-// â”€â”€â”€ REAL EVENT PHOTOS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-// All paths are relative to /public â€” served as static assets by Vite.
+// ─── REAL EVENT PHOTOS ─────────────────────────────────────────────────────
+// All paths are relative to /public — served as static assets by Vite.
 // Folder names use URL-encoding for spaces and special chars.
 
 const photoCategories = ['All', 'Awards & Recognition', 'Festivals & Culture', 'Sports', 'School Events', 'Community & Outreach', 'Workshops']
 
 const photos = [
-  // â”€â”€ Awards & Recognition â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // ── Awards & Recognition ─────────────────────────────────────────────
   {
     id: 1,
     title: 'Saina Nehwal at AHWS Mega Competitions 2024',
@@ -50,7 +50,7 @@ const photos = [
     title: 'Meet with Hon\'ble Dy. CM Mr. Pravesh Verma Ji',
     category: 'Awards & Recognition',
     date: 'September 11, 2025',
-    folder: "Meet with Honâ€™ble Dy. CM Mr. Pravesh Verma Ji (11-09-2025)",
+    folder: "Meet with Hon’ble Dy. CM Mr. Pravesh Verma Ji (11-09-2025)",
     images: [
 'WhatsApp Image 2025-09-11 at 7.24.32 PM (1).jpeg',
       'WhatsApp Image 2025-09-11 at 7.24.32 PM.jpeg',
@@ -61,7 +61,7 @@ const photos = [
     title: 'Meet with Environment Minister Mr. Manjinder Singh Sirsa Ji',
     category: 'Awards & Recognition',
     date: 'September 15, 2025',
-    folder: "Meet with Honâ€™ble Environment Minister Mr. Manjinder Singh Sirsa Ji (15-09-2025)",
+    folder: "Meet with Hon’ble Environment Minister Mr. Manjinder Singh Sirsa Ji (15-09-2025)",
     images: [
 '3839dfa7-7664-40db-ba31-2ecb4448e3c4.jpeg',
       '490b0ee2-4465-4f58-9429-98737d95f4c1.jpeg',
@@ -72,7 +72,7 @@ const photos = [
     id: 55,
     title: 'Zonal Events Student Champions & Achievers',
     category: 'Awards & Recognition',
-    date: '2025â€“2026',
+    date: '2025–2026',
     folder: 'Kids Awards',
     images: [
       'Advik Chauhan Creative.png',
@@ -87,7 +87,7 @@ const photos = [
     ],
   },
 
-  // â”€â”€ Festivals & Culture â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // ── Festivals & Culture ───────────────────────────────────────────────
   {
     id: 6,
     title: 'Lohri Celebration',
@@ -161,10 +161,10 @@ const photos = [
     ],
   },
 
-  // â”€â”€ Sports â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // ── Sports ────────────────────────────────────────────────────────────
   {
     id: 12,
-    title: 'Sports Day â€“ TEJAS 2026',
+    title: 'Sports Day – TEJAS 2026',
     category: 'Sports',
     date: 'February 17, 2026',
     folder: 'Sports Day (17-02-2026)',
@@ -186,7 +186,7 @@ const photos = [
     ],
   },
 
-  // â”€â”€ School Events â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // ── School Events ─────────────────────────────────────────────────────
   {
     id: 12.5,
     title: 'Farewell of Class XII',
@@ -299,7 +299,7 @@ const photos = [
   },
   {
     id: 20,
-    title: 'Titans of Tomorrow â€“ Cartoon Network',
+    title: 'Titans of Tomorrow – Cartoon Network',
     category: 'School Events',
     date: 'November 11, 2025',
     folder: 'Titans of Tomorrow (11-11-2025)',
@@ -322,7 +322,7 @@ const photos = [
     ],
   },
 
-  // â”€â”€ Community & Outreach â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // ── Community & Outreach ──────────────────────────────────────────────
   {
     id: 22,
     title: 'RWA Health Check-up Camp',
@@ -349,7 +349,7 @@ const photos = [
   },
   {
     id: 24,
-    title: 'Swatch Pakwara â€“ Cleanliness Drive',
+    title: 'Swatch Pakwara – Cleanliness Drive',
     category: 'Community & Outreach',
     date: 'September 17, 2025',
     folder: 'Swatch Pakwara (17-09-2025)',
@@ -371,12 +371,12 @@ const photos = [
     ],
   },
 
-  // â”€â”€ Workshops â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // ── Workshops ─────────────────────────────────────────────────────────
   {
     id: 26,
     title: 'Summer Camp 2026',
     category: 'Workshops',
-    date: 'Mayâ€“June 2026',
+    date: 'May–June 2026',
     folder: 'Summer Camp 2026',
     images: [
 'IMG_1786.JPG',
@@ -416,7 +416,7 @@ function imgUrl(folder, filename) {
   return `./WEBSITE GALLERY/${encodeURIComponent(folder)}/${encodeURIComponent(filename)}`
 }
 
-// â”€â”€â”€ VIDEO DATA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── VIDEO DATA ─────────────────────────────────────────────────────────────
 const videos = [
   { id: 1, title: 'School Activities & Events', videoId: 'y9Ew2QONNPQ' },
   { id: 2, title: 'Student Performances', videoId: 'aYty_Dx9YSE' },
@@ -426,29 +426,29 @@ const videos = [
   { id: 6, title: 'Annual Day Celebrations', videoId: 'LNpKBBK6fac' },
 ]
 
-// â”€â”€â”€ ACHIEVER DATA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── ACHIEVER DATA ───────────────────────────────────────────────────────────
 const achieverCategories = ['All', 'Academic', 'Sports', 'Co-Curricular']
 
 const achievers = [
-  { id: 1, name: 'Arjun Sharma', initials: 'AS', achievement: 'State Topper â€“ CBSE Board Exams', category: 'Academic', class: 'Class XII â€“ 2025', color: '#002147' },
-  { id: 2, name: 'Priya Patel', initials: 'PP', achievement: 'Gold Medal â€“ Inter-School Athletics', category: 'Sports', class: 'Class X â€“ 2025', color: '#1a5276' },
-  { id: 3, name: 'Rohan Mehta', initials: 'RM', achievement: '1st Place â€“ National Science Olympiad', category: 'Academic', class: 'Class IX â€“ 2024', color: '#0e6655' },
-  { id: 4, name: 'Ananya Gupta', initials: 'AG', achievement: 'Best Speaker â€“ MUN Conference', category: 'Co-Curricular', class: 'Class XI â€“ 2025', color: '#6c3483' },
-  { id: 5, name: 'Vikram Singh', initials: 'VS', achievement: 'District Champion â€“ Cricket Tournament', category: 'Sports', class: 'Class XII â€“ 2024', color: '#b9770e' },
-  { id: 6, name: 'Sneha Reddy', initials: 'SR', achievement: '100% Score â€“ Mathematics Board Exam', category: 'Academic', class: 'Class X â€“ 2025', color: '#1f618d' },
-  { id: 7, name: 'Kabir Das', initials: 'KD', achievement: 'Winner â€“ State Robotics Challenge', category: 'Co-Curricular', class: 'Class VIII â€“ 2025', color: '#117864' },
-  { id: 8, name: 'Meera Joshi', initials: 'MJ', achievement: 'Silver Medal â€“ National Swimming Championship', category: 'Sports', class: 'Class IX â€“ 2025', color: '#a04000' },
-  { id: 9, name: 'Aditya Kumar', initials: 'AK', achievement: 'Gold Medal â€“ International Math Olympiad', category: 'Academic', class: 'Class XI â€“ 2024', color: '#2e4053' },
-  { id: 10, name: 'Ishita Verma', initials: 'IV', achievement: '1st Prize â€“ All India Art Competition', category: 'Co-Curricular', class: 'Class VII â€“ 2025', color: '#7d3c98' },
+  { id: 1, name: 'Arjun Sharma', initials: 'AS', achievement: 'State Topper – CBSE Board Exams', category: 'Academic', class: 'Class XII – 2025', color: '#002147' },
+  { id: 2, name: 'Priya Patel', initials: 'PP', achievement: 'Gold Medal – Inter-School Athletics', category: 'Sports', class: 'Class X – 2025', color: '#1a5276' },
+  { id: 3, name: 'Rohan Mehta', initials: 'RM', achievement: '1st Place – National Science Olympiad', category: 'Academic', class: 'Class IX – 2024', color: '#0e6655' },
+  { id: 4, name: 'Ananya Gupta', initials: 'AG', achievement: 'Best Speaker – MUN Conference', category: 'Co-Curricular', class: 'Class XI – 2025', color: '#6c3483' },
+  { id: 5, name: 'Vikram Singh', initials: 'VS', achievement: 'District Champion – Cricket Tournament', category: 'Sports', class: 'Class XII – 2024', color: '#b9770e' },
+  { id: 6, name: 'Sneha Reddy', initials: 'SR', achievement: '100% Score – Mathematics Board Exam', category: 'Academic', class: 'Class X – 2025', color: '#1f618d' },
+  { id: 7, name: 'Kabir Das', initials: 'KD', achievement: 'Winner – State Robotics Challenge', category: 'Co-Curricular', class: 'Class VIII – 2025', color: '#117864' },
+  { id: 8, name: 'Meera Joshi', initials: 'MJ', achievement: 'Silver Medal – National Swimming Championship', category: 'Sports', class: 'Class IX – 2025', color: '#a04000' },
+  { id: 9, name: 'Aditya Kumar', initials: 'AK', achievement: 'Gold Medal – International Math Olympiad', category: 'Academic', class: 'Class XI – 2024', color: '#2e4053' },
+  { id: 10, name: 'Ishita Verma', initials: 'IV', achievement: '1st Prize – All India Art Competition', category: 'Co-Curricular', class: 'Class VII – 2025', color: '#7d3c98' },
 ]
 
 const mainTabs = [
-  { key: 'photos', label: 'ðŸ“¸ Photo Gallery' },
-  { key: 'videos', label: 'ðŸŽ¥ Video Gallery' },
-  { key: 'achievers', label: 'ðŸ† Achievers' },
+  { key: 'photos', label: '📸 Photo Gallery' },
+  { key: 'videos', label: '🎥 Video Gallery' },
+  { key: 'achievers', label: '🏆 Achievers' },
 ]
 
-// â”€â”€â”€ COMPONENT â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── COMPONENT ───────────────────────────────────────────────────────────────
 export default function Gallery() {
   const [activeTab, setActiveTab] = useState('photos')
   const [photoFilter, setPhotoFilter] = useState('All')
@@ -486,7 +486,7 @@ export default function Gallery() {
     <main className="gallery-page">
       <PageBanner title="Gallery" image="./WEBSITE GALLERY/other images/kids Dance .jpg" />
 
-      {/* â”€â”€ Main Tab Navigation â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* ── Main Tab Navigation ─────────────────────────────────────────── */}
       <section className="gallery-tabs-section">
         <div className="container">
           <div className="gallery-tabs">
@@ -503,14 +503,14 @@ export default function Gallery() {
         </div>
       </section>
 
-      {/* â”€â”€ Tab Content â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* ── Tab Content ─────────────────────────────────────────────────── */}
       <div className="gallery-tab-content">
 
-        {/* â”€â”€â”€ Photo Gallery â”€â”€â”€ */}
+        {/* ─── Photo Gallery ─── */}
         {activeTab === 'photos' && (
           <section className="gallery-photos-section fade-in-tab">
             <div className="container">
-              <h2 className="section-title">ðŸ“¸ Photo Gallery</h2>
+              <h2 className="section-title">📸 Photo Gallery</h2>
               <div className="divider-line" />
 
               {/* Filter Bar */}
@@ -554,7 +554,7 @@ export default function Gallery() {
                     </div>
                     <div className="photo-card-overlay">
                       <h4>{event.title}</h4>
-                      <span className="photo-card-date">ðŸ“… {event.date}</span>
+                      <span className="photo-card-date">📅 {event.date}</span>
                     </div>
                   </div>
                 ))}
@@ -563,11 +563,11 @@ export default function Gallery() {
           </section>
         )}
 
-        {/* â”€â”€â”€ Video Gallery â”€â”€â”€ */}
+        {/* ─── Video Gallery ─── */}
         {activeTab === 'videos' && (
           <section className="gallery-videos-section fade-in-tab">
             <div className="container">
-              <h2 className="section-title">ðŸŽ¥ Video Gallery</h2>
+              <h2 className="section-title">🎥 Video Gallery</h2>
               <div className="divider-line" />
               <div className="video-grid">
                 {videos.map((video, i) => (
@@ -595,11 +595,11 @@ export default function Gallery() {
           </section>
         )}
 
-        {/* â”€â”€â”€ Achievers â”€â”€â”€ */}
+        {/* ─── Achievers ─── */}
         {activeTab === 'achievers' && (
           <section className="gallery-achievers-section fade-in-tab">
             <div className="container">
-              <h2 className="section-title">ðŸ† Our Achievers</h2>
+              <h2 className="section-title">🏆 Our Achievers</h2>
               <div className="divider-line" />
 
               <div className="gallery-filter-bar">
@@ -627,12 +627,12 @@ export default function Gallery() {
                     <div className="achiever-info">
                       <h4 className="achiever-name">{a.name}</h4>
                       <p className="achiever-achievement">{a.achievement}</p>
-                      <span className="achiever-class">ðŸŽ“ {a.class}</span>
+                      <span className="achiever-class">🎓 {a.class}</span>
                     </div>
                     <div className="achiever-badge">
-                      {a.category === 'Academic' && 'ðŸ“š'}
-                      {a.category === 'Sports' && 'ðŸ…'}
-                      {a.category === 'Co-Curricular' && 'ðŸŽ­'}
+                      {a.category === 'Academic' && '📚'}
+                      {a.category === 'Sports' && '🏅'}
+                      {a.category === 'Co-Curricular' && '🎭'}
                     </div>
                   </div>
                 ))}
@@ -642,11 +642,11 @@ export default function Gallery() {
         )}
       </div>
 
-      {/* â”€â”€â”€ Lightbox Modal â”€â”€â”€ */}
+      {/* ─── Lightbox Modal ─── */}
       {lightbox && (
         <div className="lightbox-overlay" onClick={closeLightbox} role="dialog" aria-modal="true" aria-label="Image Lightbox">
           <div className="lightbox-box" onClick={e => e.stopPropagation()}>
-            <button className="lightbox-close" onClick={closeLightbox} aria-label="Close">âœ•</button>
+            <button className="lightbox-close" onClick={closeLightbox} aria-label="Close">✕</button>
             <img
               src={lightbox.src}
               alt={lightbox.title}
@@ -654,14 +654,14 @@ export default function Gallery() {
             />
             {lightbox.images.length > 1 && (
               <>
-                <button className="lightbox-nav lightbox-prev" onClick={lightboxPrev} aria-label="Previous">â€¹</button>
-                <button className="lightbox-nav lightbox-next" onClick={lightboxNext} aria-label="Next">â€º</button>
+                <button className="lightbox-nav lightbox-prev" onClick={lightboxPrev} aria-label="Previous">‹</button>
+                <button className="lightbox-nav lightbox-next" onClick={lightboxNext} aria-label="Next">›</button>
                 <div className="lightbox-counter">{lightbox.idx + 1} / {lightbox.images.length}</div>
               </>
             )}
             <div className="lightbox-caption">
               <strong>{lightbox.title}</strong>
-              <span>ðŸ“… {lightbox.date}</span>
+              <span>📅 {lightbox.date}</span>
             </div>
           </div>
         </div>

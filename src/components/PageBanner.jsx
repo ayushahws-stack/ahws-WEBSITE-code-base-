@@ -1,4 +1,4 @@
-﻿import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import './PageBanner.css'
 
 export default function PageBanner({ title, image = "./WEBSITE GALLERY/other images/Kids walking to school .png" }) {
