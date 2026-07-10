@@ -123,6 +123,48 @@ function FlippableInfraCard({ item }) {
   )
 }
 
+/* ✨ Flippable Bento Card ✨ */
+function FlippableBentoCard({ item }) {
+  const [isFlipped, setIsFlipped] = useState(false)
+
+  return (
+    <div 
+      className={`bento-flip-card ${item.hero ? 'bento-hero' : ''} ${isFlipped ? 'is-flipped' : ''}`}
+      onClick={() => setIsFlipped(!isFlipped)}
+      onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && setIsFlipped(!isFlipped)}
+      role="button"
+      tabIndex={0}
+      title="Click to flip card"
+    >
+      <div className="bento-flip-inner">
+        {/* Front Face: Info */}
+        <div className="bento-flip-front">
+          <div className="bento-icon-wrap">
+            <img src={item.icon} alt={item.title} loading="lazy" />
+          </div>
+          <div className="bento-text">
+            <h4 className="bento-title">{item.title}</h4>
+            <p className="bento-tagline">{item.tagline}</p>
+            {item.desc && <p className="bento-desc">{item.desc}</p>}
+          </div>
+          <div className="bento-flip-hint">👆 Click for Photo</div>
+        </div>
+
+        {/* Back Face: Image */}
+        <div className="bento-flip-back">
+          {item.image && (
+            <img src={item.image} alt={item.title} className="bento-back-img" loading="lazy" />
+          )}
+          <div className="bento-back-overlay">
+            <h4>{item.title}</h4>
+            <span className="flip-hint" style={{ marginTop: '5px' }}>👆 Click for Info</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 export default function Home() {
   const [showPopup, setShowPopup] = useState(false)
   const [leaderModal, setLeaderModal] = useState(null)
@@ -213,8 +255,8 @@ export default function Home() {
     {
       image: 'https://ahws.edu.in/images/gallery/IMG-20240509-WA0053.jpg',
       icon: 'https://ahws.edu.in/images/icons-section-02-1024x1024.webp',
-      title: 'Bright Class & Smart Boards',
-      tagline: 'AI-powered interactive classrooms with immersive 3D learning experiences.',
+      title: 'AI-Powered Smart Classrooms',
+      tagline: 'Interactive classrooms with immersive 3D learning experiences.',
     },
     {
       image: 'https://ahws.edu.in/images/gallery/IMG-20240509-WA0056.jpg',
@@ -475,25 +517,11 @@ export default function Home() {
       <section className="uniqueness-section">
         <div className="container">
           <h2 className="section-title">UNIQUENESS DEFINED</h2>
-          <p className="uniqueness-subtitle">What sets Academic Heights World School apart — 8 pillars of educational excellence.</p>
+          <p className="uniqueness-subtitle">What sets Academic Heights World School apart — 7 pillars of educational excellence.</p>
           <div className="divider-line" />
           <div className="bento-grid">
             {uniquenessData.map((item, i) => (
-              <div key={i} className={`bento-card${item.hero ? ' bento-hero' : ''}`}>
-                {item.image && (
-                  <div className="bento-cover-image">
-                    <img src={item.image} alt={item.title} loading="lazy" />
-                  </div>
-                )}
-                <div className="bento-icon-wrap">
-                  <img src={item.icon} alt={item.title} loading="lazy" />
-                </div>
-                <div className="bento-text">
-                  <h4 className="bento-title">{item.title}</h4>
-                  <p className="bento-tagline">{item.tagline}</p>
-                  {item.desc && <p className="bento-desc">{item.desc}</p>}
-                </div>
-              </div>
+              <FlippableBentoCard key={i} item={item} />
             ))}
           </div>
         </div>
