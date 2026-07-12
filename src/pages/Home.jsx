@@ -58,35 +58,7 @@ function FeatureCard({ icon, title, description, points = [], bgGradient, delay 
 }
 
 /* ── Desk Card ── */
-function DeskCard({ image, fallbackImage, name, role, message, onImageClick }) {
-  return (
-    <div className="desk-card">
-      <div 
-        className="desk-img-wrap clickable-avatar" 
-        onClick={() => onImageClick({ src: image, fallbackImage, name, role, message })}
-        title="Click to view full portrait"
-      >
-        <img
-          src={image}
-          alt={name}
-          className="desk-img"
-          loading="lazy"
-          onError={(e) => {
-            if (fallbackImage && e.currentTarget.src !== fallbackImage) {
-              e.currentTarget.src = fallbackImage;
-            }
-          }}
-        />
-        <span className="avatar-zoom-badge">🔍 Click to View</span>
-      </div>
-      <div className="desk-content">
-        <h3 className="desk-name">{name}</h3>
-        <p className="desk-role">{role}</p>
-        <p className="desk-msg">{message}</p>
-      </div>
-    </div>
-  )
-}
+
 
 /* ── Flippable Infrastructure Card ── */
 function FlippableInfraCard({ item }) {
@@ -167,7 +139,6 @@ function FlippableBentoCard({ item }) {
 
 export default function Home() {
   const [showPopup, setShowPopup] = useState(false)
-  const [leaderModal, setLeaderModal] = useState(null)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isMuted, setIsMuted] = useState(true)
   const [isPlaying, setIsPlaying] = useState(true)
@@ -487,32 +458,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── From The Desk ── */}
-      <section className="desk-section">
-        <div className="container">
-          <h2 className="section-title">Guiding Voices</h2>
-          <div className="divider-line" />
-          <div className="desk-grid">
-            <DeskCard
-              image="./images/Ms Rosy Ahuja.png"
-              fallbackImage="https://ahws.edu.in/images/OUR-SKILLED-INSTRUCTORS-002-1.jpg"
-              name="Mrs. Rosy Ahuja"
-              role="Director"
-              message="Welcome to Academic Heights World School. With an unwavering dedication to excellence, our mission is to mold inquisitive young minds into the visionary leaders of tomorrow. By fostering innovation, creativity, and academic rigor, we build the foundation for a brighter future—together."
-              onImageClick={setLeaderModal}
-            />
-            <DeskCard
-              image="./images/Ms Rachna Anand.png"
-              fallbackImage="https://ahws.edu.in/images/OUR-SKILLED-INSTRUCTORS-001-1.webp"
-              name="Mrs. Rachna Anand"
-              role="Principal"
-              message="It is my absolute privilege to welcome you to our vibrant community of learners, parents, and educators. As we set the standard for educational excellence in Delhi, I am deeply grateful for your continued trust and collaboration. Let us inspire greatness in every child."
-              onImageClick={setLeaderModal}
-            />
-          </div>
-        </div>
-      </section>
-
       {/* ── Uniqueness Defined ── */}
       <section className="uniqueness-section">
         <div className="container">
@@ -567,30 +512,6 @@ export default function Home() {
         message="Your enquiry has been successfully submitted. Our admissions counselors will be in touch with you very soon to answer all your questions."
         buttonText="Done"
       />
-
-      {leaderModal && (
-        <div className="leader-modal-backdrop" onClick={() => setLeaderModal(null)}>
-          <div className="leader-modal-content" onClick={e => e.stopPropagation()}>
-            <button className="leader-modal-close" onClick={() => setLeaderModal(null)}>✕</button>
-            <div className="leader-modal-img-wrap">
-              <img 
-                src={leaderModal.src} 
-                alt={leaderModal.name} 
-                onError={e => {
-                  if (leaderModal.fallbackImage && e.currentTarget.src !== leaderModal.fallbackImage) {
-                    e.currentTarget.src = leaderModal.fallbackImage;
-                  }
-                }}
-              />
-            </div>
-            <div className="leader-modal-details">
-              <h3>{leaderModal.name}</h3>
-              <span className="leader-modal-role">{leaderModal.role}</span>
-              <p className="leader-modal-msg">{leaderModal.message}</p>
-            </div>
-          </div>
-        </div>
-      )}
     </main>
   )
 }
