@@ -1089,6 +1089,9 @@
 .bento-flip-card.bento-hero {
   grid-column: span 2;
 }
+.bento-flip-card.bento-full {
+  grid-column: 1 / -1;
+}
 
 .bento-flip-inner {
   position: relative;

@@ -101,7 +101,7 @@ function FlippableBentoCard({ item }) {
 
   return (
     <div 
-      className={`bento-flip-card ${item.hero ? 'bento-hero' : ''} ${isFlipped ? 'is-flipped' : ''}`}
+      className={`bento-flip-card ${item.hero ? 'bento-hero' : ''} ${item.fullWidth ? 'bento-full' : ''} ${isFlipped ? 'is-flipped' : ''}`}
       onClick={() => setIsFlipped(!isFlipped)}
       onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && setIsFlipped(!isFlipped)}
       role="button"
@@ -238,7 +238,7 @@ export default function Home() {
     {
       image: 'https://ahws.edu.in/images/gallery/IMG-20240509-WA0056.jpg',
       icon: 'https://ahws.edu.in/images/icons-section-05-1024x1024.webp',
-      title: 'Robotics & AI Labs',
+      title: 'AI and Robotics Lab',
       tagline: 'Hands-on STEM learning with real robotic kits and programming.',
     },
     {
@@ -262,6 +262,7 @@ export default function Home() {
       tagline: 'Comprehensive Athletics Infrastructure',
       desc: 'Pickleball, Cricket, Football, Badminton, Tennis, Basketball, Volleyball, Taekwondo & Chess - dedicated coaching and professional athletic infrastructure for all-round physical excellence.',
       hero: true,
+      fullWidth: true,
     },
   ]
 
