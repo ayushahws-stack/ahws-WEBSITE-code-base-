@@ -137,6 +137,57 @@ function FlippableBentoCard({ item }) {
   )
 }
 
+const dayTimeline = [
+  {
+    time: "01",
+    title: "Warm Welcome",
+    desc: "Children are greeted with smiles and hugs, ensuring a smooth, safe transition from home to school.",
+    icon: "🤗"
+  },
+  {
+    time: "02",
+    title: "Blessings & Values",
+    desc: "The day begins spiritually by seeking blessings from Maa Saraswati to instill gratitude.",
+    icon: "🙏"
+  },
+  {
+    time: "03",
+    title: "Fruit Break",
+    desc: "Prioritizing health and nutrition, children enjoy seasonal fruits to energize themselves.",
+    icon: "🍎"
+  },
+  {
+    time: "04",
+    title: "Circle Time",
+    desc: "A safe space for sharing thoughts, memories, and giggles, helping align their bodies and souls.",
+    icon: "💬"
+  },
+  {
+    time: "05",
+    title: "Concept Introduction",
+    desc: "Academics taught through hands-on MI tools, Interactive Panels, and our X-Wall.",
+    icon: "💡"
+  },
+  {
+    time: "06",
+    title: "Nourish Room",
+    desc: "Nutritious meals served in a community setting to teach healthy eating habits.",
+    icon: "🥗"
+  },
+  {
+    time: "07",
+    title: "Learning by Exploring",
+    desc: "Rotational activities like robotics, library, taekwondo, music, and yoga for holistic growth.",
+    icon: "🎨"
+  },
+  {
+    time: "08",
+    title: "Smiling Farewells",
+    desc: "The day concludes safely with transitions to school transport equipped with dedicated nannies.",
+    icon: "🚌"
+  }
+];
+
 export default function Home() {
   const [showPopup, setShowPopup] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -473,7 +524,32 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Campus Gallery ── */}
+      {/* 📸📸 A Day at AHWS Timeline 📸📸 */}
+      <section className="timeline-section">
+        <div className="container">
+          <div className="section-header">
+            <h2 className="section-title">A Day at AHWS</h2>
+            <div className="divider-line" />
+            <p className="section-subtitle">Experience the holistic journey of a young learner from morning arrivals to smiling farewells.</p>
+          </div>
+          <div className="timeline-wrapper">
+            {dayTimeline.map((item, index) => (
+              <div key={index} className={`timeline-item ${index % 2 === 0 ? 'left' : 'right'}`}>
+                <div className="timeline-content fadeInUp" style={{ animationDelay: `${index * 100}ms` }}>
+                  <div className="timeline-icon">{item.icon}</div>
+                  <div className="timeline-text">
+                    <span className="timeline-time">Step {item.time}</span>
+                    <h3>{item.title}</h3>
+                    <p>{item.desc}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 📸📸 Campus Gallery 📸📸 */}
       <section className="gallery-section">
         <div className="container">
           <h2 className="section-title">Life at AHWS — Campus Gallery</h2>
