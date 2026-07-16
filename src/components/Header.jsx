@@ -36,6 +36,10 @@ const navItems = [
     ]
   },
   {
+    label: 'WELL-BEING',
+    to: '/well-being'
+  },
+  {
     label: 'ADMISSION',
     to: '/admission',
     children: [

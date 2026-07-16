@@ -1,0 +1,120 @@
+﻿/* =========================================
+   Wellbeing Page Styles
+   ========================================= */
+
+.wellbeing-page {
+  background-color: var(--surface);
+  min-height: 100vh;
+}
+
+.wellbeing-intro-section {
+  padding: 80px 0 40px;
+  text-align: center;
+}
+
+.wb-intro-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.wb-lead-text {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: var(--text);
+  margin-top: 20px;
+}
+
+.wellbeing-grid-section {
+  padding: 40px 0 80px;
+}
+
+.wb-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.wb-card {
+  background: var(--white);
+  padding: 40px 30px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid var(--border);
+}
+
+.wb-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary);
+}
+
+.wb-card-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  display: inline-block;
+  background: #f0f7ff;
+  width: 80px;
+  height: 80px;
+  line-height: 80px;
+  border-radius: 50%;
+  color: var(--primary);
+}
+
+.wb-card-title {
+  color: var(--primary);
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+}
+
+.wb-card-desc {
+  color: var(--text-light);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.counsellor-section {
+  padding: 0 0 80px;
+}
+
+.counsellor-box {
+  background: linear-gradient(135deg, var(--primary) 0%, #1e88e5 100%);
+  color: var(--white);
+  padding: 50px;
+  border-radius: var(--radius);
+  text-align: center;
+  box-shadow: var(--shadow-md);
+}
+
+.counsellor-box h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.counsellor-box p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  max-width: 800px;
+  margin: 0 auto 30px;
+  opacity: 0.9;
+}
+
+.counsellor-box .btn-primary-ahws {
+  background-color: var(--accent);
+  color: var(--primary);
+  border: none;
+}
+
+.counsellor-box .btn-primary-ahws:hover {
+  background-color: var(--white);
+}
+
+@media (max-width: 768px) {
+  .wb-grid {
+    grid-template-columns: 1fr;
+  }
+  .counsellor-box {
+    padding: 40px 20px;
+  }
+}
