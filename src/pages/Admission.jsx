@@ -54,7 +54,7 @@ export default function Admission() {
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px', flexWrap: 'wrap', gap: '10px' }}>
                 <h3 className="form-heading" style={{ margin: 0 }}>Admission Enquiry Form</h3>
                 <a 
-                  href="/AHWS_Admission_Application_Form.pdf" 
+                  href="./AHWS_Admission_Application_Form.pdf" 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="btn-primary-ahws"
