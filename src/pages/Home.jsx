@@ -216,7 +216,7 @@ export default function Home() {
 
   const features = [
     {
-      icon: 'https://ahws.edu.in/images/21st-Century-Technology_-150x100.webp',
+      icon: '🖥️',
       title: 'Technology-Integrated',
       description: 'Smart classrooms, modern labs, and AI-integrated tools that prepare our students with essential digital age competencies.',
       bgGradient: 'linear-gradient(135deg, #0b2545 0%, #134074 100%)',
@@ -228,7 +228,7 @@ export default function Home() {
       ]
     },
     {
-      icon: 'https://ahws.edu.in/images/Holistic-Education-150x100.webp',
+      icon: '🌟',
       title: 'Learning Beyond Books',
       description: 'Equal emphasis on academics, sports, performing arts, leadership, life skills, and experiential learning.',
       bgGradient: 'linear-gradient(135deg, #004d40 0%, #00695c 100%)',
@@ -240,7 +240,7 @@ export default function Home() {
       ]
     },
     {
-      icon: 'https://ahws.edu.in/images/Future-Ready-150x100.webp',
+      icon: '🌍',
       title: 'Global Outlook, Indian Values',
       description: 'Nurturing responsible global citizens rooted in Indian ethics, culture, compassion, and respect.',
       bgGradient: 'linear-gradient(135deg, #4a148c 0%, #7b1fa2 100%)',
@@ -252,7 +252,7 @@ export default function Home() {
       ]
     },
     {
-      icon: 'https://ahws.edu.in/images/Future-Ready-150x100.webp',
+      icon: '🎓',
       title: 'Playgroup to University',
       description: 'A seamless academic journey from early years to university pathways through Rishihood University — all part of our unified brand group.',
       bgGradient: 'linear-gradient(135deg, #880e4f 0%, #c2185b 100%)',
@@ -267,48 +267,48 @@ export default function Home() {
 
   const uniquenessData = [
     {
-      image: 'https://ahws.edu.in/images/gallery/IMG-20240509-WA0051.jpg',
-      icon: 'https://ahws.edu.in/images/icons-section-01-1024x1024.webp',
+      image: './WEBSITE GALLERY/other images/Sprout infographic.png',
+      icon: './WEBSITE GALLERY/other images/Sprout logo.png',
       title: 'SPROUT Curriculum',
       tagline: 'Our exclusive in-house curriculum aligned with NEP-2020',
       desc: 'Our signature, in-house SPROUT curriculum integrates scholastic and co-scholastic pedagogies, life skills, value education, critical thinking, and future-ready abilities - aligned with NEP-2020, NCF-2023, and the NIPUN Bharat Mission.',
       hero: true,
     },
     {
-      image: 'https://ahws.edu.in/images/gallery/IMG-20240509-WA0062.jpg',
-      icon: 'https://ahws.edu.in/images/icons-section-08-1024x1024.webp',
+      image: './WEBSITE GALLERY/other images/smart class room with 3D modes in the smart screen .jpeg',
+      icon: './WEBSITE GALLERY/other images/AHWS logo.png',
       title: 'X-Wall & Speak-O-Pen',
       tagline: 'Immersive learning wall + smart pronunciation tools for language mastery.',
     },
     {
-      image: 'https://ahws.edu.in/images/gallery/IMG-20240509-WA0053.jpg',
-      icon: 'https://ahws.edu.in/images/icons-section-02-1024x1024.webp',
+      image: './WEBSITE GALLERY/other images/smart class room with 3D modes in the smart screen .jpeg',
+      icon: './WEBSITE GALLERY/other images/AHWS logo.png',
       title: 'AI-Powered Smart Classrooms',
       tagline: 'Interactive classrooms with immersive 3D learning experiences.',
     },
     {
-      image: 'https://ahws.edu.in/images/gallery/IMG-20240509-WA0056.jpg',
-      icon: 'https://ahws.edu.in/images/icons-section-05-1024x1024.webp',
+      image: './WEBSITE GALLERY/other images/robotics lab.jpeg',
+      icon: './WEBSITE GALLERY/other images/AHWS logo.png',
       title: 'AI and Robotics Lab',
       tagline: 'Hands-on STEM learning with real robotic kits and programming.',
     },
     {
-      image: 'https://ahws.edu.in/images/gallery/IMG-20240509-WA0057.jpg',
-      icon: 'https://ahws.edu.in/images/icons-section-03-1024x1024.png',
+      image: './WEBSITE GALLERY/other images/Technology_and_App_010.jpg',
+      icon: './WEBSITE GALLERY/other images/360 app logo .png',
       title: '360° Support App',
       tagline: 'Complete Parent & School Automation',
       desc: 'Fully encompassing automation solution with role-customized portals for parents, teachers, and students. Monitor daily progress, attendance, academic reports, and school communications in real-time.',
       hero: true,
     },
     {
-      image: 'https://ahws.edu.in/images/gallery/IMG-20240509-WA0061.jpg',
-      icon: 'https://ahws.edu.in/images/icons-section-06-1024x1024.webp',
+      image: './WEBSITE GALLERY/other images/kids Dance .jpg',
+      icon: './WEBSITE GALLERY/other images/AHWS logo.png',
       title: 'Performing Arts',
       tagline: 'Theatre, Dance, Music & Art with professional coaches and stage exposure.',
     },
     {
-      image: 'https://ahws.edu.in/images/gallery/IMG-20240509-WA0058.jpg',
-      icon: 'https://ahws.edu.in/images/icons-section-04-1024x1024.webp',
+      image: './images/Basketball 1.jpeg',
+      icon: './WEBSITE GALLERY/other images/AHWS logo.png',
       title: '9-Sport Portfolio',
       tagline: 'Comprehensive Athletics Infrastructure',
       desc: 'Pickleball, Cricket, Football, Badminton, Tennis, Basketball, Volleyball, Taekwondo & Chess - dedicated coaching and professional athletic infrastructure for all-round physical excellence.',

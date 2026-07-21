@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { HashRouter, Routes, Route, useLocation } from 'react-router-dom'
+import { HashRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Home from './pages/Home'
@@ -74,6 +74,7 @@ function App() {
         <Route path="/careers" element={<Careers />} />
         <Route path="/committees" element={<Committees />} />
         <Route path="/infrastructure" element={<Infrastructure />} />
+        <Route path="/campus" element={<Navigate to="/gallery" replace />} />
         <Route path="/well-being" element={<Wellbeing />} />
       </Routes>
       <Footer />
