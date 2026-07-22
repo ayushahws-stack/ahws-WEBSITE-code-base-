@@ -1,4 +1,4 @@
-﻿/* ===========================
+/* ===========================
    AHWS - Global CSS Reset & Design System
    =========================== */
 
@@ -23,6 +23,23 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+/* ── Global Flip Button Reset (used on all card flip triggers) ── */
+.flip-btn {
+  background: none;
+  border: none;
+  font-family: var(--font-main);
+  cursor: pointer;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  display: inline-block;
+}
+.flip-btn:hover {
+  opacity: 1 !important;
+  transform: scale(1.06);
+}
+.flip-btn:active {
+  transform: scale(0.97);
 }
 
 html, body {

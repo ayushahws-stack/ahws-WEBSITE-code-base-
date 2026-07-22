@@ -265,9 +265,14 @@
   font-size: 0.75rem;
   font-weight: 700;
   color: #558b2f;
-  background: rgba(255,255,255,0.8);
-  padding: 3px 12px;
-  border-radius: 12px;
+  background: rgba(85, 139, 47, 0.1);
+  border: 1px solid rgba(85, 139, 47, 0.3);
+  padding: 6px 14px;
+  border-radius: 50px;
+  margin-top: auto;
+}
+.sprout-flip-card:hover .sprout-flip-hint {
+  background: rgba(85, 139, 47, 0.2);
 }
 
 /* Back of Card */

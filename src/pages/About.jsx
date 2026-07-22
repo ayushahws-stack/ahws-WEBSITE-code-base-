@@ -6,21 +6,20 @@ function FlippableWhyCard({ item }) {
   const [isFlipped, setIsFlipped] = useState(false)
 
   return (
-    <div 
-      className={`feature-flip-card ${isFlipped ? 'is-flipped' : ''}`}
-      onClick={() => setIsFlipped(!isFlipped)}
-      onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && setIsFlipped(!isFlipped)}
-      role="button"
-      tabIndex={0}
-      title="Click to flip card"
-    >
+    <div className={`feature-flip-card ${isFlipped ? 'is-flipped' : ''}`}>
       <div className="feature-flip-inner">
         {/* Front Face */}
         <div className="feature-flip-front why-card">
           <div className="why-icon">{item.icon}</div>
           <h4>{item.title}</h4>
           <p>{item.desc}</p>
-          <div className="flip-hint-feature">🔄 Click for Key Highlights</div>
+          <button
+            className="flip-hint-feature flip-btn"
+            onClick={() => setIsFlipped(true)}
+            aria-label={`See key highlights for ${item.title}`}
+          >
+            📋 Click for Key Highlights
+          </button>
         </div>
 
         {/* Back Face */}
@@ -35,7 +34,13 @@ function FlippableWhyCard({ item }) {
               ))}
             </ul>
           </div>
-          <span className="flip-hint-back-feature">🔄 Click to Flip Back</span>
+          <button
+            className="flip-hint-back-feature flip-btn"
+            onClick={() => setIsFlipped(false)}
+            aria-label="Flip back"
+          >
+            ↩️ Click to Flip Back
+          </button>
         </div>
       </div>
     </div>
