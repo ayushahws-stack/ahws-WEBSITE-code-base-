@@ -128,20 +128,22 @@ function FlippableBentoCard({ item }) {
           <div className="bento-icon-wrap">
             <img src={item.icon} alt={item.title} loading="lazy" />
           </div>
-          <div className="bento-text">
-            <h4 className="bento-title">{item.title}</h4>
-            <p className="bento-tagline">{item.tagline}</p>
-            {item.desc && <p className="bento-desc">{item.desc}</p>}
+          <div className="bento-content-wrap" style={{ display: 'flex', flexDirection: 'column', flex: 1 }}>
+            <div className="bento-text">
+              <h4 className="bento-title">{item.title}</h4>
+              <p className="bento-tagline">{item.tagline}</p>
+              {item.desc && <p className="bento-desc">{item.desc}</p>}
+            </div>
+            {images.length > 0 && (
+              <button
+                className="bento-flip-hint flip-btn"
+                onClick={() => setIsFlipped(true)}
+                aria-label={`View photo of ${item.title}`}
+              >
+                📸 Click for Photo{images.length > 1 ? ` (${images.length} photos)` : ''}
+              </button>
+            )}
           </div>
-          {images.length > 0 && (
-            <button
-              className="bento-flip-hint flip-btn"
-              onClick={() => setIsFlipped(true)}
-              aria-label={`View photo of ${item.title}`}
-            >
-              📸 Click for Photo{images.length > 1 ? ` (${images.length} photos)` : ''}
-            </button>
-          )}
         </div>
 
         {/* Back Face: Image or Swiper Gallery */}
@@ -316,6 +318,7 @@ export default function Home() {
       tagline: 'Our exclusive in-house curriculum aligned with NEP-2020',
       desc: 'Our signature, in-house SPROUT curriculum integrates scholastic and co-scholastic pedagogies, life skills, value education, critical thinking, and future-ready abilities - aligned with NEP-2020, NCF-2023, and the NIPUN Bharat Mission.',
       hero: true,
+      fullWidth: true,
     },
     {
       image: './WEBSITE GALLERY/other images/smart class room with 3D modes in the smart screen .jpeg',
@@ -342,12 +345,16 @@ export default function Home() {
       tagline: 'Complete Parent & School Automation',
       desc: 'Fully encompassing automation solution with role-customized portals for parents, teachers, and students. Monitor daily progress, attendance, academic reports, and school communications in real-time.',
       hero: true,
+      fullWidth: true,
     },
     {
       image: './WEBSITE GALLERY/other images/kids Dance .jpg',
       icon: './WEBSITE GALLERY/other images/AHWS logo.png',
       title: 'Performing Arts',
-      tagline: 'Theatre, Dance, Music & Art with professional coaches and stage exposure.',
+      tagline: 'Creative & Artistic Excellence',
+      desc: 'Theatre, Dance, Music & Art with professional coaches and stage exposure.',
+      hero: true,
+      fullWidth: true,
     },
     {
       image: './images/Basketball 1.jpeg',
