@@ -318,7 +318,6 @@ export default function Home() {
       tagline: 'Our exclusive in-house curriculum aligned with NEP-2020',
       desc: 'Our signature, in-house SPROUT curriculum integrates scholastic and co-scholastic pedagogies, life skills, value education, critical thinking, and future-ready abilities - aligned with NEP-2020, NCF-2023, and the NIPUN Bharat Mission.',
       hero: true,
-      fullWidth: true,
     },
     {
       image: './WEBSITE GALLERY/other images/smart class room with 3D modes in the smart screen .jpeg',
@@ -345,7 +344,6 @@ export default function Home() {
       tagline: 'Complete Parent & School Automation',
       desc: 'Fully encompassing automation solution with role-customized portals for parents, teachers, and students. Monitor daily progress, attendance, academic reports, and school communications in real-time.',
       hero: true,
-      fullWidth: true,
     },
     {
       image: './WEBSITE GALLERY/other images/kids Dance .jpg',
@@ -353,8 +351,6 @@ export default function Home() {
       title: 'Performing Arts',
       tagline: 'Creative & Artistic Excellence',
       desc: 'Theatre, Dance, Music & Art with professional coaches and stage exposure.',
-      hero: true,
-      fullWidth: true,
     },
     {
       image: './images/Basketball 1.jpeg',
