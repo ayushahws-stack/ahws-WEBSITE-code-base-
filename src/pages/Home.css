@@ -619,7 +619,7 @@
   justify-content: center;
   background: var(--white);
   border: 1px solid var(--border);
-  padding: 32px 24px 76px 24px;
+  padding: 32px 24px 96px 24px;
 }
 
 .feature-flip-card:hover .feature-flip-front {
@@ -664,7 +664,7 @@
 /* Back Face: Colorful Background with White Text */
 .feature-flip-back {
   transform: rotateY(180deg);
-  padding: 28px 22px 76px 22px;
+  padding: 28px 22px 96px 22px;
   color: #ffffff;
   display: flex;
   flex-direction: column;
@@ -1162,7 +1162,7 @@
 .bento-flip-front {
   background: #152844;
   border: 1.5px solid rgba(255, 199, 0, 0.25);
-  padding: 28px 22px 76px 22px;
+  padding: 28px 22px 96px 22px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1180,7 +1180,7 @@
 .bento-flip-card.bento-hero .bento-flip-front {
   flex-direction: row;
   text-align: left;
-  padding: 32px 30px 76px 30px;
+  padding: 32px 30px 96px 30px;
   background: linear-gradient(135deg, #1b3558 0%, #142742 100%);
   border: 2px solid rgba(255, 199, 0, 0.45);
 }
@@ -1825,4 +1825,5 @@
     font-size: 2rem;
   }
 }
+
 
