@@ -71,7 +71,7 @@ export default function Wellbeing() {
       </section>
       
       {/* Counselling Team Highlight (Optional integration) */}
-            <section className="counsellor-section">
+                  <section className="counsellor-section">
         <div className="container">
           <div className="counsellor-box">
             <h2>Meet Our Wellness & Counseling Team</h2>
@@ -79,23 +79,40 @@ export default function Wellbeing() {
             
             <div className="counsellor-profiles">
               <div className="counsellor-profile">
-                <div className="counsellor-avatar">&#x1F469;&#x200D;&#x2695;&#xFE0F;</div>
+                <div className="counsellor-img-wrap">
+                  <img src="./images/dr-rashmi.jpg" alt="Dr. Rashmi Bajaj Singh" className="counsellor-img" />
+                </div>
                 <h4>Dr. Rashmi Bajaj Singh</h4>
                 <span className="counsellor-role">Senior Counselor</span>
               </div>
               <div className="counsellor-profile">
-                <div className="counsellor-avatar">&#x1F469;&#x200D;&#x2695;&#xFE0F;</div>
+                <div className="counsellor-img-wrap">
+                  <img src="./images/dr-rekha.jpg" alt="Dr. Rekha Jha" className="counsellor-img" />
+                </div>
                 <h4>Dr. Rekha Jha</h4>
                 <span className="counsellor-role">Counselor</span>
               </div>
               <div className="counsellor-profile">
-                <div className="counsellor-avatar">&#x1F469;&#x200D;&#x2695;&#xFE0F;</div>
+                <div className="counsellor-img-wrap">
+                  <img src="./images/ms-urvashi.jpg" alt="Ms. Urvashi" className="counsellor-img" />
+                </div>
                 <h4>Ms. Urvashi</h4>
                 <span className="counsellor-role">Counselor</span>
               </div>
             </div>
 
-            <a href="#/contact" className="btn-primary-ahws" style={{ marginTop: '20px' }}>Reach Out for Support</a>
+            <div className="counsellor-gallery">
+              <div className="cg-item">
+                <img src="./images/counseling-parents.jpg" alt="Counseling Session with Parents" className="cg-img" />
+                <h5>Support for Parents</h5>
+              </div>
+              <div className="cg-item">
+                <img src="./images/counseling-students.jpg" alt="Counseling Session with Students" className="cg-img" />
+                <h5>Support for Students</h5>
+              </div>
+            </div>
+
+            <a href="#/contact" className="btn-primary-ahws" style={{ marginTop: '30px' }}>Reach Out for Support</a>
           </div>
         </div>
       </section>
@@ -103,5 +120,6 @@ export default function Wellbeing() {
     </main>
   )
 }
+
 
 
