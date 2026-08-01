@@ -2,35 +2,35 @@ import './Wellbeing.css'
 import PageBanner from '../components/PageBanner'
 
 export default function Wellbeing() {
-  const sections = [
+    const sections = [
     {
       title: "Mentor-Mentee Programme",
-      icon: "??",
+      icon: "\uD83E\uDD1D",
       desc: "Our Mentor-Mentee programme ensures that every child is personally known, valued, and guided. Faculty mentors provide academic support, emotional guidance, and serve as the primary link between the school and parents."
     },
     {
       title: "Student Well-being & Counselling",
-      icon: "??",
+      icon: "\uD83E\uDDE0",
       desc: "We provide dedicated on-campus counselors and safe spaces where students can talk freely about academic stress, peer relationships, and emotional struggles without judgment."
     },
     {
       title: "Life Skills Education",
-      icon: "??",
+      icon: "\uD83C\uDF31",
       desc: "Integrated into our daily curriculum, we teach essential life skills such as resilience, financial literacy, effective communication, and critical problem-solving to prepare students for the real world."
     },
     {
       title: "Health & Nutrition",
-      icon: "??",
+      icon: "\uD83C\uDF4E",
       desc: "Our 'Nourish Room' and robust physical education programs ensure students develop healthy eating habits. We conduct regular health checkups and promote a balanced, active lifestyle."
     },
     {
       title: "Values & Character Building",
-      icon: "??",
+      icon: "\uD83C\uDF1F",
       desc: "Through our 'We Teach Life' initiative and daily mindfulness practices, we actively instill core values like empathy, respect, integrity, and gratitude into our students' daily lives."
     },
     {
       title: "Inclusion & Diversity",
-      icon: "??",
+      icon: "\uD83C\uDF08",
       desc: "AHWS is a safe haven for every child. We strictly enforce anti-bullying policies and offer tailored support for special educational needs, ensuring an inclusive environment where everyone thrives."
     }
   ]
@@ -120,6 +120,9 @@ export default function Wellbeing() {
     </main>
   )
 }
+
+
+
 
 
 

@@ -580,7 +580,7 @@
 /* 3D Flip Card for Why Choose AHWS Feature Cards */
 .feature-flip-card {
   perspective: 1000px;
-  height: 440px;
+  height: 500px;
   user-select: none;
 }
 
@@ -1825,5 +1825,6 @@
     font-size: 2rem;
   }
 }
+
 
 
