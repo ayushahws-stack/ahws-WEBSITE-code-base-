@@ -384,18 +384,7 @@ const photos = [
       'IMG_2306.JPG',
     ],
   },
-  {
-    id: 27,
-    title: 'Self Makeup Workshop',
-    category: 'Workshops',
-    date: 'May 26, 2026',
-    folder: 'Self Makeup Workshop (26-05-2026)',
-    images: [
-'350ceb3f-12b2-42d6-9f2e-dd04a31bc852.jpg',
-      'IMG_1896.JPG',
-      'IMG_1899.JPG',
-    ],
-  },
+  
   {
     id: 28,
     title: 'Mother\'s Day Celebration',
@@ -669,3 +658,4 @@ export default function Gallery() {
     </main>
   )
 }
+
