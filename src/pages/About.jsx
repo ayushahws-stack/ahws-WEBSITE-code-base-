@@ -79,7 +79,7 @@ export default function About() {
       <PageBanner title="About AHWS" image="./WEBSITE GALLERY/other images/AHWS.png" />
 
       {/* Leadership Messages */}
-      <section className="leadership-section">
+      <section className="leadership-section" id="leadership">
         <div className="container">
           <h2 className="section-title">Leadership With Vision</h2>
           <div className="divider-line" />
@@ -278,7 +278,7 @@ export default function About() {
       </section>
 
       {/* ── Counselling & Parent Support ── */}
-      <section className="counselling-section">
+      <section className="counselling-section" id="counselling">
         <div className="container">
           <h2 className="section-title">Counselling & Parent Support</h2>
           <div className="divider-line" />
