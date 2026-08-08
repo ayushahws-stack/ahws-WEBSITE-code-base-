@@ -6,14 +6,31 @@ const navItems = [
   { label: 'HOME', to: '/' },
   { 
     label: 'ABOUT US', 
-    to: '/about'
+    to: '/about',
+    children: [
+      { label: 'VISION & LEADERSHIP', to: '/about#leadership' },
+      { label: 'OUR JOURNEY', to: '/about#journey' },
+      { label: 'WHY CHOOSE AHWS', to: '/about#why-ahws' },
+      { label: '360° APP', to: '/about#app' },
+      { label: 'COUNSELLING', to: '/about#counselling' },
+    ]
   },
   { 
     label: 'OUR CAMPUS', 
     to: '/gallery',
     children: [
       { label: 'GALLERY', to: '/gallery' },
-      { label: 'INFRASTRUCTURE', to: '/infrastructure' },
+      { 
+        label: 'INFRASTRUCTURE', 
+        to: '/infrastructure',
+        children: [
+          { label: 'LIBRARY', to: '/infrastructure#library' },
+          { label: 'LABORATORIES', to: '/infrastructure#laboratories' },
+          { label: 'SPORTS', to: '/infrastructure#sports' },
+          { label: 'AMENITIES', to: '/infrastructure#amenities' },
+          { label: 'SAFETY', to: '/infrastructure#safety' },
+        ]
+      },
       { label: 'SCHOOL BLOGS', to: '/blog' },
       { label: 'NEWS & EVENTS', to: '/events' },
       { label: 'NOTICE BOARD', to: '/notice-board' },
@@ -23,17 +40,35 @@ const navItems = [
     label: 'ACADEMICS', 
     to: '/curriculum',
     children: [
-      { label: 'CURRICULUM', to: '/curriculum' },
+      { 
+        label: 'CURRICULUM', 
+        to: '/curriculum',
+        children: [
+          { label: 'SPROUT CURRICULUM', to: '/curriculum#sprout-curriculum' },
+          { label: 'ACADEMIC STAGES', to: '/curriculum#academic-stages' },
+          { label: 'PEDAGOGY', to: '/curriculum#pedagogy' },
+          { label: 'EXAMINATIONS', to: '/curriculum#examination' },
+          { label: 'TEXTBOOKS', to: '/curriculum#textbooks' },
+        ]
+      },
       { label: 'BEYOND CURRICULUM', to: '/beyond-curriculum' },
       { label: 'WE TEACH LIFE', to: '/we-teach-life' },
-      // { label: 'RESULTS & ACHIEVEMENTS', to: '/results' }, // Hidden per user request
     ]
   },
   {
     label: 'WELL-BEING',
     to: '/well-being',
     children: [
-      { label: 'WELL-BEING', to: '/well-being' },
+      { 
+        label: 'WELL-BEING', 
+        to: '/well-being',
+        children: [
+          { label: 'OVERVIEW', to: '/well-being#overview' },
+          { label: 'MENTOR-MENTEE', to: '/well-being#mentor-mentee' },
+          { label: 'LIFE SKILLS', to: '/well-being#life-skills' },
+          { label: 'COUNSELLING TEAM', to: '/well-being#counselling-team' },
+        ]
+      },
       { label: 'MANDATORY DISCLOSURE', to: '/mandatory-disclosure' },
       { label: 'ALUMNI', to: '/alumni' },
       { label: 'SAFETY & COMMITTEES', to: '/committees' },
@@ -43,7 +78,17 @@ const navItems = [
     label: 'ADMISSION',
     to: '/admission',
     children: [
-      { label: 'ADMISSION PROCESS', to: '/admission' },
+      { 
+        label: 'ADMISSION PROCESS', 
+        to: '/admission',
+        children: [
+          { label: 'ENQUIRY FORM', to: '/admission#admission-journey' },
+          { label: 'AGE CRITERIA', to: '/admission#age-criteria' },
+          { label: '6-STEP PROCESS', to: '/admission#admission-process' },
+          { label: 'TRANSPORT', to: '/admission#transport' },
+          { label: 'DOCUMENTS', to: '/admission#documents' },
+        ]
+      },
       { label: 'FEE STRUCTURE', to: '/fee-structure' },
       { label: 'DRAW LIST (2026-27)', to: 'https://ahws.edu.in/ADMISSION-DRAW-LIST-17.01.25.pdf', external: true },
       { label: 'AGE CRITERIA', to: '/admission#age-criteria' },
@@ -156,21 +201,33 @@ export default function Header() {
                       {item.label} <span className="chevron">▾</span>
                     </button>
                   )}
-                  {item.children && openDropdown === item.label && (
-                    <ul className="dropdown-menu">
-                      {item.children.map((child) => (
-                        <li key={child.label}>
-                          {child.external ? (
-                            <a href={child.to} target="_blank" rel="noopener noreferrer" className="dropdown-item" onClick={() => setOpenDropdown(null)}>
-                              {child.label}
-                            </a>
-                          ) : (
-                            <NavLink to={child.to} className="dropdown-item" onClick={() => setOpenDropdown(null)}>{child.label}</NavLink>
-                          )}
-                        </li>
-                      ))}
-                    </ul>
-                  )}
+                    {item.children && openDropdown === item.label && (
+                      <ul className="dropdown-menu">
+                        {item.children.map((child) => (
+                          <li key={child.label} className={child.children ? 'has-sub-dropdown' : ''}>
+                            {child.external ? (
+                              <a href={child.to} target="_blank" rel="noopener noreferrer" className="dropdown-item" onClick={() => setOpenDropdown(null)}>
+                                {child.label} {child.children && <span style={{float:'right'}}>›</span>}
+                              </a>
+                            ) : (
+                              <NavLink to={child.to} className="dropdown-item" onClick={() => !child.children && setOpenDropdown(null)}>
+                                {child.label} {child.children && <span style={{float:'right'}}>›</span>}
+                              </NavLink>
+                            )}
+                            
+                            {child.children && (
+                              <ul className="sub-dropdown-menu">
+                                {child.children.map(sub => (
+                                  <li key={sub.label}>
+                                    <NavLink to={sub.to} className="sub-dropdown-item" onClick={() => setOpenDropdown(null)}>{sub.label}</NavLink>
+                                  </li>
+                                ))}
+                              </ul>
+                            )}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                 </li>
               ))}
             </ul>
