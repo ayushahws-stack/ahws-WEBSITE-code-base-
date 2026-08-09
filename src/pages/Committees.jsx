@@ -7,7 +7,7 @@ export default function Committees() {
     <main className="committees-page">
       <PageBanner title="Safety & Committees" image="./WEBSITE GALLERY/other images/First-Aid education.jpeg" />
       
-      <section className="committees-intro">
+      <section className="committees-intro" id="overview">
         <div className="container">
           <div className="notice-box">
             <span className="notice-icon">🛡️</span>
@@ -16,7 +16,7 @@ export default function Committees() {
         </div>
       </section>
 
-      <section className="committees-section">
+      <section className="committees-section" id="committees-list">
         <div className="container">
           <div className="committees-grid">
             

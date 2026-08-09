@@ -160,7 +160,7 @@ export default function BeyondCurriculum() {
       </section>
 
       {/* ── Section 3: Sports Portfolio ── */}
-      <section className="sports-section">
+      <section className="sports-section" id="sports">
         <div className="container">
           <h2 className="section-title">Sports</h2>
           <div className="divider-line" />

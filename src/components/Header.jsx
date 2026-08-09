@@ -3,7 +3,17 @@ import { Link, NavLink, useLocation } from 'react-router-dom'
 import './Header.css'
 
 const navItems = [
-  { label: 'HOME', to: '/' },
+  { 
+    label: 'HOME', 
+    to: '/',
+    children: [
+      { label: 'WORLD-CLASS FACILITIES', to: '/#facilities' },
+      { label: 'WHY JOIN AHWS?', to: '/#why-join' },
+      { label: 'UNIQUENESS DEFINED', to: '/#uniqueness' },
+      { label: 'A DAY AT AHWS', to: '/#day-at-ahws' },
+      { label: 'CAMPUS GALLERY', to: '/#gallery-preview' },
+    ]
+  },
   { 
     label: 'ABOUT US', 
     to: '/about',
@@ -19,7 +29,15 @@ const navItems = [
     label: 'OUR CAMPUS', 
     to: '/gallery',
     children: [
-      { label: 'GALLERY', to: '/gallery' },
+      { 
+        label: 'GALLERY', 
+        to: '/gallery',
+        children: [
+          { label: 'PHOTO GALLERY', to: '/gallery#photos' },
+          { label: 'VIDEO GALLERY', to: '/gallery#videos' },
+          { label: 'OUR ACHIEVERS', to: '/gallery#achievers' },
+        ]
+      },
       { 
         label: 'INFRASTRUCTURE', 
         to: '/infrastructure',
@@ -31,9 +49,30 @@ const navItems = [
           { label: 'SAFETY', to: '/infrastructure#safety' },
         ]
       },
-      { label: 'SCHOOL BLOGS', to: '/blog' },
-      { label: 'NEWS & EVENTS', to: '/events' },
-      { label: 'NOTICE BOARD', to: '/notice-board' },
+      { 
+        label: 'SCHOOL BLOGS', 
+        to: '/blog',
+        children: [
+          { label: 'ARTICLES', to: '/blog#articles' }
+        ]
+      },
+      { 
+        label: 'NEWS & EVENTS', 
+        to: '/events',
+        children: [
+          { label: 'AWARDS & ACCOLADES', to: '/events#awards' },
+          { label: 'RECENT NEWS', to: '/events#recent-news' },
+        ]
+      },
+      { 
+        label: 'NOTICE BOARD', 
+        to: '/notice-board',
+        children: [
+          { label: 'NOTICES', to: '/notice-board#notices' },
+          { label: 'UPCOMING EVENTS', to: '/notice-board#upcoming-events' },
+          { label: 'CIRCULARS', to: '/notice-board#circulars' },
+        ]
+      },
     ]
   },
   { 
@@ -51,8 +90,30 @@ const navItems = [
           { label: 'TEXTBOOKS', to: '/curriculum#textbooks' },
         ]
       },
-      { label: 'BEYOND CURRICULUM', to: '/beyond-curriculum' },
-      { label: 'WE TEACH LIFE', to: '/we-teach-life' },
+      { 
+        label: 'BEYOND CURRICULUM', 
+        to: '/beyond-curriculum',
+        children: [
+          { label: 'SPROUT PILLARS', to: '/beyond-curriculum#sprout-pillars' },
+          { label: 'SPECIAL PROGRAMS', to: '/beyond-curriculum#programs' },
+          { label: 'SPORTS', to: '/beyond-curriculum#sports' },
+        ]
+      },
+      { 
+        label: 'WE TEACH LIFE', 
+        to: '/we-teach-life',
+        children: [
+          { label: 'COMMUNITY', to: '/we-teach-life#community' },
+          { label: 'PARENTS', to: '/we-teach-life#parents' },
+          { label: 'EDUCATORS', to: '/we-teach-life#educators' },
+          { label: 'HELPERS', to: '/we-teach-life#helpers' },
+          { label: 'ENVIRONMENT', to: '/we-teach-life#environment' },
+          { label: 'LIFE SKILLS', to: '/we-teach-life#skills' },
+          { label: 'EXTRA-CURRICULAR', to: '/we-teach-life#extra-curricular' },
+          { label: 'MOTIVATION', to: '/we-teach-life#motivation' },
+          { label: 'GRATITUDE', to: '/we-teach-life#gratitude' },
+        ]
+      },
     ]
   },
   {
@@ -69,9 +130,28 @@ const navItems = [
           { label: 'COUNSELLING TEAM', to: '/well-being#counselling-team' },
         ]
       },
-      { label: 'MANDATORY DISCLOSURE', to: '/mandatory-disclosure' },
-      { label: 'ALUMNI', to: '/alumni' },
-      { label: 'SAFETY & COMMITTEES', to: '/committees' },
+      { 
+        label: 'MANDATORY DISCLOSURE', 
+        to: '/mandatory-disclosure',
+        children: [
+          { label: 'DISCLOSURE', to: '/mandatory-disclosure#disclosure' }
+        ]
+      },
+      { 
+        label: 'ALUMNI', 
+        to: '/alumni',
+        children: [
+          { label: 'OUR ALUMNI', to: '/alumni#alumni' }
+        ]
+      },
+      { 
+        label: 'SAFETY & COMMITTEES', 
+        to: '/committees',
+        children: [
+          { label: 'OVERVIEW', to: '/committees#overview' },
+          { label: 'COMMITTEES LIST', to: '/committees#committees-list' }
+        ]
+      },
     ]
   },
   {
@@ -89,14 +169,27 @@ const navItems = [
           { label: 'DOCUMENTS', to: '/admission#documents' },
         ]
       },
-      { label: 'FEE STRUCTURE', to: '/fee-structure' },
+      { 
+        label: 'FEE STRUCTURE', 
+        to: '/fee-structure',
+        children: [
+          { label: 'ACADEMIC SESSION', to: '/fee-structure#academic-session' }
+        ]
+      },
       { label: 'DRAW LIST (2026-27)', to: 'https://ahws.edu.in/ADMISSION-DRAW-LIST-17.01.25.pdf', external: true },
       { label: 'AGE CRITERIA', to: '/admission#age-criteria' },
       { label: 'REGISTERED APPLICANTS', to: 'https://ahws.edu.in/list-of-registered-applicants-2026-27.pdf', external: true },
       { label: 'BOOK VENDORS LIST', to: 'https://ahws.edu.in/pdfs/book-vendors-list-2026.pdf', external: true },
     ]
   },
-  { label: 'CONTACT US', to: '/contact' },
+  { 
+    label: 'CONTACT US', 
+    to: '/contact',
+    children: [
+      { label: 'CONTACT DETAILS', to: '/contact#contact-details' },
+      { label: 'LOCATION MAP', to: '/contact#location-map' },
+    ]
+  },
 ]
 
 export default function Header() {

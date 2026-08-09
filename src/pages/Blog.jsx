@@ -86,7 +86,7 @@ export default function Blog() {
     <main className="blog-page">
       <PageBanner title="School Blogs" image="./WEBSITE GALLERY/other images/Kids walking to school .png" />
 
-      <section className="blog-section">
+      <section className="blog-section" id="articles">
         <div className="container">
           <div id="blog-top-heading">
             <h2 className="section-title">Articles</h2>

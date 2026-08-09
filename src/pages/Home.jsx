@@ -557,7 +557,7 @@ export default function Home() {
       </section>
 
       {/* ── Uniqueness Defined ── */}
-      <section className="uniqueness-section">
+      <section className="uniqueness-section" id="uniqueness">
         <div className="container">
           <h2 className="section-title">UNIQUENESS DEFINED</h2>
           <p className="uniqueness-subtitle">What sets Academic Heights World School apart — 7 pillars of educational excellence.</p>
