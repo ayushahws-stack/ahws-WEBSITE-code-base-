@@ -303,7 +303,14 @@ export default function Header() {
                                 {child.label} {child.children && <span style={{float:'right'}}>›</span>}
                               </a>
                             ) : (
-                              <NavLink to={child.to} className="dropdown-item" onClick={() => !child.children && setOpenDropdown(null)}>
+                              <NavLink to={child.to} className="dropdown-item" onClick={(e) => {
+                                if (!child.children) setOpenDropdown(null);
+                                if (child.to.includes('#') && (window.location.hash === '' ? '/' : window.location.hash).includes(child.to.split('#')[0])) {
+                                  const id = child.to.split('#')[1];
+                                  const elem = document.getElementById(id);
+                                  if (elem) elem.scrollIntoView({ behavior: 'smooth' });
+                                }
+                              }}>
                                 {child.label} {child.children && <span style={{float:'right'}}>›</span>}
                               </NavLink>
                             )}
@@ -312,7 +319,14 @@ export default function Header() {
                               <ul className="sub-dropdown-menu">
                                 {child.children.map(sub => (
                                   <li key={sub.label}>
-                                    <NavLink to={sub.to} className="sub-dropdown-item" onClick={() => setOpenDropdown(null)}>{sub.label}</NavLink>
+                                    <NavLink to={sub.to} className="sub-dropdown-item" onClick={(e) => {
+                                      setOpenDropdown(null);
+                                      if (sub.to.includes('#') && (window.location.hash === '' ? '/' : window.location.hash).includes(sub.to.split('#')[0])) {
+                                        const id = sub.to.split('#')[1];
+                                        const elem = document.getElementById(id);
+                                        if (elem) elem.scrollIntoView({ behavior: 'smooth' });
+                                      }
+                                    }}>{sub.label}</NavLink>
                                   </li>
                                 ))}
                               </ul>
