@@ -1,0 +1,6 @@
+/* NoticeBoard.css */
+@import './Events.css';
+
+.noticeboard-page {
+  overflow: hidden;
+}
