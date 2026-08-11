@@ -256,7 +256,7 @@ export default function Events() {
       {/* ───── Awards & Recognition ───── */}
       <section className="events-highlights">
         <div className="container">
-          <h2 className="section-title">🏆 Awards &amp; Accolades</h2>
+          <h2 className="section-title" id="awards">🏆 Awards &amp; Accolades</h2>
           <div className="divider-line" />
           <p className="acad-subtitle" style={{ textAlign: 'center', marginBottom: '40px' }}>
             Recognized for academic brilliance, green sustainability, and educational excellence across Delhi NCR. Click any card to view event photo gallery.
@@ -299,7 +299,7 @@ export default function Events() {
       {/* ───── Recent Highlights & News ───── */}
       <section className="events-highlights" style={{ background: '#f8fafc', paddingTop: '60px' }}>
         <div className="container">
-          <h2 className="section-title">✨ Recent News &amp; Event Highlights</h2>
+          <h2 className="section-title" id="recent-news">📰 Recent News &amp; Event Highlights</h2>
           <div className="divider-line" />
           <p className="acad-subtitle" style={{ textAlign: 'center', marginBottom: '40px' }}>
             Explore photos, stories, and cultural celebrations from recent school events at Academic Heights World School. Click any card to view event photo gallery.
