@@ -1,6 +1,5 @@
 import { useInView } from 'react-intersection-observer'
 import PageBanner from '../components/PageBanner'
-import SEO from '../components/SEO'
 import './WeTeachLife.css'
 
 /* ─── Section data ─────────────────────────────────────────────────── */
@@ -196,16 +195,9 @@ export default function WeTeachLife() {
 
   return (
     <>
-      <SEO
-        title="We Teach Life | Academic Heights World School"
-        description="At AHWS, education is more than exams — it prepares children for life. Discover how we nurture community, character, skills, gratitude and joy in every student."
-        keywords="we teach life, holistic education, academic heights world school, life skills, community, parents, educators, environment, gratitude"
-      />
-
       <PageBanner
         title="We Teach Life"
-        subtitle="Education is not preparation for life; education is life itself."
-        breadcrumb={[{ label: 'Home', to: '/' }, { label: 'We Teach Life' }]}
+        image="./images/school_kids.png"
       />
 
       {/* Intro hero strip */}
