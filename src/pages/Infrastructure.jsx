@@ -8,7 +8,7 @@ export default function Infrastructure() {
       <PageBanner title="Infrastructure & Facilities" image="./WEBSITE GALLERY/other images/LIBRARY 01.png" />
       
       {/* Section 1: Library */}
-      <section className="library-section">
+      <section className="library-section" id="library">
         <div className="container">
           <div className="section-header">
             <h2 className="section-title">Library &amp; Resource Centre</h2>
@@ -41,7 +41,7 @@ export default function Infrastructure() {
       </section>
 
       {/* Section 2: Laboratories */}
-      <section className="labs-section bg-light">
+      <section className="labs-section bg-light" id="laboratories">
         <div className="container">
           <div className="section-header">
             <h2 className="section-title">State-of-the-Art Laboratories</h2>
@@ -78,7 +78,7 @@ export default function Infrastructure() {
       </section>
 
       {/* Section 3: Sports Facilities */}
-      <section className="sports-section">
+      <section className="sports-section" id="sports">
         <div className="container">
           <div className="section-header">
             <h2 className="section-title">Sports &amp; Athletics Facilities</h2>
@@ -108,7 +108,7 @@ export default function Infrastructure() {
       </section>
 
       {/* Section 4: Campus Amenities & Green Campus */}
-      <section className="amenities-section bg-primary text-white">
+      <section className="amenities-section bg-primary text-white" id="amenities">
         <div className="container">
           <div className="section-header">
             <h2 className="section-title text-white">Campus Amenities</h2>
@@ -141,7 +141,7 @@ export default function Infrastructure() {
       </section>
 
       {/* Section 5: Safety & Security */}
-      <section className="safety-section">
+      <section className="safety-section" id="safety">
         <div className="container">
           <div className="section-header">
             <h2 className="section-title">Safety &amp; Security Systems</h2>

@@ -102,7 +102,7 @@ export default function BeyondCurriculum() {
       <PageBanner title="Beyond Curriculum" image="./WEBSITE GALLERY/other images/Kids walking to school .png" />
 
       {/* ── Section 1: SPROUT Enrichment Pillars ── */}
-      <section className="enrichment-pillars-section">
+      <section className="enrichment-pillars-section" id="sprout-pillars">
         <div className="container">
           <h2 className="section-title">SPROUT Enrichment Pillars</h2>
           <div className="divider-line" />
@@ -132,7 +132,7 @@ export default function BeyondCurriculum() {
       </section>
 
       {/* ── Section 2: Co-Scholastic & Special Programs ── */}
-      <section className="special-programs-section bg-light">
+      <section className="special-programs-section bg-light" id="programs">
         <div className="container">
           <h2 className="section-title">Co-Scholastic &amp; Special Programs</h2>
           <div className="divider-line" />

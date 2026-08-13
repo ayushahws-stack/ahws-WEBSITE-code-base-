@@ -503,7 +503,7 @@ export default function Home() {
     </section>
 
       {/* ── Infrastructure / World-Class Facilities ── */}
-      <section className="infra-section">
+      <section className="infra-section" id="facilities">
         <div className="container">
           <h2 className="section-title">World-Class Facilities</h2>
           <div className="divider-line" />
@@ -544,7 +544,7 @@ export default function Home() {
       </section>
 
       {/* ── Empowering Section (Why Join AHWS) ── */}
-      <section className="empowering-section">
+      <section className="empowering-section" id="why-join">
         <div className="container">
           <h2 className="section-title">Why Join Academic Heights World School?</h2>
           <div className="divider-line" />
@@ -571,7 +571,7 @@ export default function Home() {
       </section>
 
       {/* 📸📸 A Day at AHWS Timeline 📸📸 */}
-      <section className="timeline-section">
+      <section className="timeline-section" id="day-at-ahws">
         <div className="container">
           <div className="section-header">
             <h2 className="section-title">A Day at AHWS</h2>

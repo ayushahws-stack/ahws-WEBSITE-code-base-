@@ -6,7 +6,7 @@ export default function MandatoryDisclosure() {
     <main className="disclosure-page">
       <PageBanner title="Mandatory Disclosure" image="./WEBSITE GALLERY/other images/AHWS.png" />
 
-      <section className="disclosure-section">
+      <section className="disclosure-section" id="disclosure">
         <div className="container">
           <h2 className="section-title">CBSE Mandatory Disclosure</h2>
           <div className="divider-line" />
