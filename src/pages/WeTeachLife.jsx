@@ -204,8 +204,7 @@ export default function WeTeachLife() {
         <div className="container wtl-intro-inner">
           <div className="wtl-intro-icon">
             <svg width="56" height="56" viewBox="0 0 24 24" fill="none">
-              <path d="M12 2C8 5 3 9 3 14a9 9 0 0018 0C21 9 16 5 12 2z" stroke="#002147" strokeWidth="1.8" fill="#fff5cc"/>
-              <path d="M12 8v6M9 11h6" stroke="#002147" strokeWidth="2" strokeLinecap="round"/>
+              <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" stroke="#002147" strokeWidth="2" fill="#fff5cc" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </div>
           <div className="wtl-intro-text">
