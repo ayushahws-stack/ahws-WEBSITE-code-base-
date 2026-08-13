@@ -201,11 +201,6 @@ export default function WeTeachLife() {
       {/* Intro hero strip */}
       <div ref={introRef} className={`wtl-intro ${introInView ? 'wtl-visible' : ''}`}>
         <div className="container wtl-intro-inner">
-          <div className="wtl-intro-icon">
-            <svg width="56" height="56" viewBox="0 0 24 24" fill="none">
-              <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" stroke="#002147" strokeWidth="2" fill="#fff5cc" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </div>
           <div className="wtl-intro-text">
             <h1 className="wtl-intro-heading">We Teach Life</h1>
             <p>
