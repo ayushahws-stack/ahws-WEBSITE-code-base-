@@ -31,6 +31,7 @@ const navItems = [
     children: [
       { label: 'CURRICULUM', to: '/curriculum' },
       { label: 'BEYOND CURRICULUM', to: '/beyond-curriculum' },
+      { label: 'WE TEACH LIFE', to: '/we-teach-life' },
       // { label: 'RESULTS & ACHIEVEMENTS', to: '/results' }, // Hidden per user request
     ]
   },
