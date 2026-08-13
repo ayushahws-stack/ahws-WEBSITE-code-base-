@@ -124,17 +124,7 @@
 }
 
 /* ── Text side ── */
-.wtl-icon-wrap {
-  width: 64px;
-  height: 64px;
-  background: #fff;
-  border-radius: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 2px 16px rgba(0,33,71,0.10);
-  margin-bottom: 16px;
-}
+
 .wtl-section-title {
   font-size: clamp(1.6rem, 2.5vw, 2.2rem);
   font-weight: 800;
