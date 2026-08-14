@@ -251,7 +251,7 @@ export default function Events() {
 
   return (
     <main className="events-page">
-      <PageBanner title="News & Events" image="./WEBSITE GALLERY/1st Day of 2026/WhatsApp Image 2026-01-01 at 4.29.58 PM.jpeg" />
+      <PageBanner title="News & Events" image="./WEBSITE GALLERY/1st Day of 2026/WhatsApp Image 2026-03-27 at 3.44.01 PM (1).jpeg" />
 
       {/* ───── Awards & Recognition ───── */}
       <section className="events-highlights">

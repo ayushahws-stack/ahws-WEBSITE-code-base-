@@ -440,6 +440,25 @@ const mainTabs = [
 // ─── COMPONENT ───────────────────────────────────────────────────────────────
 export default function Gallery() {
   const [activeTab, setActiveTab] = useState('photos')
+  const location = useLocation()
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
+  useEffect(() => {
+    if (location.hash) {
+      const hash = location.hash.replace('#', '')
+      if (['photos', 'videos', 'achievers'].includes(hash)) {
+        setActiveTab(hash)
+        setTimeout(() => {
+          const el = document.getElementById(hash)
+          if (el) el.scrollIntoView({ behavior: 'smooth' })
+        }, 100)
+      }
+    }
+  }, [location.hash])
+  
   const [photoFilter, setPhotoFilter] = useState('All')
   const [achieverFilter, setAchieverFilter] = useState('All')
   const [lightbox, setLightbox] = useState(null) // { src, title, date }

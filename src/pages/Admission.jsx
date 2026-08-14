@@ -36,8 +36,8 @@ export default function Admission() {
       title: 'Application', 
       desc: 'Complete the application with accurate information and required documents.',
       multiLink: [
-        { link: './documents website/AHWS_Admission_Application_Form.pdf', text: 'PDF Form', download: true },
-        { link: './documents website/AHWS_Admission_Application_Form.html', text: 'Online Form', download: false, target: '_blank' }
+        { link: './documents%20website/AHWS_Admission_Application_Form.pdf', text: 'PDF Form', download: true },
+        { link: './documents%20website/AHWS_Admission_Application_Form.html', text: 'Online Form', download: false, target: '_blank' }
       ]
     },
     { num: '04', title: 'Interactive Session', desc: 'Connect with parents in an interactive session to understand your child better.' },
@@ -62,7 +62,7 @@ export default function Admission() {
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px', flexWrap: 'wrap', gap: '10px' }}>
                 <h3 className="form-heading" style={{ margin: 0 }}>Admission Enquiry Form</h3>
                 <a 
-                  href="./documents website/AHWS_Admission_Application_Form.pdf" 
+                  href="./documents%20website/AHWS_Admission_Application_Form.pdf" 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="btn-primary-ahws"
@@ -313,7 +313,18 @@ export default function Admission() {
                 <h4 className="step-title">{step.title}</h4>
                 <p className="step-desc">{step.desc}</p>
                 {step.link && (
-                  <a href={step.link} className="step-link" style={{ marginTop: '16px', display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '0.9rem', color: '#1B2A4A', fontWeight: '700', textDecoration: 'none' }}>
+                  <a 
+                    href={step.link} 
+                    className="step-link" 
+                    style={{ marginTop: '16px', display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '0.9rem', color: '#1B2A4A', fontWeight: '700', textDecoration: 'none' }}
+                    onClick={(e) => {
+                      if (step.link.startsWith('#')) {
+                        e.preventDefault();
+                        const target = document.getElementById(step.link.substring(1));
+                        if (target) target.scrollIntoView({ behavior: 'smooth' });
+                      }
+                    }}
+                  >
                     {step.linkText} <span style={{ fontSize: '1.2rem', color: '#FFC700' }}>&rarr;</span>
                   </a>
                 )}

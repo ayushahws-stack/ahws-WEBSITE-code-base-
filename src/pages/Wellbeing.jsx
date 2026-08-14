@@ -60,7 +60,7 @@ export default function Wellbeing() {
         <div className="container">
           <div className="wb-grid">
             {sections.map((sec, idx) => (
-              <div key={idx} className="wb-card" id={sec.title.includes("Mentor") ? "mentor-mentee" : sec.title.includes("Life") ? "life-skills" : ""}>
+              <div key={idx} className="wb-card" id={sec.title.includes("Mentor") ? "mentor-mentee" : sec.title.includes("Life") ? "life-skills" : undefined}>
                 <div className="wb-card-icon">{sec.icon}</div>
                 <h3 className="wb-card-title">{sec.title}</h3>
                 <p className="wb-card-desc">{sec.desc}</p>
@@ -80,21 +80,21 @@ export default function Wellbeing() {
             <div className="counsellor-profiles">
               <div className="counsellor-profile">
                 <div className="counsellor-img-wrap">
-                  <img src="./images/dr-rashmi.jpg" alt="Dr. Rashmi Bajaj Singh" className="counsellor-img" />
+                  <div className="counsellor-avatar">Dr. R</div>
                 </div>
                 <h4>Dr. Rashmi Bajaj Singh</h4>
                 <span className="counsellor-role">Senior Counselor</span>
               </div>
               <div className="counsellor-profile">
                 <div className="counsellor-img-wrap">
-                  <img src="./images/dr-rekha.jpg" alt="Dr. Rekha Jha" className="counsellor-img" />
+                  <div className="counsellor-avatar">Dr. R</div>
                 </div>
                 <h4>Dr. Rekha Jha</h4>
                 <span className="counsellor-role">Counselor</span>
               </div>
               <div className="counsellor-profile">
                 <div className="counsellor-img-wrap">
-                  <img src="./images/ms-urvashi.jpg" alt="Ms. Urvashi" className="counsellor-img" />
+                  <div className="counsellor-avatar">Ms. U</div>
                 </div>
                 <h4>Ms. Urvashi</h4>
                 <span className="counsellor-role">Counselor</span>
@@ -103,11 +103,11 @@ export default function Wellbeing() {
 
             <div className="counsellor-gallery">
               <div className="cg-item">
-                <img src="./images/counseling-parents.jpg" alt="Counseling Session with Parents" className="cg-img" />
+                <img src="./WEBSITE GALLERY/other images/parents feedback.png" alt="Counseling Session with Parents" className="cg-img" />
                 <h5>Support for Parents</h5>
               </div>
               <div className="cg-item">
-                <img src="./images/counseling-students.jpg" alt="Counseling Session with Students" className="cg-img" />
+                <img src="./WEBSITE GALLERY/other images/well being 101.png" alt="Counseling Session with Students" className="cg-img" />
                 <h5>Support for Students</h5>
               </div>
             </div>

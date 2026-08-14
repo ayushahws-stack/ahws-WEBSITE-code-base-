@@ -17,7 +17,7 @@ const sections = [
     quote: 'Alone we can do little; together we can do so much.',
     quoteBy: 'Helen Keller',
     accent: '#002147',
-    image: './images/DSC_0200.jpeg',
+    image: './WEBSITE GALLERY/AHWS Baby Show (02-10-2024)/DSC_0200.jpeg',
     body: `A child's growth is closely connected to the strength of the community around them. At Academic Heights World School, we work to create an inclusive, caring community where every student, parent and teacher feels valued and genuinely part of something bigger. We believe children learn best when people respect one another, work together and share a sense of purpose.\n\nWhen you become part of the Academic Heights World School family, you become part of a community that cares about your child and wants to see them thrive. We encourage parents, teachers and students to work closely together because children grow best when the people around them are connected. Here, your child will have people who know them, encourage them and stand by them.`,
   },
   {
@@ -32,7 +32,7 @@ const sections = [
     quote: 'The child is both a hope and a promise for mankind.',
     quoteBy: 'Maria Montessori',
     accent: '#FFC700',
-    image: './images/WhatsApp Image 2025-09-28 at 1.50.55 PM.jpeg',
+    image: './WEBSITE GALLERY/RWA Health Check-up Camp (28-09-2025)/WhatsApp Image 2025-09-28 at 1.50.55 PM.jpeg',
     body: `We know that parents are a child's first and most important teachers. Your hopes for your child, the values you want them to carry and the future you imagine for them all matter to us. We do not try to take your place. We work alongside you, as trusted partners who can support your child's learning and growth.\n\nWe value your thoughts, we listen to your concerns and we welcome your involvement in your child's education. We believe children benefit most when families and schools work as partners. When you choose Academic Heights World School, you place an important trust in us, and we take that trust seriously. Your hopes for your child become part of what we work towards every day.`,
   },
   {
@@ -48,7 +48,7 @@ const sections = [
     quote: 'A teacher affects eternity; he can never tell where his influence stops.',
     quoteBy: 'Henry Brooks Adams',
     accent: '#002147',
-    image: './images/DSC_0257.jpeg',
+    image: './WEBSITE GALLERY/AHWS Baby Show (02-10-2024)/DSC_0257.jpeg',
     body: `Behind every great student is a teacher who believes in them. At Academic Heights World School, our educators are more than instructors; they are mentors, guides and lifelong learners who genuinely enjoy helping young minds grow. We are proud of our dedicated team and the care they bring to each child, from everyday encouragement to meaningful individual attention.\n\nWe choose our educators for their knowledge, warmth and commitment to the whole child. They create classrooms where curiosity is encouraged, questions are welcomed and children feel comfortable being themselves. Your child will be known, listened to and challenged to grow by teachers who care about their progress and their potential.`,
   },
   {
@@ -62,7 +62,7 @@ const sections = [
     quote: 'Everyone can be great because everyone can serve.',
     quoteBy: 'Martin Luther King Jr.',
     accent: '#FFC700',
-    image: './images/IMG_20251104_083911.jpeg',
+    image: './WEBSITE GALLERY/Gurupurab Celebration (04-11-2025)/IMG_20251104_083911.jpeg',
     body: `A school works because of many people, including those who often work quietly behind the scenes. At Academic Heights World School, our support staff help keep the school clean, welcoming and ready for learning each day. Their work may happen in the background, but it has a real impact on the experience children have at school.\n\nFrom the warm welcome at the front desk to the care taken throughout our classrooms and hallways, our staff work hard to make the school feel comfortable and well cared for. They are here to help, to keep things running smoothly and, most importantly, to help your child feel happy and supported during the school day.`,
   },
   {
@@ -91,7 +91,7 @@ const sections = [
     quote: 'Skills make you valuable.',
     quoteBy: 'Jim Rohn',
     accent: '#FFC700',
-    image: './images/Technology_and_App_010.jpg',
+    image: './WEBSITE GALLERY/other images/Technology_and_App_010.jpg',
     body: `In a changing world, knowledge alone is not enough. At Academic Heights World School, we also help students build practical skills they can carry into everyday life. These include critical thinking, problem-solving, communication, collaboration and the confident use of technology. Our learning experiences are designed to prepare children for real situations, not simply for tests.\n\nFrom learning how to think deeply and speak with confidence to creating art and working as part of a team, students are encouraged to build a broad range of abilities. Along the way, they develop confidence, flexibility and the belief that they can keep learning and improving. These are qualities that can continue to serve them long after school.`,
   },
   {
@@ -106,7 +106,7 @@ const sections = [
     quote: 'Every child is an artist. The problem is how to remain an artist once we grow up.',
     quoteBy: 'Pablo Picasso',
     accent: '#002147',
-    image: './images/kid making art 02.png',
+    image: './WEBSITE GALLERY/other images/kid making art 02.png',
     body: `We believe school should give children opportunities to discover interests beyond the regular classroom. At Academic Heights World School, our co-curricular activities give students space to try new things, discover what they enjoy and learn how to work with others. These experiences are an important part of becoming a confident, well-rounded individual.\n\nTaking part in activities outside the classroom teaches children how to cooperate, stay committed and keep going when something is difficult. It also gives them chances to build confidence, friendships and memories they will carry with them. With guidance from our staff, students can explore new interests at their own pace and discover new sides of themselves.`,
   },
   {
@@ -121,7 +121,7 @@ const sections = [
     quote: 'Nothing will work unless you do.',
     quoteBy: 'Maya Angelou',
     accent: '#FFC700',
-    image: './images/IMG_1062.jpeg',
+    image: './WEBSITE GALLERY/Dental Check-up Drive (13-05-2026)/IMG_1062.jpeg',
     body: `A child's mindset can make a meaningful difference to how they approach learning and challenges. At Academic Heights World School, we want students to believe in their ability to grow, to keep going when things are difficult and to have the courage to try again. We celebrate effort and resilience, not just outcomes.\n\nThrough assemblies, stories, encouragement and personal mentoring, we help students develop the confidence to face challenges and pursue their goals. We teach them that setbacks are part of learning and that mistakes can become opportunities to improve. We want every child to leave Academic Heights World School with knowledge, but also with a strong belief in their own ability to learn and grow.`,
   },
   {
@@ -135,7 +135,7 @@ const sections = [
     quote: 'In ordinary life, we hardly realize that we receive a great deal more than we give, and that it is only with gratitude that life becomes rich.',
     quoteBy: 'Dietrich Bonhoeffer',
     accent: '#002147',
-    image: './images/IMG_20260217_101527.jpeg',
+    image: './WEBSITE GALLERY/Sports Day (17-02-2026)/IMG_20260217_101527.jpeg',
     body: `We believe gratitude can shape the way children see themselves, other people and the world around them. At Academic Heights World School, we encourage students to notice and appreciate the people, opportunities and experiences that enrich their lives. In doing so, we nurture kindness, empathy and a generous spirit.\n\nAs children learn to be grateful, they can become more aware of the people who support them and more thoughtful in the way they treat others. Gratitude can encourage empathy, resilience and a positive outlook through both good days and difficult ones. At Academic Heights World School, we want academic growth to go hand in hand with becoming a thoughtful, caring human being who can make a positive difference in the world.`,
   },
 ]
