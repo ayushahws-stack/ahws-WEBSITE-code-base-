@@ -8,7 +8,7 @@ export default function Admission() {
     parentname: '', class: '', city: '', studentname: '', phone: '', email: '',
     dob: '', gender: '', category: '', prevschool: '',
     fathername: '', mothername: '', fatherjob: '', motherjob: '',
-    address: '', income: '', source: ''
+    address: '', income: '', source: '', otherSource: ''
   })
   const [status, setStatus] = useState('')
   const [showPopup, setShowPopup] = useState(false)
@@ -24,8 +24,8 @@ export default function Admission() {
       setForm({ parentname: '', class: '', city: '', studentname: '', phone: '', email: '',
         dob: '', gender: '', category: '', prevschool: '',
         fathername: '', mothername: '', fatherjob: '', motherjob: '',
-        address: '', income: '', source: '' })
-    }, 1200)
+        address: '', income: '', source: '', otherSource: '' })
+    }, 1500)
   }
 
     const steps = [
@@ -241,6 +241,18 @@ export default function Admission() {
                         <option value="Flyers/Banners">Flyers / Banners</option>
                         <option value="Other">Other</option>
                       </select>
+                      {form.source === 'Other' && (
+                        <input
+                          type="text"
+                          name="otherSource"
+                          value={form.otherSource || ''}
+                          onChange={handleChange}
+                          placeholder="Please specify"
+                          className="form-input"
+                          style={{ marginTop: '10px' }}
+                          required
+                        />
+                      )}
                     </div>
                   </div>
                 </div>
