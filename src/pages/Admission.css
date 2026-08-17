@@ -60,6 +60,12 @@
   gap: 16px;
   margin-bottom: 20px;
 }
+.form-row-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 20px;
+}
 
 .form-group { display: flex; flex-direction: column; }
 
@@ -266,7 +272,7 @@ select.form-input {
 
 @media (max-width: 600px) {
   .admission-main, .admission-process, .admission-links { padding: 60px 0; }
-  .form-row { grid-template-columns: 1fr; }
+  .form-row, .form-row-3 { grid-template-columns: 1fr; }
   .steps-grid, .docs-grid { grid-template-columns: 1fr; }
 }
 
