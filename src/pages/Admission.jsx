@@ -80,7 +80,7 @@ export default function Admission() {
                   <h4>1. Student Details</h4>
                   <div className="form-row">
                     <div className="form-group">
-                      <label htmlFor="adm-studentname">Student's Full Name *</label>
+                      <label htmlFor="adm-studentname">Student's Full Name <span style={{ color: '#e74c3c' }}>*</span></label>
                       <input
                         id="adm-studentname"
                         type="text" name="studentname" value={form.studentname}
@@ -89,7 +89,7 @@ export default function Admission() {
                       />
                     </div>
                     <div className="form-group">
-                      <label htmlFor="adm-dob">Date of Birth *</label>
+                      <label htmlFor="adm-dob">Date of Birth <span style={{ color: '#e74c3c' }}>*</span></label>
                       <input
                         id="adm-dob"
                         type="date" name="dob" value={form.dob || ''}
@@ -100,7 +100,7 @@ export default function Admission() {
                   </div>
                   <div className="form-row-3">
                     <div className="form-group">
-                      <label htmlFor="adm-gender">Gender *</label>
+                      <label htmlFor="adm-gender">Gender <span style={{ color: '#e74c3c' }}>*</span></label>
                       <select id="adm-gender" name="gender" value={form.gender || ''} onChange={handleChange} required className="form-input">
                         <option value="">Select Gender</option>
                         <option value="Male">Male</option>
@@ -109,7 +109,7 @@ export default function Admission() {
                       </select>
                     </div>
                     <div className="form-group">
-                      <label htmlFor="adm-category">Category *</label>
+                      <label htmlFor="adm-category">Category <span style={{ color: '#e74c3c' }}>*</span></label>
                       <select id="adm-category" name="category" value={form.category || ''} onChange={handleChange} required className="form-input">
                         <option value="">Select Category</option>
                         <option value="General">General</option>
@@ -121,7 +121,7 @@ export default function Admission() {
                       </select>
                     </div>
                     <div className="form-group">
-                      <label htmlFor="adm-class">Select Class *</label>
+                      <label htmlFor="adm-class">Select Class <span style={{ color: '#e74c3c' }}>*</span></label>
                       <select id="adm-class" name="class" value={form.class} onChange={handleChange} required className="form-input">
                         <option value="">Select Class</option>
                         {['Nursery','Kindergarten (KG)','Class 1','Class 2','Class 3','Class 4','Class 5','Class 6','Class 7','Class 8','Class 9','Class 10','Class 11','Class 12'].map(c => (
@@ -132,7 +132,7 @@ export default function Admission() {
                   </div>
                   <div className="form-row" style={{ gridTemplateColumns: '1fr' }}>
                     <div className="form-group">
-                      <label htmlFor="adm-prevschool">Previous School &amp; Class *</label>
+                      <label htmlFor="adm-prevschool">Previous School &amp; Class <span style={{ color: '#e74c3c' }}>*</span></label>
                       <input
                         id="adm-prevschool"
                         type="text" name="prevschool" value={form.prevschool || ''}
@@ -148,7 +148,7 @@ export default function Admission() {
                   <h4>2. Parents / Guardian Details</h4>
                   <div className="form-row">
                     <div className="form-group">
-                      <label htmlFor="adm-fathername">Father's Name *</label>
+                      <label htmlFor="adm-fathername">Father's Name <span style={{ color: '#e74c3c' }}>*</span></label>
                       <input
                         id="adm-fathername"
                         type="text" name="fathername" value={form.fathername || ''}
@@ -157,7 +157,7 @@ export default function Admission() {
                       />
                     </div>
                     <div className="form-group">
-                      <label htmlFor="adm-mothername">Mother's Name *</label>
+                      <label htmlFor="adm-mothername">Mother's Name <span style={{ color: '#e74c3c' }}>*</span></label>
                       <input
                         id="adm-mothername"
                         type="text" name="mothername" value={form.mothername || ''}
@@ -193,7 +193,7 @@ export default function Admission() {
                   <h4>3. Contact &amp; Income Details</h4>
                   <div className="form-row">
                     <div className="form-group">
-                      <label htmlFor="adm-phone">Mobile Number *</label>
+                      <label htmlFor="adm-phone">Mobile Number <span style={{ color: '#e74c3c' }}>*</span></label>
                       <div className="phone-input-group">
                         <span className="phone-prefix">+91</span>
                         <input
@@ -206,7 +206,7 @@ export default function Admission() {
                       </div>
                     </div>
                     <div className="form-group">
-                      <label htmlFor="adm-email">Email Address *</label>
+                      <label htmlFor="adm-email">Email Address <span style={{ color: '#e74c3c' }}>*</span></label>
                       <input
                         id="adm-email"
                         type="email" name="email" value={form.email}
@@ -216,7 +216,7 @@ export default function Admission() {
                     </div>
                   </div>
                   <div className="form-group">
-                    <label htmlFor="adm-address">Residential Address *</label>
+                    <label htmlFor="adm-address">Residential Address <span style={{ color: '#e74c3c' }}>*</span></label>
                     <textarea
                       id="adm-address"
                       name="address" value={form.address || ''}
@@ -235,7 +235,7 @@ export default function Admission() {
                       />
                     </div>
                     <div className="form-group">
-                      <label htmlFor="adm-source">How did you hear about AHWS? *</label>
+                      <label htmlFor="adm-source">How did you hear about AHWS? <span style={{ color: '#e74c3c' }}>*</span></label>
                       <select id="adm-source" name="source" value={form.source || ''} onChange={handleChange} required className="form-input">
                         <option value="">Select Option</option>
                         <option value="Social Media">Social Media</option>

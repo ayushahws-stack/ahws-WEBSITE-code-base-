@@ -114,7 +114,7 @@ export default function Careers() {
                 <textarea placeholder="Brief Cover Letter" rows="4"></textarea>
               </div>
               <div className="form-group file-upload">
-                <label>Upload Resume (PDF/DOCX) *</label>
+                <label>Upload Resume (PDF/DOCX) <span style={{ color: '#e74c3c' }}>*</span></label>
                 <input type="file" accept=".pdf,.doc,.docx" required />
               </div>
               <button type="submit" className="btn-primary-ahws submit-btn">Submit Application</button>
