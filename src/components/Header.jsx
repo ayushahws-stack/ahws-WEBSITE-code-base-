@@ -167,6 +167,7 @@ const navItems = [
           { label: '6-STEP PROCESS', to: '/admission#admission-process' },
           { label: 'TRANSPORT', to: '/admission#transport' },
           { label: 'DOCUMENTS', to: '/admission#documents' },
+          { label: 'FAQS', to: '/admission#faq' },
         ]
       },
       { 
