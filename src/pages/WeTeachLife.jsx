@@ -257,7 +257,7 @@ export default function WeTeachLife() {
           <p className="wtl-cta-sub">
             Enrol at Academic Heights World School and help nurture a lifetime of growth, happiness and purpose.
           </p>
-          <a href="#/admission" className="btn-primary-ahws">Apply for Admission</a>
+          <Link to="/admission"></Link>
         </div>
       </div>
     </>
