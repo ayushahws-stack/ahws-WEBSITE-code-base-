@@ -253,16 +253,16 @@ export default function Home() {
       hero: true,
     },
     {
-      image: 'https://ahws.edu.in/images/gallery/IMG-20240509-WA0053.jpg',
-      icon: 'https://ahws.edu.in/images/icons-section-02-1024x1024.webp',
-      title: 'AI-Powered Smart Classrooms',
-      tagline: 'Interactive classrooms with immersive 3D learning experiences.',
-    },
-    {
       image: 'https://ahws.edu.in/images/gallery/IMG-20240509-WA0062.jpg',
       icon: 'https://ahws.edu.in/images/icons-section-08-1024x1024.webp',
       title: 'X-Wall & Speak-O-Pen',
       tagline: 'Immersive learning wall + smart pronunciation tools for language mastery.',
+    },
+    {
+      image: 'https://ahws.edu.in/images/gallery/IMG-20240509-WA0053.jpg',
+      icon: 'https://ahws.edu.in/images/icons-section-02-1024x1024.webp',
+      title: 'AI-Powered Smart Classrooms',
+      tagline: 'Interactive classrooms with immersive 3D learning experiences.',
     },
     {
       image: 'https://ahws.edu.in/images/gallery/IMG-20240509-WA0056.jpg',
