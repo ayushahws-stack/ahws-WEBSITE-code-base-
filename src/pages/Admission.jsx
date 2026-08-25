@@ -1,4 +1,4 @@
-﻿import { useState } from 'react'
+import { useState } from 'react'
 import './Admission.css'
 import Popup from '../components/Popup'
 import PageBanner from '../components/PageBanner'
@@ -227,7 +227,7 @@ export default function Admission() {
 
                 <div className="submit-btn-wrapper">
                   <button type="submit" className="btn-primary-ahws submit-btn" disabled={status === 'Sending...'}>
-                    {status === 'Sending...' ? 'â³ Sending...' : 'Submit Admission Enquiry'}
+                    {status === 'Sending...' ? '⏳ Sending...' : 'Submit Admission Enquiry'}
                   </button>
                 </div>
               </form>
@@ -236,13 +236,13 @@ export default function Admission() {
         </div>
       </section>
 
-      {/* â”€â”€ Age Criteria & Principal Video Section â”€â”€ */}
+      {/* ── Age Criteria & Principal Video Section ── */}
       <section className="admission-video-section bg-light" id="age-criteria">
         <div className="container">
-          <h2 className="section-title">ðŸŽ“ Age Criteria Explained by Principal Ma'am</h2>
+          <h2 className="section-title">🎓 Age Criteria Explained by Principal Ma'am</h2>
           <div className="divider-line" />
           <p className="process-intro" style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto 36px' }}>
-            Watch <strong>Ms. Rachna Anand</strong> (Principal, AHWS) explain the age criteria, class eligibility guidelines, and admission rules for the 2026â€“27 academic session.
+            Watch <strong>Ms. Rachna Anand</strong> (Principal, AHWS) explain the age criteria, class eligibility guidelines, and admission rules for the 2026–27 academic session.
           </p>
 
           <div className="admission-video-wrap">
@@ -256,7 +256,7 @@ export default function Admission() {
             </div>
             <div className="video-caption-bar">
               <div className="caption-info">
-                <h4>Age Criteria Guidelines 2026â€“27</h4>
+                <h4>Age Criteria Guidelines 2026–27</h4>
                 <p>Official video explanation by Principal Ms. Rachna Anand</p>
               </div>
               <a 
@@ -266,7 +266,7 @@ export default function Admission() {
                 className="btn btn-primary"
                 style={{ background: '#FFC700', color: '#002147', fontWeight: 800 }}
               >
-                ðŸ“„ Download Age Criteria PDF â†—
+                📄 Download Age Criteria PDF ↗
               </a>
             </div>
           </div>
@@ -310,9 +310,9 @@ export default function Admission() {
               { label: 'List of Book Vendors 2026', href: 'https://ahws.edu.in/pdfs/book-vendors-list-2026.pdf' },
             ].map((doc, i) => (
               <a key={i} href={doc.href} target="_blank" rel="noopener noreferrer" className="doc-card">
-                <span className="doc-icon">ðŸ“„</span>
+                <span className="doc-icon">📄</span>
                 <span className="doc-label">{doc.label}</span>
-                <span className="doc-arrow">â†—</span>
+                <span className="doc-arrow">↗</span>
               </a>
             ))}
           </div>

@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import PageBanner from '../components/PageBanner';
 import './Infrastructure.css';
 
@@ -20,10 +20,10 @@ export default function Infrastructure() {
               <h3>Fostering a Lifelong Love for Reading</h3>
               <p>Our expansive, well-stocked library serves as the intellectual heart of AHWS. Designed with peaceful reading nooks and modern digital cataloguing, it provides students with unlimited access to literature and research material.</p>
               <ul className="feature-list">
-                <li>ðŸ“š Extensive collection of 6,000+ books across diverse genres</li>
-                <li>ðŸ’» Extensive digital resources and e-learning portals</li>
-                <li>ðŸ¤« Dedicated quiet reading zones for focused study &amp; research</li>
-                <li>ðŸ“° Daily national newspapers &amp; international periodicals</li>
+                <li>📚 Extensive collection of 6,000+ books across diverse genres</li>
+                <li>💻 Extensive digital resources and e-learning portals</li>
+                <li>🤫 Dedicated quiet reading zones for focused study &amp; research</li>
+                <li>📰 Daily national newspapers &amp; international periodicals</li>
               </ul>
             </div>
             <div className="library-gallery" style={{ gridTemplateColumns: 'repeat(2, 1fr)', gap: '20px' }}>
@@ -52,7 +52,7 @@ export default function Infrastructure() {
             <div className="lab-card fadeInUp">
               <img src="./WEBSITE GALLERY/other images/science lab.jpeg" alt="Science Lab" className="lab-card-img" />
               <div className="lab-card-content">
-                <div className="lab-icon">ðŸ”¬</div>
+                <div className="lab-icon">🔬</div>
                 <h3>Science Lab</h3>
                 <p>Fully equipped, highly safe and well-ventilated laboratory with comprehensive chemical stocks, microscope stations, and modern apparatus.</p>
               </div>
@@ -60,7 +60,7 @@ export default function Infrastructure() {
             <div className="lab-card fadeInUp delay-1">
               <img src="./WEBSITE GALLERY/other images/Computer lab.jpg" alt="Computer Lab" className="lab-card-img" />
               <div className="lab-card-content">
-                <div className="lab-icon">ðŸ’»</div>
+                <div className="lab-icon">💻</div>
                 <h3>Computer Lab</h3>
                 <p>High-speed internet workstations with the latest software for coding, digital literacy, and IT education.</p>
               </div>
@@ -68,7 +68,7 @@ export default function Infrastructure() {
             <div className="lab-card fadeInUp delay-2">
               <img src="./images/Robotics 1.jpeg" alt="Robotics Lab" className="lab-card-img" />
               <div className="lab-card-content">
-                <div className="lab-icon">ðŸ¤–</div>
+                <div className="lab-icon">🤖</div>
                 <h3>Robotics &amp; AI Innovation Lab</h3>
                 <p>An immersive setting equipped with robotic kits, sensors, and microcontrollers empowering students to master STEM &amp; coding.</p>
               </div>
@@ -118,21 +118,21 @@ export default function Infrastructure() {
             <div className="amenity-card fadeInUp">
               <img src="./images/Green campus.png" alt="Lush Green Campus" className="amenity-card-img" />
               <div className="amenity-content">
-                <h3>ðŸŒ³ Lush Green Eco-Campus</h3>
+                <h3>🌳 Lush Green Eco-Campus</h3>
                 <p>Spacious, eco-friendly green grounds providing a clean, inspiring environment for play, learning, and outdoor activities.</p>
               </div>
             </div>
             <div className="amenity-card fadeInUp delay-1">
               <img src="./WEBSITE GALLERY/other images/smart class room with 3D modes in the smart screen .jpeg" alt="Smart Classrooms" className="amenity-card-img" />
               <div className="amenity-content">
-                <h3>ðŸ’¡ Smart Classrooms</h3>
+                <h3>💡 Smart Classrooms</h3>
                 <p>Every classroom is fully air-conditioned and equipped with interactive smart boards and 3D learning models.</p>
               </div>
             </div>
             <div className="amenity-card fadeInUp delay-2">
               <img src="./WEBSITE GALLERY/other images/First-Aid education.jpeg" alt="First Aid & Safety" className="amenity-card-img" />
               <div className="amenity-content">
-                <h3>ðŸ¥ Health &amp; Safety First</h3>
+                <h3>🏥 Health &amp; Safety First</h3>
                 <p>Comprehensive first-aid education, a fully equipped medical room, and active safety protocols for student well-being.</p>
               </div>
             </div>
