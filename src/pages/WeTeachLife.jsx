@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useInView } from 'react-intersection-observer'
 import PageBanner from '../components/PageBanner'
 import './WeTeachLife.css'
