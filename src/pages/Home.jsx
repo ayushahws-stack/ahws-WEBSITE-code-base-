@@ -259,6 +259,12 @@ export default function Home() {
       tagline: 'Interactive classrooms with immersive 3D learning experiences.',
     },
     {
+      image: 'https://ahws.edu.in/images/gallery/IMG-20240509-WA0062.jpg',
+      icon: 'https://ahws.edu.in/images/icons-section-08-1024x1024.webp',
+      title: 'X-Wall & Speak-O-Pen',
+      tagline: 'Immersive learning wall + smart pronunciation tools for language mastery.',
+    },
+    {
       image: 'https://ahws.edu.in/images/gallery/IMG-20240509-WA0056.jpg',
       icon: 'https://ahws.edu.in/images/icons-section-05-1024x1024.webp',
       title: 'Robotics & AI Labs',
@@ -273,24 +279,18 @@ export default function Home() {
       hero: true,
     },
     {
-      image: 'https://ahws.edu.in/images/gallery/IMG-20240509-WA0058.jpg',
-      icon: 'https://ahws.edu.in/images/icons-section-04-1024x1024.webp',
-      title: '9-Sport Portfolio',
-      tagline: 'Comprehensive Athletics Infrastructure',
-      desc: 'Pickleball, Cricket, Football, Badminton, Tennis, Basketball, Volleyball, Taekwondo & Chess - dedicated coaching and professional athletic infrastructure for all-round physical excellence.',
-      hero: true,
-    },
-    {
       image: 'https://ahws.edu.in/images/gallery/IMG-20240509-WA0061.jpg',
       icon: 'https://ahws.edu.in/images/icons-section-06-1024x1024.webp',
       title: 'Performing Arts',
       tagline: 'Theatre, Dance, Music & Art with professional coaches and stage exposure.',
     },
     {
-      image: 'https://ahws.edu.in/images/gallery/IMG-20240509-WA0062.jpg',
-      icon: 'https://ahws.edu.in/images/icons-section-08-1024x1024.webp',
-      title: 'X-Wall & Speak-O-Pen',
-      tagline: 'Immersive learning wall + smart pronunciation tools for language mastery.',
+      image: 'https://ahws.edu.in/images/gallery/IMG-20240509-WA0058.jpg',
+      icon: 'https://ahws.edu.in/images/icons-section-04-1024x1024.webp',
+      title: '9-Sport Portfolio',
+      tagline: 'Comprehensive Athletics Infrastructure',
+      desc: 'Pickleball, Cricket, Football, Badminton, Tennis, Basketball, Volleyball, Taekwondo & Chess - dedicated coaching and professional athletic infrastructure for all-round physical excellence.',
+      hero: true,
     },
   ]
 
