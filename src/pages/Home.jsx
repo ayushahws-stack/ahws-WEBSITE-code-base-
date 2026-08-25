@@ -203,23 +203,27 @@ export default function Home() {
 
   const uniquenessData = [
     {
+      image: 'https://ahws.edu.in/images/gallery/IMG-20240509-WA0051.jpg',
       icon: 'https://ahws.edu.in/images/icons-section-01-1024x1024.webp',
       title: 'SPROUT Curriculum',
-      tagline: 'NEP-2020 aligned holistic development',
-      desc: 'Our signature SPROUT curriculum integrates scholastic and co-scholastic pedagogies, life skills, value education, critical thinking, and future-ready abilities — aligned with NEP-2020, NCF-2023, and the NIPUN Bharat Mission.',
+      tagline: 'Our exclusive in-house curriculum aligned with NEP-2020',
+      desc: 'Our signature, in-house SPROUT curriculum integrates scholastic and co-scholastic pedagogies, life skills, value education, critical thinking, and future-ready abilities - aligned with NEP-2020, NCF-2023, and the NIPUN Bharat Mission.',
       hero: true,
     },
     {
+      image: 'https://ahws.edu.in/images/gallery/IMG-20240509-WA0053.jpg',
       icon: 'https://ahws.edu.in/images/icons-section-02-1024x1024.webp',
       title: 'Bright Class & Smart Boards',
       tagline: 'AI-powered interactive classrooms with immersive 3D learning experiences.',
     },
     {
+      image: 'https://ahws.edu.in/images/gallery/IMG-20240509-WA0056.jpg',
       icon: 'https://ahws.edu.in/images/icons-section-05-1024x1024.webp',
       title: 'Robotics & AI Labs',
       tagline: 'Hands-on STEM learning with real robotic kits and programming.',
     },
     {
+      image: 'https://ahws.edu.in/images/gallery/IMG-20240509-WA0057.jpg',
       icon: 'https://ahws.edu.in/images/icons-section-03-1024x1024.png',
       title: '360° Support App',
       tagline: 'Complete Parent & School Automation',
@@ -227,25 +231,21 @@ export default function Home() {
       hero: true,
     },
     {
+      image: 'https://ahws.edu.in/images/gallery/IMG-20240509-WA0058.jpg',
       icon: 'https://ahws.edu.in/images/icons-section-04-1024x1024.webp',
       title: '9-Sport Portfolio',
       tagline: 'Comprehensive Athletics Infrastructure',
-      desc: 'Pickleball, Cricket, Football, Badminton, Tennis, Basketball, Volleyball, Taekwondo & Chess — dedicated coaching and professional athletic infrastructure for all-round physical excellence.',
+      desc: 'Pickleball, Cricket, Football, Badminton, Tennis, Basketball, Volleyball, Taekwondo & Chess - dedicated coaching and professional athletic infrastructure for all-round physical excellence.',
       hero: true,
     },
     {
-      icon: 'https://ahws.edu.in/images/icons-section-07-1024x1024.webp',
-      title: 'Decode Startup',
-      tagline: 'Entrepreneurship in school',
-      desc: 'Students pitch real business ideas to investors and receive initial funding — building entrepreneurs while still in school. A one-of-a-kind program that nurtures innovation, financial literacy, and leadership from an early age.',
-      hero: true,
-    },
-    {
+      image: 'https://ahws.edu.in/images/gallery/IMG-20240509-WA0061.jpg',
       icon: 'https://ahws.edu.in/images/icons-section-06-1024x1024.webp',
       title: 'Performing Arts',
       tagline: 'Theatre, Dance, Music & Art with professional coaches and stage exposure.',
     },
     {
+      image: 'https://ahws.edu.in/images/gallery/IMG-20240509-WA0062.jpg',
       icon: 'https://ahws.edu.in/images/icons-section-08-1024x1024.webp',
       title: 'X-Wall & Speak-O-Pen',
       tagline: 'Immersive learning wall + smart pronunciation tools for language mastery.',
@@ -480,6 +480,11 @@ export default function Home() {
           <div className="bento-grid">
             {uniquenessData.map((item, i) => (
               <div key={i} className={`bento-card${item.hero ? ' bento-hero' : ''}`}>
+                {item.image && (
+                  <div className="bento-cover-image">
+                    <img src={item.image} alt={item.title} loading="lazy" />
+                  </div>
+                )}
                 <div className="bento-icon-wrap">
                   <img src={item.icon} alt={item.title} loading="lazy" />
                 </div>
