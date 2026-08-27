@@ -21,6 +21,7 @@ import Infrastructure from './pages/Infrastructure'
 import Curriculum from './pages/Curriculum'
 import BeyondCurriculum from './pages/BeyondCurriculum'
 import WeTeachLife from './pages/WeTeachLife'
+import Wellbeing from './pages/Wellbeing'
 import AnnouncementTicker from './components/AnnouncementTicker'
 import FloatingEnquiry from './components/FloatingEnquiry'
 import SEO from './components/SEO'
@@ -73,6 +74,7 @@ function App() {
         <Route path="/careers" element={<Careers />} />
         <Route path="/committees" element={<Committees />} />
         <Route path="/infrastructure" element={<Infrastructure />} />
+        <Route path="/well-being" element={<Wellbeing />} />
       </Routes>
       <Footer />
       <FloatingEnquiry />
