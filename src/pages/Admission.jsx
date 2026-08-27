@@ -250,14 +250,26 @@ export default function Admission() {
 
       {/* ── Age Criteria & Principal Video Section ── */}
       <section className="admission-video-section bg-light" id="age-criteria">
-        <div className="container">
-          <h2 className="section-title">🎓 Age Criteria Explained by Principal Ma'am</h2>
-          <div className="divider-line" />
-          <p className="process-intro" style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto 36px' }}>
-            Watch <strong>Ms. Rachna Anand</strong> (Principal, AHWS) explain the age criteria, class eligibility guidelines, and admission rules for the 2026–27 academic session.
-          </p>
+          <div className="container">
+            <h2 className="section-title">🎥 Age Criteria Explained by Principal Ma'am</h2>
+            <div className="divider-line" />
+            <p className="process-intro" style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto 36px' }}>
+              Watch <strong>Ms. Rachna Anand</strong> (Principal, AHWS) explain the age criteria, class eligibility guidelines, and admission rules for the 2026–27 academic session.
+            </p>
 
-          <div className="admission-video-wrap">
+            <div style={{ textAlign: 'center', marginBottom: '36px' }}>
+              <a 
+                href="https://ahws.edu.in/age-criteria-2026-27.pdf" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="btn-primary-ahws"
+                style={{ background: '#FFC700', color: '#002147', fontWeight: 800, padding: '12px 24px', borderRadius: '50px', textDecoration: 'none', display: 'inline-block' }}
+              >
+                📄 Download Age Criteria PDF ↗
+              </a>
+            </div>
+
+            <div className="admission-video-wrap">
             <div className="video-responsive-embed">
               <iframe
                 src="https://www.youtube.com/embed/y9Ew2QONNPQ"
@@ -271,15 +283,6 @@ export default function Admission() {
                 <h4>Age Criteria Guidelines 2026–27</h4>
                 <p>Official video explanation by Principal Ms. Rachna Anand</p>
               </div>
-              <a 
-                href="https://ahws.edu.in/age-criteria-2026-27.pdf" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="btn btn-primary"
-                style={{ background: '#FFC700', color: '#002147', fontWeight: 800 }}
-              >
-                📄 Download Age Criteria PDF ↗
-              </a>
             </div>
           </div>
         </div>
