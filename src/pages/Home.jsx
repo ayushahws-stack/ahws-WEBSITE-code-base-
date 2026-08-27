@@ -338,7 +338,7 @@ export default function Home() {
     {
       image: './WEBSITE GALLERY/other images/Technology_and_App_010.jpg',
       icon: './WEBSITE GALLERY/other images/360 app logo .png',
-      title: '360° Support App',
+      title: '360° Mobile App',
       tagline: 'Complete Parent & School Automation',
       desc: 'Fully encompassing automation solution with role-customized portals for parents, teachers, and students. Monitor daily progress, attendance, academic reports, and school communications in real-time.',
       hero: true,
