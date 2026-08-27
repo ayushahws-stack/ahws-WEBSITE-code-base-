@@ -225,9 +225,8 @@ export default function Curriculum() {
               {sprout7Layers.map((layer, idx) => (
                 <div key={idx} className="layer-item-wrapper">
                   <div className="layer-big-number">{layer.num}</div>
-                  <div 
+                  <div
                     className={`sprout-flip-card ${flippedCards[idx] ? 'flipped' : ''}`}
-                    onClick={() => toggleCardFlip(idx)}
                   >
                     <div className="sprout-flip-inner">
                       {/* Front Side */}
@@ -235,13 +234,27 @@ export default function Curriculum() {
                         <span className="sprout-capsule-badge">🌱 {layer.code}</span>
                         <div className="sprout-card-icon">{layer.icon}</div>
                         <h4 className="sprout-card-title">{layer.title}</h4>
-                        <span className="sprout-flip-hint">Tap to Flip 🔄</span>
+                        <button
+                          className="sprout-flip-hint flip-btn"
+                          onClick={() => toggleCardFlip(idx)}
+                          aria-label={`Flip to see details of ${layer.title}`}
+                        >
+                          📋 Tap to See Details 🔄
+                        </button>
                       </div>
 
                       {/* Back Side */}
                       <div className="sprout-flip-back">
                         <h5>{layer.code}</h5>
                         <p>{layer.desc}</p>
+                        <button
+                          className="sprout-flip-hint-back flip-btn"
+                          onClick={() => toggleCardFlip(idx)}
+                          aria-label="Flip back"
+                          style={{ marginTop: '12px', color: '#aed581', fontSize: '0.78rem', fontWeight: 700, letterSpacing: '0.5px', textTransform: 'uppercase' }}
+                        >
+                          ↩️ Flip Back
+                        </button>
                       </div>
                     </div>
                   </div>

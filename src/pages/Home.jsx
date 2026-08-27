@@ -14,14 +14,9 @@ function FeatureCard({ icon, title, description, points = [], bgGradient, delay 
   const [isFlipped, setIsFlipped] = useState(false)
 
   return (
-    <div 
+    <div
       className={`feature-flip-card ${isFlipped ? 'is-flipped' : ''}`}
-      onClick={() => setIsFlipped(!isFlipped)}
-      onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && setIsFlipped(!isFlipped)}
       style={{ animationDelay: `${delay}ms` }}
-      role="button"
-      tabIndex={0}
-      title="Click to flip card"
     >
       <div className="feature-flip-inner">
         {/* Front Face: Info */}
@@ -35,7 +30,13 @@ function FeatureCard({ icon, title, description, points = [], bgGradient, delay 
           </div>
           <h3 className="feature-title">{title}</h3>
           <p className="feature-desc">{description}</p>
-          <div className="flip-hint-feature">🔄 Click for Key Highlights</div>
+          <button
+            className="flip-hint-feature flip-btn"
+            onClick={() => setIsFlipped(true)}
+            aria-label={`See key highlights for ${title}`}
+          >
+            📋 Click for Key Highlights
+          </button>
         </div>
 
         {/* Back Face: Colorful Background + Bullet Points + White Text */}
@@ -50,7 +51,13 @@ function FeatureCard({ icon, title, description, points = [], bgGradient, delay 
               ))}
             </ul>
           </div>
-          <span className="flip-hint-back-feature">🔄 Click to Flip Back</span>
+          <button
+            className="flip-hint-back-feature flip-btn"
+            onClick={() => setIsFlipped(false)}
+            aria-label="Flip back"
+          >
+            ↩️ Click to Flip Back
+          </button>
         </div>
       </div>
     </div>
