@@ -1292,7 +1292,10 @@
 .bento-flip-hint:hover {
   opacity: 1;
   background: rgba(0, 33, 71, 0.35);
-  transform: translateX(-50%) scale(1.05);
+  transform: translateX(-50%) scale(1.05) !important;
+}
+.bento-flip-hint:active {
+  transform: translateX(-50%) scale(0.97) !important;
 }
 
 /* Swiper on the back of bento card */
