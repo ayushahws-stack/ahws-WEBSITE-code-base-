@@ -1141,7 +1141,7 @@
 .bento-flip-front {
   background: #152844;
   border: 1.5px solid rgba(255, 199, 0, 0.25);
-  padding: 28px 22px;
+  padding: 28px 22px 76px 22px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1159,7 +1159,7 @@
 .bento-flip-card.bento-hero .bento-flip-front {
   flex-direction: row;
   text-align: left;
-  padding: 32px 30px;
+  padding: 32px 30px 76px 30px;
   background: linear-gradient(135deg, #1b3558 0%, #142742 100%);
   border: 2px solid rgba(255, 199, 0, 0.45);
 }
@@ -1272,7 +1272,10 @@
 }
 
 .bento-flip-hint {
-  margin-top: auto;
+  position: absolute;
+  bottom: 26px;
+  left: 50%;
+  transform: translateX(-50%);
   padding: 10px 20px;
   font-size: 0.82rem;
   font-weight: 700;
@@ -1283,13 +1286,13 @@
   background: rgba(0, 33, 71, 0.15);
   border: 1px solid rgba(255, 199, 0, 0.4);
   border-radius: 50px;
-  align-self: center;
+  white-space: nowrap;
   transition: opacity 0.3s ease, transform 0.3s ease, background 0.3s ease;
 }
 .bento-flip-hint:hover {
   opacity: 1;
   background: rgba(0, 33, 71, 0.35);
-  transform: scale(1.05);
+  transform: translateX(-50%) scale(1.05);
 }
 
 /* Swiper on the back of bento card */
