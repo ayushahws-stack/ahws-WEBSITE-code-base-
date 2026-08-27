@@ -50,7 +50,7 @@ export default function Admission() {
 
 
             {/* Form */}
-            <div className="admission-form-wrap">
+            <div className="admission-form-wrap" id="enquiry-form">
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px', flexWrap: 'wrap', gap: '10px' }}>
                 <h3 className="form-heading" style={{ margin: 0 }}>Admission Enquiry Form</h3>
                 <a 
