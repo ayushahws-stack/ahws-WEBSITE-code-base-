@@ -118,3 +118,48 @@
     padding: 40px 20px;
   }
 }
+
+.counsellor-profiles {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.counsellor-profile {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px 24px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  min-width: 240px;
+  backdrop-filter: blur(8px);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.counsellor-profile:hover {
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.18);
+  border-color: var(--accent);
+}
+
+.counsellor-avatar {
+  font-size: 3.5rem;
+  margin-bottom: 15px;
+}
+
+.counsellor-profile h4 {
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+  color: #ffffff;
+  font-weight: 800;
+}
+
+.counsellor-role {
+  font-size: 0.95rem;
+  color: #FFC700;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}

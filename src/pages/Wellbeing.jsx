@@ -1,36 +1,36 @@
-﻿import './Wellbeing.css'
+import './Wellbeing.css'
 import PageBanner from '../components/PageBanner'
 
 export default function Wellbeing() {
   const sections = [
     {
       title: "Mentor-Mentee Programme",
-      icon: "🤝",
+      icon: "??",
       desc: "Our Mentor-Mentee programme ensures that every child is personally known, valued, and guided. Faculty mentors provide academic support, emotional guidance, and serve as the primary link between the school and parents."
     },
     {
       title: "Student Well-being & Counselling",
-      icon: "🧠",
+      icon: "??",
       desc: "We provide dedicated on-campus counselors and safe spaces where students can talk freely about academic stress, peer relationships, and emotional struggles without judgment."
     },
     {
       title: "Life Skills Education",
-      icon: "🌱",
+      icon: "??",
       desc: "Integrated into our daily curriculum, we teach essential life skills such as resilience, financial literacy, effective communication, and critical problem-solving to prepare students for the real world."
     },
     {
       title: "Health & Nutrition",
-      icon: "🥗",
+      icon: "??",
       desc: "Our 'Nourish Room' and robust physical education programs ensure students develop healthy eating habits. We conduct regular health checkups and promote a balanced, active lifestyle."
     },
     {
       title: "Values & Character Building",
-      icon: "🙏",
+      icon: "??",
       desc: "Through our 'We Teach Life' initiative and daily mindfulness practices, we actively instill core values like empathy, respect, integrity, and gratitude into our students' daily lives."
     },
     {
       title: "Inclusion & Diversity",
-      icon: "🌍",
+      icon: "??",
       desc: "AHWS is a safe haven for every child. We strictly enforce anti-bullying policies and offer tailored support for special educational needs, ensuring an inclusive environment where everyone thrives."
     }
   ]
@@ -71,14 +71,31 @@ export default function Wellbeing() {
       </section>
       
       {/* Counselling Team Highlight (Optional integration) */}
-      <section className="counsellor-section">
+            <section className="counsellor-section">
         <div className="container">
           <div className="counsellor-box">
-            <div className="counsellor-text">
-              <h2>Meet Our Wellness Team</h2>
-              <p>Our dedicated wellness and counseling team, led by Dr. Rashmi Bajaj Singh (Clinical Psychologist & Hypnotherapist), provides expert guidance to support emotional health, stress management, and personal development for both students and parents.</p>
-              <a href="#/contact" className="btn-primary-ahws">Reach Out for Support</a>
+            <h2>Meet Our Wellness & Counseling Team</h2>
+            <p>Our dedicated wellness and counseling team provides expert guidance to support emotional health, stress management, and personal development for both students and parents.</p>
+            
+            <div className="counsellor-profiles">
+              <div className="counsellor-profile">
+                <div className="counsellor-avatar">&#x1F469;&#x200D;&#x2695;&#xFE0F;</div>
+                <h4>Dr. Rashmi Bajaj Singh</h4>
+                <span className="counsellor-role">Senior Counselor</span>
+              </div>
+              <div className="counsellor-profile">
+                <div className="counsellor-avatar">&#x1F469;&#x200D;&#x2695;&#xFE0F;</div>
+                <h4>Dr. Rekha Jha</h4>
+                <span className="counsellor-role">Counselor</span>
+              </div>
+              <div className="counsellor-profile">
+                <div className="counsellor-avatar">&#x1F469;&#x200D;&#x2695;&#xFE0F;</div>
+                <h4>Ms. Urvashi</h4>
+                <span className="counsellor-role">Counselor</span>
+              </div>
             </div>
+
+            <a href="#/contact" className="btn-primary-ahws" style={{ marginTop: '20px' }}>Reach Out for Support</a>
           </div>
         </div>
       </section>
@@ -86,3 +103,5 @@ export default function Wellbeing() {
     </main>
   )
 }
+
+
