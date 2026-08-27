@@ -1101,7 +1101,7 @@
 .bento-flip-card {
   perspective: 1000px;
   cursor: pointer;
-  height: 400px;
+  height: 340px;
   user-select: none;
 }
 .bento-flip-card.bento-hero {
