@@ -65,21 +65,20 @@ function FlippableInfraCard({ item }) {
   const [isFlipped, setIsFlipped] = useState(false)
 
   return (
-    <div 
-      className={`infra-flip-card ${isFlipped ? 'is-flipped' : ''}`}
-      onClick={() => setIsFlipped(!isFlipped)}
-      onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && setIsFlipped(!isFlipped)}
-      role="button"
-      tabIndex={0}
-      title="Click to flip card"
-    >
+    <div className={`infra-flip-card ${isFlipped ? 'is-flipped' : ''}`}>
       <div className="infra-flip-inner">
         {/* Front: Info Card */}
         <div className="infra-flip-front infra-card">
           <div className="infra-icon">{item.icon}</div>
           <h3>{item.title}</h3>
           <p>{item.desc}</p>
-          <div className="flip-hint">🔄 Click for Photo</div>
+          <button
+            className="flip-hint flip-btn"
+            onClick={() => setIsFlipped(true)}
+            aria-label={`View photo of ${item.title}`}
+          >
+            📸 Click for Photo
+          </button>
         </div>
 
         {/* Back: Photo */}
@@ -87,7 +86,13 @@ function FlippableInfraCard({ item }) {
           <img src={item.image} alt={item.title} className="infra-back-img" loading="lazy" />
           <div className="infra-back-overlay">
             <h4>{item.title}</h4>
-            <span className="flip-hint-back">🔄 Click for Info</span>
+            <button
+              className="flip-hint-back flip-btn"
+              onClick={() => setIsFlipped(false)}
+              aria-label={`View info about ${item.title}`}
+            >
+              ℹ️ Click for Info
+            </button>
           </div>
         </div>
       </div>
@@ -99,14 +104,16 @@ function FlippableInfraCard({ item }) {
 function FlippableBentoCard({ item }) {
   const [isFlipped, setIsFlipped] = useState(false)
 
+  // Support both a single image (item.image) and multiple images (item.images[])
+  const images = item.images
+    ? item.images
+    : item.image
+    ? [item.image]
+    : []
+
   return (
-    <div 
+    <div
       className={`bento-flip-card ${item.hero ? 'bento-hero' : ''} ${item.fullWidth ? 'bento-full' : ''} ${isFlipped ? 'is-flipped' : ''}`}
-      onClick={() => setIsFlipped(!isFlipped)}
-      onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && setIsFlipped(!isFlipped)}
-      role="button"
-      tabIndex={0}
-      title="Click to flip card"
     >
       <div className="bento-flip-inner">
         {/* Front Face: Info */}
@@ -119,17 +126,46 @@ function FlippableBentoCard({ item }) {
             <p className="bento-tagline">{item.tagline}</p>
             {item.desc && <p className="bento-desc">{item.desc}</p>}
           </div>
-          <div className="bento-flip-hint">👆 Click for Photo</div>
+          {images.length > 0 && (
+            <button
+              className="bento-flip-hint flip-btn"
+              onClick={() => setIsFlipped(true)}
+              aria-label={`View photo of ${item.title}`}
+            >
+              📸 Click for Photo{images.length > 1 ? ` (${images.length} photos)` : ''}
+            </button>
+          )}
         </div>
 
-        {/* Back Face: Image */}
+        {/* Back Face: Image or Swiper Gallery */}
         <div className="bento-flip-back">
-          {item.image && (
-            <img src={item.image} alt={item.title} className="bento-back-img" loading="lazy" />
-          )}
+          {images.length > 1 ? (
+            <Swiper
+              modules={[Navigation, Pagination]}
+              navigation
+              pagination={{ clickable: true }}
+              loop
+              className="bento-back-swiper"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {images.map((src, idx) => (
+                <SwiperSlide key={idx}>
+                  <img src={src} alt={`${item.title} ${idx + 1}`} className="bento-back-img" loading="lazy" />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          ) : images.length === 1 ? (
+            <img src={images[0]} alt={item.title} className="bento-back-img" loading="lazy" />
+          ) : null}
           <div className="bento-back-overlay">
             <h4>{item.title}</h4>
-            <span className="flip-hint" style={{ marginTop: '5px' }}>👆 Click for Info</span>
+            <button
+              className="flip-hint-back flip-btn"
+              onClick={() => setIsFlipped(false)}
+              aria-label={`View info about ${item.title}`}
+            >
+              ℹ️ Click for Info
+            </button>
           </div>
         </div>
       </div>
