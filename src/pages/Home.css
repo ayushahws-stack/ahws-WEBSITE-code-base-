@@ -91,7 +91,6 @@
 /* 3D Flip Card Styling */
 .infra-flip-card {
   perspective: 1000px;
-  cursor: pointer;
   height: 380px;
   user-select: none;
 }
@@ -581,7 +580,6 @@
 /* 3D Flip Card for Why Choose AHWS Feature Cards */
 .feature-flip-card {
   perspective: 1000px;
-  cursor: pointer;
   height: 380px;
   user-select: none;
 }
@@ -1100,7 +1098,6 @@
 /* 3D Flip Card Container */
 .bento-flip-card {
   perspective: 1000px;
-  cursor: pointer;
   height: 340px;
   user-select: none;
 }
@@ -1804,3 +1801,4 @@
     font-size: 2rem;
   }
 }
+
