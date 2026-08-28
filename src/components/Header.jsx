@@ -85,7 +85,7 @@ const navItems = [
         children: [
           { label: 'SPROUT CURRICULUM', to: '/curriculum#sprout-curriculum' },
           { label: 'ACADEMIC STAGES', to: '/curriculum#academic-stages' },
-          { label: 'PEDAGOGY', to: '/curriculum#pedagogy' },
+          { label: 'LEARNING & PEDAGOGY', to: '/curriculum#pedagogy' },
           { label: 'EXAMINATIONS', to: '/curriculum#examination' },
           { label: 'TEXTBOOKS', to: '/curriculum#textbooks' },
         ]
@@ -404,4 +404,5 @@ export default function Header() {
     </header>
   )
 }
+
 
