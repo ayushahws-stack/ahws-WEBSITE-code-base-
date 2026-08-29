@@ -36,8 +36,8 @@ export default function Admission() {
       title: 'Application', 
       desc: 'Complete the application with accurate information and required documents.',
       multiLink: [
-        { link: './documents website/AHWS_Admission_Application_Form_BW.pdf', text: 'PDF Form', download: true },
-        { link: './documents website/AHWS_Admission_Application_Form_BW.docx', text: 'Word Form', download: true }
+        { link: './documents website/AHWS_Admission_Application_Form.pdf', text: 'PDF Form', download: true },
+        { link: './documents website/AHWS_Admission_Application_Form.html', text: 'Online Form', download: false, target: '_blank' }
       ]
     },
     { num: '04', title: 'Interactive Session', desc: 'Connect with parents in an interactive session to understand your child better.' },
@@ -62,7 +62,7 @@ export default function Admission() {
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px', flexWrap: 'wrap', gap: '10px' }}>
                 <h3 className="form-heading" style={{ margin: 0 }}>Admission Enquiry Form</h3>
                 <a 
-                  href="./documents website/AHWS_Admission_Application_Form_BW.pdf" 
+                  href="./documents website/AHWS_Admission_Application_Form.pdf" 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="btn-primary-ahws"
@@ -320,7 +320,7 @@ export default function Admission() {
                 {step.multiLink && (
                   <div style={{ marginTop: '16px', display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
                     {step.multiLink.map((ml, idx) => (
-                      <a key={idx} href={ml.link} download={ml.download} className="step-link" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '0.9rem', color: '#1B2A4A', fontWeight: '700', textDecoration: 'none' }}>
+                      <a key={idx} href={ml.link} download={ml.download} target={ml.target} className="step-link" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '0.9rem', color: '#1B2A4A', fontWeight: '700', textDecoration: 'none' }}>
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
                         {ml.text}
                       </a>
@@ -367,5 +367,7 @@ export default function Admission() {
     </main>
   )
 }
+
+
 
 
