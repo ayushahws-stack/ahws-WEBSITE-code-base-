@@ -62,7 +62,7 @@ export default function About() {
       name: "Rachna Anand",
       role: "Principal",
       image: "./images/Ms Rachna Anand.png",
-      quote: "Every child is a promise of a better tomorrow. Our duty is to help them realize it!",
+      quote: "At AHWS, our purpose is to nurture learners who are academically grounded, curious, and confident in an ever-changing world.",
       focus: "Nurturing values of integrity, curiosity, and empathy to foster holistic growth."
     },
     {
@@ -335,4 +335,5 @@ export default function About() {
     </main>
   )
 }
+
 

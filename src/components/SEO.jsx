@@ -4,8 +4,8 @@ import { useEffect } from 'react';
 
 const routeMetadata = {
   '/': {
-    title: 'Academic Heights World School (AHWS) – Best CBSE School in Pitampura, Delhi',
-    description: 'Academic Heights World School (AHWS) is a top CBSE school in Pitampura, Delhi. Offering NEP-2020 aligned SPROUT curriculum, AI & Robotics labs, 150 CCTV cameras, and holistic 360° education.'
+    title: 'CBSE School in Pitampura, Delhi | Academic Heights World School',
+    description: 'At Academic Heights World School Pitampura, our purpose is to nurture learners who are academically grounded, curious, and confident through conceptual, experiential, and competency-based learning.'
   },
   '/about': {
     title: 'About Us | Academic Heights World School (AHWS) Delhi',
@@ -132,3 +132,4 @@ export default function SEO() {
     </Helmet>
   );
 }
+
