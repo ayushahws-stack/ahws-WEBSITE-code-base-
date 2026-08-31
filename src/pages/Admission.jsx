@@ -344,23 +344,23 @@ export default function Admission() {
           }}>
             <div style={{ backgroundColor: '#fff', padding: '30px', borderRadius: '12px', boxShadow: 'var(--shadow)', borderTop: '4px solid var(--ahws-secondary)' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '15px' }}>
-                <span style={{ fontSize: '1.5rem' }}>??</span>
+                <span style={{ fontSize: '1.5rem' }}>🚌</span>
                 <h3 style={{ color: 'var(--ahws-primary)', margin: 0 }}>Bus Routes & Coverage</h3>
               </div>
               <p style={{ color: 'var(--ahws-muted)', lineHeight: '1.6' }}>We provide comfortable transport covering major residential areas around North West Delhi. <em>(Specific routes and timings will be updated soon).</em></p>
             </div>
             
             <div style={{ backgroundColor: '#fff', padding: '30px', borderRadius: '12px', boxShadow: 'var(--shadow)', borderTop: '4px solid var(--ahws-secondary)' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '15px' }}>
-                <span style={{ fontSize: '1.5rem' }}>???</span>
-                <h3 style={{ color: 'var(--ahws-primary)', margin: 0 }}>Safety & GPS Monitored</h3>
-              </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '15px' }}>
+                  <span style={{ fontSize: '1.5rem' }}>🛡️</span>
+                  <h3 style={{ color: 'var(--ahws-primary)', margin: 0 }}>Safety & GPS Monitored</h3>
+                </div>
               <p style={{ color: 'var(--ahws-muted)', lineHeight: '1.6' }}>For complete security, all our school buses are equipped with GPS tracking which is strictly monitored in real-time by our dedicated school safety staff and administration.</p>
             </div>
 
             <div style={{ backgroundColor: '#fff', padding: '30px', borderRadius: '12px', boxShadow: 'var(--shadow)', borderTop: '4px solid var(--ahws-secondary)' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '15px' }}>
-                <span style={{ fontSize: '1.5rem' }}>??</span>
+                <span style={{ fontSize: '1.5rem' }}>💳</span>
                 <h3 style={{ color: 'var(--ahws-primary)', margin: 0 }}>Transport Fees</h3>
               </div>
               <p style={{ color: 'var(--ahws-muted)', lineHeight: '1.6' }}>Transport fees vary based on distance and route slabs. Please reach out to our admission desk or reception for the exact fee structure for your location.</p>
