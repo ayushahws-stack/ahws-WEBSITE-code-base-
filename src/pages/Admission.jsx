@@ -98,13 +98,26 @@ export default function Admission() {
                       />
                     </div>
                   </div>
-                  <div className="form-row">
+                  <div className="form-row-3">
                     <div className="form-group">
                       <label htmlFor="adm-gender">Gender *</label>
                       <select id="adm-gender" name="gender" value={form.gender || ''} onChange={handleChange} required className="form-input">
                         <option value="">Select Gender</option>
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                      </select>
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="adm-category">Category *</label>
+                      <select id="adm-category" name="category" value={form.category || ''} onChange={handleChange} required className="form-input">
+                        <option value="">Select Category</option>
+                        <option value="General">General</option>
+                        <option value="SC">SC</option>
+                        <option value="ST">ST</option>
+                        <option value="OBC">OBC</option>
+                        <option value="EWS">EWS</option>
+                        <option value="PWD">PWD</option>
                       </select>
                     </div>
                     <div className="form-group">
@@ -117,17 +130,7 @@ export default function Admission() {
                       </select>
                     </div>
                   </div>
-                  <div className="form-row">
-                    <div className="form-group">
-                      <label htmlFor="adm-category">Category *</label>
-                      <select id="adm-category" name="category" value={form.category || ''} onChange={handleChange} required className="form-input">
-                        <option value="">Select Category</option>
-                        <option value="General">General</option>
-                        <option value="SC">SC</option>
-                        <option value="ST">ST</option>
-                        <option value="OBC">OBC</option>
-                      </select>
-                    </div>
+                  <div className="form-row" style={{ gridTemplateColumns: '1fr' }}>
                     <div className="form-group">
                       <label htmlFor="adm-prevschool">Previous School &amp; Class *</label>
                       <input
