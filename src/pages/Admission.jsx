@@ -50,7 +50,7 @@ export default function Admission() {
       <PageBanner title="Admission Process" image="./WEBSITE GALLERY/other images/Kids walking to school .png" />
 
       {/* Enquiry + Video */}
-      <section className="admission-main">
+      <section className="admission-main" id="admission-journey">
         <div className="container">
           <h2 className="section-title">Begin Your AHWS Admission Journey</h2>
           <div className="divider-line" />
@@ -332,7 +332,7 @@ export default function Admission() {
           </div>
         </div>
       </section>      {/* Safe Transport */}
-      <section className="admission-transport" style={{ padding: '60px 0', backgroundColor: 'var(--ahws-light-bg)' }}>
+      <section className="admission-transport" id="transport" style={{ padding: '60px 0', backgroundColor: 'var(--ahws-light-bg)' }}>
         <div className="container">
           <h2 className="section-title">Safe & Secure Transport</h2>
           <div className="divider-line" />
@@ -370,7 +370,7 @@ export default function Admission() {
       </section>
 
       {/* Important Links */}
-      <section className="admission-links">
+      <section className="admission-links" id="documents">
         <div className="container">
           <h2 className="section-title">Important Documents</h2>
           <div className="divider-line" />

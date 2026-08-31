@@ -71,7 +71,7 @@ export default function Wellbeing() {
       </section>
       
       {/* Counselling Team Highlight (Optional integration) */}
-                  <section className="counsellor-section">
+                  <section className="counsellor-section" id="counselling-team">
         <div className="container">
           <div className="counsellor-box">
             <h2>Meet Our Wellness & Counseling Team</h2>
