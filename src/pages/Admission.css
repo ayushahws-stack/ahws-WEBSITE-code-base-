@@ -83,7 +83,7 @@
   font-size: 0.85rem;
   font-weight: 700;
   color: var(--primary);
-  margin-bottom: 6px;
+  margin-bottom: 10px;
 }
 
 .form-input {
@@ -102,6 +102,11 @@
 .form-input::placeholder { color: var(--text-muted); }
 
 .form-input option { background: var(--white); color: var(--text-dark); }
+
+select.form-input {
+  padding-right: 36px;
+  cursor: pointer;
+}
 
 .form-input:focus {
   background: var(--white);
