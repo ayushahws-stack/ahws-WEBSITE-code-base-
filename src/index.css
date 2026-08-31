@@ -17,6 +17,16 @@
   --radius-lg: 20px;
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   --font-main: 'Outfit', 'Inter', sans-serif;
+  --surface: #ffffff;
+  --text: #1a1a2e;
+  --text-light: #6c757d;
+  --shadow-sm: 0 2px 8px rgba(0,33,71,0.06);
+  --shadow-md: 0 4px 16px rgba(0,33,71,0.12);
+  --ahws-light-bg: #f8f9fa;
+  --ahws-secondary: #FFC700;
+  --ahws-primary: #002147;
+  --ahws-muted: #6c757d;
+  --radius-md: 8px;
 }
 
 *, *::before, *::after {
@@ -293,3 +303,5 @@ img {
 .phone-input {
   padding-left: 52px !important;
 }
+
+.table-responsive { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }

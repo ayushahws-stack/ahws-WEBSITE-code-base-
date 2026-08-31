@@ -117,7 +117,7 @@ export default function Careers() {
                 <label>Upload Resume (PDF/DOCX) *</label>
                 <input type="file" accept=".pdf,.doc,.docx" required />
               </div>
-              <button type="submit" className="btn btn-primary submit-btn">Submit Application</button>
+              <button type="submit" className="btn-primary-ahws submit-btn">Submit Application</button>
             </form>
           </div>
         </div>
