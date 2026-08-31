@@ -161,7 +161,7 @@ export default function Curriculum() {
       <PageBanner title="Curriculum" image="./WEBSITE GALLERY/other images/Curriculum and Academics.png" />
 
       {/* ── Section 1: SPROUT Curriculum Overview & Hallmark Banners ── */}
-      <section className="acad-curriculum">
+      <section className="acad-curriculum" id="sprout-curriculum">
         <div className="container">
           <h2 className="section-title">The SPROUT Curriculum</h2>
           <div className="divider-line" />
@@ -285,7 +285,7 @@ export default function Curriculum() {
       </section>
 
       {/* ── Section 2: 5+3+3+4 Academic Stages ── */}
-      <section className="acad-stages-section bg-light">
+      <section className="acad-stages-section bg-light" id="academic-stages">
         <div className="container">
           <h2 className="section-title">Academic Stages (NEP 5+3+3+4 Structure)</h2>
           <div className="divider-line" />
@@ -305,7 +305,7 @@ export default function Curriculum() {
       </section>
 
       {/* ── Section 3: Pedagogical Approach ── */}
-      <section className="acad-pedagogy">
+      <section className="acad-pedagogy" id="pedagogy">
         <div className="container">
           <h2 className="section-title">Our Pedagogical Approach</h2>
           <div className="divider-line" />
@@ -326,7 +326,7 @@ export default function Curriculum() {
       </section>
 
       {/* ── Section 4: Examination Schedule ── */}
-      <section className="acad-exams bg-light">
+      <section className="acad-exams bg-light" id="examination">
         <div className="container">
           <h2 className="section-title">Examination Schedule 2026–27</h2>
           <div className="divider-line" />
@@ -362,7 +362,7 @@ export default function Curriculum() {
       </section>
 
       {/* ── Section 5: Prescribed Textbooks ── */}
-      <section className="acad-textbooks">
+      <section className="acad-textbooks" id="textbooks">
         <div className="container">
           <h2 className="section-title">List of Textbooks</h2>
           <div className="divider-line" />
