@@ -57,7 +57,7 @@ export default function NoticeBoard() {
       {/* ───── Notice Board Section ───── */}
       <section className="events-notices">
         <div className="container">
-          <h2 className="section-title">📌 Notice Board</h2>
+          <h2 className="section-title" id="notices">📢 Notice Board</h2>
           <div className="divider-line" />
           <div className="notices-list">
             {notices.map((n, i) => (
@@ -82,7 +82,7 @@ export default function NoticeBoard() {
       {/* ───── Upcoming Events Section ───── */}
       <section className="events-upcoming">
         <div className="container">
-          <h2 className="section-title">🗓️ Upcoming Events</h2>
+          <h2 className="section-title" id="upcoming-events">🗓️ Upcoming Events</h2>
           <div className="divider-line" />
           <div className="upcoming-grid">
             {upcomingEvents.map((ev, i) => (
@@ -102,7 +102,7 @@ export default function NoticeBoard() {
       {/* ───── School Circulars Section ───── */}
       <section className="events-circulars bg-light">
         <div className="container">
-          <h2 className="section-title">📎 School Circulars</h2>
+          <h2 className="section-title" id="circulars">📜 School Circulars</h2>
           <div className="divider-line" />
           <div className="circulars-table-wrap">
             <table className="circulars-table">

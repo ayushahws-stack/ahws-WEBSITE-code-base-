@@ -433,7 +433,7 @@ const achievers = [
 
 const mainTabs = [
   { key: 'photos', label: '📸 Photo Gallery' },
-  { key: 'videos', label: '🎥 Video Gallery' },
+  { key: 'videos', label: '📹 Video Gallery' },
   { key: 'achievers', label: '🏆 Achievers' },
 ]
 
@@ -499,7 +499,7 @@ export default function Gallery() {
         {activeTab === 'photos' && (
           <section className="gallery-photos-section fade-in-tab">
             <div className="container">
-              <h2 className="section-title">📸 Photo Gallery</h2>
+              <h2 className="section-title" id="photos">📸 Photo Gallery</h2>
               <div className="divider-line" />
 
               {/* Filter Bar */}
@@ -556,7 +556,7 @@ export default function Gallery() {
         {activeTab === 'videos' && (
           <section className="gallery-videos-section fade-in-tab">
             <div className="container">
-              <h2 className="section-title">🎥 Video Gallery</h2>
+              <h2 className="section-title" id="videos">📹 Video Gallery</h2>
               <div className="divider-line" />
               <div className="video-grid">
                 {videos.map((video, i) => (
@@ -588,7 +588,7 @@ export default function Gallery() {
         {activeTab === 'achievers' && (
           <section className="gallery-achievers-section fade-in-tab">
             <div className="container">
-              <h2 className="section-title">🏆 Our Achievers</h2>
+              <h2 className="section-title" id="achievers">🏆 Our Achievers</h2>
               <div className="divider-line" />
 
               <div className="gallery-filter-bar">

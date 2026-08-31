@@ -598,7 +598,7 @@ export default function Home() {
       {/* 📸📸 Campus Gallery 📸📸 */}
       <section className="gallery-section">
         <div className="container">
-          <h2 className="section-title">Life at AHWS — Campus Gallery</h2>
+          <h2 className="section-title" id="gallery-preview">Life at AHWS - Campus Gallery</h2>
           <div className="divider-line" />
           <Swiper
             modules={[Navigation, Pagination, Autoplay]}
