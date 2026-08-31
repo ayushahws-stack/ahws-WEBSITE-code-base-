@@ -25,7 +25,7 @@ export default function ContactUs() {
       <PageBanner title="Contact Us" image="./WEBSITE GALLERY/other images/AHWS.png" />
 
       {/* Contact Info + Form */}
-      <section className="contact-section">
+      <section className="contact-section" id="contact-details">
         <div className="container">
           <div className="contact-grid">
             {/* Info */}
@@ -143,7 +143,7 @@ export default function ContactUs() {
       </section>
 
       {/* Map */}
-      <section className="map-section">
+      <section className="map-section" id="location-map">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13999.345345667478!2d77.146475!3d28.694542!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d03cd66ffffff%3A0x57011d15466577a3!2sAcademic%20Heights%20World%20School%20(AHWS)%20-%20Best%20School%20in%20Pitampura%20I%20Best%20CBSE%20School%20in%20Pitampura%20I%20Top%20School%20in%20Pitampura!5e0!3m2!1sen!2sin!4v1765368526481!5m2!1sen!2sin"
           className="contact-map"
