@@ -59,7 +59,7 @@ export default function About() {
       focus: "Moving from knowledge to skills and wisdom, from competition to cooperation."
     },
     {
-      name: "Rachana Anand",
+      name: "Rachna Anand",
       role: "Principal",
       image: "./images/Ms Rachna Anand.png",
       quote: "Every child is a promise of a better tomorrow. Our duty is to help them realize it!",
@@ -287,7 +287,7 @@ export default function About() {
           </p>
           <div className="counselling-grid">
             <div className="counselling-profile-card">
-              <div className="counsellor-avatar-img"><img src="./images/dr-rashmi.jpg" alt="Dr. Rashmi" /></div>
+              <div className="counsellor-avatar-img"><div className="counsellor-avatar">Dr. R</div></div>
               <h3>Dr. Rashmi Bajaj Singh</h3>
               <p className="counsellor-title">School Counsellor & Parental Coach</p>
               <p className="counsellor-exp">📅 28+ Years of Experience in Education & Guidance</p>

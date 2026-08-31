@@ -26,7 +26,7 @@ export default function Infrastructure() {
                 <li>📰 Daily national newspapers &amp; international periodicals</li>
               </ul>
             </div>
-            <div className="library-gallery" style={{ gridTemplateColumns: 'repeat(2, 1fr)', gap: '20px' }}>
+            <div className="library-gallery">
               <div className="library-img-wrap">
                 <img src="./images/library 1.jpeg" alt="AHWS Library Reading Hall" className="library-img" />
                 <span className="library-tag">Main Reading Hall</span>
@@ -114,7 +114,7 @@ export default function Infrastructure() {
             <h2 className="section-title text-white">Campus Amenities</h2>
             <div className="divider-line" style={{ background: 'var(--secondary)' }} />
           </div>
-          <div className="amenities-grid" style={{ gridTemplateColumns: 'repeat(3, 1fr)' }}>
+          <div className="amenities-grid">
             <div className="amenity-card fadeInUp">
               <img src="./images/Green campus.png" alt="Lush Green Campus" className="amenity-card-img" />
               <div className="amenity-content">

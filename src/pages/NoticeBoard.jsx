@@ -39,7 +39,7 @@ export default function NoticeBoard() {
 
   return (
     <main className="noticeboard-page">
-      <PageBanner title="School Notice Board & Circulars" image="./WEBSITE GALLERY/1st Day of 2026/WhatsApp Image 2026-01-01 at 4.29.58 PM.jpeg" />
+      <PageBanner title="School Notice Board & Circulars" image="./WEBSITE GALLERY/1st Day of 2026/WhatsApp Image 2026-03-27 at 3.44.01 PM (1).jpeg" />
 
       {/* ───── Academic Calendar Banner ───── */}
       <section className="calendar-banner-section">
