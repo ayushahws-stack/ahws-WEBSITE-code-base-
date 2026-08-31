@@ -1,0 +1,48 @@
+﻿.back-to-top {
+  position: fixed;
+  bottom: 110px; /* Above the floating enquiry button */
+  right: 32px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--secondary); /* Yellow/Gold for visibility */
+  color: var(--primary); /* Navy text */
+  border: 2px solid var(--white);
+  box-shadow: 0 4px 12px rgba(0,33,71,0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 9998;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  background-color: var(--primary);
+  color: var(--white);
+  border-color: var(--secondary);
+  transform: translateY(-3px);
+}
+
+.arrow-up {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+@media (max-width: 640px) {
+  .back-to-top {
+    bottom: 80px; /* Adjust for mobile enquiry button size */
+    right: 16px;
+    width: 40px;
+    height: 40px;
+  }
+}

@@ -24,6 +24,7 @@ import WeTeachLife from './pages/WeTeachLife'
 import Wellbeing from './pages/Wellbeing'
 import AnnouncementTicker from './components/AnnouncementTicker'
 import FloatingEnquiry from './components/FloatingEnquiry'
+import BackToTop from './components/BackToTop'
 import SEO from './components/SEO'
 import './App.css'
 
@@ -79,6 +80,7 @@ function App() {
       </Routes>
       <Footer />
       <FloatingEnquiry />
+      <BackToTop />
     </HashRouter>
   )
 }
