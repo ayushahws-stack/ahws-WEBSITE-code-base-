@@ -19,7 +19,12 @@ const sections = [
     quoteBy: 'Helen Keller',
     accent: '#002147',
     image: './WEBSITE GALLERY/AHWS Baby Show (02-10-2024)/DSC_0200.jpeg',
-    body: `A child's growth is closely connected to the strength of the community around them. At Academic Heights World School, we work to create an inclusive, caring community where every student, parent and teacher feels valued and genuinely part of something bigger. We believe children learn best when people respect one another, work together and share a sense of purpose.\n\nWhen you become part of the Academic Heights World School family, you become part of a community that cares about your child and wants to see them thrive. We encourage parents, teachers and students to work closely together because children grow best when the people around them are connected. Here, your child will have people who know them, encourage them and stand by them.`,
+    body: `A child's growth is closely connected to the strength of the community around them. At Academic Heights World School, we work to create an inclusive, caring community where every student, parent and teacher feels valued and genuinely part of something bigger. We believe children learn best when people respect one another, work together and share a sense of purpose.\n\nWhen you become part of the Academic Heights World School family, you become part of an active service community. Our students lead concrete ground initiatives, including:
+
+• Student-Led Book Drives with local library projects
+• Handmade Paper Bag Drives distributed across Pitampura markets to combat single-use plastics
+• Eco-Awareness & Swachh Bharat Cleanliness Campaigns
+• Intergenerational visits to local eldercare and RWA Health Check-up Camps We encourage parents, teachers and students to work closely together because children grow best when the people around them are connected. Here, your child will have people who know them, encourage them and stand by them.`,
   },
   {
     id: 'parents',
@@ -264,3 +269,4 @@ export default function WeTeachLife() {
     </>
   )
 }
+
