@@ -6,13 +6,7 @@ const navItems = [
   { label: 'HOME', to: '/' },
   { 
     label: 'ABOUT US', 
-    to: '/about',
-    children: [
-      { label: 'ABOUT AHWS', to: '/about' },
-      { label: 'MANDATORY DISCLOSURE', to: '/mandatory-disclosure' },
-      { label: 'ALUMNI', to: '/alumni' },
-      { label: 'SAFETY & COMMITTEES', to: '/committees' },
-    ]
+    to: '/about'
   },
   { 
     label: 'OUR CAMPUS', 
@@ -37,7 +31,13 @@ const navItems = [
   },
   {
     label: 'WELL-BEING',
-    to: '/well-being'
+    to: '/well-being',
+    children: [
+      { label: 'WELL-BEING', to: '/well-being' },
+      { label: 'MANDATORY DISCLOSURE', to: '/mandatory-disclosure' },
+      { label: 'ALUMNI', to: '/alumni' },
+      { label: 'SAFETY & COMMITTEES', to: '/committees' },
+    ]
   },
   {
     label: 'ADMISSION',
@@ -235,3 +235,4 @@ export default function Header() {
     </header>
   )
 }
+
