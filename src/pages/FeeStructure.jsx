@@ -9,7 +9,7 @@ const FeeStructure = () => {
     <main className="fee-structure-page">
       <PageBanner title="Fee Structure" image="./WEBSITE GALLERY/other images/Curriculum and Academics.png" />
       
-      <section className="fee-section">
+      <section className="fee-section" id="academic-session">
         <div className="container">
           <div className="fee-header-info">
             <h2 className="section-title">Academic Session 2026-27</h2>

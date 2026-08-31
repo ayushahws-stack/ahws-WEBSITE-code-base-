@@ -297,7 +297,7 @@ export default function Admission() {
       </section>
 
       {/* Admission Process */}
-      <section className="admission-process">
+      <section className="admission-process" id="admission-process">
         <div className="container">
           <h2 className="section-title">Admission Process</h2>
           <div className="divider-line" />

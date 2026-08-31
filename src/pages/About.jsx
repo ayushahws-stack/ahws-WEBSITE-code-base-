@@ -131,7 +131,7 @@ export default function About() {
       )}
 
       {/* Our Journey */}
-      <section className="about-journey">
+      <section className="about-journey" id="journey">
         <div className="container">
           <h2 className="section-title">Our Journey Towards Excellence in Education</h2>
           <div className="divider-line" />
@@ -152,7 +152,7 @@ export default function About() {
       </section>
 
       {/* Why AHWS */}
-      <section className="why-ahws">
+      <section className="why-ahws" id="why-ahws">
         <div className="container">
           <h2 className="section-title">Why Choose AHWS?</h2>
           <div className="divider-line" />
@@ -210,7 +210,7 @@ export default function About() {
 
 
       {/* 360° Learning App */}
-      <section className="app360-section">
+      <section className="app360-section" id="app">
         <div className="container">
           <div className="app360-grid">
             <div className="app360-content">

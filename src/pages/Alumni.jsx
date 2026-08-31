@@ -56,7 +56,7 @@ export default function Alumni() {
       <PageBanner title="Alumni" image="./WEBSITE GALLERY/Alumni Meet 2024/WhatsApp Image 2024-11-12 at 9.04.33 AM (1).jpeg" />
 
       {/* Intro Section */}
-      <section className="alumni-intro-section">
+      <section className="alumni-intro-section" id="alumni">
         <div className="container">
           <h2 className="section-title">Our Proud Alumni</h2>
           <div className="divider-line" />

@@ -42,7 +42,7 @@ export default function Wellbeing() {
         image="./WEBSITE GALLERY/other images/First-Aid education.jpeg"
       />
 
-      <section className="wellbeing-intro-section">
+      <section className="wellbeing-intro-section" id="overview">
         <div className="container">
           <div className="wb-intro-content">
             <h2 className="section-title">Nurturing Minds, Building Character</h2>
@@ -60,7 +60,7 @@ export default function Wellbeing() {
         <div className="container">
           <div className="wb-grid">
             {sections.map((sec, idx) => (
-              <div key={idx} className="wb-card">
+              <div key={idx} className="wb-card" id={sec.title.includes("Mentor") ? "mentor-mentee" : sec.title.includes("Life") ? "life-skills" : ""}>
                 <div className="wb-card-icon">{sec.icon}</div>
                 <h3 className="wb-card-title">{sec.title}</h3>
                 <p className="wb-card-desc">{sec.desc}</p>
