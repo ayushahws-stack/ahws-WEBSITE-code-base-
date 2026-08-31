@@ -261,51 +261,75 @@ export default function Home() {
 
   const features = [
     {
-      icon: '🖥️',
-      title: 'Technology-Integrated',
-      description: 'Smart classrooms, modern labs, and AI-integrated tools that prepare our students with essential digital age competencies.',
+      icon: '📚',
+      title: 'Strong Academic Foundations',
+      description: 'Rigorous CBSE curriculum aligned with NEP-2020 and NCF-2023, ensuring conceptual clarity and academic excellence at every stage.',
       bgGradient: 'linear-gradient(135deg, #0b2545 0%, #134074 100%)',
       points: [
-        'Interactive 3D Smart Boards in Classrooms',
-        'Robotics & AI Hands-On Kits',
-        'X-Wall & Speak-O-Pen Language Tools',
-        '360° Mobile App Real-Time Access'
+        'NEP 2020 & NCF 2023 Compliant SPROUT Curriculum',
+        'Concept-First Mastery-Based Learning',
+        'Speak-O-Pen Interactive Language Technology',
+        'Consistently Strong CBSE Board Results'
       ]
     },
     {
-      icon: '🌟',
-      title: 'Learning Beyond Books',
-      description: 'Equal emphasis on academics, sports, performing arts, leadership, life skills, and experiential learning.',
+      icon: '🌱',
+      title: 'Learning Beyond the Textbook',
+      description: 'Experiential, inquiry-based learning through hands-on DIY kits, field trips, and real-world project discovery.',
       bgGradient: 'linear-gradient(135deg, #004d40 0%, #00695c 100%)',
       points: [
-        'Experiential & Outdoor Field Learning',
-        'Theater, Dance, Music & Fine Arts',
-        'Leadership & Personality Workshops',
-        '9-Sport Athletic Infrastructure'
+        'Hands-On DIY SILK Learning Kits',
+        'Field Trips & Outdoor Exploration',
+        'Project-Based Problem Solving',
+        'Real-World Application & Inquiry'
       ]
     },
     {
-      icon: '🌍',
-      title: 'Global Outlook, Indian Values',
-      description: 'Nurturing responsible global citizens rooted in Indian ethics, culture, compassion, and respect.',
+      icon: '💡',
+      title: 'Competency & Skills Development',
+      description: 'Fostering 21st-century 4C skills — Critical Thinking, Creativity, Collaboration, and Communication.',
+      bgGradient: 'linear-gradient(135deg, #b71c1c 0%, #c62828 100%)',
+      points: [
+        'Decode Startup Entrepreneurship Program',
+        'Kaushal Vikas Practical Skill Training',
+        'WordsWorth Digital Language Lab',
+        'Public Speaking & Leadership Workshops'
+      ]
+    },
+    {
+      icon: '💻',
+      title: 'Technology with Purpose',
+      description: 'Smart 3D classrooms, AI & Robotics innovation labs, and digital tools designed to deepen understanding.',
+      bgGradient: 'linear-gradient(135deg, #1A237E 0%, #283593 100%)',
+      points: [
+        'Interactive 3D Smart Boards in Every Classroom',
+        'Robotics & AI Innovation Labs',
+        'X-Wall Interactive Learning Panels',
+        '360° Real-Time Parent Mobile App Access'
+      ]
+    },
+    {
+      icon: '🏆',
+      title: 'Sports, Arts, Theatre & Well-being',
+      description: 'Comprehensive 9-sport portfolio, dedicated performing arts studios, and holistic physical wellness programmes.',
+      bgGradient: 'linear-gradient(135deg, #E65100 0%, #EF6C00 100%)',
+      points: [
+        'Pickleball, Cricket, Taekwondo & Athletics',
+        'Performing Arts, Music & Theatre Studio',
+        'Zonal & National Level Competition Platform',
+        'Holistic Physical & Emotional Well-being'
+      ]
+    },
+    {
+      icon: '🤝',
+      title: 'Personalised Guidance & Mentoring',
+      description: 'Dedicated student counselling, career guidance, and mentor-mentee support so every child thrives.',
       bgGradient: 'linear-gradient(135deg, #4a148c 0%, #7b1fa2 100%)',
       points: [
-        'Rooted in Rich Indian Ethics & Heritage',
-        'Global Citizen Competencies & Mindset',
-        'Character Building & Value Education',
-        'Empathy, Integrity & Social Compassion'
-      ]
-    },
-    {
-      icon: '🎓',
-      title: 'Playgroup to University',
-      description: 'A seamless academic journey from early years to university pathways through Rishihood University — all part of our unified brand group.',
-      bgGradient: 'linear-gradient(135deg, #880e4f 0%, #c2185b 100%)',
-      points: [
-        'Playgroup to Higher Education',
-        'Unified Group: Bachpan, AHWS & Rishihood',
-        'Continuous Guided Mentorship',
-        'Smooth Higher Ed Transitions'
+        'In-House Professional Child Counselling',
+        'Individual Academic & Emotional Support',
+        'Stream Selection & Career Guidance',
+        'Strong Parent-Teacher Partnership Forums'
       ]
     },
   ]

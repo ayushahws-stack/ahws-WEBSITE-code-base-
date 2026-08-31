@@ -162,9 +162,26 @@ export default function BeyondCurriculum() {
       {/* ── Section 3: Sports Portfolio ── */}
       <section className="sports-section" id="sports">
         <div className="container">
-          <h2 className="section-title">Sports</h2>
+          <h2 className="section-title">Sports &amp; Athletic Excellence</h2>
           <div className="divider-line" />
-          <p className="acad-subtitle">At AHWS, we ensure our learners stay healthy and fit with top-notch sports facilities. Guided by professional sports coaches, students develop into all-rounders with stamina, strategy, and sportsmanship.</p>
+          <p className="acad-subtitle">At AHWS, students are guided by certified sports coaches and compete at zonal and national levels. Every student participates in our annual Tejas Sports Meet, building endurance, strategy, and sportsmanship.</p>
+
+          {/* Verified Sports Evidence Metrics */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '20px', margin: '30px 0 40px 0' }}>
+            <div style={{ background: '#F4F6F9', padding: '22px', borderRadius: '10px', borderLeft: '4px solid #1B2A4A' }}>
+              <h4 style={{ color: '#1B2A4A', fontWeight: '700', marginBottom: '8px' }}>Certified Coaches</h4>
+              <p style={{ color: '#555', fontSize: '0.9rem', lineHeight: '1.5' }}>Dedicated instructors for Taekwondo, Cricket, Badminton, Basketball, and Chess.</p>
+            </div>
+            <div style={{ background: '#F4F6F9', padding: '22px', borderRadius: '10px', borderLeft: '4px solid #D4AF37' }}>
+              <h4 style={{ color: '#1B2A4A', fontWeight: '700', marginBottom: '8px' }}>CBSE Zonal Medals</h4>
+              <p style={{ color: '#555', fontSize: '0.9rem', lineHeight: '1.5' }}>Gold and Silver medalists in CBSE Zonal Taekwondo and Athletics championships.</p>
+            </div>
+            <div style={{ background: '#F4F6F9', padding: '22px', borderRadius: '10px', borderLeft: '4px solid #2E7D32' }}>
+              <h4 style={{ color: '#1B2A4A', fontWeight: '700', marginBottom: '8px' }}>100% Student Participation</h4>
+              <p style={{ color: '#555', fontSize: '0.9rem', lineHeight: '1.5' }}>Every student competes in the annual Tejas Sports Meet and intra-house games.</p>
+            </div>
+          </div>
+
           <div ref={sportsRef} className={`sports-grid ${sportsInView ? 'in-view' : ''}`}>
             {sportsPortfolio.map((sport, i) => (
               <div key={i} className="sport-card">
