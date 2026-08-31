@@ -219,12 +219,12 @@
   background: transparent;
 }
 
-.dropdown-menu ul {
+.dropdown-menu > ul {
   list-style: none;
   padding: 0;
   margin: 0;
   border-radius: var(--radius);
-  overflow: hidden; /* Restore hidden overflow on the inner list container */
+  overflow: visible; /* Changed to visible so submenus can fly out */
 }
 
 .dropdown-item {
@@ -496,4 +496,15 @@ li:last-child > .dropdown-item {
   background: var(--secondary);
   color: var(--primary);
   padding-left: 24px;
+}
+
+
+/* Open sub-menus to the left for the last 3 navigation items to prevent screen overflow */
+.nav-list > .nav-item:nth-last-child(-n+4) .sub-dropdown-menu {
+  left: auto;
+  right: 100%;
+}
+.nav-list > .nav-item:nth-last-child(-n+4) .has-sub-dropdown::before {
+  left: -20px;
+  right: auto;
 }
