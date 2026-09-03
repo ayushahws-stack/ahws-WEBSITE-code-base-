@@ -1,4 +1,3 @@
-import React from 'react';
 import './Committees.css';
 import PageBanner from '../components/PageBanner';
 

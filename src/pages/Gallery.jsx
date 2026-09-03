@@ -440,8 +440,11 @@ const mainTabs = [
 
 // ─── COMPONENT ───────────────────────────────────────────────────────────────
 export default function Gallery() {
-  const [activeTab, setActiveTab] = useState('photos')
   const location = useLocation()
+  const [activeTab, setActiveTab] = useState(() => {
+    const hash = window.location.hash.replace('#', '')
+    return ['photos', 'videos', 'achievers'].includes(hash) ? hash : 'photos'
+  })
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -451,7 +454,7 @@ export default function Gallery() {
     if (location.hash) {
       const hash = location.hash.replace('#', '')
       if (['photos', 'videos', 'achievers'].includes(hash)) {
-        setActiveTab(hash)
+        setActiveTab(prev => (prev !== hash ? hash : prev))
         setTimeout(() => {
           const el = document.getElementById(hash)
           if (el) el.scrollIntoView({ behavior: 'smooth' })
