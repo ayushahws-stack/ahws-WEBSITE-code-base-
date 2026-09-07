@@ -1,5 +1,6 @@
-import { useEffect } from 'react'
-import { useLocation } from 'react-router-dom'
+import { useLocation } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
+import { useEffect } from 'react';
 
 const routeMetadata = {
   '/': {
@@ -65,26 +66,69 @@ const routeMetadata = {
   '/alumni': {
     title: 'Alumni Network | Academic Heights World School',
     description: 'Connect with distinguished AHWS alumni excelling in IITs, AIIMS, sports, and corporate leadership. Register for the AHWS Alumni Network.'
+  },
+  '/we-teach-life': {
+    title: 'We Teach Life | Holistic Development at AHWS',
+    description: 'Explore how AHWS imparts life skills, emotional intelligence, and real-world leadership qualities through the We Teach Life initiative.'
+  },
+  '/tc-database': {
+    title: 'Transfer Certificate Database | AHWS Pitampura',
+    description: 'Search and download student Transfer Certificates (TC) officially issued by Academic Heights World School.'
   }
-}
+};
 
 export default function SEO() {
-  const location = useLocation()
+  const location = useLocation();
+  const path = location.pathname;
+  
+  const meta = routeMetadata[path] || {
+    title: 'Academic Heights World School | Pitampura',
+    description: 'Academic Heights World School (AHWS) is a top CBSE school in Pitampura, Delhi.'
+  };
+
+  const siteUrl = 'https://ahws.edu.in';
+  const canonicalUrl = `${siteUrl}${path === '/' ? '' : path}`;
 
   useEffect(() => {
-    const meta = routeMetadata[location.pathname] || routeMetadata['/']
-    document.title = meta.title
+    // Legacy support to ensure standard scroll restoration
+    window.scrollTo(0, 0);
+  }, [path]);
 
-    let metaDesc = document.querySelector('meta[name="description"]')
-    if (!metaDesc) {
-      metaDesc = document.createElement('meta')
-      metaDesc.setAttribute('name', 'description')
-      document.head.appendChild(metaDesc)
-    }
-    metaDesc.setAttribute('content', meta.description)
-    
-    window.scrollTo(0, 0)
-  }, [location])
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": siteUrl
+      },
+      ...(path !== '/' ? [{
+        "@type": "ListItem",
+        "position": 2,
+        "name": meta.title.split('|')[0].trim(),
+        "item": canonicalUrl
+      }] : [])
+    ]
+  };
 
-  return null
+  return (
+    <Helmet>
+      <title>{meta.title}</title>
+      <meta name="description" content={meta.description} />
+      <link rel="canonical" href={canonicalUrl} />
+      
+      <meta property="og:title" content={meta.title} />
+      <meta property="og:description" content={meta.description} />
+      <meta property="og:url" content={canonicalUrl} />
+      
+      <meta name="twitter:title" content={meta.title} />
+      <meta name="twitter:description" content={meta.description} />
+
+      <script type="application/ld+json">
+        {JSON.stringify(breadcrumbSchema)}
+      </script>
+    </Helmet>
+  );
 }

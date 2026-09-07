@@ -1,8 +1,11 @@
 import { useEffect } from 'react'
 import { HashRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom'
+import { HelmetProvider } from 'react-helmet-async'
 import Header from './components/Header'
+
 import Footer from './components/Footer'
 import Home from './pages/Home'
+import NotFound from './pages/NotFound'
 import About from './pages/About'
 import Admission from './pages/Admission'
 import ContactUs from './pages/ContactUs'
@@ -50,11 +53,13 @@ function ScrollToTop() {
 
 function App() {
   return (
+    <HelmetProvider>
     <HashRouter>
       <ScrollToTop />
       <SEO />
       <AnnouncementTicker />
       <Header />
+        <Breadcrumbs />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
@@ -82,6 +87,7 @@ function App() {
       <FloatingEnquiry />
       <BackToTop />
     </HashRouter>
+    </HelmetProvider>
   )
 }
 
