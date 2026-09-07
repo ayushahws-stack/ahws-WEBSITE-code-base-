@@ -80,7 +80,12 @@ export default function Wellbeing() {
             <div className="counsellor-profiles">
               <div className="counsellor-profile">
                 <div className="counsellor-img-wrap">
-                  <div className="counsellor-avatar">Dr. R</div>
+                  <img 
+                    src="./images/new%20AHWS%20Website%20Photos/About/Ms.%20Rashmi%20ma_am/WhatsApp%20Image%202026-08-31%20at%2011.04.40%20PM.jpeg" 
+                    alt="Dr. Rashmi Bajaj Singh" 
+                    className="counsellor-avatar"
+                    style={{ objectFit: 'cover' }}
+                  />
                 </div>
                 <h4>Dr. Rashmi Bajaj Singh</h4>
                 <span className="counsellor-role">Senior Counselor</span>

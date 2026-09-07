@@ -47,24 +47,28 @@ export default function Academics() {
       icon: '🌱',
       title: 'Foundation Stage',
       classes: '5 Years (Age 3-8)',
+      image: './images/new%20AHWS%20Website%20Photos/Curriculum/Pre-primary%20students%20(Age%203-8)%20engaging%20in%20play/20260401_120414.jpg',
       desc: 'Play-based & joyful learning. Focuses on holistic child development — building curiosity, motor skills, social habits, and foundational language & numeracy.',
     },
     {
       icon: '🔍',
       title: 'Preparatory Stage',
       classes: '3 Years (Age 8-11)',
+      image: './images/new%20AHWS%20Website%20Photos/Curriculum/Primary%20students/IMG_8601.jpg',
       desc: 'Discovery and Interactive Learning. Building a strong base in foundational literacy, numeracy, and cognitive skills through thematic and inquiry-based approaches.',
     },
     {
       icon: '🧪',
       title: 'Middle Stage',
       classes: '3 Years (Age 11-14)',
+      image: './images/new%20AHWS%20Website%20Photos/Curriculum/Primary%20students/IMG_8602.jpg',
       desc: 'Learning by experience and analysis. Emphasis on conceptual understanding across Sciences, Mathematics, Social Studies, and Languages with project-based learning.',
     },
     {
       icon: '🧠',
       title: 'Secondary Stage',
       classes: '4 Years (Age 14-18)',
+      image: './images/new%20AHWS%20Website%20Photos/Curriculum/Senior%20students%20(Age%2014-18)%20in%20a%20lab%20or%20studying/CAM%20%201%201899T01.JPG',
       desc: 'Multidisciplinary learning & Critical thinking. Rigorous preparation complemented by career counselling, competitive exam guidance, and specialized stream options.',
     },
   ]
@@ -131,14 +135,14 @@ export default function Academics() {
       title: 'Creativity & Expression through Art',
       tag: 'Visual Arts',
       desc: 'Our Arts program empowers students to express themselves freely, build confidence, and develop their unique creativity. Young artists explore various mediums, bringing imagination to life.',
-      image: './WEBSITE GALLERY/other images/kid making art.jpeg'
+      image: './images/new%20AHWS%20Website%20Photos/Home/Students%20in%20Art%20&%20Music%20Studios/IMG_8588.jpg'
     },
     {
       icon: '🎵',
       title: 'Music & Performing Arts',
       tag: 'Performing Arts',
       desc: 'Professional teachers guide students in singing, dancing, and musical instruments. Students compete in external events, building talent and confidence through performance and expression.',
-      image: './WEBSITE GALLERY/other images/kids Dance .jpg',
+      image: './images/new%20AHWS%20Website%20Photos/Home/Students%20in%20Art%20&%20Music%20Studios/CAM%20%201%201935T01.JPG',
       imagePosition: 'center 70%'
     },
     {
@@ -146,7 +150,7 @@ export default function Academics() {
       title: 'Robotics & STEM Innovation',
       tag: 'Tech & Innovation',
       desc: 'Hands-on learning with robotic kits, microcontrollers, and coding activities that empower students to master STEM skills, logical reasoning, and digital enterprise.',
-      image: './WEBSITE GALLERY/other images/robotics lab.jpeg'
+      image: './images/new%20AHWS%20Website%20Photos/Beyond%20Curriculum/Robotics/IMG_8552.jpg'
     },
   ]
 
@@ -232,6 +236,11 @@ export default function Academics() {
               <div ref={curriculumRef} className={`acad-curriculum-grid ${curriculumInView ? 'in-view' : ''}`}>
                 {curriculumCards.map((card, i) => (
                   <div key={i} className="acad-curriculum-card" style={{ animationDelay: `${i * 0.15}s` }}>
+                    {card.image && (
+                      <div className="acad-card-img-wrap" style={{ height: '160px', borderRadius: '10px', overflow: 'hidden', marginBottom: '14px' }}>
+                        <img src={card.image} alt={card.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} loading="lazy" />
+                      </div>
+                    )}
                     <div className="acad-curriculum-icon">{card.icon}</div>
                     <span className="acad-curriculum-badge">{card.classes}</span>
                     <h3>{card.title}</h3>
