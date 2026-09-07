@@ -59,7 +59,7 @@ function App() {
       <SEO />
       <AnnouncementTicker />
       <Header />
-        <Breadcrumbs />
+        
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
