@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './Admission.css'
 import Popup from '../components/Popup'
 import PageBanner from '../components/PageBanner'
+import FAQ from '../components/FAQ'
 
 export default function Admission() {
   const [form, setForm] = useState({
@@ -392,6 +393,15 @@ export default function Admission() {
               <p style={{ color: 'var(--ahws-muted)', lineHeight: '1.6' }}>Transport fees vary based on distance and route slabs. Please reach out to our admission desk or reception for the exact fee structure for your location.</p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="admission-faq" id="faq" style={{ padding: '60px 0', backgroundColor: 'var(--white)' }}>
+        <div className="container">
+          <h2 className="section-title">Frequently Asked Questions</h2>
+          <div className="divider-line" />
+          <FAQ />
         </div>
       </section>
 
