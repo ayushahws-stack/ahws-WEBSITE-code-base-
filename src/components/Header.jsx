@@ -306,7 +306,9 @@ export default function Header() {
                             ) : (
                               <NavLink to={child.to} className="dropdown-item" onClick={(e) => {
                                 if (!child.children) setOpenDropdown(null);
-                                if (child.to.includes('#') && (window.location.hash === '' ? '/' : window.location.hash).includes(child.to.split('#')[0])) {
+                                const targetPath = child.to.split('#')[0] || '/';
+                                  const currentPath = window.location.hash.replace('#', '').split('?')[0] || '/';
+                                  if (child.to.includes('#') && currentPath === targetPath) {
                                   const id = child.to.split('#')[1];
                                   const elem = document.getElementById(id);
                                   if (elem) elem.scrollIntoView({ behavior: 'smooth' });
@@ -322,7 +324,9 @@ export default function Header() {
                                   <li key={sub.label}>
                                     <NavLink to={sub.to} className="sub-dropdown-item" onClick={(e) => {
                                       setOpenDropdown(null);
-                                      if (sub.to.includes('#') && (window.location.hash === '' ? '/' : window.location.hash).includes(sub.to.split('#')[0])) {
+                                      const targetPath = sub.to.split('#')[0] || '/';
+                                        const currentPath = window.location.hash.replace('#', '').split('?')[0] || '/';
+                                        if (sub.to.includes('#') && currentPath === targetPath) {
                                         const id = sub.to.split('#')[1];
                                         const elem = document.getElementById(id);
                                         if (elem) elem.scrollIntoView({ behavior: 'smooth' });
