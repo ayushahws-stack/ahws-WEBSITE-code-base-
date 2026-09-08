@@ -30,10 +30,7 @@ const faqData = [
     question: "Are there any additional charges?",
     answer: "Any applicable charges are communicated clearly to parents during the admission process. We believe parents should have complete clarity about the financial structure."
   },
-  {
-    question: "Your fees are higher than another school. Why?",
-    answer: "I completely understand that fees are an important consideration. We encourage you to look at the overall value—our teaching approach, individual attention, learning environment, activities, facilities and opportunities for the child’s overall development. We would be happy to explain what is included in the fee structure."
-  },
+  
   {
     question: "Is there any girl-child concession in the fee?",
     answer: "We can check the current fee structure and applicable concessions for you."
@@ -81,7 +78,11 @@ const faqData = [
   {
     question: "How can parents communicate with teachers?",
     answer: "Parents can communicate through the school’s designated communication channels and during scheduled interactions/PTMs, while following the school’s communication guidelines and official WhatsApp groups."
-  }
+  },
+  {
+    question: "Your fees are higher than another school. Why?",
+    answer: "I completely understand that fees are an important consideration. We encourage you to look at the overall value—our teaching approach, individual attention, learning environment, activities, facilities and opportunities for the child’s overall development. We would be happy to explain what is included in the fee structure."
+  },
 ];
 
 export default function FAQ() {
