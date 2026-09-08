@@ -421,6 +421,8 @@ export default function Home() {
             <video
               ref={heroVideoRef}
               className="hero-video"
+              title="Academic Heights World School Campus Life"
+              aria-label="Montage video showing students and campus facilities at Academic Heights World School"
               autoPlay
               muted={isMuted}
               loop

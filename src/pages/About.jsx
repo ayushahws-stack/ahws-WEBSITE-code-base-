@@ -265,6 +265,8 @@ export default function About() {
               <div className="app360-video-wrap">
                 <video
                   src="https://ahws.edu.in/images/360-App-Video-Final-1-1.mp4"
+                  title="AHWS 360 Parent Communication App Demonstration"
+                  aria-label="Video demonstrating the features of the AHWS 360 mobile app for parents"
                   autoPlay
                   muted
                   loop
