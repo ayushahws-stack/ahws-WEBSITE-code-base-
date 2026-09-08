@@ -1,0 +1,60 @@
+name: Production CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build_and_test:
+    name: Build & Lint
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Check out the repository code
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      # 2. Set up Node.js environment
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      # 3. Install dependencies cleanly
+      - name: Install Dependencies
+        run: npm ci
+
+      # 4. Run strict ESLint checks
+      - name: Run Linter
+        run: npm run lint
+
+      # 5. Run Vite Production Build
+      - name: Build Application (Vite)
+        run: npm run build
+
+      # 6. Upload 'dist' artifact (Optimized Output)
+      - name: Upload Production Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ahws-production-build
+          path: dist/
+          retention-days: 7
+
+  # ==========================================
+  # DEPLOYMENT CONFIGURATION (Netlify / Vercel / GitHub Pages)
+  # ==========================================
+  # To deploy this optimized static output, configure your target platform below:
+  #
+  # Option A: VERCEL / NETLIFY
+  # Vercel and Netlify auto-detect Vite projects. You don't actually need this Action to deploy there.
+  # Simply connect your GitHub repository in their dashboard, and they will run 'npm run build' and host the 'dist' folder automatically.
+  #
+  # Option B: GITHUB PAGES (Current AHWS Setup)
+  # Currently, the 'dist' folder is deployed to a separate click-and-play repository (ahws_WEBSITE-).
+  # To fully automate cross-repo deployment via GitHub actions, you would use 'peaceiris/actions-gh-pages@v3' 
+  # with a Personal Access Token (PAT) stored in your repository Secrets.
