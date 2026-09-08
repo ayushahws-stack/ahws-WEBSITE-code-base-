@@ -50,6 +50,7 @@ export default function Footer() {
                 { label: 'Results', to: '/results' },
                 { label: 'Alumni', to: '/alumni' },
                 { label: 'Mandatory Disclosure', to: '/mandatory-disclosure' },
+                { label: 'FAQs', to: '/admission#faq' },
                 { label: 'Contact Us', to: '/contact' },
               ].map(link => (
                 <li key={link.label}>
