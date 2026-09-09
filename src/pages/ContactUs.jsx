@@ -22,7 +22,7 @@ export default function ContactUs() {
 
   return (
     <main className="contact-page">
-      <PageBanner title="Contact Us" image="./WEBSITE GALLERY/other images/AHWS.png" />
+      <PageBanner title="Contact Us" image="./images/new%20AHWS%20Website%20Photos/Contact%20us/Reception.JPG" />
 
       {/* Contact Info + Form */}
       <section className="contact-section" id="contact-details">

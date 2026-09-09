@@ -144,7 +144,7 @@ export default function About() {
             </div>
             <div className="journey-images-wrap">
               <div className="journey-image">
-                <img src="https://ahws.edu.in/images/about-us-amination.gif" alt="About AHWS Animation" loading="lazy" />
+                <img src="./images/new%20AHWS%20Website%20Photos/About/Historical%20shots%20of%20school%20building/IMG_8514.jpg" alt="Academic Heights World School Campus Heritage" loading="lazy" />
               </div>
             </div>
           </div>
@@ -254,8 +254,8 @@ export default function About() {
                 </a>
               </div>
               <div className="app360-mockups" style={{ display: 'flex', gap: '15px', marginTop: '30px' }}>
-                <img src="./WEBSITE GALLERY/other images/360 app ui mockup 1.jpg" alt="360 App Mockup 1" style={{ width: '45%', borderRadius: 'var(--radius)', boxShadow: 'var(--shadow)' }} />
-                <img src="./WEBSITE GALLERY/other images/360 app ui mockup 2.png" alt="360 App Mockup 2" style={{ width: '45%', borderRadius: 'var(--radius)', boxShadow: 'var(--shadow)' }} />
+                <img src="./images/new%20AHWS%20Website%20Photos/About/360%20Degree/Home.jpeg" alt="360 App Home Dashboard" style={{ width: '45%', borderRadius: 'var(--radius)', boxShadow: 'var(--shadow)' }} />
+                <img src="./images/new%20AHWS%20Website%20Photos/About/360%20Degree/Attendence.jpg" alt="360 App Attendance Portal" style={{ width: '45%', borderRadius: 'var(--radius)', boxShadow: 'var(--shadow)' }} />
               </div>
             </div>
             <div className="app360-image">
@@ -289,7 +289,14 @@ export default function About() {
           </p>
           <div className="counselling-grid">
             <div className="counselling-profile-card">
-              <div className="counsellor-avatar-img"><div className="counsellor-avatar">Dr. R</div></div>
+              <div className="counsellor-avatar-img">
+                <img 
+                  src="./images/new%20AHWS%20Website%20Photos/About/Ms.%20Rashmi%20ma_am/WhatsApp%20Image%202026-08-31%20at%2011.04.40%20PM.jpeg" 
+                  alt="Dr. Rashmi Bajaj Singh - School Counsellor & Parental Coach" 
+                  className="counsellor-avatar"
+                  style={{ objectFit: 'cover' }}
+                />
+              </div>
               <h3>Dr. Rashmi Bajaj Singh</h3>
               <p className="counsellor-title">School Counsellor & Parental Coach</p>
               <p className="counsellor-exp">📅 28+ Years of Experience in Education & Guidance</p>
