@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import './Header.css'
 
@@ -304,7 +304,7 @@ export default function Header() {
                                 {child.label} {child.children && <span style={{float:'right'}}>›</span>}
                               </a>
                             ) : (
-                              <NavLink to={child.to} className="dropdown-item" onClick={(e) => {
+                              <NavLink to={child.to} className="dropdown-item" onClick={() => {
                                 if (!child.children) setOpenDropdown(null);
                                 const targetPath = child.to.split('#')[0] || '/';
                                   const currentPath = window.location.hash.replace('#', '').split('?')[0] || '/';
@@ -322,7 +322,7 @@ export default function Header() {
                               <ul className="sub-dropdown-menu">
                                 {child.children.map(sub => (
                                   <li key={sub.label}>
-                                    <NavLink to={sub.to} className="sub-dropdown-item" onClick={(e) => {
+                                    <NavLink to={sub.to} className="sub-dropdown-item" onClick={() => {
                                       setOpenDropdown(null);
                                       const targetPath = sub.to.split('#')[0] || '/';
                                         const currentPath = window.location.hash.replace('#', '').split('?')[0] || '/';

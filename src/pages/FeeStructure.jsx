@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+
 import { Link } from 'react-router-dom';
 import PageBanner from '../components/PageBanner';
 import './FeeStructure.css';

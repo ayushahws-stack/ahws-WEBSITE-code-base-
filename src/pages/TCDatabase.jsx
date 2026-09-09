@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import PageBanner from '../components/PageBanner';
 import './TCDatabase.css';
 

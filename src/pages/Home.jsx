@@ -1,5 +1,4 @@
-import { useEffect, useState, useRef } from 'react'
-import { Link } from 'react-router-dom'
+import { useState, useRef } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination, Autoplay } from 'swiper/modules'
 import 'swiper/css'
@@ -488,7 +487,7 @@ export default function Home() {
               muted={isMuted}
               loop
               playsInline
-              poster="https://ahws.edu.in/images/hero-fallback.jpg"
+              poster="./WEBSITE GALLERY/other images/AHWS.png"
               onPlay={() => setIsPlaying(true)}
               onPause={() => setIsPlaying(false)}
             >

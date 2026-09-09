@@ -15,7 +15,6 @@ import Blog from './pages/Blog'
 import Events from './pages/Events'
 import NoticeBoard from './pages/NoticeBoard'
 import Gallery from './pages/Gallery'
-import Academics from './pages/Academics'
 import Results from './pages/Results'
 import FeeStructure from './pages/FeeStructure'
 import Careers from './pages/Careers'
@@ -82,6 +81,7 @@ function App() {
         <Route path="/infrastructure" element={<Infrastructure />} />
         <Route path="/campus" element={<Navigate to="/gallery" replace />} />
         <Route path="/well-being" element={<Wellbeing />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
       <FloatingEnquiry />
