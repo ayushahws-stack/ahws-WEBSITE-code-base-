@@ -29,5 +29,5 @@ for (const file of files) {
   markdown += textOnly + '\n\n---\n\n';
 }
 
-fs.writeFileSync('D:/ayush bansal/WEBSITE/02_HANDOVER_DOCS/AHWS_Page_Copy.md', markdown);
-console.log('Copy document created.');
+fs.writeFileSync('D:/ayush bansal/WEBSITE/02_HANDOVER_DOCS/02_WORDPRESS_DEVELOPER_PACKAGE/AHWS_Page_Copy.md', markdown);
+console.log('Copy document created in 02_WORDPRESS_DEVELOPER_PACKAGE.');

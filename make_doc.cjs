@@ -1,8 +1,8 @@
 const fs = require('fs');
 const { execSync } = require('child_process');
 
-const mdPath = 'D:\\ayush bansal\\WEBSITE\\02_HANDOVER_DOCS\\AHWS_SEO_Implementation_Guide.md';
-const docxPath = 'D:\\ayush bansal\\WEBSITE\\02_HANDOVER_DOCS\\AHWS_SEO_Implementation_Guide.docx';
+const mdPath = 'D:\\ayush bansal\\WEBSITE\\02_HANDOVER_DOCS\\03_SEO_AND_MARKETING_STRATEGY\\AHWS_SEO_Implementation_Guide.md';
+const docxPath = 'D:\\ayush bansal\\WEBSITE\\02_HANDOVER_DOCS\\03_SEO_AND_MARKETING_STRATEGY\\AHWS_SEO_Implementation_Guide.docx';
 
 // Convert using PowerShell Word.Application COM Object
 const psScript = 

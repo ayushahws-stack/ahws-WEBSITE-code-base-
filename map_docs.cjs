@@ -27,5 +27,5 @@ for (const file of files) {
   }
 }
 
-fs.writeFileSync('D:/ayush bansal/WEBSITE/02_HANDOVER_DOCS/AHWS_Documents_Mapping.md', markdown);
-console.log('Mapping created.');
+fs.writeFileSync('D:/ayush bansal/WEBSITE/02_HANDOVER_DOCS/02_WORDPRESS_DEVELOPER_PACKAGE/AHWS_Documents_Mapping.md', markdown);
+console.log('Mapping created in 02_WORDPRESS_DEVELOPER_PACKAGE.');
