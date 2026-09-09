@@ -144,7 +144,12 @@ export default function About() {
             </div>
             <div className="journey-images-wrap">
               <div className="journey-image">
-                <img src="./images/new%20AHWS%20Website%20Photos/About/Historical%20shots%20of%20school%20building/IMG_8514.jpg" alt="Academic Heights World School Campus Heritage" loading="lazy" />
+                <img 
+                  src="./images/new%20AHWS%20Website%20Photos/About/Historical%20shots%20of%20school%20building/IMG_8514.jpg" 
+                  alt="Academic Heights World School Campus Heritage" 
+                  loading="lazy" 
+                  onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = "https://ahws.edu.in/images/about-us-amination.gif"; }}
+                />
               </div>
             </div>
           </div>
@@ -254,8 +259,18 @@ export default function About() {
                 </a>
               </div>
               <div className="app360-mockups" style={{ display: 'flex', gap: '15px', marginTop: '30px' }}>
-                <img src="./images/new%20AHWS%20Website%20Photos/About/360%20Degree/Home.jpeg" alt="360 App Home Dashboard" style={{ width: '45%', borderRadius: 'var(--radius)', boxShadow: 'var(--shadow)' }} />
-                <img src="./images/new%20AHWS%20Website%20Photos/About/360%20Degree/Attendence.jpg" alt="360 App Attendance Portal" style={{ width: '45%', borderRadius: 'var(--radius)', boxShadow: 'var(--shadow)' }} />
+                <img 
+                  src="./images/new%20AHWS%20Website%20Photos/About/360%20Degree/Home.jpeg" 
+                  alt="360 App Home Dashboard" 
+                  style={{ width: '45%', borderRadius: 'var(--radius)', boxShadow: 'var(--shadow)' }} 
+                  onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = "./WEBSITE GALLERY/other images/360 app ui mockup 1.jpg"; }}
+                />
+                <img 
+                  src="./images/new%20AHWS%20Website%20Photos/About/360%20Degree/Attendence.jpg" 
+                  alt="360 App Attendance Portal" 
+                  style={{ width: '45%', borderRadius: 'var(--radius)', boxShadow: 'var(--shadow)' }} 
+                  onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = "./WEBSITE GALLERY/other images/360 app ui mockup 2.png"; }}
+                />
               </div>
             </div>
             <div className="app360-image">
@@ -295,6 +310,7 @@ export default function About() {
                   alt="Dr. Rashmi Bajaj Singh - School Counsellor & Parental Coach" 
                   className="counsellor-avatar"
                   style={{ objectFit: 'cover' }}
+                  onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = "./WEBSITE GALLERY/other images/AHWS.png"; }}
                 />
               </div>
               <h3>Dr. Rashmi Bajaj Singh</h3>

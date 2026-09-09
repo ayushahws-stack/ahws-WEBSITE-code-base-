@@ -57,7 +57,8 @@ export default function BeyondCurriculum() {
       title: 'Decode Startup — Entrepreneurial Leadership',
       tag: 'Enterprise & Leadership',
       desc: 'Our signature Decode Startup program helps students grow into future leaders by enabling them to design, implement, and present business ideas to actual investors. Upon approval, concepts receive initial seed funding to turn ideas into feasible startup ventures.',
-      image: './images/new%20AHWS%20Website%20Photos/Home/Students%20using%20Smart%20Classrooms/IMG_8540.jpg'
+      image: './images/new%20AHWS%20Website%20Photos/Home/Students%20using%20Smart%20Classrooms/IMG_8540.jpg',
+      fallback: './WEBSITE GALLERY/other images/smart class room with 3D modes in the smart screen .jpeg'
     },
     {
       icon: '🎙️',
@@ -72,6 +73,7 @@ export default function BeyondCurriculum() {
       tag: 'Stage Exposure & Empathy',
       desc: 'Uniquely formulated to empower students to overcome stage fear, instill unshakeable self-confidence, and master emotional expressiveness. Young performers tackle social issues on stage to build deep human empathy and community awareness.',
       image: './images/new%20AHWS%20Website%20Photos/Home/Students%20in%20Art%20&%20Music%20Studios/CAM%20%201%201935T01.JPG',
+      fallback: './WEBSITE GALLERY/other images/kids Dance .jpg',
       imagePosition: 'center 20%'
     },
     {
@@ -79,21 +81,24 @@ export default function BeyondCurriculum() {
       title: 'Creativity & Expression through Art',
       tag: 'Visual Arts',
       desc: 'Our Arts program empowers students to express themselves freely, build confidence, and develop their unique creativity. Young artists explore various mediums, bringing imagination to life.',
-      image: './images/new%20AHWS%20Website%20Photos/Home/Students%20in%20Art%20&%20Music%20Studios/IMG_8588.jpg'
+      image: './images/new%20AHWS%20Website%20Photos/Home/Students%20in%20Art%20&%20Music%20Studios/IMG_8588.jpg',
+      fallback: './WEBSITE GALLERY/other images/kid making art.jpeg'
     },
     {
       icon: '🤖',
       title: 'Robotics & STEM Innovation',
       tag: 'Tech & Innovation',
       desc: 'Hands-on learning with robotic kits, microcontrollers, and coding activities that empower students to master STEM skills, logical reasoning, and digital enterprise.',
-      image: './images/new%20AHWS%20Website%20Photos/Beyond%20Curriculum/Robotics/IMG_8552.jpg'
+      image: './images/new%20AHWS%20Website%20Photos/Beyond%20Curriculum/Robotics/IMG_8552.jpg',
+      fallback: './images/Robotics 2.jpeg'
     },
     {
       icon: '🏆',
       title: 'Sports & Athletics Excellence',
       tag: 'Fitness & Sportsmanship',
       desc: 'Comprehensive sports training under certified coaches. From track and field to tactical team sports, students build endurance, leadership, and sportsmanship.',
-      image: './images/new%20AHWS%20Website%20Photos/Home/Sports/CAM%20%201%201696T01.JPG'
+      image: './images/new%20AHWS%20Website%20Photos/Home/Sports/CAM%20%201%201696T01.JPG',
+      fallback: './WEBSITE GALLERY/Sports Day (17-02-2026)/IMG_20260217_114341.jpeg'
     }
   ]
 
@@ -142,7 +147,17 @@ export default function BeyondCurriculum() {
               <div key={i} className="program-card-v2">
                 {prog.image && (
                   <div className="program-image-v2" style={{ height: '220px', marginBottom: '20px', borderRadius: 'var(--radius-lg)', overflow: 'hidden' }}>
-                    <img src={prog.image} alt={prog.title} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: prog.imagePosition || 'center' }} />
+                    <img 
+                      src={prog.image} 
+                      alt={prog.title} 
+                      style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: prog.imagePosition || 'center' }} 
+                      onError={(e) => {
+                        if (prog.fallback && e.currentTarget.src !== prog.fallback) {
+                          e.currentTarget.onerror = null;
+                          e.currentTarget.src = prog.fallback;
+                        }
+                      }}
+                    />
                   </div>
                 )}
                 <div className="program-card-content">

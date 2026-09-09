@@ -19,6 +19,7 @@ const sections = [
     quoteBy: 'Helen Keller',
     accent: '#002147',
     image: './images/new%20AHWS%20Website%20Photos/We%20Teach%20Life/Students%20planting%20trees%20or%20in%20the%20green%20campus/20250724_085455.jpg',
+    fallback: './WEBSITE GALLERY/AHWS Baby Show (02-10-2024)/DSC_0200.jpeg',
     body: `A child's growth is closely connected to the strength of the community around them. At Academic Heights World School, we work to create an inclusive, caring community where every student, parent and teacher feels valued and genuinely part of something bigger. We believe children learn best when people respect one another, work together and share a sense of purpose.\n\nWhen you become part of the Academic Heights World School family, you become part of an active service community. Our students lead concrete ground initiatives, including:
 
 � Student-Led Book Drives with local library projects
@@ -39,6 +40,7 @@ const sections = [
     quoteBy: 'Maria Montessori',
     accent: '#FFC700',
     image: './images/new%20AHWS%20Website%20Photos/We%20Teach%20Life/Parent%20and%20child%20interacting%20happily%20at%20school/WhatsApp%20Image%202026-07-18%20at%2011.01.05%20AM%20(2).jpeg',
+    fallback: './WEBSITE GALLERY/RWA Health Check-up Camp (28-09-2025)/WhatsApp Image 2025-09-28 at 1.50.55 PM.jpeg',
     body: `We know that parents are a child's first and most important teachers. Your hopes for your child, the values you want them to carry and the future you imagine for them all matter to us. We do not try to take your place. We work alongside you, as trusted partners who can support your child's learning and growth.\n\nWe value your thoughts, we listen to your concerns and we welcome your involvement in your child's education. We believe children benefit most when families and schools work as partners. When you choose Academic Heights World School, you place an important trust in us, and we take that trust seriously. Your hopes for your child become part of what we work towards every day.`,
   },
   {
@@ -84,6 +86,7 @@ const sections = [
     quoteBy: 'Frank Lloyd Wright',
     accent: '#002147',
     image: './images/new%20AHWS%20Website%20Photos/We%20Teach%20Life/Students%20planting%20trees%20or%20in%20the%20green%20campus/20250724_085658.jpg',
+    fallback: './images/Green campus.png',
     body: `Children learn best when they feel safe, comfortable and inspired by the space around them. At Academic Heights World School, our environment is designed to encourage curiosity, creativity and a sense of discovery. Our classrooms are airy and welcoming, our green spaces give children room to breathe, and every part of the campus is planned with their experience in mind.\n\nA thoughtful learning environment can help children feel calmer, stay focused and enjoy their time at school. We take pride in keeping our spaces clean, comfortable and well equipped for learning, while also giving students opportunities to spend time outdoors and connect with nature. We want every child to walk into school each day feeling that they are in a place where they can learn and belong.`,
   },
   {
@@ -98,6 +101,7 @@ const sections = [
     quoteBy: 'Jim Rohn',
     accent: '#FFC700',
     image: './images/new%20AHWS%20Website%20Photos/Home/Students%20working%20in%20Robotics%20&%20AI%20Lab/AI.jpeg',
+    fallback: './WEBSITE GALLERY/other images/Technology_and_App_010.jpg',
     body: `In a changing world, knowledge alone is not enough. At Academic Heights World School, we also help students build practical skills they can carry into everyday life. These include critical thinking, problem-solving, communication, collaboration and the confident use of technology. Our learning experiences are designed to prepare children for real situations, not simply for tests.\n\nFrom learning how to think deeply and speak with confidence to creating art and working as part of a team, students are encouraged to build a broad range of abilities. Along the way, they develop confidence, flexibility and the belief that they can keep learning and improving. These are qualities that can continue to serve them long after school.`,
   },
   {
@@ -113,6 +117,7 @@ const sections = [
     quoteBy: 'Pablo Picasso',
     accent: '#002147',
     image: './images/new%20AHWS%20Website%20Photos/Home/Students%20in%20Art%20&%20Music%20Studios/CAM%20%201%201935T01.JPG',
+    fallback: './WEBSITE GALLERY/other images/kid making art 02.png',
     body: `We believe school should give children opportunities to discover interests beyond the regular classroom. At Academic Heights World School, our co-curricular activities give students space to try new things, discover what they enjoy and learn how to work with others. These experiences are an important part of becoming a confident, well-rounded individual.\n\nTaking part in activities outside the classroom teaches children how to cooperate, stay committed and keep going when something is difficult. It also gives them chances to build confidence, friendships and memories they will carry with them. With guidance from our staff, students can explore new interests at their own pace and discover new sides of themselves.`,
   },
   {
@@ -180,8 +185,13 @@ function LifeSection({ section, index }) {
               alt={section.label}
               loading="lazy"
               onError={e => {
-                e.currentTarget.style.display = 'none'
-                e.currentTarget.parentElement.classList.add('wtl-image-placeholder')
+                if (section.fallback && e.currentTarget.src !== section.fallback) {
+                  e.currentTarget.onerror = null
+                  e.currentTarget.src = section.fallback
+                } else {
+                  e.currentTarget.style.display = 'none'
+                  e.currentTarget.parentElement.classList.add('wtl-image-placeholder')
+                }
               }}
             />
             <div className="wtl-image-badge" style={{ background: section.accent }}>
