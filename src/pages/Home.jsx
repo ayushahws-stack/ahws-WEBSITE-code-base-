@@ -437,9 +437,46 @@ export default function Home() {
 
   return (
     <main className="home-page">
-      <h1 className="sr-only">Academic Heights World School (AHWS) – Best CBSE School in Pitampura, Delhi</h1>
+      <h1 className="sr-only">Academic Heights World School (AHWS) | CBSE School in Pitampura, Delhi</h1>
       {/* ── Hero Section ── */}
       <section className="hero-section">
+        <div className="container" style={{ textAlign: 'center', marginBottom: '32px' }}>
+          <div style={{
+            display: 'inline-block',
+            background: 'rgba(212, 175, 55, 0.15)',
+            color: '#D4AF37',
+            border: '1px solid rgba(212, 175, 55, 0.4)',
+            padding: '6px 20px',
+            borderRadius: '30px',
+            fontWeight: '700',
+            fontSize: '0.85rem',
+            letterSpacing: '2px',
+            textTransform: 'uppercase',
+            marginBottom: '14px'
+          }}>
+            Learn • Explore • Lead • Thrive
+          </div>
+          <h1 style={{
+            fontSize: 'clamp(1.8rem, 3.2vw, 2.7rem)',
+            color: '#FFFFFF',
+            fontWeight: '800',
+            lineHeight: '1.25',
+            margin: '0 auto 12px auto',
+            maxWidth: '900px'
+          }}>
+            Choosing the Right School is One of the Most Important Decisions
+          </h1>
+          <p style={{
+            color: '#E2E8F0',
+            fontSize: '1.05rem',
+            maxWidth: '720px',
+            margin: '0 auto',
+            lineHeight: '1.6'
+          }}>
+            At Academic Heights World School, we nurture curious, confident, and grounded learners through conceptual, experiential, and competency-based education.
+          </p>
+        </div>
+
         <div className="hero-container">
           <div className="hero-video-wrap">
             <video
