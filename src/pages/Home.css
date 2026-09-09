@@ -363,47 +363,88 @@
 }
 
 .btn-hero-enquiry {
-  background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%);
-  color: #1B2A4A;
-  font-weight: 800;
-  font-size: 1.05rem;
-  padding: 14px 32px;
+  background: linear-gradient(135deg, #FFC700 0%, #FFA800 100%);
+  color: #002147;
+  font-family: var(--font-main);
+  font-weight: 750;
+  font-size: 1rem;
+  padding: 14px 28px;
   border-radius: 50px;
-  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.4);
   cursor: pointer;
-  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.4);
-  transition: all 0.3s ease;
+  box-shadow: 0 8px 24px rgba(255, 199, 0, 0.4), 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
+  letter-spacing: 0.3px;
+  line-height: 1;
+}
+
+.btn-hero-enquiry .btn-icon {
+  flex-shrink: 0;
+  color: #002147;
+}
+
+.btn-hero-enquiry .btn-arrow {
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+  color: #002147;
 }
 
 .btn-hero-enquiry:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 30px rgba(212, 175, 55, 0.6);
-  background: linear-gradient(135deg, #FFD700 0%, #C5A059 100%);
+  background: linear-gradient(135deg, #FFD426 0%, #FFB61A 100%);
+  box-shadow: 0 12px 32px rgba(255, 199, 0, 0.55), 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.btn-hero-enquiry:hover .btn-arrow {
+  transform: translateX(4px);
+}
+
+.btn-hero-enquiry:active {
+  transform: translateY(-1px);
 }
 
 .btn-hero-secondary {
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.10);
   color: #FFFFFF;
-  font-weight: 700;
-  font-size: 1.05rem;
-  padding: 14px 28px;
+  font-family: var(--font-main);
+  font-weight: 650;
+  font-size: 1rem;
+  padding: 13px 26px;
   border-radius: 50px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
+  letter-spacing: 0.2px;
+  line-height: 1;
+}
+
+.btn-hero-secondary .btn-icon {
+  flex-shrink: 0;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .btn-hero-secondary:hover {
-  background: rgba(255, 255, 255, 0.22);
-  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.20);
+  border-color: #FFC700;
   color: #FFFFFF;
-  border-color: #D4AF37;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.btn-hero-secondary:hover .btn-icon {
+  color: #FFC700;
+}
+
+.btn-hero-secondary:active {
+  transform: translateY(-1px);
 }
 
 /* Quick Control Overlay */
