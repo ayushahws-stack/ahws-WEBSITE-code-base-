@@ -71,6 +71,18 @@ const routeMetadata = {
     title: 'We Teach Life | Holistic Development at AHWS',
     description: 'Explore how AHWS imparts life skills, emotional intelligence, and real-world leadership qualities through the We Teach Life initiative.'
   },
+  '/well-being': {
+    title: 'Student Wellbeing & Counselling Support | AHWS Pitampura',
+    description: 'Learn about student mental health, emotional wellness, parent coaching, and guidance under in-house counsellor Dr. Rashmi Bajaj Singh (28+ years experience) at AHWS.'
+  },
+  '/blog': {
+    title: 'School Blog & Educational Insights | Academic Heights World School',
+    description: 'Articles on 21st-century schooling, NEP 2020 pedagogical practices, parenting tips, AI & STEM education from Academic Heights World School, Pitampura.'
+  },
+  '/academics': {
+    title: 'Academics & SPROUT Curriculum | Academic Heights World School',
+    description: 'Comprehensive academic framework from Nursery to Class XII aligned with NEP 2020, experiential learning, and SPROUT 7-layer pedagogy.'
+  },
   '/tc-database': {
     title: 'Transfer Certificate Database | AHWS Pitampura',
     description: 'Search and download student Transfer Certificates (TC) officially issued by Academic Heights World School.'
@@ -119,6 +131,8 @@ export default function SEO() {
       <meta name="description" content={meta.description} />
       <link rel="canonical" href={canonicalUrl} />
       
+      <meta property="og:site_name" content="Academic Heights World School" />
+      <meta property="og:locale" content="en_IN" />
       <meta property="og:title" content={meta.title} />
       <meta property="og:description" content={meta.description} />
       <meta property="og:url" content={canonicalUrl} />
