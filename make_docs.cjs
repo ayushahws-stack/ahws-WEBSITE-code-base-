@@ -371,7 +371,8 @@ async function generateGapAnalysis() {
   // Write to all target locations
   const targetPaths = [
     'D:\\ayush bansal\\WEBSITE\\v3_AHWS_Website_Gap_Analysis.docx',
-    'D:\\ayush bansal\\WEBSITE\\01_WEBSITE_SOURCE\\docs\\v3_AHWS_Website_Gap_Analysis.docx'
+    'D:\\ayush bansal\\WEBSITE\\01_WEBSITE_SOURCE\\docs\\v3_AHWS_Website_Gap_Analysis.docx',
+    'D:\\ayush bansal\\WEBSITE\\02_HANDOVER_DOCS\\01_EXECUTIVE_AND_AUDIT_REPORTS\\v3_AHWS_Website_Gap_Analysis.docx'
   ];
 
   for (const p of targetPaths) {
@@ -574,21 +575,21 @@ async function generateVerificationReport() {
     new TableRow({
       children: [
         new TableCell({ borders: cellBorder, children: [createParagraph("Extracted Page Copy", true)] }),
-        new TableCell({ borders: cellBorder, children: [createParagraph("02_HANDOVER_DOCS/AHWS_Page_Copy.md")] }),
+        new TableCell({ borders: cellBorder, children: [createParagraph("02_HANDOVER_DOCS/02_WORDPRESS_DEVELOPER_PACKAGE/AHWS_Page_Copy.md")] }),
         new TableCell({ borders: cellBorder, children: [createParagraph("Raw text extract of all 20 pages for WordPress copy-paste.")] }),
       ]
     }),
     new TableRow({
       children: [
         new TableCell({ borders: cellBorder, children: [createParagraph("Site Architecture Blueprint", true)] }),
-        new TableCell({ borders: cellBorder, children: [createParagraph("02_HANDOVER_DOCS/AHWS_Site_Architecture_Guide.md")] }),
+        new TableCell({ borders: cellBorder, children: [createParagraph("02_HANDOVER_DOCS/02_WORDPRESS_DEVELOPER_PACKAGE/AHWS_Site_Architecture_Guide.md")] }),
         new TableCell({ borders: cellBorder, children: [createParagraph("Maps SEO permalinks, form field schemas, and menu tree.")] }),
       ]
     }),
     new TableRow({
       children: [
         new TableCell({ borders: cellBorder, children: [createParagraph("Media Assets Archive", true)] }),
-        new TableCell({ borders: cellBorder, children: [createParagraph("02_HANDOVER_DOCS/AHWS_Media_Assets.zip")] }),
+        new TableCell({ borders: cellBorder, children: [createParagraph("02_HANDOVER_DOCS/04_MEDIA_AND_DATA_ASSETS/AHWS_Media_Assets.zip")] }),
         new TableCell({ borders: cellBorder, children: [createParagraph("892 MB compressed zip archive of all images, videos, and PDFs.")] }),
       ]
     }),
@@ -602,7 +603,7 @@ async function generateVerificationReport() {
     new TableRow({
       children: [
         new TableCell({ borders: cellBorder, children: [createParagraph("Documents & PDF Mapping", true)] }),
-        new TableCell({ borders: cellBorder, children: [createParagraph("02_HANDOVER_DOCS/AHWS_Documents_Mapping.md")] }),
+        new TableCell({ borders: cellBorder, children: [createParagraph("02_HANDOVER_DOCS/02_WORDPRESS_DEVELOPER_PACKAGE/AHWS_Documents_Mapping.md")] }),
         new TableCell({ borders: cellBorder, children: [createParagraph("Maps all downloadable school disclosures and planners to buttons.")] }),
       ]
     })
@@ -647,7 +648,7 @@ async function generateVerificationReport() {
   const targetPaths = [
     'D:\\ayush bansal\\WEBSITE\\AHWS_Codebase_Verification_Report.docx',
     'D:\\ayush bansal\\WEBSITE\\01_WEBSITE_SOURCE\\docs\\AHWS_Codebase_Verification_Report.docx',
-    'D:\\ayush bansal\\WEBSITE\\02_HANDOVER_DOCS\\AHWS_Codebase_Verification_Report.docx'
+    'D:\\ayush bansal\\WEBSITE\\02_HANDOVER_DOCS\\01_EXECUTIVE_AND_AUDIT_REPORTS\\AHWS_Codebase_Verification_Report.docx'
   ];
 
   for (const p of targetPaths) {
