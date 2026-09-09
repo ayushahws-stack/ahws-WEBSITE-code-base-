@@ -13,6 +13,17 @@ export default function MandatoryDisclosure() {
           <p className="disclosure-intro">
             As per the guidelines set by the Central Board of Secondary Education (CBSE), Academic Heights World School provides the following information and documents for public transparency.
           </p>
+
+          <div style={{
+            background: '#FFF8E1', 
+            border: '1px solid #FFE082', 
+            padding: '15px 20px', 
+            borderRadius: '8px', 
+            margin: '20px 0 30px 0',
+            color: '#5D4037'
+          }}>
+            <strong>📌 CBSE SARAS Administrative Notice:</strong> Official CBSE Affiliation No: <strong>2730105</strong>. School administration is currently coordinating with the CBSE SARAS portal team to update the registered domain listing directly to <code>ahws.edu.in</code>.
+          </div>
           
           <div className="md-container">
             <h3 className="md-heading">A. GENERAL INFORMATION</h3>
