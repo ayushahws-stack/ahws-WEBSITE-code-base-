@@ -234,6 +234,7 @@ const dayTimeline = [
 
 export default function Home() {
   const [showPopup, setShowPopup] = useState(false)
+  const [showEnquiryModal, setShowEnquiryModal] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isMuted, setIsMuted] = useState(true)
   const [isPlaying, setIsPlaying] = useState(true)
@@ -474,6 +475,22 @@ export default function Home() {
           }}>
             At Academic Heights World School, we nurture curious, confident, and grounded learners through conceptual, experiential, and competency-based education.
           </p>
+          <div className="hero-cta-group">
+            <button 
+              type="button" 
+              className="btn-hero-enquiry" 
+              onClick={() => setShowEnquiryModal(true)}
+              aria-label="Open Quick Enquiry Form"
+            >
+              📋 Quick Enquiry
+            </button>
+            <a 
+              href="#facilities" 
+              className="btn-hero-secondary"
+            >
+              🏫 Explore Facilities
+            </a>
+          </div>
         </div>
 
         <div className="hero-container">
@@ -513,56 +530,8 @@ export default function Home() {
               </button>
             </div>
           </div>
-
-          <div className="hero-form-container">
-          <div className="hero-form-card">
-            <h3>Quick Enquiry</h3>
-            <p>Connect with our admissions team instantly. (Parent/Guardian details)</p>
-            <form onSubmit={(e) => { 
-              e.preventDefault(); 
-              const form = e.target;
-              setIsSubmitting(true);
-              setTimeout(() => {
-                setShowPopup(true); 
-                form.reset();
-                setIsSubmitting(false);
-              }, 1000);
-            }}>
-                <label htmlFor="hf-parentname" className="sr-only">Parent's Name</label>
-                <input id="hf-parentname" type="text" placeholder="Parent's Name" className="hf-input" required />
-                
-                <div className="phone-input-group">
-                  <label htmlFor="hf-phone" className="sr-only">Phone Number</label>
-                  <span className="phone-prefix">+91</span>
-                  <input id="hf-phone" type="tel" placeholder="Phone Number" className="hf-input phone-input" pattern="[0-9]{10}" maxLength={10} required />
-                </div>
-                
-                <label htmlFor="hf-class" className="sr-only">Select Class</label>
-                <select id="hf-class" className="hf-input" required defaultValue="">
-                <option value="">Select Class</option>
-                <option value="Nursery">Nursery</option>
-                <option value="KG">Kindergarten</option>
-                <option value="1">Class 1</option>
-                <option value="2">Class 2</option>
-                <option value="3">Class 3</option>
-                <option value="4">Class 4</option>
-                <option value="5">Class 5</option>
-                <option value="6">Class 6</option>
-                <option value="7">Class 7</option>
-                <option value="8">Class 8</option>
-                <option value="9">Class 9</option>
-                <option value="10">Class 10</option>
-                <option value="11">Class 11</option>
-                <option value="12">Class 12</option>
-              </select>
-              <button type="submit" className="btn-primary-ahws hf-submit" disabled={isSubmitting}>
-                {isSubmitting ? '⏳ Sending...' : 'Get a Call Back'}
-              </button>
-            </form>
-          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
       {/* ── Infrastructure / World-Class Facilities ── */}
       <section className="infra-section" id="facilities">
@@ -697,6 +666,82 @@ export default function Home() {
         message="Your enquiry has been successfully submitted. Our admissions counselors will be in touch with you very soon to answer all your questions."
         buttonText="Done"
       />
+
+      {/* ── Quick Enquiry Modal ── */}
+      {showEnquiryModal && (
+        <div className="enquiry-modal-backdrop" onClick={() => setShowEnquiryModal(false)}>
+          <div 
+            className="enquiry-modal-content" 
+            onClick={(e) => e.stopPropagation()}
+            role="dialog" 
+            aria-modal="true" 
+            aria-labelledby="enquiry-modal-title"
+          >
+            <button 
+              type="button" 
+              className="enquiry-modal-close" 
+              onClick={() => setShowEnquiryModal(false)}
+              aria-label="Close enquiry form"
+            >
+              ✕
+            </button>
+            <div className="enquiry-modal-header">
+              <span className="enquiry-modal-badge">ADMISSION ENQUIRY 2026-27</span>
+              <h3 id="enquiry-modal-title">Quick Enquiry</h3>
+              <p>Connect with our admissions team instantly. Fill in your details below.</p>
+            </div>
+            <form onSubmit={(e) => { 
+              e.preventDefault(); 
+              const form = e.target;
+              setIsSubmitting(true);
+              setTimeout(() => {
+                setShowEnquiryModal(false);
+                setShowPopup(true); 
+                form.reset();
+                setIsSubmitting(false);
+              }, 800);
+            }}>
+              <div className="enquiry-form-field">
+                <label htmlFor="modal-parentname">Parent's Name <span style={{ color: '#e53e3e' }}>*</span></label>
+                <input id="modal-parentname" type="text" placeholder="Enter parent / guardian name" className="hf-input" required />
+              </div>
+              
+              <div className="enquiry-form-field">
+                <label htmlFor="modal-phone">Phone Number <span style={{ color: '#e53e3e' }}>*</span></label>
+                <div className="phone-input-group">
+                  <span className="phone-prefix">+91</span>
+                  <input id="modal-phone" type="tel" placeholder="10-digit mobile number" className="hf-input phone-input" pattern="[0-9]{10}" maxLength={10} required />
+                </div>
+              </div>
+              
+              <div className="enquiry-form-field">
+                <label htmlFor="modal-class">Select Grade / Class <span style={{ color: '#e53e3e' }}>*</span></label>
+                <select id="modal-class" className="hf-input" required defaultValue="">
+                  <option value="">Select Class</option>
+                  <option value="Nursery">Nursery</option>
+                  <option value="KG">Kindergarten</option>
+                  <option value="1">Class 1</option>
+                  <option value="2">Class 2</option>
+                  <option value="3">Class 3</option>
+                  <option value="4">Class 4</option>
+                  <option value="5">Class 5</option>
+                  <option value="6">Class 6</option>
+                  <option value="7">Class 7</option>
+                  <option value="8">Class 8</option>
+                  <option value="9">Class 9</option>
+                  <option value="10">Class 10</option>
+                  <option value="11">Class 11</option>
+                  <option value="12">Class 12</option>
+                </select>
+              </div>
+
+              <button type="submit" className="btn-primary-ahws hf-submit" disabled={isSubmitting} style={{ width: '100%', marginTop: '10px' }}>
+                {isSubmitting ? '⏳ Sending...' : 'Get a Call Back'}
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
     </main>
   )
 }
