@@ -414,3 +414,143 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* ─── 360° Virtual Tour Showcase (Coming Soon) ─── */
+.virtual-tour-section {
+  padding: 50px 0 20px;
+  background: linear-gradient(180deg, rgba(0, 33, 71, 0.03) 0%, rgba(255, 255, 255, 1) 100%);
+}
+
+.virtual-tour-card {
+  background: linear-gradient(135deg, #002147 0%, #001530 100%);
+  color: #ffffff;
+  border-radius: 20px;
+  padding: 50px 40px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 16px 45px rgba(0, 33, 71, 0.18);
+  border: 1.5px solid rgba(255, 199, 0, 0.35);
+}
+
+.virtual-tour-card::before {
+  content: '';
+  position: absolute;
+  top: -40%;
+  right: -15%;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(255, 199, 0, 0.18) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.virtual-tour-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 199, 0, 0.15);
+  border: 1px solid #FFC700;
+  color: #FFC700;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 8px 20px;
+  border-radius: 9999px;
+  margin-bottom: 20px;
+}
+
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  background: #FFC700;
+  border-radius: 50%;
+  display: inline-block;
+  animation: vtPulse 1.8s infinite;
+}
+
+@keyframes vtPulse {
+  0% { transform: scale(0.9); opacity: 0.7; box-shadow: 0 0 0 0 rgba(255, 199, 0, 0.7); }
+  70% { transform: scale(1.3); opacity: 1; box-shadow: 0 0 0 8px rgba(255, 199, 0, 0); }
+  100% { transform: scale(0.9); opacity: 0.7; box-shadow: 0 0 0 0 rgba(255, 199, 0, 0); }
+}
+
+.virtual-tour-title {
+  font-size: 2.3rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 16px;
+  letter-spacing: -0.5px;
+}
+
+.virtual-tour-desc {
+  max-width: 820px;
+  margin: 0 auto 30px;
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.virtual-tour-highlights {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 30px;
+}
+
+.vt-highlight-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #ffffff;
+  backdrop-filter: blur(4px);
+}
+
+.vt-highlight-item .vt-icon {
+  font-size: 1.2rem;
+}
+
+.virtual-tour-status {
+  display: flex;
+  justify-content: center;
+}
+
+.vt-status-pill {
+  display: inline-block;
+  background: #FFC700;
+  color: #002147;
+  font-weight: 800;
+  font-size: 0.95rem;
+  padding: 12px 28px;
+  border-radius: 9999px;
+  box-shadow: 0 4px 16px rgba(255, 199, 0, 0.4);
+  letter-spacing: 0.3px;
+}
+
+@media (max-width: 768px) {
+  .virtual-tour-card {
+    padding: 34px 20px;
+  }
+  .virtual-tour-title {
+    font-size: 1.65rem;
+  }
+  .virtual-tour-desc {
+    font-size: 0.95rem;
+  }
+  .virtual-tour-highlights {
+    flex-direction: column;
+    align-items: center;
+  }
+  .vt-highlight-item {
+    width: 100%;
+    justify-content: center;
+  }
+}

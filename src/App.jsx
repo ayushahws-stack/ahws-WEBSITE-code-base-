@@ -79,6 +79,8 @@ function App() {
         <Route path="/careers" element={<Careers />} />
         <Route path="/committees" element={<Committees />} />
         <Route path="/infrastructure" element={<Infrastructure />} />
+        <Route path="/facilities" element={<Infrastructure />} />
+        <Route path="facilities" element={<Infrastructure />} />
         <Route path="/campus" element={<Navigate to="/gallery" replace />} />
         <Route path="/well-being" element={<Wellbeing />} />
         <Route path="*" element={<NotFound />} />
