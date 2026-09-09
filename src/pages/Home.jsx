@@ -440,94 +440,73 @@ export default function Home() {
       <h1 className="sr-only">Academic Heights World School (AHWS) | CBSE School in Pitampura, Delhi</h1>
       {/* ── Hero Section ── */}
       <section className="hero-section">
-        <div className="container" style={{ textAlign: 'center', marginBottom: '32px' }}>
-          <div style={{
-            display: 'inline-block',
-            background: 'rgba(212, 175, 55, 0.15)',
-            color: '#D4AF37',
-            border: '1px solid rgba(212, 175, 55, 0.4)',
-            padding: '6px 20px',
-            borderRadius: '30px',
-            fontWeight: '700',
-            fontSize: '0.85rem',
-            letterSpacing: '2px',
-            textTransform: 'uppercase',
-            marginBottom: '14px'
-          }}>
-            Learn • Explore • Lead • Thrive
+        <div className="hero-split-container">
+          {/* Left Column: Video (~40-45% width) */}
+          <div className="hero-video-col">
+            <div className="hero-video-wrap">
+              <video
+                ref={heroVideoRef}
+                className="hero-video"
+                title="Academic Heights World School Campus Life"
+                aria-label="Montage video showing students and campus facilities at Academic Heights World School"
+                autoPlay
+                muted={isMuted}
+                loop
+                playsInline
+                poster="./WEBSITE GALLERY/other images/AHWS.png"
+                onPlay={() => setIsPlaying(true)}
+                onPause={() => setIsPlaying(false)}
+              >
+                <source src="https://ahws.edu.in/images/world-school.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+              <div className="hero-video-controls-overlay">
+                <button 
+                  type="button" 
+                  className="video-control-btn" 
+                  onClick={togglePlay}
+                  title={isPlaying ? "Pause Video" : "Play Video"}
+                >
+                  {isPlaying ? '⏸️ Pause' : '▶️ Play'}
+                </button>
+                <button 
+                  type="button" 
+                  className="video-control-btn" 
+                  onClick={toggleMute}
+                  title={isMuted ? "Unmute Audio" : "Mute Audio"}
+                >
+                  {isMuted ? '🔇 Unmute Sound' : '🔊 Sound On'}
+                </button>
+              </div>
+            </div>
           </div>
-          <h1 style={{
-            fontSize: 'clamp(1.8rem, 3.2vw, 2.7rem)',
-            color: '#FFFFFF',
-            fontWeight: '800',
-            lineHeight: '1.25',
-            margin: '0 auto 12px auto',
-            maxWidth: '900px'
-          }}>
-            Choosing the Right School is One of the Most Important Decisions
-          </h1>
-          <p style={{
-            color: '#E2E8F0',
-            fontSize: '1.05rem',
-            maxWidth: '720px',
-            margin: '0 auto',
-            lineHeight: '1.6'
-          }}>
-            At Academic Heights World School, we nurture curious, confident, and grounded learners through conceptual, experiential, and competency-based education.
-          </p>
-          <div className="hero-cta-group">
-            <button 
-              type="button" 
-              className="btn-hero-enquiry" 
-              onClick={() => setShowEnquiryModal(true)}
-              aria-label="Open Quick Enquiry Form"
-            >
-              📋 Quick Enquiry
-            </button>
-            <a 
-              href="#facilities" 
-              className="btn-hero-secondary"
-            >
-              🏫 Explore Facilities
-            </a>
-          </div>
-        </div>
 
-        <div className="hero-container">
-          <div className="hero-video-wrap">
-            <video
-              ref={heroVideoRef}
-              className="hero-video"
-              title="Academic Heights World School Campus Life"
-              aria-label="Montage video showing students and campus facilities at Academic Heights World School"
-              autoPlay
-              muted={isMuted}
-              loop
-              playsInline
-              poster="./WEBSITE GALLERY/other images/AHWS.png"
-              onPlay={() => setIsPlaying(true)}
-              onPause={() => setIsPlaying(false)}
-            >
-              <source src="https://ahws.edu.in/images/world-school.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-            <div className="hero-video-controls-overlay">
+          {/* Right Column: Text & CTA (~40-50% width) */}
+          <div className="hero-content-col">
+            <div className="hero-badge">
+              Learn • Explore • Lead • Thrive
+            </div>
+            <h1 className="hero-main-title">
+              Choosing the Right School is One of the Most Important Decisions
+            </h1>
+            <p className="hero-description">
+              At Academic Heights World School, we nurture curious, confident, and grounded learners through conceptual, experiential, and competency-based education.
+            </p>
+            <div className="hero-cta-group">
               <button 
                 type="button" 
-                className="video-control-btn" 
-                onClick={togglePlay}
-                title={isPlaying ? "Pause Video" : "Play Video"}
+                className="btn-hero-enquiry" 
+                onClick={() => setShowEnquiryModal(true)}
+                aria-label="Open Quick Enquiry Form"
               >
-                {isPlaying ? '⏸️ Pause' : '▶️ Play'}
+                📋 Quick Enquiry
               </button>
-              <button 
-                type="button" 
-                className="video-control-btn" 
-                onClick={toggleMute}
-                title={isMuted ? "Unmute Audio" : "Mute Audio"}
+              <a 
+                href="#facilities" 
+                className="btn-hero-secondary"
               >
-                {isMuted ? '🔇 Unmute Sound' : '🔊 Sound On'}
-              </button>
+                🏫 Explore Facilities
+              </a>
             </div>
           </div>
         </div>
