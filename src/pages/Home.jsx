@@ -89,7 +89,18 @@ function FlippableInfraCard({ item }) {
 
         {/* Back: Photo */}
         <div className="infra-flip-back">
-          <img src={item.image} alt={item.title} className="infra-back-img" loading="lazy" />
+          <img 
+            src={item.image} 
+            alt={item.title} 
+            className="infra-back-img" 
+            loading="lazy" 
+            onError={(e) => {
+              if (item.fallback && e.currentTarget.src !== item.fallback) {
+                e.currentTarget.onerror = null;
+                e.currentTarget.src = item.fallback;
+              }
+            }}
+          />
           <div className="infra-back-overlay">
             <h4>{item.title}</h4>
             <button
@@ -158,12 +169,34 @@ function FlippableBentoCard({ item }) {
             >
               {images.map((src, idx) => (
                 <SwiperSlide key={idx}>
-                  <img src={src} alt={`${item.title} ${idx + 1}`} className="bento-back-img" loading="lazy" />
+                  <img 
+                    src={src} 
+                    alt={`${item.title} ${idx + 1}`} 
+                    className="bento-back-img" 
+                    loading="lazy" 
+                    onError={(e) => {
+                      if (item.fallback && e.currentTarget.src !== item.fallback) {
+                        e.currentTarget.onerror = null;
+                        e.currentTarget.src = item.fallback;
+                      }
+                    }}
+                  />
                 </SwiperSlide>
               ))}
             </Swiper>
           ) : images.length === 1 ? (
-            <img src={images[0]} alt={item.title} className="bento-back-img" loading="lazy" />
+            <img 
+              src={images[0]} 
+              alt={item.title} 
+              className="bento-back-img" 
+              loading="lazy" 
+              onError={(e) => {
+                if (item.fallback && e.currentTarget.src !== item.fallback) {
+                  e.currentTarget.onerror = null;
+                  e.currentTarget.src = item.fallback;
+                }
+              }}
+            />
           ) : null}
           <div className="bento-back-overlay">
             <h4>{item.title}</h4>
@@ -345,24 +378,28 @@ export default function Home() {
     },
     {
       image: './images/new%20AHWS%20Website%20Photos/Home/Students%20using%20Smart%20Classrooms/IMG_8540.jpg',
+      fallback: './WEBSITE GALLERY/other images/smart class room with 3D modes in the smart screen .jpeg',
       icon: './WEBSITE GALLERY/other images/AHWS logo.png',
       title: 'X-Wall & Speak-O-Pen',
       tagline: 'Immersive learning wall + smart pronunciation tools for language mastery.',
     },
     {
       image: './images/new%20AHWS%20Website%20Photos/Home/Students%20using%20Smart%20Classrooms/IMG_8541.jpg',
+      fallback: './WEBSITE GALLERY/other images/smart class room with 3D modes in the smart screen .jpeg',
       icon: './WEBSITE GALLERY/other images/AHWS logo.png',
       title: 'AI-Powered Smart Classrooms',
       tagline: 'Interactive classrooms with immersive 3D learning experiences.',
     },
     {
       image: './images/new%20AHWS%20Website%20Photos/Home/Students%20working%20in%20Robotics%20&%20AI%20Lab/AI.jpeg',
+      fallback: './WEBSITE GALLERY/other images/robotics lab.jpeg',
       icon: './WEBSITE GALLERY/other images/AHWS logo.png',
       title: 'AI and Robotics Lab',
       tagline: 'Hands-on STEM learning with real robotic kits and programming.',
     },
     {
       image: './images/new%20AHWS%20Website%20Photos/About/360%20Degree/Home.jpeg',
+      fallback: './WEBSITE GALLERY/other images/Technology_and_App_010.jpg',
       icon: './WEBSITE GALLERY/other images/360 app logo .png',
       title: '360° Mobile App',
       tagline: 'Complete Parent & School Automation',
@@ -371,6 +408,7 @@ export default function Home() {
     },
     {
       image: './images/new%20AHWS%20Website%20Photos/Home/Students%20in%20Art%20&%20Music%20Studios/CAM%20%201%201935T01.JPG',
+      fallback: './WEBSITE GALLERY/other images/kids Dance .jpg',
       icon: './WEBSITE GALLERY/other images/AHWS logo.png',
       title: 'Performing Arts',
       tagline: 'Creative & Artistic Excellence',
@@ -378,6 +416,7 @@ export default function Home() {
     },
     {
       image: './images/new%20AHWS%20Website%20Photos/Home/Sports/CAM%20%201%201696T01.JPG',
+      fallback: './images/Basketball 1.jpeg',
       icon: './WEBSITE GALLERY/other images/AHWS logo.png',
       title: '9-Sport Portfolio',
       tagline: 'Comprehensive Athletics Infrastructure',
@@ -392,47 +431,53 @@ export default function Home() {
       title: 'Smart Classrooms', 
       icon: '💻', 
       desc: 'Interactive digital boards, ergonomic seating, and 3D digital learning tools.',
-      image: './images/new%20AHWS%20Website%20Photos/Home/Students%20using%20Smart%20Classrooms/IMG_8540.jpg'
+      image: './images/new%20AHWS%20Website%20Photos/Home/Students%20using%20Smart%20Classrooms/IMG_8540.jpg',
+      fallback: './WEBSITE GALLERY/other images/smart class room with 3D modes in the smart screen .jpeg'
     },
     { 
       title: 'Science Laboratories', 
       icon: '🔬', 
       desc: 'Fully equipped Physics, Chemistry, Composite, and Biology labs with advanced safety features.',
-      image: './images/new%20AHWS%20Website%20Photos/Home/Science%20Experiment/20251030_104810.jpg.jpeg'
+      image: './images/new%20AHWS%20Website%20Photos/Home/Science%20Experiment/20251030_104810.jpg.jpeg',
+      fallback: './WEBSITE GALLERY/other images/science lab.jpeg'
     },
     { 
       title: 'Robotics Lab', 
       icon: '🤖', 
       desc: 'An immersive setting equipped with distinct types of robotic kits, empowering students to harness the power of programming to design and build practical robots.',
-      image: './images/new%20AHWS%20Website%20Photos/Home/Students%20working%20in%20Robotics%20&%20AI%20Lab/AI.jpeg'
+      image: './images/new%20AHWS%20Website%20Photos/Home/Students%20working%20in%20Robotics%20&%20AI%20Lab/AI.jpeg',
+      fallback: './WEBSITE GALLERY/other images/robotics lab.jpeg'
     },
     { 
       title: 'Library', 
       icon: '📚', 
       desc: 'A vast collection of academic books, journals, fiction, and digital resources.',
-      image: './images/new%20AHWS%20Website%20Photos/Home/Students%20reading%20in%20the%20Library/IMG-20260712-WA0217.jpg'
+      image: './images/new%20AHWS%20Website%20Photos/Home/Students%20reading%20in%20the%20Library/IMG-20260712-WA0217.jpg',
+      fallback: './images/library 1.jpeg'
     },
     { 
       title: 'Sports', 
       icon: '🏅', 
       desc: 'Pickleball court, outdoor basketball court, outdoor football field, and cricket nets.',
-      image: './images/new%20AHWS%20Website%20Photos/Home/Sports/CAM%20%201%201696T01.JPG'
+      image: './images/new%20AHWS%20Website%20Photos/Home/Sports/CAM%20%201%201696T01.JPG',
+      fallback: './images/Basketball 1.jpeg'
     },
     { 
       title: 'Art & Music Studios', 
       icon: '🎨', 
       desc: 'Dedicated spaces for painting, sculpture, classical music, and dance.',
-      image: './images/new%20AHWS%20Website%20Photos/Home/Students%20in%20Art%20&%20Music%20Studios/CAM%20%201%201935T01.JPG'
+      image: './images/new%20AHWS%20Website%20Photos/Home/Students%20in%20Art%20&%20Music%20Studios/CAM%20%201%201935T01.JPG',
+      fallback: './WEBSITE GALLERY/other images/kid making art.jpeg'
     },
   ]
 
   const galleryImages = [
-    { src: './images/new%20AHWS%20Website%20Photos/Home/Science%20Experiment/20251030_105844.jpg.jpeg', alt: 'Science Lab', title: 'Science Laboratory' },
-    { src: './images/new%20AHWS%20Website%20Photos/Beyond%20Curriculum/Robotics/IMG_8552.jpg', alt: 'Robotics Lab', title: 'Robotics & AI Innovation Lab' },
-    { src: './images/new%20AHWS%20Website%20Photos/We%20Teach%20Life/Students%20planting%20trees%20or%20in%20the%20green%20campus/20250724_085455.jpg', alt: 'Green Campus', title: 'Lush Green Eco-Campus' },
-    { src: './images/new%20AHWS%20Website%20Photos/Home/Students%20reading%20in%20the%20Library/IMG-20260712-WA0218.jpg', alt: 'Library', title: 'Library & Resource Centre' },
-    { src: './images/new%20AHWS%20Website%20Photos/Home/Students%20using%20Smart%20Classrooms/IMG_8541.jpg', alt: 'Classroom', title: 'Smart Classrooms' },
-    { src: './images/new%20AHWS%20Website%20Photos/Home/Sports/CAM%20%201%201700T01.JPG', alt: 'Sports Ground', title: 'Sports & Athletics Facilities' },
+    { src: './images/new%20AHWS%20Website%20Photos/Home/Science%20Experiment/20251030_105844.jpg.jpeg', fallback: './WEBSITE GALLERY/other images/science lab.jpeg', alt: 'Science Lab', title: 'Science Laboratory' },
+    { src: './images/new%20AHWS%20Website%20Photos/Beyond%20Curriculum/Robotics/IMG_8552.jpg', fallback: './images/Robotics 1.jpeg', alt: 'Robotics Lab', title: 'Robotics & AI Innovation Lab' },
+    { src: './images/new%20AHWS%20Website%20Photos/We%20Teach%20Life/Students%20planting%20trees%20or%20in%20the%20green%20campus/20250724_085455.jpg', fallback: './images/Green campus.png', alt: 'Green Campus', title: 'Lush Green Eco-Campus' },
+    { src: './images/new%20AHWS%20Website%20Photos/Home/Students%20reading%20in%20the%20Library/IMG-20260712-WA0218.jpg', fallback: './images/library 1.jpeg', alt: 'Library', title: 'Library & Resource Centre' },
+    { src: './images/new%20AHWS%20Website%20Photos/Home/Students%20using%20Smart%20Classrooms/IMG_8541.jpg', fallback: './WEBSITE GALLERY/other images/smart class room with 3D modes in the smart screen .jpeg', alt: 'Classroom', title: 'Smart Classrooms' },
+    { src: './images/new%20AHWS%20Website%20Photos/Home/Sports/CAM%20%201%201700T01.JPG', fallback: './images/Basketball 1.jpeg', alt: 'Sports Ground', title: 'Sports & Athletics Facilities' },
   ]
 
   return (
@@ -638,7 +683,17 @@ export default function Home() {
             {galleryImages.map((item, i) => (
               <SwiperSlide key={i}>
                 <div className="gallery-item">
-                  <img src={item.src} alt={item.alt} loading="lazy" />
+                  <img 
+                    src={item.src} 
+                    alt={item.alt} 
+                    loading="lazy" 
+                    onError={(e) => {
+                      if (item.fallback && e.currentTarget.src !== item.fallback) {
+                        e.currentTarget.onerror = null;
+                        e.currentTarget.src = item.fallback;
+                      }
+                    }}
+                  />
                   <div className="gallery-overlay">
                     <h4>{item.title}</h4>
                   </div>

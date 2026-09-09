@@ -85,6 +85,7 @@ export default function Wellbeing() {
                     alt="Dr. Rashmi Bajaj Singh" 
                     className="counsellor-avatar"
                     style={{ objectFit: 'cover' }}
+                    onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = "./WEBSITE GALLERY/other images/AHWS.png"; }}
                   />
                 </div>
                 <h4>Dr. Rashmi Bajaj Singh</h4>

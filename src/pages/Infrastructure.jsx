@@ -28,11 +28,21 @@ export default function Infrastructure() {
             </div>
             <div className="library-gallery">
               <div className="library-img-wrap">
-                <img src="./images/new%20AHWS%20Website%20Photos/Home/Students%20reading%20in%20the%20Library/IMG-20260712-WA0217.jpg" alt="AHWS Library Reading Hall" className="library-img" />
+                <img 
+                  src="./images/new%20AHWS%20Website%20Photos/Home/Students%20reading%20in%20the%20Library/IMG-20260712-WA0217.jpg" 
+                  alt="AHWS Library Reading Hall" 
+                  className="library-img" 
+                  onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = "./images/library 1.jpeg"; }}
+                />
                 <span className="library-tag">Main Reading Hall</span>
               </div>
               <div className="library-img-wrap">
-                <img src="./images/new%20AHWS%20Website%20Photos/Home/Students%20reading%20in%20the%20Library/IMG-20260712-WA0218.jpg" alt="AHWS Quiet Study Nook" className="library-img" />
+                <img 
+                  src="./images/new%20AHWS%20Website%20Photos/Home/Students%20reading%20in%20the%20Library/IMG-20260712-WA0218.jpg" 
+                  alt="AHWS Quiet Study Nook" 
+                  className="library-img" 
+                  onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = "./images/library 3.jpeg"; }}
+                />
                 <span className="library-tag">Quiet Study Zone</span>
               </div>
             </div>
@@ -50,7 +60,12 @@ export default function Infrastructure() {
           </div>
           <div className="labs-grid">
             <div className="lab-card fadeInUp">
-              <img src="./images/new%20AHWS%20Website%20Photos/Home/Science%20Experiment/20251030_104810.jpg.jpeg" alt="Science Lab" className="lab-card-img" />
+              <img 
+                src="./images/new%20AHWS%20Website%20Photos/Home/Science%20Experiment/20251030_104810.jpg.jpeg" 
+                alt="Science Lab" 
+                className="lab-card-img" 
+                onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = "./WEBSITE GALLERY/other images/science lab.jpeg"; }}
+              />
               <div className="lab-card-content">
                 <div className="lab-icon">🔬</div>
                 <h3>Science Lab</h3>
@@ -66,7 +81,12 @@ export default function Infrastructure() {
               </div>
             </div>
             <div className="lab-card fadeInUp delay-2">
-              <img src="./images/new%20AHWS%20Website%20Photos/Home/Students%20working%20in%20Robotics%20&%20AI%20Lab/AI.jpeg" alt="Robotics Lab" className="lab-card-img" />
+              <img 
+                src="./images/new%20AHWS%20Website%20Photos/Home/Students%20working%20in%20Robotics%20&%20AI%20Lab/AI.jpeg" 
+                alt="Robotics Lab" 
+                className="lab-card-img" 
+                onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = "./images/Robotics 1.jpeg"; }}
+              />
               <div className="lab-card-content">
                 <div className="lab-icon">🤖</div>
                 <h3>Robotics &amp; AI Innovation Lab</h3>
@@ -88,11 +108,21 @@ export default function Infrastructure() {
           <p className="sports-text">Our campus boasts world-class outdoor and indoor sports facilities, including basketball courts, cricket nets, track &amp; field, and indoor sports arenas.</p>
           <div className="sports-masonry">
             <div className="sports-img-wrap img-1">
-              <img src="./images/new%20AHWS%20Website%20Photos/Home/Sports/CAM%20%201%201696T01.JPG" alt="AHWS Basketball Arena" className="sports-img" />
+              <img 
+                src="./images/new%20AHWS%20Website%20Photos/Home/Sports/CAM%20%201%201696T01.JPG" 
+                alt="AHWS Basketball Arena" 
+                className="sports-img" 
+                onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = "./images/Basketball 1.jpeg"; }}
+              />
               <span className="sports-caption">Basketball Court &amp; Training</span>
             </div>
             <div className="sports-img-wrap img-2">
-              <img src="./images/new%20AHWS%20Website%20Photos/Home/Sports/CAM%20%201%201700T01.JPG" alt="AHWS Sports Action" className="sports-img" />
+              <img 
+                src="./images/new%20AHWS%20Website%20Photos/Home/Sports/CAM%20%201%201700T01.JPG" 
+                alt="AHWS Sports Action" 
+                className="sports-img" 
+                onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = "./images/Basketball 2.jpeg"; }}
+              />
               <span className="sports-caption">Outdoor Sports Arena</span>
             </div>
             <div className="sports-img-wrap img-3">
@@ -116,14 +146,24 @@ export default function Infrastructure() {
           </div>
           <div className="amenities-grid">
             <div className="amenity-card fadeInUp">
-              <img src="./images/new%20AHWS%20Website%20Photos/We%20Teach%20Life/Students%20planting%20trees%20or%20in%20the%20green%20campus/20250724_085455.jpg" alt="Lush Green Campus" className="amenity-card-img" />
+              <img 
+                src="./images/new%20AHWS%20Website%20Photos/We%20Teach%20Life/Students%20planting%20trees%20or%20in%20the%20green%20campus/20250724_085455.jpg" 
+                alt="Lush Green Campus" 
+                className="amenity-card-img" 
+                onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = "./images/Green campus.png"; }}
+              />
               <div className="amenity-content">
                 <h3>🌳 Lush Green Eco-Campus</h3>
                 <p>Spacious, eco-friendly green grounds providing a clean, inspiring environment for play, learning, and outdoor activities.</p>
               </div>
             </div>
             <div className="amenity-card fadeInUp delay-1">
-              <img src="./images/new%20AHWS%20Website%20Photos/Home/Students%20using%20Smart%20Classrooms/IMG_8540.jpg" alt="Smart Classrooms" className="amenity-card-img" />
+              <img 
+                src="./images/new%20AHWS%20Website%20Photos/Home/Students%20using%20Smart%20Classrooms/IMG_8540.jpg" 
+                alt="Smart Classrooms" 
+                className="amenity-card-img" 
+                onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = "./WEBSITE GALLERY/other images/smart class room with 3D modes in the smart screen .jpeg"; }}
+              />
               <div className="amenity-content">
                 <h3>💡 Smart Classrooms</h3>
                 <p>Every classroom is fully air-conditioned and equipped with interactive smart boards and 3D learning models.</p>
