@@ -1568,7 +1568,7 @@ select.hf-input {
   .bento-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  .bento-hero {
+  .bento-flip-card.bento-hero {
     grid-column: span 2;
   }
 }
@@ -1577,14 +1577,24 @@ select.hf-input {
   .bento-grid {
     grid-template-columns: 1fr;
   }
-  .bento-hero {
+  .bento-flip-card {
+    height: 400px;
+  }
+  .bento-flip-card.bento-hero {
     grid-column: span 1;
+    height: 480px;
+  }
+  .bento-flip-card.bento-hero .bento-flip-front {
     flex-direction: column;
     text-align: center;
+    padding: 28px 22px 96px 22px;
   }
-  .bento-hero .bento-icon-wrap {
+  .bento-flip-card.bento-hero .bento-icon-wrap {
     margin-right: 0;
     margin-bottom: 18px;
+    width: 96px;
+    min-width: 96px;
+    height: 96px;
   }
 }
 
