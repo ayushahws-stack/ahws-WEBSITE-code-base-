@@ -1,4 +1,5 @@
 import { useState, useRef } from 'react'
+import { Link } from 'react-router-dom'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination, Autoplay } from 'swiper/modules'
 import 'swiper/css'
@@ -554,15 +555,15 @@ export default function Home() {
                   <polyline points="12 5 19 12 12 19"></polyline>
                 </svg>
               </button>
-              <a 
-                href="#facilities" 
+              <Link 
+                to="/facilities" 
                 className="btn-hero-secondary"
               >
                 <svg className="btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   <path d="M3 21h18M3 7v14M21 7v14M6 7V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v3M9 10h.01M15 10h.01M9 14h.01M15 14h.01M9 18h.01M15 18h.01"/>
                 </svg>
                 <span>Explore Facilities</span>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -573,6 +574,16 @@ export default function Home() {
         <div className="container">
           <h2 className="section-title">World-Class Facilities</h2>
           <div className="divider-line" />
+          <div className="infra-vt-banner">
+            <div className="infra-vt-inner">
+              <div className="infra-vt-tag">
+                <span className="pulse-dot" />
+                <strong>360° Virtual Tour</strong> — Coming Soon!
+              </div>
+              <p>Experience an immersive digital walkthrough of our campus, smart classrooms, robotics labs, and athletic arena from home.</p>
+              <Link to="/facilities" className="infra-vt-link">Explore Facilities &amp; Virtual Tour →</Link>
+            </div>
+          </div>
           <p className="infra-intro">
             At Academic Heights World School, we believe that the right environment is crucial for effective learning.
             Our campus is thoughtfully designed to provide students with state-of-the-art facilities that cater to

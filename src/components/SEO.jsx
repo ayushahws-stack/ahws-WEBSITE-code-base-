@@ -31,6 +31,10 @@ const routeMetadata = {
     title: 'World-Class Infrastructure & Facilities | AHWS',
     description: 'Explore AHWS campus facilities: 150 CCTV cameras, 6,000+ book library, Science & AI Robotics labs, Basketball courts, and air-conditioned smart classrooms.'
   },
+  '/facilities': {
+    title: 'Explore Facilities & 360° Virtual Tour | AHWS Pitampura',
+    description: 'Explore AHWS campus facilities and upcoming 360° virtual reality campus tour. Library, Science & AI Labs, Sports Arena, and Smart Classrooms.'
+  },
   '/gallery': {
     title: 'Photo & Video Gallery | Academic Heights World School',
     description: 'View photos and videos of AHWS Sports Day, Annual Celebrations, Science Exhibitions, Achievers, and vibrant campus life.'

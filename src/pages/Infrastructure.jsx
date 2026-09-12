@@ -7,6 +7,49 @@ export default function Infrastructure() {
     <main className="infrastructure-page">
       <PageBanner title="Infrastructure & Facilities" image="./WEBSITE GALLERY/other images/LIBRARY 01.png" />
       
+      {/* 360° Virtual Tour Showcase - Coming Soon */}
+      <section className="virtual-tour-section" id="virtual-tour">
+        <div className="container">
+          <div className="virtual-tour-card">
+            <div className="virtual-tour-badge">
+              <span className="pulse-dot" />
+              <span>360° Virtual Reality Tour</span>
+            </div>
+            <h2 className="virtual-tour-title">360° Virtual Tour — Coming Soon</h2>
+            <p className="virtual-tour-desc">
+              We are actively developing an immersive, ultra-high-definition 360° virtual campus tour of Academic Heights World School. 
+              Soon, parents and students will be able to take a self-guided walkthrough through our smart classrooms, science and AI innovation laboratories, 
+              library, basketball arena, and green eco-campus from the comfort of their home on any mobile, desktop, or VR headset.
+            </p>
+            <div className="virtual-tour-highlights">
+              <div className="vt-highlight-item">
+                <span className="vt-icon">🔬</span>
+                <span>Robotics &amp; AI Lab</span>
+              </div>
+              <div className="vt-highlight-item">
+                <span className="vt-icon">📚</span>
+                <span>Resource Library</span>
+              </div>
+              <div className="vt-highlight-item">
+                <span className="vt-icon">🏀</span>
+                <span>Sports &amp; Athletics Arena</span>
+              </div>
+              <div className="vt-highlight-item">
+                <span className="vt-icon">💡</span>
+                <span>Interactive Smart Classes</span>
+              </div>
+              <div className="vt-highlight-item">
+                <span className="vt-icon">🌳</span>
+                <span>Lush Green Campus</span>
+              </div>
+            </div>
+            <div className="virtual-tour-status">
+              <span className="vt-status-pill">🚀 Launching Soon • Experience AHWS from Anywhere</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Section 1: Library */}
       <section className="library-section" id="library">
         <div className="container">
