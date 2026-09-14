@@ -164,13 +164,26 @@
   .fee-section {
     padding: 50px 0;
   }
+
+  .fee-table {
+    min-width: 100%; /* Remove 500px min-width */
+  }
   
   .pdf-style-table td {
-    padding: 12px 14px;
+    padding: 12px 10px;
     font-size: 0.85rem;
   }
   
   .fee-disclaimer {
     padding: 20px;
+  }
+
+  .fee-actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .fee-actions .btn {
+    width: 100%;
   }
 }
