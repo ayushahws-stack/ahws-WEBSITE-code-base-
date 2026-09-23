@@ -1,8 +1,10 @@
 
+import { useState } from 'react';
 import PageBanner from '../components/PageBanner';
 import './Infrastructure.css';
 
 export default function Infrastructure() {
+  const [selectedLabVideo, setSelectedLabVideo] = useState(null);
   return (
     <main className="infrastructure-page">
       <PageBanner title="Infrastructure & Facilities" image="./WEBSITE GALLERY/other images/LIBRARY 01.png" />
@@ -103,12 +105,27 @@ export default function Infrastructure() {
           </div>
           <div className="labs-grid">
             <div className="lab-card fadeInUp">
-              <img 
-                src="./images/new%20AHWS%20Website%20Photos/Home/Science%20Experiment/20251030_104810.jpg.jpeg" 
-                alt="Science Lab" 
-                className="lab-card-img" 
-                onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = "./WEBSITE GALLERY/other images/science lab.jpeg"; }}
-              />
+              <div className="lab-card-media-wrap">
+                <img 
+                  src="./images/new%20AHWS%20Website%20Photos/Home/Science%20Experiment/20251030_104810.jpg.jpeg" 
+                  alt="Science Lab" 
+                  className="lab-card-img" 
+                  onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = "./WEBSITE GALLERY/other images/science lab.jpeg"; }}
+                />
+                <button 
+                  type="button" 
+                  className="lab-video-badge-btn"
+                  onClick={() => setSelectedLabVideo({
+                    title: "Hands-on Practical Science Experiment",
+                    subtitle: "Authentic student experiment conducted in our fully equipped school science laboratory.",
+                    src: "./images/new%20AHWS%20Website%20Photos/Home/Science%20Experiment/WhatsApp%20Video%202025-09-02%20at%2009.22.51.mp4"
+                  })}
+                  title="Watch Science Lab Experiment in Action"
+                >
+                  <span className="play-icon">▶</span>
+                  <span>Watch Experiment Clip (5s)</span>
+                </button>
+              </div>
               <div className="lab-card-content">
                 <div className="lab-icon">🔬</div>
                 <h3>Science Lab</h3>
@@ -263,6 +280,44 @@ export default function Infrastructure() {
           </div>
         </div>
       </section>
+
+      {/* ── Video Modal for Lab Experiment ── */}
+      {selectedLabVideo && (
+        <div className="lab-modal-backdrop" onClick={() => setSelectedLabVideo(null)}>
+          <div 
+            className="lab-modal-box"
+            onClick={(e) => e.stopPropagation()}
+            role="dialog"
+            aria-modal="true"
+            aria-label={selectedLabVideo.title}
+          >
+            <button 
+              type="button" 
+              className="lab-modal-close" 
+              onClick={() => setSelectedLabVideo(null)}
+              aria-label="Close video"
+            >
+              ✕
+            </button>
+            <div className="lab-modal-header">
+              <span className="lab-modal-badge">SCIENCE LAB DEMONSTRATION</span>
+              <h3>{selectedLabVideo.title}</h3>
+              <p>{selectedLabVideo.subtitle}</p>
+            </div>
+            <div className="lab-modal-player-wrap">
+              <video 
+                src={selectedLabVideo.src} 
+                controls 
+                autoPlay 
+                playsInline 
+                className="lab-modal-video"
+              >
+                Your browser does not support HTML5 video.
+              </video>
+            </div>
+          </div>
+        </div>
+      )}
     </main>
   );
 }

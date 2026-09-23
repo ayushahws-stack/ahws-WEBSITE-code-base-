@@ -100,7 +100,13 @@ export default function Wellbeing() {
               </div>
               <div className="counsellor-profile">
                 <div className="counsellor-img-wrap">
-                  <div className="counsellor-avatar">Ms. U</div>
+                  <img 
+                    src="./images/new%20AHWS%20Website%20Photos/Counselling/Urvashi.jpeg" 
+                    alt="Ms. Urvashi" 
+                    className="counsellor-img"
+                    style={{ objectFit: 'cover' }}
+                    onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = "./WEBSITE GALLERY/other images/AHWS.png"; }}
+                  />
                 </div>
                 <h4>Ms. Urvashi</h4>
                 <span className="counsellor-role">Counselor</span>

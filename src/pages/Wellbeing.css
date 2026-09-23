@@ -177,12 +177,15 @@
   justify-content: center;
 }
 
-.counsellor-img {
+.counsellor-img,
+.counsellor-img-wrap img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 50%;
   color: transparent;
   font-size: 0.8rem;
+  display: block;
 }
 
 .counsellor-gallery {

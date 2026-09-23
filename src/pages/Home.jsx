@@ -272,6 +272,7 @@ export default function Home() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isMuted, setIsMuted] = useState(true)
   const [isPlaying, setIsPlaying] = useState(true)
+  const [activeVideoTestimonial, setActiveVideoTestimonial] = useState(null)
   const heroVideoRef = useRef(null)
 
   const toggleMute = () => {
@@ -470,6 +471,72 @@ export default function Home() {
       image: './images/new%20AHWS%20Website%20Photos/Home/Students%20in%20Art%20&%20Music%20Studios/CAM%20%201%201935T01.JPG',
       fallback: './WEBSITE GALLERY/other images/kid making art.jpeg'
     },
+  ]
+
+  const videoTestimonials = [
+    {
+      id: 1,
+      title: 'Nurturing Environment & Foundational Growth',
+      category: 'Parent Experience',
+      duration: '0:29',
+      speaker: 'AHWS Parent Community',
+      src: './images/new%20AHWS%20Website%20Photos/Home/Testimonials/20260324_095112%20(1).mp4',
+      highlight: 'Warm atmosphere, personalized care, and foundational excellence.'
+    },
+    {
+      id: 2,
+      title: 'Confidence & Communication in Early Years',
+      category: 'Parent Testimonial',
+      duration: '0:18',
+      speaker: 'Primary Wing Parent',
+      src: './images/new%20AHWS%20Website%20Photos/Home/Testimonials/20260324_095326.mp4',
+      highlight: 'Rapid improvement in spoken expression and social confidence.'
+    },
+    {
+      id: 3,
+      title: 'Holistic Academic & Co-Curricular Balance',
+      category: 'Parent Review',
+      duration: '0:22',
+      speaker: 'AHWS Parent Feedback',
+      src: './images/new%20AHWS%20Website%20Photos/Home/Testimonials/20260324_095911.mp4',
+      highlight: 'Equal focus on academic rigor, sports, and arts development.'
+    },
+    {
+      id: 4,
+      title: 'Care, Safety & Faculty Dedication',
+      category: 'Parent Feedback',
+      duration: '0:23',
+      speaker: 'Early Childhood Parent',
+      src: './images/new%20AHWS%20Website%20Photos/Home/Testimonials/20260324_111900.mp4',
+      highlight: 'Safe campus environment, attentive teachers, and caring mentorship.'
+    },
+    {
+      id: 5,
+      title: 'Transformative Learning Experience',
+      category: 'Parent Perspective',
+      duration: '0:30',
+      speaker: 'Middle Wing Parent',
+      src: './images/new%20AHWS%20Website%20Photos/Home/Testimonials/20260324_112138.mp4',
+      highlight: 'Hands-on practical projects that make children truly love school.'
+    },
+    {
+      id: 6,
+      title: 'Student Growth, Values & Mentorship',
+      category: 'Parent Experience',
+      duration: '0:44',
+      speaker: 'AHWS Parent Community',
+      src: './images/new%20AHWS%20Website%20Photos/Home/Testimonials/20260324_112451.mp4',
+      highlight: 'Inculcating core moral values, discipline, and compassionate outlook.'
+    },
+    {
+      id: 7,
+      title: 'Comprehensive Development & Community',
+      category: 'Parent Testimonial',
+      duration: '0:51',
+      speaker: 'Senior Wing Parent',
+      src: './images/new%20AHWS%20Website%20Photos/Home/Testimonials/20260324_113037.mp4',
+      highlight: '360° holistic growth shaping children into well-rounded leaders.'
+    }
   ]
 
   const galleryImages = [
@@ -672,6 +739,74 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── Voices of AHWS — Parent & Student Video Testimonials ── */}
+      <section className="testimonials-video-section" id="testimonials">
+        <div className="container">
+          <div className="section-header">
+            <div className="section-badge-pill">💬 HEAR FROM OUR PARENTS</div>
+            <h2 className="section-title">Voices of Academic Heights</h2>
+            <div className="divider-line" />
+            <p className="section-subtitle">
+              Authentic stories, heartfelt experiences, and firsthand impressions shared by parents and students from our campus community.
+            </p>
+          </div>
+
+          <Swiper
+            modules={[Navigation, Pagination, Autoplay]}
+            navigation
+            pagination={{ clickable: true }}
+            autoplay={{ delay: 5000, disableOnInteraction: true }}
+            spaceBetween={24}
+            breakpoints={{
+              0: { slidesPerView: 1 },
+              640: { slidesPerView: 2 },
+              1024: { slidesPerView: 3 },
+            }}
+            className="video-testimonials-swiper"
+          >
+            {videoTestimonials.map((vt) => (
+              <SwiperSlide key={vt.id}>
+                <div 
+                  className="video-testimonial-card"
+                  onClick={() => setActiveVideoTestimonial(vt)}
+                  role="button"
+                  tabIndex={0}
+                  aria-label={`Watch testimonial: ${vt.title}`}
+                  onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') setActiveVideoTestimonial(vt); }}
+                >
+                  <div className="vt-video-thumb-wrap">
+                    <video
+                      src={`${vt.src}#t=0.5`}
+                      preload="metadata"
+                      muted
+                      playsInline
+                      className="vt-thumb-video"
+                    />
+                    <div className="vt-thumb-overlay">
+                      <div className="vt-play-icon-glow">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                          <polygon points="5 3 19 12 5 21 5 3" />
+                        </svg>
+                      </div>
+                      <span className="vt-duration-badge">⏱ {vt.duration}</span>
+                      <span className="vt-category-tag">{vt.category}</span>
+                    </div>
+                  </div>
+                  <div className="vt-card-info">
+                    <h4 className="vt-title">{vt.title}</h4>
+                    <p className="vt-highlight">"{vt.highlight}"</p>
+                    <div className="vt-footer">
+                      <span className="vt-speaker">{vt.speaker}</span>
+                      <span className="vt-cta-text">Watch Video ▶</span>
+                    </div>
+                  </div>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+      </section>
+
       {/* 📸📸 Campus Gallery 📸📸 */}
       <section className="gallery-section">
         <div className="container">
@@ -795,6 +930,44 @@ export default function Home() {
                 {isSubmitting ? '⏳ Sending...' : 'Get a Call Back'}
               </button>
             </form>
+          </div>
+        </div>
+      )}
+
+      {/* ── Video Player Modal for Testimonials ── */}
+      {activeVideoTestimonial && (
+        <div className="video-modal-backdrop" onClick={() => setActiveVideoTestimonial(null)}>
+          <div 
+            className="video-modal-box"
+            onClick={(e) => e.stopPropagation()}
+            role="dialog"
+            aria-modal="true"
+            aria-label={activeVideoTestimonial.title}
+          >
+            <button 
+              type="button" 
+              className="video-modal-close" 
+              onClick={() => setActiveVideoTestimonial(null)}
+              aria-label="Close video"
+            >
+              ✕
+            </button>
+            <div className="video-modal-header">
+              <span className="video-modal-category">{activeVideoTestimonial.category}</span>
+              <h3>{activeVideoTestimonial.title}</h3>
+              <p>{activeVideoTestimonial.speaker} • {activeVideoTestimonial.duration}</p>
+            </div>
+            <div className="video-modal-player-wrap">
+              <video 
+                src={activeVideoTestimonial.src} 
+                controls 
+                autoPlay 
+                playsInline 
+                className="video-modal-player"
+              >
+                Your browser does not support HTML5 video.
+              </video>
+            </div>
           </div>
         </div>
       )}
