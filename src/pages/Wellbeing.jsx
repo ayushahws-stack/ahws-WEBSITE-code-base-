@@ -81,9 +81,9 @@ export default function Wellbeing() {
               <div className="counsellor-profile">
                 <div className="counsellor-img-wrap">
                   <img 
-                    src="./images/new%20AHWS%20Website%20Photos/About/Ms.%20Rashmi%20ma_am/WhatsApp%20Image%202026-08-31%20at%2011.04.40%20PM.jpeg" 
+                    src="./images/Dr_Rashmi_Bajaj_Singh.jpg" 
                     alt="Dr. Rashmi Bajaj Singh" 
-                    className="counsellor-avatar"
+                    className="counsellor-img"
                     style={{ objectFit: 'cover' }}
                     onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = "./WEBSITE GALLERY/other images/AHWS.png"; }}
                   />
