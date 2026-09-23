@@ -93,7 +93,13 @@ export default function Wellbeing() {
               </div>
               <div className="counsellor-profile">
                 <div className="counsellor-img-wrap">
-                  <div className="counsellor-avatar">Dr. R</div>
+                  <img 
+                    src="./images/Dr_Rekha_Jha.jpg" 
+                    alt="Dr. Rekha Jha" 
+                    className="counsellor-img"
+                    style={{ objectFit: 'cover' }}
+                    onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = "./WEBSITE GALLERY/other images/AHWS.png"; }}
+                  />
                 </div>
                 <h4>Dr. Rekha Jha</h4>
                 <span className="counsellor-role">Counselor</span>
@@ -101,7 +107,7 @@ export default function Wellbeing() {
               <div className="counsellor-profile">
                 <div className="counsellor-img-wrap">
                   <img 
-                    src="./images/new%20AHWS%20Website%20Photos/Counselling/Urvashi.jpeg" 
+                    src="./images/Ms_Urvashi.jpg" 
                     alt="Ms. Urvashi" 
                     className="counsellor-img"
                     style={{ objectFit: 'cover' }}
@@ -115,11 +121,21 @@ export default function Wellbeing() {
 
             <div className="counsellor-gallery">
               <div className="cg-item">
-                <img src="./WEBSITE GALLERY/other images/parents feedback.png" alt="Counseling Session with Parents" className="cg-img" />
+                <img 
+                  src="./images/counseling_support_parents.jpg" 
+                  alt="Counseling & Guidance Session with Parents" 
+                  className="cg-img" 
+                  onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = "./WEBSITE GALLERY/other images/AHWS.png"; }}
+                />
                 <h5>Support for Parents</h5>
               </div>
               <div className="cg-item">
-                <img src="./WEBSITE GALLERY/other images/well being 101.png" alt="Counseling Session with Students" className="cg-img" />
+                <img 
+                  src="./images/counseling_support_students.jpg" 
+                  alt="Student Well-Being & Child Protection Session" 
+                  className="cg-img" 
+                  onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = "./WEBSITE GALLERY/other images/AHWS.png"; }}
+                />
                 <h5>Support for Students</h5>
               </div>
             </div>
