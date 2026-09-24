@@ -1,8 +1,71 @@
+import { useState, useEffect } from 'react'
 import './Wellbeing.css'
 import PageBanner from '../components/PageBanner'
 
 export default function Wellbeing() {
-    const sections = [
+  const [selectedLightbox, setSelectedLightbox] = useState(null)
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') setSelectedLightbox(null)
+    }
+    if (selectedLightbox) {
+      window.addEventListener('keydown', handleKeyDown)
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown)
+      document.body.style.overflow = ''
+    }
+  }, [selectedLightbox])
+
+  const counsellors = [
+    {
+      name: "Dr. Rashmi Bajaj Singh",
+      role: "Senior Counselor",
+      badge: "Parental Coach • 28+ Years Exp.",
+      image: "./images/Dr_Rashmi_Bajaj_Singh.jpg",
+      fallback: "./images/new%20AHWS%20Website%20Photos/About/Ms.%20Rashmi%20ma_am/WhatsApp%20Image%202026-08-31%20at%2011.04.40%20PM.jpeg",
+      desc: "Specializes in adolescent psychology, parental coaching, stress resilience, and positive behavioral development for children and families."
+    },
+    {
+      name: "Dr. Rekha Jha",
+      role: "Counselor",
+      badge: "Student Psychological Support",
+      image: "./images/Dr_Rekha_Jha.jpg",
+      fallback: "./WEBSITE GALLERY/other images/AHWS.png",
+      desc: "Empowering learners through active listening, mindfulness, self-regulation, and holistic emotional wellbeing support."
+    },
+    {
+      name: "Ms. Urvashi",
+      role: "Counselor",
+      badge: "Student Wellbeing Specialist",
+      image: "./images/new%20AHWS%20Website%20Photos/Counselling/Urvashi.jpeg",
+      fallback: "./images/Ms_Urvashi.jpg",
+      desc: "Dedicated to student emotional development, early pastoral care, and positive behavioral coaching in a compassionate environment."
+    }
+  ]
+
+  const sessionGalleries = [
+    {
+      title: "Counselor with Parent",
+      tag: "Parent Counseling Session",
+      image: "./images/counseling_support_parents.jpg",
+      fallback: "./WEBSITE GALLERY/other images/parents feedback.png",
+      desc: "Dedicated counseling and parental coaching sessions to support child development, address concerns, and build nurturing home environments."
+    },
+    {
+      title: "Counselor with Student",
+      tag: "Student Counseling Session",
+      image: "./images/counseling_support_students.jpg",
+      fallback: "./WEBSITE GALLERY/other images/well being 101.png",
+      desc: "Compassionate, confidential student guidance and emotional well-being sessions to foster self-confidence and personal resilience."
+    }
+  ]
+
+  const sections = [
     {
       title: "Mentor-Mentee Programme",
       icon: "\uD83E\uDD1D",
@@ -78,66 +141,109 @@ export default function Wellbeing() {
             <p>Our dedicated wellness and counseling team provides expert guidance to support emotional health, stress management, and personal development for both students and parents.</p>
             
             <div className="counsellor-profiles">
-              <div className="counsellor-profile">
-                <div className="counsellor-img-wrap">
-                  <img 
-                    src="./images/Dr_Rashmi_Bajaj_Singh.jpg" 
-                    alt="Dr. Rashmi Bajaj Singh" 
-                    className="counsellor-img"
-                    style={{ objectFit: 'cover' }}
-                    onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = "./WEBSITE GALLERY/other images/AHWS.png"; }}
-                  />
+              {counsellors.map((c, idx) => (
+                <div 
+                  key={idx} 
+                  className="counsellor-profile clickable-card"
+                  onClick={() => setSelectedLightbox({
+                    title: c.name,
+                    subtitle: c.role,
+                    badge: c.badge,
+                    image: c.image,
+                    fallback: c.fallback,
+                    desc: c.desc
+                  })}
+                  role="button"
+                  tabIndex={0}
+                  aria-label={`View photo and profile of ${c.name}`}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      setSelectedLightbox({
+                        title: c.name,
+                        subtitle: c.role,
+                        badge: c.badge,
+                        image: c.image,
+                        fallback: c.fallback,
+                        desc: c.desc
+                      })
+                    }
+                  }}
+                >
+                  <div className="counsellor-img-wrap">
+                    <img 
+                      src={c.image} 
+                      alt={c.name} 
+                      className="counsellor-img"
+                      style={{ objectFit: 'cover' }}
+                      onError={(e) => {
+                        if (c.fallback && e.currentTarget.src !== c.fallback) {
+                          e.currentTarget.onerror = null;
+                          e.currentTarget.src = c.fallback;
+                        }
+                      }}
+                    />
+                    <div className="counsellor-img-overlay">
+                      <span className="counsellor-zoom-icon">🔍</span>
+                    </div>
+                  </div>
+                  <h4>{c.name}</h4>
+                  <span className="counsellor-role">{c.role}</span>
+                  <span className="counsellor-click-hint">Click to Enlarge Photo</span>
                 </div>
-                <h4>Dr. Rashmi Bajaj Singh</h4>
-                <span className="counsellor-role">Senior Counselor</span>
-              </div>
-              <div className="counsellor-profile">
-                <div className="counsellor-img-wrap">
-                  <img 
-                    src="./images/Dr_Rekha_Jha.jpg" 
-                    alt="Dr. Rekha Jha" 
-                    className="counsellor-img"
-                    style={{ objectFit: 'cover' }}
-                    onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = "./WEBSITE GALLERY/other images/AHWS.png"; }}
-                  />
-                </div>
-                <h4>Dr. Rekha Jha</h4>
-                <span className="counsellor-role">Counselor</span>
-              </div>
-              <div className="counsellor-profile">
-                <div className="counsellor-img-wrap">
-                  <img 
-                    src="./images/Ms_Urvashi.jpg" 
-                    alt="Ms. Urvashi" 
-                    className="counsellor-img"
-                    style={{ objectFit: 'cover' }}
-                    onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = "./WEBSITE GALLERY/other images/AHWS.png"; }}
-                  />
-                </div>
-                <h4>Ms. Urvashi</h4>
-                <span className="counsellor-role">Counselor</span>
-              </div>
+              ))}
             </div>
 
             <div className="counsellor-gallery">
-              <div className="cg-item">
-                <img 
-                  src="./images/counseling_support_parents.jpg" 
-                  alt="Counseling & Guidance Session with Parents" 
-                  className="cg-img" 
-                  onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = "./WEBSITE GALLERY/other images/AHWS.png"; }}
-                />
-                <h5>Support for Parents</h5>
-              </div>
-              <div className="cg-item">
-                <img 
-                  src="./images/counseling_support_students.jpg" 
-                  alt="Student Well-Being & Child Protection Session" 
-                  className="cg-img" 
-                  onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = "./WEBSITE GALLERY/other images/AHWS.png"; }}
-                />
-                <h5>Support for Students</h5>
-              </div>
+              {sessionGalleries.map((s, idx) => (
+                <div 
+                  key={idx} 
+                  className="cg-item clickable-card"
+                  onClick={() => setSelectedLightbox({
+                    title: s.title,
+                    subtitle: s.tag,
+                    badge: s.tag,
+                    image: s.image,
+                    fallback: s.fallback,
+                    desc: s.desc
+                  })}
+                  role="button"
+                  tabIndex={0}
+                  aria-label={`Enlarge photo: ${s.title}`}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      setSelectedLightbox({
+                        title: s.title,
+                        subtitle: s.tag,
+                        badge: s.tag,
+                        image: s.image,
+                        fallback: s.fallback,
+                        desc: s.desc
+                      })
+                    }
+                  }}
+                >
+                  <div className="cg-img-wrap">
+                    <img 
+                      src={s.image} 
+                      alt={s.title} 
+                      className="cg-img" 
+                      onError={(e) => {
+                        if (s.fallback && e.currentTarget.src !== s.fallback) {
+                          e.currentTarget.onerror = null;
+                          e.currentTarget.src = s.fallback;
+                        }
+                      }}
+                    />
+                    <div className="cg-img-overlay">
+                      <span className="cg-zoom-badge">🔍 Click to Enlarge</span>
+                    </div>
+                  </div>
+                  <div className="cg-item-content">
+                    <h5>{s.title}</h5>
+                    <span className="cg-tag-pill">{s.tag}</span>
+                  </div>
+                </div>
+              ))}
             </div>
 
             <a href="#/contact" className="btn-primary-ahws" style={{ marginTop: '30px' }}>Reach Out for Support</a>
@@ -145,6 +251,45 @@ export default function Wellbeing() {
         </div>
       </section>
 
+      {/* ── High-Definition Lightbox Modal ── */}
+      {selectedLightbox && (
+        <div className="wb-lightbox-backdrop" onClick={() => setSelectedLightbox(null)}>
+          <div 
+            className="wb-lightbox-card"
+            onClick={(e) => e.stopPropagation()}
+            role="dialog"
+            aria-modal="true"
+            aria-label={selectedLightbox.title}
+          >
+            <button 
+              type="button" 
+              className="wb-lightbox-close" 
+              onClick={() => setSelectedLightbox(null)}
+              aria-label="Close preview"
+            >
+              ✕
+            </button>
+            <div className="wb-lightbox-img-wrap">
+              <img 
+                src={selectedLightbox.image} 
+                alt={selectedLightbox.title} 
+                className="wb-lightbox-img"
+                onError={(e) => {
+                  if (selectedLightbox.fallback && e.currentTarget.src !== selectedLightbox.fallback) {
+                    e.currentTarget.onerror = null;
+                    e.currentTarget.src = selectedLightbox.fallback;
+                  }
+                }}
+              />
+            </div>
+            <div className="wb-lightbox-details">
+              <span className="wb-lightbox-badge">{selectedLightbox.badge || selectedLightbox.subtitle}</span>
+              <h3>{selectedLightbox.title}</h3>
+              {selectedLightbox.desc && <p className="wb-lightbox-desc">{selectedLightbox.desc}</p>}
+            </div>
+          </div>
+        </div>
+      )}
     </main>
   )
 }
