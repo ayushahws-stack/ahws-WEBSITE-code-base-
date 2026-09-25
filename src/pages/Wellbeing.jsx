@@ -1,13 +1,21 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
 import './Wellbeing.css'
 import PageBanner from '../components/PageBanner'
 
 export default function Wellbeing() {
   const [selectedLightbox, setSelectedLightbox] = useState(null)
+  const [rotatingIdx, setRotatingIdx] = useState(0)
+  const [lightboxImgIdx, setLightboxImgIdx] = useState(0)
+  const rotationRef = useRef(null)
 
+  /* ── Keyboard: Escape closes lightbox, arrows navigate gallery ── */
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === 'Escape') setSelectedLightbox(null)
+      if (selectedLightbox?.images) {
+        if (e.key === 'ArrowRight') setLightboxImgIdx(prev => (prev + 1) % selectedLightbox.images.length)
+        if (e.key === 'ArrowLeft') setLightboxImgIdx(prev => (prev - 1 + selectedLightbox.images.length) % selectedLightbox.images.length)
+      }
     }
     if (selectedLightbox) {
       window.addEventListener('keydown', handleKeyDown)
@@ -21,6 +29,7 @@ export default function Wellbeing() {
     }
   }, [selectedLightbox])
 
+  /* ── Counsellor Profiles ── */
   const counsellors = [
     {
       name: "Dr. Rashmi Bajaj Singh",
@@ -48,6 +57,16 @@ export default function Wellbeing() {
     }
   ]
 
+  /* ── Session Gallery Data ── */
+  const drRashmiStudentImages = [
+    "./images/counseling_support_students.jpg",
+    "./images/new%20AHWS%20Website%20Photos/Counselling/Dr_Rashmi_Images/Counsellor_Dr_Rashmi_Bajaj_Singh%20with%20kids/IMG_20260724_142231.jpg.jpeg",
+    "./images/new%20AHWS%20Website%20Photos/Counselling/Dr_Rashmi_Images/Counsellor_Dr_Rashmi_Bajaj_Singh%20with%20kids/IMG_20260724_142216.jpg.jpeg",
+    "./images/new%20AHWS%20Website%20Photos/Counselling/Dr_Rashmi_Images/Counsellor_Dr_Rashmi_Bajaj_Singh%20with%20kids/IMG_20260724_142341.jpg.jpeg",
+    "./images/new%20AHWS%20Website%20Photos/Counselling/Dr_Rashmi_Images/Counsellor_Dr_Rashmi_Bajaj_Singh%20with%20kids/IMG_20260724_142352.jpg.jpeg",
+    "./images/new%20AHWS%20Website%20Photos/Counselling/Dr_Rashmi_Images/Counsellor_Dr_Rashmi_Bajaj_Singh%20with%20kids/IMG_20260724_142326.jpg.jpeg"
+  ]
+
   const sessionGalleries = [
     {
       title: "Counselor with Parent",
@@ -59,12 +78,21 @@ export default function Wellbeing() {
     {
       title: "Counselor with Student",
       tag: "Student Counseling Session",
-      image: "./images/counseling_support_students.jpg",
+      images: drRashmiStudentImages,
       fallback: "./WEBSITE GALLERY/other images/well being 101.png",
       desc: "Compassionate, confidential student guidance and emotional well-being sessions to foster self-confidence and personal resilience."
     }
   ]
 
+  /* ── Auto-rotate the student gallery card every 3.5s ── */
+  useEffect(() => {
+    rotationRef.current = setInterval(() => {
+      setRotatingIdx(prev => (prev + 1) % drRashmiStudentImages.length)
+    }, 3500)
+    return () => clearInterval(rotationRef.current)
+  }, [])
+
+  /* ── Wellbeing Feature Sections ── */
   const sections = [
     {
       title: "Mentor-Mentee Programme",
@@ -97,6 +125,30 @@ export default function Wellbeing() {
       desc: "AHWS is a safe haven for every child. We strictly enforce anti-bullying policies and offer tailored support for special educational needs, ensuring an inclusive environment where everyone thrives."
     }
   ]
+
+  /* ── Helper: open lightbox for a gallery item ── */
+  const openSessionLightbox = useCallback((s) => {
+    if (s.images) {
+      setLightboxImgIdx(rotatingIdx)
+      setSelectedLightbox({
+        title: s.title,
+        subtitle: s.tag,
+        badge: s.tag,
+        images: s.images,
+        fallback: s.fallback,
+        desc: s.desc
+      })
+    } else {
+      setSelectedLightbox({
+        title: s.title,
+        subtitle: s.tag,
+        badge: s.tag,
+        image: s.image,
+        fallback: s.fallback,
+        desc: s.desc
+      })
+    }
+  }, [rotatingIdx])
 
   return (
     <main className="wellbeing-page">
@@ -133,8 +185,8 @@ export default function Wellbeing() {
         </div>
       </section>
       
-      {/* Counselling Team Highlight (Optional integration) */}
-                  <section className="counsellor-section" id="counselling-team">
+      {/* Counselling Team Highlight */}
+      <section className="counsellor-section" id="counselling-team">
         <div className="container">
           <div className="counsellor-box">
             <h2>Meet Our Wellness & Counseling Team</h2>
@@ -198,42 +250,57 @@ export default function Wellbeing() {
                 <div 
                   key={idx} 
                   className="cg-item clickable-card"
-                  onClick={() => setSelectedLightbox({
-                    title: s.title,
-                    subtitle: s.tag,
-                    badge: s.tag,
-                    image: s.image,
-                    fallback: s.fallback,
-                    desc: s.desc
-                  })}
+                  onClick={() => openSessionLightbox(s)}
                   role="button"
                   tabIndex={0}
                   aria-label={`Enlarge photo: ${s.title}`}
                   onKeyDown={(e) => {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                      setSelectedLightbox({
-                        title: s.title,
-                        subtitle: s.tag,
-                        badge: s.tag,
-                        image: s.image,
-                        fallback: s.fallback,
-                        desc: s.desc
-                      })
-                    }
+                    if (e.key === 'Enter' || e.key === ' ') openSessionLightbox(s)
                   }}
                 >
                   <div className="cg-img-wrap">
-                    <img 
-                      src={s.image} 
-                      alt={s.title} 
-                      className="cg-img" 
-                      onError={(e) => {
-                        if (s.fallback && e.currentTarget.src !== s.fallback) {
-                          e.currentTarget.onerror = null;
-                          e.currentTarget.src = s.fallback;
-                        }
-                      }}
-                    />
+                    {s.images ? (
+                      /* ── Rotating image slideshow ── */
+                      <div className="cg-rotating-container">
+                        {s.images.map((imgSrc, imgIdx) => (
+                          <img
+                            key={imgIdx}
+                            src={imgSrc}
+                            alt={`${s.title} ${imgIdx + 1}`}
+                            className={`cg-img cg-rotating-img ${imgIdx === rotatingIdx ? 'cg-active' : ''}`}
+                            loading="lazy"
+                            onError={(e) => {
+                              if (s.fallback && e.currentTarget.src !== s.fallback) {
+                                e.currentTarget.onerror = null;
+                                e.currentTarget.src = s.fallback;
+                              }
+                            }}
+                          />
+                        ))}
+                        {/* Dot indicators */}
+                        <div className="cg-dots">
+                          {s.images.map((_, dotIdx) => (
+                            <span
+                              key={dotIdx}
+                              className={`cg-dot ${dotIdx === rotatingIdx ? 'cg-dot-active' : ''}`}
+                            />
+                          ))}
+                        </div>
+                      </div>
+                    ) : (
+                      /* ── Static single image ── */
+                      <img 
+                        src={s.image} 
+                        alt={s.title} 
+                        className="cg-img" 
+                        onError={(e) => {
+                          if (s.fallback && e.currentTarget.src !== s.fallback) {
+                            e.currentTarget.onerror = null;
+                            e.currentTarget.src = s.fallback;
+                          }
+                        }}
+                      />
+                    )}
                     <div className="cg-img-overlay">
                       <span className="cg-zoom-badge">🔍 Click to Enlarge</span>
                     </div>
@@ -270,17 +337,54 @@ export default function Wellbeing() {
               ✕
             </button>
             <div className="wb-lightbox-img-wrap">
-              <img 
-                src={selectedLightbox.image} 
-                alt={selectedLightbox.title} 
-                className="wb-lightbox-img"
-                onError={(e) => {
-                  if (selectedLightbox.fallback && e.currentTarget.src !== selectedLightbox.fallback) {
-                    e.currentTarget.onerror = null;
-                    e.currentTarget.src = selectedLightbox.fallback;
-                  }
-                }}
-              />
+              {selectedLightbox.images ? (
+                /* ── Multi-image lightbox with prev/next ── */
+                <>
+                  <img 
+                    src={selectedLightbox.images[lightboxImgIdx]} 
+                    alt={`${selectedLightbox.title} ${lightboxImgIdx + 1}`} 
+                    className="wb-lightbox-img"
+                    onError={(e) => {
+                      if (selectedLightbox.fallback && e.currentTarget.src !== selectedLightbox.fallback) {
+                        e.currentTarget.onerror = null;
+                        e.currentTarget.src = selectedLightbox.fallback;
+                      }
+                    }}
+                  />
+                  <button
+                    type="button"
+                    className="wb-lightbox-nav wb-lightbox-prev"
+                    onClick={() => setLightboxImgIdx(prev => (prev - 1 + selectedLightbox.images.length) % selectedLightbox.images.length)}
+                    aria-label="Previous photo"
+                  >
+                    ‹
+                  </button>
+                  <button
+                    type="button"
+                    className="wb-lightbox-nav wb-lightbox-next"
+                    onClick={() => setLightboxImgIdx(prev => (prev + 1) % selectedLightbox.images.length)}
+                    aria-label="Next photo"
+                  >
+                    ›
+                  </button>
+                  <div className="wb-lightbox-counter">
+                    {lightboxImgIdx + 1} / {selectedLightbox.images.length}
+                  </div>
+                </>
+              ) : (
+                /* ── Single image lightbox ── */
+                <img 
+                  src={selectedLightbox.image} 
+                  alt={selectedLightbox.title} 
+                  className="wb-lightbox-img"
+                  onError={(e) => {
+                    if (selectedLightbox.fallback && e.currentTarget.src !== selectedLightbox.fallback) {
+                      e.currentTarget.onerror = null;
+                      e.currentTarget.src = selectedLightbox.fallback;
+                    }
+                  }}
+                />
+              )}
             </div>
             <div className="wb-lightbox-details">
               <span className="wb-lightbox-badge">{selectedLightbox.badge || selectedLightbox.subtitle}</span>
@@ -293,9 +397,3 @@ export default function Wellbeing() {
     </main>
   )
 }
-
-
-
-
-
-
