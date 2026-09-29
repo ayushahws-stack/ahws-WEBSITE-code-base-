@@ -416,7 +416,7 @@ export default function Curriculum() {
             📌 <em>Detailed date sheets will be shared via circulars and the 360° App well in advance. Parents are requested to ensure regular attendance during examination weeks.</em>
           </p>
           <div style={{ display: 'flex', justifyContent: 'center', marginTop: '24px' }}>
-            <a href="$12026-27).pdf" target="_blank" rel="noopener noreferrer" className="acad-download-btn">
+            <a href="./documents website/Academic Planner (2026-27).pdf" target="_blank" rel="noopener noreferrer" className="acad-download-btn">
               📅 Download Academic Planner (2027-28)
             </a>
           </div>
@@ -450,7 +450,7 @@ export default function Curriculum() {
                     ))}
                   </ul>
                   <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginTop: '16px' }}>
-                    <a href="$12026-27.pdf" target="_blank" rel="noopener noreferrer" className="acad-download-btn">
+                    <a href="./documents website/HVM Syllabus Class 1-12- 2026-27.pdf" target="_blank" rel="noopener noreferrer" className="acad-download-btn">
                       ⬇️ Download Complete Syllabus (Class 1-12)
                     </a>
                   </div>
@@ -464,6 +464,7 @@ export default function Curriculum() {
     </main>
   )
 }
+
 
 
 

@@ -29,11 +29,11 @@ export default function NoticeBoard() {
   ]
 
   const circulars = [
-    { date: 'June 28, 2026', title: 'Summer Vacation Schedule & Homework Guidelines', file: './documents%20website/Academic%20Planner%20(2027-28).pdf' },
+    { date: 'June 28, 2026', title: 'Summer Vacation Schedule & Homework Guidelines', file: './documents%20website/Academic%20Planner%20(2026-27).pdf' },
     { date: 'June 20, 2026', title: 'Annual Day Preparation – Participation Consent Form', file: './documents%20website/SCHOOL%20EVENTS%20-%20DR%20REKHA.pdf' },
     { date: 'June 15, 2026', title: 'Fee Structure Revision for Academic Year 2027–28', file: './documents%20website/AHWS%20Mandatory%20disclosures/Fee%20structure-%20Mandatory%20Disclosure.pdf' },
     { date: 'June 10, 2026', title: 'Admission Circular – Session 2027–28', file: './documents%20website/Enquiry%20form%20-AHWS%20FINAL.pdf' },
-    { date: 'May 25, 2026', title: 'Examination Schedule – First Term 2027–28', file: './documents%20website/HVM%20Syllabus%20Class%201-12-%202027-28.pdf' },
+    { date: 'May 25, 2026', title: 'Examination Schedule – First Term 2027–28', file: './documents%20website/HVM%20Syllabus%20Class%201-12-%202026-27.pdf' },
     { date: 'May 15, 2026', title: 'POCSO Act – School Compliance Circular', file: './documents%20website/POCSO%20ACT%20circular.pdf' },
   ]
 
@@ -49,7 +49,7 @@ export default function NoticeBoard() {
               <h3>📅 Academic Calendar 2027-28</h3>
               <p>Download the complete academic schedule, including holidays and exam dates.</p>
             </div>
-            <a href="$12026-27).pdf" target="_blank" rel="noopener noreferrer" className="btn btn-primary">Download PDF</a>
+            <a href="./documents website/Academic Planner (2026-27).pdf" target="_blank" rel="noopener noreferrer" className="btn btn-primary">Download PDF</a>
           </div>
         </div>
       </section>
@@ -133,4 +133,6 @@ export default function NoticeBoard() {
     </main>
   )
 }
+
+
 
