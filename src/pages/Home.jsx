@@ -914,16 +914,22 @@ export default function Home() {
               <p>Connect with our admissions team instantly. Fill in your details below.</p>
             </div>
             <form onSubmit={(e) => { 
-              e.preventDefault(); 
-              const form = e.target;
-              setIsSubmitting(true);
-              setTimeout(() => {
+                e.preventDefault(); 
+                const form = e.target;
+                
+                const parentName = form.elements['modal-parentname'].value;
+                const phone = form.elements['modal-phone'].value;
+                const studentClass = form.elements['modal-class'].value;
+
+                const msg = "Hello Academic Heights World School, I would like to inquire about admission for my child.\n\n*Enquiry Details:*\nParent Name: $parentName\nPhone: $phone\nClass: $studentClass";
+                
+                const whatsappUrl = "https://wa.me/918860455000?text=${encodeURIComponent(msg)}";
+                window.open(whatsappUrl, '_blank');
+
                 setShowEnquiryModal(false);
                 setShowPopup(true); 
                 form.reset();
-                setIsSubmitting(false);
-              }, 800);
-            }}>
+              }}>
               <div className="enquiry-form-field">
                 <label htmlFor="modal-parentname">Parent's Name <span style={{ color: '#e53e3e' }}>*</span></label>
                 <input id="modal-parentname" type="text" placeholder="Enter parent / guardian name" className="hf-input" required />
@@ -1006,4 +1012,5 @@ export default function Home() {
     </main>
   )
 }
+
 
