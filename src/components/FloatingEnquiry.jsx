@@ -21,13 +21,9 @@ export default function FloatingEnquiry() {
     const formData = new FormData(e.target)
     const parentName = formData.get('parentName')
     const phone = formData.get('phone')
-    const email = formData.get('email')
     const studentClass = formData.get('studentClass')
 
     let msg = `Hello Academic Heights World School, I would like to inquire about admission for my child.\n\n*Enquiry Details:*\nParent Name: ${parentName}\nPhone: ${phone}\nClass: ${studentClass}`
-    if (email) {
-      msg += `\nEmail: ${email}`
-    }
 
     const whatsappUrl = `https://wa.me/918860455000?text=${encodeURIComponent(msg)}`
     window.open(whatsappUrl, '_blank')
@@ -72,7 +68,6 @@ export default function FloatingEnquiry() {
                     <form onSubmit={handleSubmit} className="floating-form">
             <input type="text" name="parentName" placeholder="Parent's Name" aria-label="Parent's Name" required className="fl-input" />
             <input type="tel" name="phone" placeholder="Phone Number" aria-label="Phone Number" required pattern="[0-9]{10}" maxLength={10} className="fl-input" />
-            <input type="email" name="email" placeholder="Email Address" aria-label="Email Address" className="fl-input" />
             <select name="studentClass" required defaultValue="" className="fl-input" aria-label="Select Class">
               <option value="">Select Class</option>
               <option value="Nursery">Nursery</option>
