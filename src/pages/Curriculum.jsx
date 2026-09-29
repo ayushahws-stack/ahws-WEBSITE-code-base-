@@ -390,7 +390,7 @@ export default function Curriculum() {
       {/* ── Section 4: Examination Schedule ── */}
       <section className="acad-exams bg-light" id="examination">
         <div className="container">
-          <h2 className="section-title">Examination Schedule 2026–27</h2>
+          <h2 className="section-title">Examination Schedule 2027-28</h2>
           <div className="divider-line" />
           <div className="acad-table-wrap">
             <table className="acad-exam-table">
@@ -416,8 +416,8 @@ export default function Curriculum() {
             📌 <em>Detailed date sheets will be shared via circulars and the 360° App well in advance. Parents are requested to ensure regular attendance during examination weeks.</em>
           </p>
           <div style={{ display: 'flex', justifyContent: 'center', marginTop: '24px' }}>
-            <a href="./documents%20website/Academic%20Planner%20(2026-27).pdf" target="_blank" rel="noopener noreferrer" className="acad-download-btn">
-              📅 Download Academic Planner (2026-27)
+            <a href="./documents%20website/Academic%20Planner%20(2027-28).pdf" target="_blank" rel="noopener noreferrer" className="acad-download-btn">
+              📅 Download Academic Planner (2027-28)
             </a>
           </div>
         </div>
@@ -450,7 +450,7 @@ export default function Curriculum() {
                     ))}
                   </ul>
                   <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginTop: '16px' }}>
-                    <a href="./documents%20website/HVM%20Syllabus%20Class%201-12-%202026-27.pdf" target="_blank" rel="noopener noreferrer" className="acad-download-btn">
+                    <a href="./documents%20website/HVM%20Syllabus%20Class%201-12-%202027-28.pdf" target="_blank" rel="noopener noreferrer" className="acad-download-btn">
                       ⬇️ Download Complete Syllabus (Class 1-12)
                     </a>
                   </div>

@@ -1,0 +1,73 @@
+.faq-page {
+  background-color: var(--surface);
+  min-height: 100vh;
+}
+
+.faq-page-section {
+  padding: 80px 0;
+}
+
+.faq-page-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.faq-intro {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text);
+  text-align: center;
+  max-width: 750px;
+  margin: 0 auto 40px;
+}
+
+.faq-cta-box {
+  margin-top: 60px;
+  background: linear-gradient(135deg, var(--primary) 0%, #1e88e5 100%);
+  color: var(--white);
+  padding: 40px;
+  border-radius: var(--radius);
+  text-align: center;
+  box-shadow: var(--shadow-md);
+}
+
+.faq-cta-box h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.faq-cta-box p {
+  opacity: 0.9;
+  margin-bottom: 24px;
+  font-size: 1.05rem;
+}
+
+.faq-cta-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.faq-cta-buttons .btn-primary-ahws {
+  background: #FFC700;
+  color: #002147;
+  border: none;
+  font-weight: 800;
+}
+
+.faq-cta-buttons .btn-secondary-ahws {
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.faq-cta-buttons .btn-secondary-ahws:hover {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: #FFC700;
+}

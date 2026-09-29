@@ -636,6 +636,38 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── Trust Strip ── */}
+      <section className="trust-strip">
+        <div className="container">
+          <div className="trust-strip-grid">
+            <div className="trust-item">
+              <span className="trust-number">CBSE</span>
+              <span className="trust-label">Affiliated #2730105</span>
+            </div>
+            <div className="trust-item">
+              <span className="trust-number">150+</span>
+              <span className="trust-label">CCTV Cameras</span>
+            </div>
+            <div className="trust-item">
+              <span className="trust-number">6,000+</span>
+              <span className="trust-label">Library Books</span>
+            </div>
+            <div className="trust-item">
+              <span className="trust-number">9</span>
+              <span className="trust-label">Sports Offered</span>
+            </div>
+            <div className="trust-item">
+              <span className="trust-number">100%</span>
+              <span className="trust-label">CBSE Pass Rate</span>
+            </div>
+            <div className="trust-item">
+              <span className="trust-number">50+</span>
+              <span className="trust-label">Awards Won</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── Infrastructure / World-Class Facilities ── */}
       <section className="infra-section" id="facilities">
         <div className="container">
@@ -877,7 +909,7 @@ export default function Home() {
               ✕
             </button>
             <div className="enquiry-modal-header">
-              <span className="enquiry-modal-badge">ADMISSION ENQUIRY 2026-27</span>
+              <span className="enquiry-modal-badge">ADMISSION ENQUIRY 2027-28</span>
               <h3 id="enquiry-modal-title">Quick Enquiry</h3>
               <p>Connect with our admissions team instantly. Fill in your details below.</p>
             </div>

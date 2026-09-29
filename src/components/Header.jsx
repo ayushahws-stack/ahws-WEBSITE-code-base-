@@ -177,9 +177,9 @@ const navItems = [
           { label: 'ACADEMIC SESSION', to: '/fee-structure#academic-session' }
         ]
       },
-      { label: 'DRAW LIST (2026-27)', to: 'https://ahws.edu.in/ADMISSION-DRAW-LIST-17.01.25.pdf', external: true },
+      { label: 'DRAW LIST (2027-28)', to: 'https://ahws.edu.in/ADMISSION-DRAW-LIST-17.01.25.pdf', external: true },
       { label: 'AGE CRITERIA', to: '/admission#age-criteria' },
-      { label: 'REGISTERED APPLICANTS', to: 'https://ahws.edu.in/list-of-registered-applicants-2026-27.pdf', external: true },
+      { label: 'REGISTERED APPLICANTS', to: 'https://ahws.edu.in/list-of-registered-applicants-2027-28.pdf', external: true },
       { label: 'BOOK VENDORS LIST', to: 'https://ahws.edu.in/pdfs/book-vendors-list-2026.pdf', external: true },
     ]
   },
@@ -228,7 +228,7 @@ export default function Header() {
               to="/admission"
               className="blink-badge"
             >
-              🔴 REGISTRATION OPEN 2026-27
+              🔴 REGISTRATION OPEN 2027-28
             </Link>
           </div>
           <div className="topbar-right">

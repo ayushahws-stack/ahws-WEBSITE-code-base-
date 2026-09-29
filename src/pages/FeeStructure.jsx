@@ -12,7 +12,7 @@ const FeeStructure = () => {
       <section className="fee-section" id="academic-session">
         <div className="container">
           <div className="fee-header-info">
-            <h2 className="section-title">Academic Session 2026-27</h2>
+            <h2 className="section-title">Academic Session 2027-28</h2>
             <div className="divider-line" />
             <p className="fee-subtitle">ACADEMIC HEIGHTS WORLD SCHOOL</p>
             <p className="fee-subtitle-small">SD-QD Block, Pitampura Delhi - 110034</p>

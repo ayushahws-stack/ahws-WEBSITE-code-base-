@@ -278,12 +278,12 @@ export default function Admission() {
             <h2 className="section-title">🎥 Age Criteria Explained by Principal Ma'am</h2>
             <div className="divider-line" />
             <p className="process-intro" style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto 36px' }}>
-              Watch <strong>Ms. Rachna Anand</strong> (Principal, AHWS) explain the age criteria, class eligibility guidelines, and admission rules for the 2026–27 academic session.
+              Watch <strong>Ms. Rachna Anand</strong> (Principal, AHWS) explain the age criteria, class eligibility guidelines, and admission rules for the 2027–28 academic session.
             </p>
 
             <div style={{ textAlign: 'center', marginBottom: '36px' }}>
               <a 
-                href="https://ahws.edu.in/age-criteria-2026-27.pdf" 
+                href="https://ahws.edu.in/age-criteria-2027-28.pdf" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="btn-primary-ahws"
@@ -304,11 +304,23 @@ export default function Admission() {
             </div>
             <div className="video-caption-bar">
               <div className="caption-info">
-                <h4>Age Criteria Guidelines 2026–27</h4>
+                <h4>Age Criteria Guidelines 2027–28</h4>
                 <p>Official video explanation by Principal Ms. Rachna Anand</p>
               </div>
             </div>
           </div>
+
+            {/* SEO-indexable age criteria summary */}
+            <div className="age-criteria-summary" style={{ maxWidth: '800px', margin: '32px auto 0', padding: '24px 28px', background: 'rgba(0, 33, 71, 0.04)', borderRadius: '12px', borderLeft: '4px solid #002147' }}>
+              <h3 style={{ color: '#002147', fontSize: '1.1rem', marginBottom: '12px' }}>Age Criteria at a Glance — Session 2027–28</h3>
+              <p style={{ color: '#475569', lineHeight: '1.7', fontSize: '0.95rem', margin: 0 }}>
+                Admission eligibility at Academic Heights World School, Pitampura is determined by the child's age as on 31st March of the academic year.
+                For <strong>Nursery</strong>, the child should be <strong>3+ years</strong>; for <strong>KG (Kindergarten)</strong>, <strong>4+ years</strong>;
+                and for <strong>Class 1</strong>, <strong>6+ years</strong> as per CBSE and Delhi DOE guidelines.
+                Age relaxation, if any, is subject to the school's admission policy. For the complete age-class mapping and Date of Birth cutoff details,
+                please watch the Principal's video above or download the official Age Criteria PDF.
+              </p>
+            </div>
         </div>
       </section>
 
@@ -413,9 +425,9 @@ export default function Admission() {
           <div className="docs-grid">
             {[
               { label: 'Official Offline Enquiry Form (PDF)', href: './documents%20website/Enquiry%20form%20-AHWS%20FINAL.pdf' },
-              { label: 'Admission Draw List 2026-27', href: 'https://ahws.edu.in/ADMISSION-DRAW-LIST-17.01.25.pdf' },
-              { label: 'Age Criteria 2026-27', href: 'https://ahws.edu.in/age-criteria-2026-27.pdf' },
-              { label: 'List of Registered Applicants 2026-27', href: 'https://ahws.edu.in/list-of-registered-applicants-2026-27.pdf' },
+              { label: 'Admission Draw List 2027-28', href: 'https://ahws.edu.in/ADMISSION-DRAW-LIST-17.01.25.pdf' },
+              { label: 'Age Criteria 2027-28', href: 'https://ahws.edu.in/age-criteria-2027-28.pdf' },
+              { label: 'List of Registered Applicants 2027-28', href: 'https://ahws.edu.in/list-of-registered-applicants-2027-28.pdf' },
               { label: 'A-9 Vendors List', href: 'https://ahws.edu.in/images/A-9-vendors-list.pdf' },
               { label: 'List of Book Vendors 2026', href: 'https://ahws.edu.in/pdfs/book-vendors-list-2026.pdf' },
             ].map((doc, i) => (

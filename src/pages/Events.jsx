@@ -344,7 +344,7 @@ export default function Events() {
           <div className="calendar-banner" style={{ background: 'linear-gradient(135deg, #002147, #004080)' }}>
             <div className="calendar-text">
               <h3>📌 Official School Notice Board &amp; Circulars</h3>
-              <p>Looking for recent notices, academic planner 2026-27, upcoming event dates, or school circulars?</p>
+              <p>Looking for recent notices, academic planner 2027-28, upcoming event dates, or school circulars?</p>
             </div>
             <Link 
               to="/notice-board" 

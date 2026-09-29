@@ -24,6 +24,7 @@ import Curriculum from './pages/Curriculum'
 import BeyondCurriculum from './pages/BeyondCurriculum'
 import WeTeachLife from './pages/WeTeachLife'
 import Wellbeing from './pages/Wellbeing'
+import FAQPage from './pages/FAQPage'
 import AnnouncementTicker from './components/AnnouncementTicker'
 import FloatingEnquiry from './components/FloatingEnquiry'
 import BackToTop from './components/BackToTop'
@@ -83,6 +84,7 @@ function App() {
         <Route path="facilities" element={<Infrastructure />} />
         <Route path="/campus" element={<Navigate to="/gallery" replace />} />
         <Route path="/well-being" element={<Wellbeing />} />
+        <Route path="/faqs" element={<FAQPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />

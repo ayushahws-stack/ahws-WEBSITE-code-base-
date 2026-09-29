@@ -68,6 +68,61 @@
   .mv-grid { grid-template-columns: 1fr; }
 }
 
+/* ── Trust Strip ── */
+.trust-strip {
+  background: linear-gradient(135deg, #002147 0%, #0d3b6e 100%);
+  padding: 28px 0;
+  border-bottom: 3px solid #FFC700;
+}
+
+.trust-strip-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 48px;
+  flex-wrap: wrap;
+}
+
+.trust-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-width: 100px;
+}
+
+.trust-number {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: #FFC700;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+}
+
+.trust-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.85);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-top: 4px;
+}
+
+@media (max-width: 768px) {
+  .trust-strip-grid {
+    gap: 24px;
+  }
+  .trust-item {
+    min-width: 80px;
+  }
+  .trust-number {
+    font-size: 1.4rem;
+  }
+  .trust-label {
+    font-size: 0.7rem;
+  }
+}
+
 /* World-Class Facilities / Infrastructure */
 .infra-section {
   padding: 80px 0;

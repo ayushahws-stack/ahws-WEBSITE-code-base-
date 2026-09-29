@@ -20,11 +20,11 @@ const routeMetadata = {
     description: 'Discover Decode Startup, Wordsworth Digital Language Lab, Theater & Performing Arts, Sports Excellence, and 21st Century Skills at AHWS.'
   },
   '/admission': {
-    title: 'Admissions Open 2026-27 | Academic Heights World School',
+    title: 'Admissions Open 2027-28 | Academic Heights World School',
     description: 'Apply for admission at Academic Heights World School, Pitampura for Nursery to Class XII. Online enquiry, eligibility criteria, and fee structure.'
   },
   '/fee-structure': {
-    title: 'Fee Structure 2026-27 | Academic Heights World School',
+    title: 'Fee Structure 2027-28 | Academic Heights World School',
     description: 'Official fee breakdown for Academic Heights World School, Pitampura, Delhi. Admission fee, tuition fee, annual charges, and payment guidelines.'
   },
   '/infrastructure': {
@@ -45,7 +45,7 @@ const routeMetadata = {
   },
   '/notice-board': {
     title: 'School Notice Board & Circulars | AHWS Pitampura',
-    description: 'Official AHWS Notice Board, Academic Calendar 2026-27, upcoming event dates, PTM schedules, and downloadable school circulars.'
+    description: 'Official AHWS Notice Board, Academic Calendar 2027-28, upcoming event dates, PTM schedules, and downloadable school circulars.'
   },
   '/results': {
     title: 'CBSE Board Results & Toppers | AHWS Pitampura',
@@ -78,6 +78,10 @@ const routeMetadata = {
   '/well-being': {
     title: 'Student Wellbeing & Counselling Support | AHWS Pitampura',
     description: 'Learn about student mental health, emotional wellness, parent coaching, and guidance under in-house counsellor Dr. Rashmi Bajaj Singh (28+ years experience) at AHWS.'
+  },
+  '/faqs': {
+    title: 'FAQs | Academic Heights World School Pitampura',
+    description: 'Frequently asked questions about AHWS admissions, fees, transport, safety, curriculum, and school life. Get answers to parent queries about Academic Heights World School.'
   },
   '/blog': {
     title: 'School Blog & Educational Insights | Academic Heights World School',
