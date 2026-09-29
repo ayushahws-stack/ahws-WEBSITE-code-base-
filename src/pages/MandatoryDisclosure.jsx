@@ -83,7 +83,7 @@ export default function MandatoryDisclosure() {
                 </thead>
                 <tbody>
                   <tr><td>1</td><td>FEE STRUCTURE OF THE SCHOOL</td><td><a href="./documents%20website/AHWS%20Mandatory%20disclosures/Fee%20structure-%20Mandatory%20Disclosure.pdf" target="_blank" rel="noopener noreferrer" className="md-link">View Document</a></td></tr>
-                  <tr><td>2</td><td>ANNUAL ACADEMIC CALENDAR</td><td><a href="./documents%20website/AHWS%20Mandatory%20disclosures/Academic%20Planner%20for%20Educators%202027-28%20(P).pdf" target="_blank" rel="noopener noreferrer" className="md-link">View Document</a></td></tr>
+                  <tr><td>2</td><td>ANNUAL ACADEMIC CALENDAR</td><td><a href="$12026-27%20(P).pdf" target="_blank" rel="noopener noreferrer" className="md-link">View Document</a></td></tr>
                   <tr><td>3</td><td>LIST OF SCHOOL MANAGEMENT COMMITTEE (SMC)</td><td><a href="./documents%20website/AHWS%20Mandatory%20disclosures/List%20of%20SMC.pdf" target="_blank" rel="noopener noreferrer" className="md-link">View Document</a></td></tr>
                   <tr><td>4</td><td>LIST OF PARENTS TEACHERS ASSOCIATION (PTA) MEMBERS</td><td><a href="./documents%20website/AHWS%20Mandatory%20disclosures/List%20of%20PTA%20MEMBERS.pdf" target="_blank" rel="noopener noreferrer" className="md-link">View Document</a></td></tr>
                   <tr><td>5</td><td>LAST THREE-YEAR RESULT OF THE BOARD EXAMINATION AS PER APPLICABILITY</td><td><a href="./documents%20website/AHWS%20Mandatory%20disclosures/last%20three%20years%20cbse%20result.pdf" target="_blank" rel="noopener noreferrer" className="md-link">View Document</a></td></tr>
@@ -143,4 +143,5 @@ export default function MandatoryDisclosure() {
     </main>
   )
 }
+
 

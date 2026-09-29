@@ -149,11 +149,11 @@ export default function Curriculum() {
   ]
 
   const examSchedule = [
-    { term: 'Term I', type: 'Periodic Assessment I', dates: 'July 2026' },
-    { term: 'Term I', type: 'Mid-Term Examination', dates: 'September 2026' },
-    { term: 'Term I', type: 'Periodic Assessment II', dates: 'November 2026' },
-    { term: 'Term II', type: 'Periodic Assessment III', dates: 'January 2027' },
-    { term: 'Term II', type: 'Annual Examination', dates: 'March 2027' },
+    { term: 'Term I', type: 'Periodic Assessment I', dates: 'July 2027' },
+    { term: 'Term I', type: 'Mid-Term Examination', dates: 'September 2027' },
+    { term: 'Term I', type: 'Periodic Assessment II', dates: 'November 2027' },
+    { term: 'Term II', type: 'Periodic Assessment III', dates: 'January 2028' },
+    { term: 'Term II', type: 'Annual Examination', dates: 'March 2028' },
   ]
 
   const textbookSections = [
@@ -416,7 +416,7 @@ export default function Curriculum() {
             📌 <em>Detailed date sheets will be shared via circulars and the 360° App well in advance. Parents are requested to ensure regular attendance during examination weeks.</em>
           </p>
           <div style={{ display: 'flex', justifyContent: 'center', marginTop: '24px' }}>
-            <a href="./documents%20website/Academic%20Planner%20(2027-28).pdf" target="_blank" rel="noopener noreferrer" className="acad-download-btn">
+            <a href="$12026-27).pdf" target="_blank" rel="noopener noreferrer" className="acad-download-btn">
               📅 Download Academic Planner (2027-28)
             </a>
           </div>
@@ -450,7 +450,7 @@ export default function Curriculum() {
                     ))}
                   </ul>
                   <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginTop: '16px' }}>
-                    <a href="./documents%20website/HVM%20Syllabus%20Class%201-12-%202027-28.pdf" target="_blank" rel="noopener noreferrer" className="acad-download-btn">
+                    <a href="$12026-27.pdf" target="_blank" rel="noopener noreferrer" className="acad-download-btn">
                       ⬇️ Download Complete Syllabus (Class 1-12)
                     </a>
                   </div>
@@ -464,6 +464,8 @@ export default function Curriculum() {
     </main>
   )
 }
+
+
 
 
 

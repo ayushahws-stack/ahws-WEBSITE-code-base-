@@ -49,7 +49,7 @@ export default function NoticeBoard() {
               <h3>📅 Academic Calendar 2027-28</h3>
               <p>Download the complete academic schedule, including holidays and exam dates.</p>
             </div>
-            <a href="./documents%20website/Academic%20Planner%20(2027-28).pdf" target="_blank" rel="noopener noreferrer" className="btn btn-primary">Download PDF</a>
+            <a href="$12026-27).pdf" target="_blank" rel="noopener noreferrer" className="btn btn-primary">Download PDF</a>
           </div>
         </div>
       </section>
@@ -133,3 +133,4 @@ export default function NoticeBoard() {
     </main>
   )
 }
+

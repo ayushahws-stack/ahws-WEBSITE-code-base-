@@ -319,7 +319,7 @@ export default function Academics() {
                 📌 <em>Detailed date sheets will be shared via circulars and the 360° App well in advance. Parents are requested to ensure regular attendance during examination weeks.</em>
               </p>
               <div style={{ display: 'flex', justifyContent: 'center', marginTop: '24px' }}>
-                <a href="./documents%20website/Academic%20Planner%20(2027-28).pdf" target="_blank" rel="noopener noreferrer" className="acad-download-btn">
+                <a href="$12026-27).pdf" target="_blank" rel="noopener noreferrer" className="acad-download-btn">
                   📅 Download Academic Planner (2027-28)
                 </a>
               </div>
@@ -353,7 +353,7 @@ export default function Academics() {
                         ))}
                       </ul>
                       <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginTop: '16px' }}>
-                        <a href="./documents%20website/HVM%20Syllabus%20Class%201-12-%202027-28.pdf" target="_blank" rel="noopener noreferrer" className="acad-download-btn">
+                        <a href="$12026-27.pdf" target="_blank" rel="noopener noreferrer" className="acad-download-btn">
                           ⬇️ Download Complete Syllabus (Class 1-12)
                         </a>
                       </div>
@@ -479,3 +479,4 @@ export default function Academics() {
     </main>
   )
 }
+
