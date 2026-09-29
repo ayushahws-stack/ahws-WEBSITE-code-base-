@@ -23,7 +23,7 @@ export default function FAQPage() {
               <h3>Still Have Questions?</h3>
               <p>Our admissions team is here to help. Reach out to us for any additional queries.</p>
               <div className="faq-cta-buttons">
-                <a href="#/contact" className="btn-primary-ahws">Contact Us</a>
+                <a href="/ahws_WEBSITE-/contact" className="btn-primary-ahws">Contact Us</a>
                 <a href="tel:8860455000" className="btn-secondary-ahws">📞 Call: 8860 455 000</a>
               </div>
             </div>

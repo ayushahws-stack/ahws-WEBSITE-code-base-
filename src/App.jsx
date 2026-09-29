@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { HashRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom'
 import { HelmetProvider } from 'react-helmet-async'
 import Header from './components/Header'
 
@@ -54,7 +54,7 @@ function ScrollToTop() {
 function App() {
   return (
     <HelmetProvider>
-    <HashRouter>
+    <BrowserRouter basename="/ahws_WEBSITE-/">
       <ScrollToTop />
       <SEO />
       <AnnouncementTicker />
@@ -90,7 +90,7 @@ function App() {
       <Footer />
       <FloatingEnquiry />
       <BackToTop />
-    </HashRouter>
+    </BrowserRouter>
     </HelmetProvider>
   )
 }
