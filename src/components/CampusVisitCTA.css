@@ -1,0 +1,178 @@
+/* ── Campus Visit Section ── */
+.campus-visit-section {
+  background: linear-gradient(135deg, #002147 0%, #1a3a6b 100%);
+  padding: 60px 0;
+  text-align: center;
+  color: #fff;
+  border-top: 4px solid #FFC700;
+  border-bottom: 4px solid #FFC700;
+}
+
+.cv-content h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+  color: #FFC700;
+}
+
+.cv-content p {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto 32px;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+.btn-primary-cv {
+  background: #FFC700;
+  color: #002147;
+  border: none;
+  padding: 16px 36px;
+  font-size: 1.2rem;
+  font-weight: 800;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 199, 0, 0.3);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-primary-cv:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(255, 199, 0, 0.4);
+  background: #ffda47;
+}
+
+/* ── Campus Visit Modal ── */
+.cv-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 15, 36, 0.85);
+  backdrop-filter: blur(5px);
+  z-index: 10000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.cv-modal-content {
+  background: #fff;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  animation: cvModalSlideIn 0.3s ease-out;
+}
+
+@keyframes cvModalSlideIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.cv-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: rgba(0, 33, 71, 0.1);
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  color: #002147;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.cv-modal-close:hover {
+  background: rgba(0, 33, 71, 0.2);
+}
+
+.cv-modal-header {
+  background: #f8fafc;
+  padding: 30px 30px 20px;
+  border-bottom: 1px solid #e2e8f0;
+  text-align: center;
+}
+
+.cv-modal-header h3 {
+  color: #002147;
+  font-size: 1.6rem;
+  margin-bottom: 8px;
+}
+
+.cv-modal-header p {
+  color: #64748b;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.cv-form {
+  padding: 25px 30px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cv-form-field label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #334155;
+  margin-bottom: 8px;
+}
+
+.cv-form-field .req {
+  color: #e53e3e;
+}
+
+.cv-form-field input,
+.cv-form-field select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #1e293b;
+  transition: border-color 0.2s;
+}
+
+.cv-form-field input:focus,
+.cv-form-field select:focus {
+  outline: none;
+  border-color: #002147;
+}
+
+.cv-submit-btn {
+  background: #25D366; /* WhatsApp Green */
+  color: #fff;
+  border: none;
+  padding: 14px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 10px;
+}
+
+.cv-submit-btn:hover {
+  background: #1ebd5a;
+}
+
+@media (max-width: 600px) {
+  .cv-content h2 { font-size: 2rem; }
+  .cv-form { padding: 20px; }
+  .cv-modal-header { padding: 25px 20px 15px; }
+}

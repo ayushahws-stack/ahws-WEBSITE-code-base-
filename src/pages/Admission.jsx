@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './Admission.css'
 import Popup from '../components/Popup'
 import PageBanner from '../components/PageBanner'
+import CampusVisitCTA from '../components/CampusVisitCTA'
 import FAQ from '../components/FAQ'
 
 export default function Admission() {
@@ -325,6 +326,8 @@ export default function Admission() {
       </section>
 
       {/* Admission Process */}
+      <CampusVisitCTA />
+
       <section className="admission-process" id="admission-process">
         <div className="container">
           <h2 className="section-title">Admission Process</h2>
@@ -451,6 +454,7 @@ export default function Admission() {
     </main>
   )
 }
+
 
 
 
