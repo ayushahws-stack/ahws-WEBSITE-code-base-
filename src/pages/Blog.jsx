@@ -15,21 +15,21 @@ export default function Blog() {
       title: 'The Importance of Holistic Education in the 21st Century', 
       category: 'Academics & Pedagogy',
       excerpt: 'Discover how holistic education prepares students for future challenges beyond academic success, focusing on emotional intelligence and critical thinking.', 
-      img: 'https://ahws.edu.in/images/slider-1.webp' 
+      img: './images/new%20AHWS%20Website%20Photos/Home/Students%20reading%20in%20the%20Library/IMG-20260712-WA0218.jpg' 
     },
     { 
       id: 2,
       title: 'Integrating Technology & AI in Modern Classrooms', 
       category: 'Technology & AI',
       excerpt: 'A look into how smart classrooms, interactive 3D panels, and robotics labs enhance learning retention and engagement among young minds.', 
-      img: 'https://ahws.edu.in/images/slider-2.webp' 
+      img: './images/new%20AHWS%20Website%20Photos/Home/Students%20working%20in%20Robotics%20&%20AI%20Lab/AI.jpeg' 
     },
     { 
       id: 3,
       title: 'Extracurricular Activities: Shaping Well-Rounded Personalities', 
       category: 'Student Life',
       excerpt: 'Why sports, performing arts, and music are just as crucial as mathematics and science in early child development.', 
-      img: 'https://ahws.edu.in/images/slider-3.webp' 
+      img: './images/new%20AHWS%20Website%20Photos/Home/Students%20in%20Art%20&%20Music%20Studios/CAM%20%201%201935T01.JPG' 
     },
     { 
       id: 4,
@@ -43,7 +43,7 @@ export default function Blog() {
       title: 'Nurturing Physical Fitness & Team Spirit Through Sports', 
       category: 'Sports & Fitness',
       excerpt: 'From basketball arenas to taekwondo and cricket, explore how sports build resilience, stamina, and lifelong sportsmanship.', 
-      img: './images/Basketball 1.jpeg' 
+      img: './images/new%20AHWS%20Website%20Photos/Home/Sports/CAM%20%201%201696T01.JPG' 
     },
     { 
       id: 6,
@@ -161,3 +161,5 @@ export default function Blog() {
     </main>
   )
 }
+
+

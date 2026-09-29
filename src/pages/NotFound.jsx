@@ -13,7 +13,7 @@ export default function NotFound() {
       
       <PageBanner 
         title="404 - Page Not Found" 
-        image="/images/campus_placeholder.jpg" 
+        image="./images/new%20AHWS%20Website%20Photos/Home/Students%20planting%20trees%20or%20in%20the%20green%20campus/20250724_085455.jpg" 
       />
       
       <div className="container" style={{ textAlign: 'center', padding: '100px 20px', minHeight: '50vh' }}>
@@ -29,3 +29,4 @@ export default function NotFound() {
     </div>
   );
 }
+
