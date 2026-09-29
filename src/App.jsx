@@ -27,6 +27,7 @@ import Wellbeing from './pages/Wellbeing'
 import FAQPage from './pages/FAQPage'
 import AnnouncementTicker from './components/AnnouncementTicker'
 import FloatingEnquiry from './components/FloatingEnquiry'
+import WhatsAppWidget from './components/WhatsAppWidget'
 import BackToTop from './components/BackToTop'
 import SEO from './components/SEO'
 import './App.css'
@@ -89,6 +90,7 @@ function App() {
       </Routes>
       <Footer />
       <FloatingEnquiry />
+      <WhatsAppWidget />
       <BackToTop />
     </BrowserRouter>
     </HelmetProvider>
