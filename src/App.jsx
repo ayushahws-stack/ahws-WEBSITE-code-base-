@@ -6,6 +6,7 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import Home from './pages/Home'
 import NotFound from './pages/NotFound'
+import TCDatabase from './pages/TCDatabase'
 import About from './pages/About'
 import Admission from './pages/Admission'
 import ContactUs from './pages/ContactUs'
@@ -86,6 +87,7 @@ function App() {
         <Route path="/campus" element={<Navigate to="/gallery" replace />} />
         <Route path="/well-being" element={<Wellbeing />} />
         <Route path="/faqs" element={<FAQPage />} />
+        <Route path="/tc-database" element={<TCDatabase />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
@@ -100,3 +102,4 @@ function App() {
 export default App
 
 // force refresh
+
