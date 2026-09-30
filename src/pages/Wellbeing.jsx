@@ -313,7 +313,7 @@ export default function Wellbeing() {
               ))}
             </div>
 
-            <a href="/ahws_WEBSITE-/contact" className="btn-primary-ahws" style={{ marginTop: '30px' }}>Reach Out for Support</a>
+            <a href="/contact" className="btn-primary-ahws" style={{ marginTop: '30px' }}>Reach Out for Support</a>
           </div>
         </div>
       </section>
@@ -397,3 +397,4 @@ export default function Wellbeing() {
     </main>
   )
 }
+

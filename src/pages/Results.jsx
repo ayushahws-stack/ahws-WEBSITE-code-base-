@@ -34,9 +34,9 @@ export default function Results() {
   ]
 
   const classXIIToppers = [
-    { rank: 1, name: 'Ishita Reddy', initials: 'IR', marks: '97.6%', stream: 'Science', color: '#4A90D9' },
-    { rank: 2, name: 'Aditya Nair', initials: 'AN', marks: '96.8%', stream: 'Science', color: '#D94A7A' },
-    { rank: 3, name: 'Meera Joshi', initials: 'MJ', marks: '96.2%', stream: 'Commerce', color: '#4AD9A7' },
+    { rank: 1, name: 'Utsav Jain', initials: 'IR', marks: '97.6%', stream: 'Science', color: '#4A90D9' },
+    { rank: 2, name: 'Darsh Sanoria', initials: 'AN', marks: '96.8%', stream: 'Science', color: '#D94A7A' },
+    { rank: 3, name: 'Harshad Mahor', initials: 'MJ', marks: '96.2%', stream: 'Commerce', color: '#4AD9A7' },
     { rank: 4, name: 'Vikram Rao', initials: 'VR', marks: '95.8%', stream: 'Science', color: '#D9A74A' },
     { rank: 5, name: 'Tanya Kapoor', initials: 'TK', marks: '95.0%', stream: 'Commerce', color: '#7A4AD9' },
     { rank: 6, name: 'Arjun Das', initials: 'AD', marks: '94.6%', stream: 'Science', color: '#4AD9D9' },
@@ -253,3 +253,4 @@ export default function Results() {
     </main>
   )
 }
+
