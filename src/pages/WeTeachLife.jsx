@@ -1,282 +1,283 @@
-import { Link } from 'react-router-dom';
-import { useInView } from 'react-intersection-observer'
-import PageBanner from '../components/PageBanner'
-import './WeTeachLife.css'
-
-/* â”€â”€ Section data â”€â”€ */
-const sections = [
-  {
-    id: 'community',
-    label: 'Community',
-    icon: (
-      <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
-        <circle cx="9" cy="7" r="3" stroke="#002147" strokeWidth="1.8"/>
-        <circle cx="15" cy="7" r="3" stroke="#FFC700" strokeWidth="1.8"/>
-        <path d="M3 20c0-3.314 2.686-6 6-6h6c3.314 0 6 2.686 6 6" stroke="#002147" strokeWidth="1.8" strokeLinecap="round"/>
-      </svg>
-    ),
-    quote: 'Alone we can do little; together we can do so much.',
-    quoteBy: 'Helen Keller',
-    accent: '#002147',
-    image: './images/new%20AHWS%20Website%20Photos/We%20Teach%20Life/Students%20planting%20trees%20or%20in%20the%20green%20campus/20250724_085455.jpg',
-    fallback: './WEBSITE GALLERY/AHWS Baby Show (02-10-2024)/DSC_0200.jpeg',
-    body: `A child's growth is closely connected to the strength of the community around them. At Academic Heights World School, we work to create an inclusive, caring community where every student, parent and teacher feels valued and genuinely part of something bigger. We believe children learn best when people respect one another, work together and share a sense of purpose.\n\nWhen you become part of the Academic Heights World School family, you become part of an active service community. Our students lead concrete ground initiatives, including:
-
-ï¿½ Student-Led Book Drives with local library projects
-ï¿½ Handmade Paper Bag Drives distributed across Pitampura markets to combat single-use plastics
-ï¿½ Eco-Awareness & Swachh Bharat Cleanliness Campaigns
-ï¿½ Intergenerational visits to local eldercare and RWA Health Check-up Camps We encourage parents, teachers and students to work closely together because children grow best when the people around them are connected. Here, your child will have people who know them, encourage them and stand by them.`,
-  },
-  {
-    id: 'parents',
-    label: 'Parents',
-    icon: (
-      <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
-        <path d="M12 21c-4.5-4-8-7.5-8-11a8 8 0 0116 0c0 3.5-3.5 7-8 11z" stroke="#FFC700" strokeWidth="1.8" fill="#fff5cc"/>
-        <circle cx="12" cy="10" r="2.5" stroke="#002147" strokeWidth="1.8"/>
-      </svg>
-    ),
-    quote: 'The child is both a hope and a promise for mankind.',
-    quoteBy: 'Maria Montessori',
-    accent: '#FFC700',
-    image: './images/new%20AHWS%20Website%20Photos/We%20Teach%20Life/Parent%20and%20child%20interacting%20happily%20at%20school/WhatsApp%20Image%202026-07-18%20at%2011.01.05%20AM%20(2).jpeg',
-    fallback: './WEBSITE GALLERY/RWA Health Check-up Camp (28-09-2025)/WhatsApp Image 2025-09-28 at 1.50.55 PM.jpeg',
-    body: `We know that parents are a child's first and most important teachers. Your hopes for your child, the values you want them to carry and the future you imagine for them all matter to us. We do not try to take your place. We work alongside you, as trusted partners who can support your child's learning and growth.\n\nWe value your thoughts, we listen to your concerns and we welcome your involvement in your child's education. We believe children benefit most when families and schools work as partners. When you choose Academic Heights World School, you place an important trust in us, and we take that trust seriously. Your hopes for your child become part of what we work towards every day.`,
-  },
-  {
-    id: 'educators',
-    label: 'Educators',
-    icon: (
-      <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
-        <rect x="3" y="5" width="18" height="13" rx="2" stroke="#002147" strokeWidth="1.8"/>
-        <path d="M8 19l4 2 4-2" stroke="#002147" strokeWidth="1.6" strokeLinecap="round"/>
-        <path d="M9 11h6M9 8h4" stroke="#FFC700" strokeWidth="1.6" strokeLinecap="round"/>
-      </svg>
-    ),
-    quote: 'A teacher affects eternity; he can never tell where his influence stops.',
-    quoteBy: 'Henry Brooks Adams',
-    accent: '#002147',
-    image: './WEBSITE GALLERY/AHWS Baby Show (02-10-2024)/DSC_0257.jpeg',
-    body: `Behind every great student is a teacher who believes in them. At Academic Heights World School, our educators are more than instructors; they are mentors, guides and lifelong learners who genuinely enjoy helping young minds grow. We are proud of our dedicated team and the care they bring to each child, from everyday encouragement to meaningful individual attention.\n\nWe choose our educators for their knowledge, warmth and commitment to the whole child. They create classrooms where curiosity is encouraged, questions are welcomed and children feel comfortable being themselves. Your child will be known, listened to and challenged to grow by teachers who care about their progress and their potential.`,
-  },
-  {
-    id: 'helpers',
-    label: 'Helpers',
-    icon: (
-      <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
-        <path d="M12 3l2 5h5l-4 3 1.5 5L12 13l-4.5 3L9 11 5 8h5z" stroke="#FFC700" strokeWidth="1.6" fill="#fff5cc"/>
-      </svg>
-    ),
-    quote: 'Everyone can be great because everyone can serve.',
-    quoteBy: 'Martin Luther King Jr.',
-    accent: '#FFC700',
-    image: './WEBSITE GALLERY/Gurupurab Celebration (04-11-2025)/IMG_20251104_083911.jpeg',
-    body: `A school works because of many people, including those who often work quietly behind the scenes. At Academic Heights World School, our support staff help keep the school clean, welcoming and ready for learning each day. Their work may happen in the background, but it has a real impact on the experience children have at school.\n\nFrom the warm welcome at the front desk to the care taken throughout our classrooms and hallways, our staff work hard to make the school feel comfortable and well cared for. They are here to help, to keep things running smoothly and, most importantly, to help your child feel happy and supported during the school day.`,
-  },
-  {
-    id: 'environment',
-    label: 'Environment',
-    icon: (
-      <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
-        <path d="M12 2C8 2 4 6 4 10c0 5 5 10 8 12 3-2 8-7 8-12 0-4-4-8-8-8z" stroke="#002147" strokeWidth="1.8" fill="#e8f5e9"/>
-        <path d="M9 13c1-2 3-3 3-3s2 1 3 3" stroke="#002147" strokeWidth="1.5" strokeLinecap="round"/>
-      </svg>
-    ),
-    quote: 'Space is the breath of art.',
-    quoteBy: 'Frank Lloyd Wright',
-    accent: '#002147',
-    image: './images/new%20AHWS%20Website%20Photos/We%20Teach%20Life/Students%20planting%20trees%20or%20in%20the%20green%20campus/20250724_085658.jpg',
-    fallback: './images/Green campus.png',
-    body: `Children learn best when they feel safe, comfortable and inspired by the space around them. At Academic Heights World School, our environment is designed to encourage curiosity, creativity and a sense of discovery. Our classrooms are airy and welcoming, our green spaces give children room to breathe, and every part of the campus is planned with their experience in mind.\n\nA thoughtful learning environment can help children feel calmer, stay focused and enjoy their time at school. We take pride in keeping our spaces clean, comfortable and well equipped for learning, while also giving students opportunities to spend time outdoors and connect with nature. We want every child to walk into school each day feeling that they are in a place where they can learn and belong.`,
-  },
-  {
-    id: 'skills',
-    label: 'Skills',
-    icon: (
-      <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
-        <path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z" stroke="#FFC700" strokeWidth="1.7" fill="#fff5cc"/>
-      </svg>
-    ),
-    quote: 'Skills make you valuable.',
-    quoteBy: 'Jim Rohn',
-    accent: '#FFC700',
-    image: './images/new%20AHWS%20Website%20Photos/Home/Students%20working%20in%20Robotics%20&%20AI%20Lab/AI.jpeg',
-    fallback: './WEBSITE GALLERY/other images/Technology_and_App_010.jpg',
-    body: `In a changing world, knowledge alone is not enough. At Academic Heights World School, we also help students build practical skills they can carry into everyday life. These include critical thinking, problem-solving, communication, collaboration and the confident use of technology. Our learning experiences are designed to prepare children for real situations, not simply for tests.\n\nFrom learning how to think deeply and speak with confidence to creating art and working as part of a team, students are encouraged to build a broad range of abilities. Along the way, they develop confidence, flexibility and the belief that they can keep learning and improving. These are qualities that can continue to serve them long after school.`,
-  },
-  {
-    id: 'extra-curricular',
-    label: 'Extra Curricular',
-    icon: (
-      <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
-        <circle cx="12" cy="12" r="9" stroke="#002147" strokeWidth="1.8"/>
-        <path d="M12 7v5l3 3" stroke="#FFC700" strokeWidth="1.8" strokeLinecap="round"/>
-      </svg>
-    ),
-    quote: 'Every child is an artist. The problem is how to remain an artist once we grow up.',
-    quoteBy: 'Pablo Picasso',
-    accent: '#002147',
-    image: './images/new%20AHWS%20Website%20Photos/Home/Students%20in%20Art%20&%20Music%20Studios/CAM%20%201%201935T01.JPG',
-    fallback: './WEBSITE GALLERY/other images/kid making art 02.png',
-    body: `We believe school should give children opportunities to discover interests beyond the regular classroom. At Academic Heights World School, our co-curricular activities give students space to try new things, discover what they enjoy and learn how to work with others. These experiences are an important part of becoming a confident, well-rounded individual.\n\nTaking part in activities outside the classroom teaches children how to cooperate, stay committed and keep going when something is difficult. It also gives them chances to build confidence, friendships and memories they will carry with them. With guidance from our staff, students can explore new interests at their own pace and discover new sides of themselves.`,
-  },
-  {
-    id: 'motivation',
-    label: 'Motivation & Inspiration',
-    icon: (
-      <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
-        <path d="M12 2l1.5 4.5H18l-3.75 2.75 1.5 4.5L12 11l-3.75 2.75 1.5-4.5L6 6.5h4.5z" stroke="#FFC700" strokeWidth="1.7" fill="#fff5cc"/>
-        <path d="M12 14v6M9 17h6" stroke="#002147" strokeWidth="1.7" strokeLinecap="round"/>
-      </svg>
-    ),
-    quote: 'Nothing will work unless you do.',
-    quoteBy: 'Maya Angelou',
-    accent: '#FFC700',
-    image: './WEBSITE GALLERY/Dental Check-up Drive (13-05-2026)/IMG_1062.jpeg',
-    body: `A child's mindset can make a meaningful difference to how they approach learning and challenges. At Academic Heights World School, we want students to believe in their ability to grow, to keep going when things are difficult and to have the courage to try again. We celebrate effort and resilience, not just outcomes.\n\nThrough assemblies, stories, encouragement and personal mentoring, we help students develop the confidence to face challenges and pursue their goals. We teach them that setbacks are part of learning and that mistakes can become opportunities to improve. We want every child to leave Academic Heights World School with knowledge, but also with a strong belief in their own ability to learn and grow.`,
-  },
-  {
-    id: 'gratitude',
-    label: 'Gratitude',
-    icon: (
-      <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
-        <path d="M12 21l-1.5-1.35C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.5 11.15L12 21z" stroke="#002147" strokeWidth="1.8" fill="#fff0f0"/>
-      </svg>
-    ),
-    quote: 'In ordinary life, we hardly realize that we receive a great deal more than we give, and that it is only with gratitude that life becomes rich.',
-    quoteBy: 'Dietrich Bonhoeffer',
-    accent: '#002147',
-    image: './WEBSITE GALLERY/Sports Day (17-02-2026)/IMG_20260217_101527.jpeg',
-    body: `We believe gratitude can shape the way children see themselves, other people and the world around them. At Academic Heights World School, we encourage students to notice and appreciate the people, opportunities and experiences that enrich their lives. In doing so, we nurture kindness, empathy and a generous spirit.\n\nAs children learn to be grateful, they can become more aware of the people who support them and more thoughtful in the way they treat others. Gratitude can encourage empathy, resilience and a positive outlook through both good days and difficult ones. At Academic Heights World School, we want academic growth to go hand in hand with becoming a thoughtful, caring human being who can make a positive difference in the world.`,
-  },
-]
-
-/* â”€â”€â”€ Single section component â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
-function LifeSection({ section, index }) {
-  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.12 })
-  const isEven = index % 2 === 0
-
-  return (
-    <section
-      id={section.id}
-      ref={ref}
-      className={`wtl-section ${isEven ? 'wtl-section--normal' : 'wtl-section--reverse'} ${inView ? 'wtl-visible' : ''}`}
-    >
-      <div className="container wtl-section-inner">
-        {/* Text side */}
-        <div className="wtl-text-side">
-          <h2 className="wtl-section-title">{section.label}</h2>
-          <div className="wtl-divider" style={{ background: `linear-gradient(90deg, ${section.accent}, ${section.accent === '#002147' ? '#FFC700' : '#002147'})` }} />
-          <blockquote className="wtl-quote">
-            <span className="wtl-quote-mark">"</span>
-            {section.quote}
-            <cite className="wtl-quote-by">â€” {section.quoteBy}</cite>
-          </blockquote>
-          {section.body.split('\n\n').map((para, i) => (
-            <p key={i} className="wtl-body">{para}</p>
-          ))}
-        </div>
-
-        {/* Image side */}
-        <div className="wtl-image-side">
-          <div className="wtl-image-frame">
-            <img
-              src={section.image}
-              alt={section.label}
-              loading="lazy"
-              onError={e => {
-                if (section.fallback && e.currentTarget.src !== section.fallback) {
-                  e.currentTarget.onerror = null
-                  e.currentTarget.src = section.fallback
-                } else {
-                  e.currentTarget.style.display = 'none'
-                  e.currentTarget.parentElement.classList.add('wtl-image-placeholder')
-                }
-              }}
-            />
-            <div className="wtl-image-badge" style={{ background: section.accent }}>
-              {section.label}
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  )
-}
-
-/* â”€â”€â”€ Page â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
-export default function WeTeachLife() {
-  const { ref: introRef, inView: introInView } = useInView({ triggerOnce: true, threshold: 0.1 })
-
-  return (
-    <>
-      <PageBanner
-        title="We Teach Life"
-      />
-
-      {/* Intro hero strip */}
-      <div ref={introRef} className={`wtl-intro ${introInView ? 'wtl-visible' : ''}`}>
-        <div className="container wtl-intro-inner">
-          <div className="wtl-intro-text">
-            <h1 className="wtl-intro-heading">We Teach Life</h1>
-            <p>
-              At Academic Heights World School, we believe education should prepare children for more than exams.
-              It should prepare them for <em>life</em>. Our aim is to help every child grow into a kind, confident
-              and capable person who can adapt to a world that is constantly changing. Every lesson, conversation
-              and experience is designed to help them become ready for whatever tomorrow brings.
-            </p>
-            <p>
-              Choosing Academic Heights World School means choosing more than strong academics. It means choosing a
-              school that will walk alongside your child as they grow. We care about their minds, their character
-              and their sense of who they are. At Academic Heights World School, we do not simply teach subjects;
-              we help children learn how to live well.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      {/* Quick nav pills */}
-      <nav className="wtl-nav" aria-label="Page sections">
-        <div className="container">
-          <ul className="wtl-nav-list">
-            {sections.map(s => (
-              <li key={s.id}>
-                <button 
-                  onClick={() => {
-                    const el = document.getElementById(s.id);
-                    if (el) {
-                      const y = el.getBoundingClientRect().top + window.scrollY - 80; // Offset for sticky nav
-                      window.scrollTo({ top: y, behavior: 'smooth' });
-                    }
-                  }} 
-                  className="wtl-nav-pill"
-                >
-                  {s.label}
-                </button>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </nav>
-
-      {/* All sections */}
-      <main className="wtl-main">
-        {sections.map((section, i) => (
-          <LifeSection key={section.id} section={section} index={i} />
-        ))}
-      </main>
-
-      {/* CTA strip */}
-      <div className="wtl-cta">
-        <div className="container wtl-cta-inner">
-          <h2 className="wtl-cta-title">Give Your Child the Gift of a Grateful Heart</h2>
-          <p className="wtl-cta-sub">
-            Enrol at Academic Heights World School and help nurture a lifetime of growth, happiness and purpose.
-          </p>
-          <Link to="/admission"></Link>
-        </div>
-      </div>
-    </>
-  )
-}
-
+-i-m-p-o-r-t- -{- -L-i-n-k- -}- -f-r-o-m- -'-r-e-a-c-t---r-o-u-t-e-r---d-o-m-'-;-
+-i-m-p-o-r-t- -{- -u-s-e-I-n-V-i-e-w- -}- -f-r-o-m- -'-r-e-a-c-t---i-n-t-e-r-s-e-c-t-i-o-n---o-b-s-e-r-v-e-r-'-
+-i-m-p-o-r-t- -P-a-g-e-B-a-n-n-e-r- -f-r-o-m- -'-.-.-/-c-o-m-p-o-n-e-n-t-s-/-P-a-g-e-B-a-n-n-e-r-'-
+-i-m-p-o-r-t- -'-.-/-W-e-T-e-a-c-h-L-i-f-e-.-c-s-s-'-
+-
+-/-*- -â-”-€-â-”-€- -S-e-c-t-i-o-n- -d-a-t-a- -â-”-€-â-”-€- -*-/-
+-c-o-n-s-t- -s-e-c-t-i-o-n-s- -=- -[-
+- - -{-
+- - - - -i-d-:- -'-c-o-m-m-u-n-i-t-y-'-,-
+- - - - -l-a-b-e-l-:- -'-C-o-m-m-u-n-i-t-y-'-,-
+- - - - -i-c-o-n-:- -(-
+- - - - - - -<-s-v-g- -w-i-d-t-h-=-"-4-0-"- -h-e-i-g-h-t-=-"-4-0-"- -v-i-e-w-B-o-x-=-"-0- -0- -2-4- -2-4-"- -f-i-l-l-=-"-n-o-n-e-"->-
+- - - - - - - - -<-c-i-r-c-l-e- -c-x-=-"-9-"- -c-y-=-"-7-"- -r-=-"-3-"- -s-t-r-o-k-e-=-"-#-0-0-2-1-4-7-"- -s-t-r-o-k-e-W-i-d-t-h-=-"-1-.-8-"-/->-
+- - - - - - - - -<-c-i-r-c-l-e- -c-x-=-"-1-5-"- -c-y-=-"-7-"- -r-=-"-3-"- -s-t-r-o-k-e-=-"-#-F-F-C-7-0-0-"- -s-t-r-o-k-e-W-i-d-t-h-=-"-1-.-8-"-/->-
+- - - - - - - - -<-p-a-t-h- -d-=-"-M-3- -2-0-c-0---3-.-3-1-4- -2-.-6-8-6---6- -6---6-h-6-c-3-.-3-1-4- -0- -6- -2-.-6-8-6- -6- -6-"- -s-t-r-o-k-e-=-"-#-0-0-2-1-4-7-"- -s-t-r-o-k-e-W-i-d-t-h-=-"-1-.-8-"- -s-t-r-o-k-e-L-i-n-e-c-a-p-=-"-r-o-u-n-d-"-/->-
+- - - - - - -<-/-s-v-g->-
+- - - - -)-,-
+- - - - -q-u-o-t-e-:- -'-A-l-o-n-e- -w-e- -c-a-n- -d-o- -l-i-t-t-l-e-;- -t-o-g-e-t-h-e-r- -w-e- -c-a-n- -d-o- -s-o- -m-u-c-h-.-'-,-
+- - - - -q-u-o-t-e-B-y-:- -'-H-e-l-e-n- -K-e-l-l-e-r-'-,-
+- - - - -a-c-c-e-n-t-:- -'-#-0-0-2-1-4-7-'-,-
+- - - - -i-m-a-g-e-:- -'-.-/-i-m-a-g-e-s-/-n-e-w-%-2-0-A-H-W-S-%-2-0-W-e-b-s-i-t-e-%-2-0-P-h-o-t-o-s-/-W-e-%-2-0-T-e-a-c-h-%-2-0-L-i-f-e-/-S-t-u-d-e-n-t-s-%-2-0-p-l-a-n-t-i-n-g-%-2-0-t-r-e-e-s-%-2-0-o-r-%-2-0-i-n-%-2-0-t-h-e-%-2-0-g-r-e-e-n-%-2-0-c-a-m-p-u-s-/-2-0-2-5-0-7-2-4-_-0-8-5-4-5-5-.-j-p-g-'-,-
+- - - - -f-a-l-l-b-a-c-k-:- -'-.-/-W-E-B-S-I-T-E- -G-A-L-L-E-R-Y-/-A-H-W-S- -B-a-b-y- -S-h-o-w- -(-0-2---1-0---2-0-2-4-)-/-D-S-C-_-0-2-0-0-.-j-p-e-g-'-,-
+- - - - -b-o-d-y-:- -`-A- -c-h-i-l-d-'-s- -g-r-o-w-t-h- -i-s- -c-l-o-s-e-l-y- -c-o-n-n-e-c-t-e-d- -t-o- -t-h-e- -s-t-r-e-n-g-t-h- -o-f- -t-h-e- -c-o-m-m-u-n-i-t-y- -a-r-o-u-n-d- -t-h-e-m-.- -A-t- -A-c-a-d-e-m-i-c- -H-e-i-g-h-t-s- -W-o-r-l-d- -S-c-h-o-o-l-,- -w-e- -w-o-r-k- -t-o- -c-r-e-a-t-e- -a-n- -i-n-c-l-u-s-i-v-e-,- -c-a-r-i-n-g- -c-o-m-m-u-n-i-t-y- -w-h-e-r-e- -e-v-e-r-y- -s-t-u-d-e-n-t-,- -p-a-r-e-n-t- -a-n-d- -t-e-a-c-h-e-r- -f-e-e-l-s- -v-a-l-u-e-d- -a-n-d- -g-e-n-u-i-n-e-l-y- -p-a-r-t- -o-f- -s-o-m-e-t-h-i-n-g- -b-i-g-g-e-r-.- -W-e- -b-e-l-i-e-v-e- -c-h-i-l-d-r-e-n- -l-e-a-r-n- -b-e-s-t- -w-h-e-n- -p-e-o-p-l-e- -r-e-s-p-e-c-t- -o-n-e- -a-n-o-t-h-e-r-,- -w-o-r-k- -t-o-g-e-t-h-e-r- -a-n-d- -s-h-a-r-e- -a- -s-e-n-s-e- -o-f- -p-u-r-p-o-s-e-.-\-n-\-n-W-h-e-n- -y-o-u- -b-e-c-o-m-e- -p-a-r-t- -o-f- -t-h-e- -A-c-a-d-e-m-i-c- -H-e-i-g-h-t-s- -W-o-r-l-d- -S-c-h-o-o-l- -f-a-m-i-l-y-,- -y-o-u- -b-e-c-o-m-e- -p-a-r-t- -o-f- -a-n- -a-c-t-i-v-e- -s-e-r-v-i-c-e- -c-o-m-m-u-n-i-t-y-.- -O-u-r- -s-t-u-d-e-n-t-s- -l-e-a-d- -c-o-n-c-r-e-t-e- -g-r-o-u-n-d- -i-n-i-t-i-a-t-i-v-e-s-,- -i-n-c-l-u-d-i-n-g-:-
+-
+-ï-¿-½- -S-t-u-d-e-n-t---L-e-d- -B-o-o-k- -D-r-i-v-e-s- -w-i-t-h- -l-o-c-a-l- -l-i-b-r-a-r-y- -p-r-o-j-e-c-t-s-
+-ï-¿-½- -H-a-n-d-m-a-d-e- -P-a-p-e-r- -B-a-g- -D-r-i-v-e-s- -d-i-s-t-r-i-b-u-t-e-d- -a-c-r-o-s-s- -P-i-t-a-m-p-u-r-a- -m-a-r-k-e-t-s- -t-o- -c-o-m-b-a-t- -s-i-n-g-l-e---u-s-e- -p-l-a-s-t-i-c-s-
+-ï-¿-½- -E-c-o---A-w-a-r-e-n-e-s-s- -&- -S-w-a-c-h-h- -B-h-a-r-a-t- -C-l-e-a-n-l-i-n-e-s-s- -C-a-m-p-a-i-g-n-s-
+-ï-¿-½- -I-n-t-e-r-g-e-n-e-r-a-t-i-o-n-a-l- -v-i-s-i-t-s- -t-o- -l-o-c-a-l- -e-l-d-e-r-c-a-r-e- -a-n-d- -R-W-A- -H-e-a-l-t-h- -C-h-e-c-k---u-p- -C-a-m-p-s- -W-e- -e-n-c-o-u-r-a-g-e- -p-a-r-e-n-t-s-,- -t-e-a-c-h-e-r-s- -a-n-d- -s-t-u-d-e-n-t-s- -t-o- -w-o-r-k- -c-l-o-s-e-l-y- -t-o-g-e-t-h-e-r- -b-e-c-a-u-s-e- -c-h-i-l-d-r-e-n- -g-r-o-w- -b-e-s-t- -w-h-e-n- -t-h-e- -p-e-o-p-l-e- -a-r-o-u-n-d- -t-h-e-m- -a-r-e- -c-o-n-n-e-c-t-e-d-.- -H-e-r-e-,- -y-o-u-r- -c-h-i-l-d- -w-i-l-l- -h-a-v-e- -p-e-o-p-l-e- -w-h-o- -k-n-o-w- -t-h-e-m-,- -e-n-c-o-u-r-a-g-e- -t-h-e-m- -a-n-d- -s-t-a-n-d- -b-y- -t-h-e-m-.-`-,-
+- - -}-,-
+- - -{-
+- - - - -i-d-:- -'-p-a-r-e-n-t-s-'-,-
+- - - - -l-a-b-e-l-:- -'-P-a-r-e-n-t-s-'-,-
+- - - - -i-c-o-n-:- -(-
+- - - - - - -<-s-v-g- -w-i-d-t-h-=-"-4-0-"- -h-e-i-g-h-t-=-"-4-0-"- -v-i-e-w-B-o-x-=-"-0- -0- -2-4- -2-4-"- -f-i-l-l-=-"-n-o-n-e-"->-
+- - - - - - - - -<-p-a-t-h- -d-=-"-M-1-2- -2-1-c---4-.-5---4---8---7-.-5---8---1-1-a-8- -8- -0- -0-1-1-6- -0-c-0- -3-.-5---3-.-5- -7---8- -1-1-z-"- -s-t-r-o-k-e-=-"-#-F-F-C-7-0-0-"- -s-t-r-o-k-e-W-i-d-t-h-=-"-1-.-8-"- -f-i-l-l-=-"-#-f-f-f-5-c-c-"-/->-
+- - - - - - - - -<-c-i-r-c-l-e- -c-x-=-"-1-2-"- -c-y-=-"-1-0-"- -r-=-"-2-.-5-"- -s-t-r-o-k-e-=-"-#-0-0-2-1-4-7-"- -s-t-r-o-k-e-W-i-d-t-h-=-"-1-.-8-"-/->-
+- - - - - - -<-/-s-v-g->-
+- - - - -)-,-
+- - - - -q-u-o-t-e-:- -'-T-h-e- -c-h-i-l-d- -i-s- -b-o-t-h- -a- -h-o-p-e- -a-n-d- -a- -p-r-o-m-i-s-e- -f-o-r- -m-a-n-k-i-n-d-.-'-,-
+- - - - -q-u-o-t-e-B-y-:- -'-M-a-r-i-a- -M-o-n-t-e-s-s-o-r-i-'-,-
+- - - - -a-c-c-e-n-t-:- -'-#-F-F-C-7-0-0-'-,-
+- - - - -i-m-a-g-e-:- -'-.-/-i-m-a-g-e-s-/-n-e-w-%-2-0-A-H-W-S-%-2-0-W-e-b-s-i-t-e-%-2-0-P-h-o-t-o-s-/-W-e-%-2-0-T-e-a-c-h-%-2-0-L-i-f-e-/-P-a-r-e-n-t-%-2-0-a-n-d-%-2-0-c-h-i-l-d-%-2-0-i-n-t-e-r-a-c-t-i-n-g-%-2-0-h-a-p-p-i-l-y-%-2-0-a-t-%-2-0-s-c-h-o-o-l-/-W-h-a-t-s-A-p-p-%-2-0-I-m-a-g-e-%-2-0-2-0-2-6---0-7---1-8-%-2-0-a-t-%-2-0-1-1-.-0-1-.-0-5-%-2-0-A-M-%-2-0-(-2-)-.-j-p-e-g-'-,-
+- - - - -f-a-l-l-b-a-c-k-:- -'-.-/-W-E-B-S-I-T-E- -G-A-L-L-E-R-Y-/-R-W-A- -H-e-a-l-t-h- -C-h-e-c-k---u-p- -C-a-m-p- -(-2-8---0-9---2-0-2-5-)-/-W-h-a-t-s-A-p-p- -I-m-a-g-e- -2-0-2-5---0-9---2-8- -a-t- -1-.-5-0-.-5-5- -P-M-.-j-p-e-g-'-,-
+- - - - -b-o-d-y-:- -`-W-e- -k-n-o-w- -t-h-a-t- -p-a-r-e-n-t-s- -a-r-e- -a- -c-h-i-l-d-'-s- -f-i-r-s-t- -a-n-d- -m-o-s-t- -i-m-p-o-r-t-a-n-t- -t-e-a-c-h-e-r-s-.- -Y-o-u-r- -h-o-p-e-s- -f-o-r- -y-o-u-r- -c-h-i-l-d-,- -t-h-e- -v-a-l-u-e-s- -y-o-u- -w-a-n-t- -t-h-e-m- -t-o- -c-a-r-r-y- -a-n-d- -t-h-e- -f-u-t-u-r-e- -y-o-u- -i-m-a-g-i-n-e- -f-o-r- -t-h-e-m- -a-l-l- -m-a-t-t-e-r- -t-o- -u-s-.- -W-e- -d-o- -n-o-t- -t-r-y- -t-o- -t-a-k-e- -y-o-u-r- -p-l-a-c-e-.- -W-e- -w-o-r-k- -a-l-o-n-g-s-i-d-e- -y-o-u-,- -a-s- -t-r-u-s-t-e-d- -p-a-r-t-n-e-r-s- -w-h-o- -c-a-n- -s-u-p-p-o-r-t- -y-o-u-r- -c-h-i-l-d-'-s- -l-e-a-r-n-i-n-g- -a-n-d- -g-r-o-w-t-h-.-\-n-\-n-W-e- -v-a-l-u-e- -y-o-u-r- -t-h-o-u-g-h-t-s-,- -w-e- -l-i-s-t-e-n- -t-o- -y-o-u-r- -c-o-n-c-e-r-n-s- -a-n-d- -w-e- -w-e-l-c-o-m-e- -y-o-u-r- -i-n-v-o-l-v-e-m-e-n-t- -i-n- -y-o-u-r- -c-h-i-l-d-'-s- -e-d-u-c-a-t-i-o-n-.- -W-e- -b-e-l-i-e-v-e- -c-h-i-l-d-r-e-n- -b-e-n-e-f-i-t- -m-o-s-t- -w-h-e-n- -f-a-m-i-l-i-e-s- -a-n-d- -s-c-h-o-o-l-s- -w-o-r-k- -a-s- -p-a-r-t-n-e-r-s-.- -W-h-e-n- -y-o-u- -c-h-o-o-s-e- -A-c-a-d-e-m-i-c- -H-e-i-g-h-t-s- -W-o-r-l-d- -S-c-h-o-o-l-,- -y-o-u- -p-l-a-c-e- -a-n- -i-m-p-o-r-t-a-n-t- -t-r-u-s-t- -i-n- -u-s-,- -a-n-d- -w-e- -t-a-k-e- -t-h-a-t- -t-r-u-s-t- -s-e-r-i-o-u-s-l-y-.- -Y-o-u-r- -h-o-p-e-s- -f-o-r- -y-o-u-r- -c-h-i-l-d- -b-e-c-o-m-e- -p-a-r-t- -o-f- -w-h-a-t- -w-e- -w-o-r-k- -t-o-w-a-r-d-s- -e-v-e-r-y- -d-a-y-.-`-,-
+- - -}-,-
+- - -{-
+- - - - -i-d-:- -'-e-d-u-c-a-t-o-r-s-'-,-
+- - - - -l-a-b-e-l-:- -'-E-d-u-c-a-t-o-r-s-'-,-
+- - - - -i-c-o-n-:- -(-
+- - - - - - -<-s-v-g- -w-i-d-t-h-=-"-4-0-"- -h-e-i-g-h-t-=-"-4-0-"- -v-i-e-w-B-o-x-=-"-0- -0- -2-4- -2-4-"- -f-i-l-l-=-"-n-o-n-e-"->-
+- - - - - - - - -<-r-e-c-t- -x-=-"-3-"- -y-=-"-5-"- -w-i-d-t-h-=-"-1-8-"- -h-e-i-g-h-t-=-"-1-3-"- -r-x-=-"-2-"- -s-t-r-o-k-e-=-"-#-0-0-2-1-4-7-"- -s-t-r-o-k-e-W-i-d-t-h-=-"-1-.-8-"-/->-
+- - - - - - - - -<-p-a-t-h- -d-=-"-M-8- -1-9-l-4- -2- -4---2-"- -s-t-r-o-k-e-=-"-#-0-0-2-1-4-7-"- -s-t-r-o-k-e-W-i-d-t-h-=-"-1-.-6-"- -s-t-r-o-k-e-L-i-n-e-c-a-p-=-"-r-o-u-n-d-"-/->-
+- - - - - - - - -<-p-a-t-h- -d-=-"-M-9- -1-1-h-6-M-9- -8-h-4-"- -s-t-r-o-k-e-=-"-#-F-F-C-7-0-0-"- -s-t-r-o-k-e-W-i-d-t-h-=-"-1-.-6-"- -s-t-r-o-k-e-L-i-n-e-c-a-p-=-"-r-o-u-n-d-"-/->-
+- - - - - - -<-/-s-v-g->-
+- - - - -)-,-
+- - - - -q-u-o-t-e-:- -'-A- -t-e-a-c-h-e-r- -a-f-f-e-c-t-s- -e-t-e-r-n-i-t-y-;- -h-e- -c-a-n- -n-e-v-e-r- -t-e-l-l- -w-h-e-r-e- -h-i-s- -i-n-f-l-u-e-n-c-e- -s-t-o-p-s-.-'-,-
+- - - - -q-u-o-t-e-B-y-:- -'-H-e-n-r-y- -B-r-o-o-k-s- -A-d-a-m-s-'-,-
+- - - - -a-c-c-e-n-t-:- -'-#-0-0-2-1-4-7-'-,-
+- - - - -i-m-a-g-e-:- -'-.-/-W-E-B-S-I-T-E- -G-A-L-L-E-R-Y-/-A-H-W-S- -B-a-b-y- -S-h-o-w- -(-0-2---1-0---2-0-2-4-)-/-D-S-C-_-0-2-5-7-.-j-p-e-g-'-,-
+- - - - -b-o-d-y-:- -`-B-e-h-i-n-d- -e-v-e-r-y- -g-r-e-a-t- -s-t-u-d-e-n-t- -i-s- -a- -t-e-a-c-h-e-r- -w-h-o- -b-e-l-i-e-v-e-s- -i-n- -t-h-e-m-.- -A-t- -A-c-a-d-e-m-i-c- -H-e-i-g-h-t-s- -W-o-r-l-d- -S-c-h-o-o-l-,- -o-u-r- -e-d-u-c-a-t-o-r-s- -a-r-e- -m-o-r-e- -t-h-a-n- -i-n-s-t-r-u-c-t-o-r-s-;- -t-h-e-y- -a-r-e- -m-e-n-t-o-r-s-,- -g-u-i-d-e-s- -a-n-d- -l-i-f-e-l-o-n-g- -l-e-a-r-n-e-r-s- -w-h-o- -g-e-n-u-i-n-e-l-y- -e-n-j-o-y- -h-e-l-p-i-n-g- -y-o-u-n-g- -m-i-n-d-s- -g-r-o-w-.- -W-e- -a-r-e- -p-r-o-u-d- -o-f- -o-u-r- -d-e-d-i-c-a-t-e-d- -t-e-a-m- -a-n-d- -t-h-e- -c-a-r-e- -t-h-e-y- -b-r-i-n-g- -t-o- -e-a-c-h- -c-h-i-l-d-,- -f-r-o-m- -e-v-e-r-y-d-a-y- -e-n-c-o-u-r-a-g-e-m-e-n-t- -t-o- -m-e-a-n-i-n-g-f-u-l- -i-n-d-i-v-i-d-u-a-l- -a-t-t-e-n-t-i-o-n-.-\-n-\-n-W-e- -c-h-o-o-s-e- -o-u-r- -e-d-u-c-a-t-o-r-s- -f-o-r- -t-h-e-i-r- -k-n-o-w-l-e-d-g-e-,- -w-a-r-m-t-h- -a-n-d- -c-o-m-m-i-t-m-e-n-t- -t-o- -t-h-e- -w-h-o-l-e- -c-h-i-l-d-.- -T-h-e-y- -c-r-e-a-t-e- -c-l-a-s-s-r-o-o-m-s- -w-h-e-r-e- -c-u-r-i-o-s-i-t-y- -i-s- -e-n-c-o-u-r-a-g-e-d-,- -q-u-e-s-t-i-o-n-s- -a-r-e- -w-e-l-c-o-m-e-d- -a-n-d- -c-h-i-l-d-r-e-n- -f-e-e-l- -c-o-m-f-o-r-t-a-b-l-e- -b-e-i-n-g- -t-h-e-m-s-e-l-v-e-s-.- -Y-o-u-r- -c-h-i-l-d- -w-i-l-l- -b-e- -k-n-o-w-n-,- -l-i-s-t-e-n-e-d- -t-o- -a-n-d- -c-h-a-l-l-e-n-g-e-d- -t-o- -g-r-o-w- -b-y- -t-e-a-c-h-e-r-s- -w-h-o- -c-a-r-e- -a-b-o-u-t- -t-h-e-i-r- -p-r-o-g-r-e-s-s- -a-n-d- -t-h-e-i-r- -p-o-t-e-n-t-i-a-l-.-`-,-
+- - -}-,-
+- - -{-
+- - - - -i-d-:- -'-h-e-l-p-e-r-s-'-,-
+- - - - -l-a-b-e-l-:- -'-H-e-l-p-e-r-s-'-,-
+- - - - -i-c-o-n-:- -(-
+- - - - - - -<-s-v-g- -w-i-d-t-h-=-"-4-0-"- -h-e-i-g-h-t-=-"-4-0-"- -v-i-e-w-B-o-x-=-"-0- -0- -2-4- -2-4-"- -f-i-l-l-=-"-n-o-n-e-"->-
+- - - - - - - - -<-p-a-t-h- -d-=-"-M-1-2- -3-l-2- -5-h-5-l---4- -3- -1-.-5- -5-L-1-2- -1-3-l---4-.-5- -3-L-9- -1-1- -5- -8-h-5-z-"- -s-t-r-o-k-e-=-"-#-F-F-C-7-0-0-"- -s-t-r-o-k-e-W-i-d-t-h-=-"-1-.-6-"- -f-i-l-l-=-"-#-f-f-f-5-c-c-"-/->-
+- - - - - - -<-/-s-v-g->-
+- - - - -)-,-
+- - - - -q-u-o-t-e-:- -'-E-v-e-r-y-o-n-e- -c-a-n- -b-e- -g-r-e-a-t- -b-e-c-a-u-s-e- -e-v-e-r-y-o-n-e- -c-a-n- -s-e-r-v-e-.-'-,-
+- - - - -q-u-o-t-e-B-y-:- -'-M-a-r-t-i-n- -L-u-t-h-e-r- -K-i-n-g- -J-r-.-'-,-
+- - - - -a-c-c-e-n-t-:- -'-#-F-F-C-7-0-0-'-,-
+- - - - -i-m-a-g-e-:- -'-.-/-W-E-B-S-I-T-E- -G-A-L-L-E-R-Y-/-G-u-r-u-p-u-r-a-b- -C-e-l-e-b-r-a-t-i-o-n- -(-0-4---1-1---2-0-2-5-)-/-I-M-G-_-2-0-2-5-1-1-0-4-_-0-8-3-9-1-1-.-j-p-e-g-'-,-
+- - - - -b-o-d-y-:- -`-A- -s-c-h-o-o-l- -w-o-r-k-s- -b-e-c-a-u-s-e- -o-f- -m-a-n-y- -p-e-o-p-l-e-,- -i-n-c-l-u-d-i-n-g- -t-h-o-s-e- -w-h-o- -o-f-t-e-n- -w-o-r-k- -q-u-i-e-t-l-y- -b-e-h-i-n-d- -t-h-e- -s-c-e-n-e-s-.- -A-t- -A-c-a-d-e-m-i-c- -H-e-i-g-h-t-s- -W-o-r-l-d- -S-c-h-o-o-l-,- -o-u-r- -s-u-p-p-o-r-t- -s-t-a-f-f- -h-e-l-p- -k-e-e-p- -t-h-e- -s-c-h-o-o-l- -c-l-e-a-n-,- -w-e-l-c-o-m-i-n-g- -a-n-d- -r-e-a-d-y- -f-o-r- -l-e-a-r-n-i-n-g- -e-a-c-h- -d-a-y-.- -T-h-e-i-r- -w-o-r-k- -m-a-y- -h-a-p-p-e-n- -i-n- -t-h-e- -b-a-c-k-g-r-o-u-n-d-,- -b-u-t- -i-t- -h-a-s- -a- -r-e-a-l- -i-m-p-a-c-t- -o-n- -t-h-e- -e-x-p-e-r-i-e-n-c-e- -c-h-i-l-d-r-e-n- -h-a-v-e- -a-t- -s-c-h-o-o-l-.-\-n-\-n-F-r-o-m- -t-h-e- -w-a-r-m- -w-e-l-c-o-m-e- -a-t- -t-h-e- -f-r-o-n-t- -d-e-s-k- -t-o- -t-h-e- -c-a-r-e- -t-a-k-e-n- -t-h-r-o-u-g-h-o-u-t- -o-u-r- -c-l-a-s-s-r-o-o-m-s- -a-n-d- -h-a-l-l-w-a-y-s-,- -o-u-r- -s-t-a-f-f- -w-o-r-k- -h-a-r-d- -t-o- -m-a-k-e- -t-h-e- -s-c-h-o-o-l- -f-e-e-l- -c-o-m-f-o-r-t-a-b-l-e- -a-n-d- -w-e-l-l- -c-a-r-e-d- -f-o-r-.- -T-h-e-y- -a-r-e- -h-e-r-e- -t-o- -h-e-l-p-,- -t-o- -k-e-e-p- -t-h-i-n-g-s- -r-u-n-n-i-n-g- -s-m-o-o-t-h-l-y- -a-n-d-,- -m-o-s-t- -i-m-p-o-r-t-a-n-t-l-y-,- -t-o- -h-e-l-p- -y-o-u-r- -c-h-i-l-d- -f-e-e-l- -h-a-p-p-y- -a-n-d- -s-u-p-p-o-r-t-e-d- -d-u-r-i-n-g- -t-h-e- -s-c-h-o-o-l- -d-a-y-.-`-,-
+- - -}-,-
+- - -{-
+- - - - -i-d-:- -'-e-n-v-i-r-o-n-m-e-n-t-'-,-
+- - - - -l-a-b-e-l-:- -'-E-n-v-i-r-o-n-m-e-n-t-'-,-
+- - - - -i-c-o-n-:- -(-
+- - - - - - -<-s-v-g- -w-i-d-t-h-=-"-4-0-"- -h-e-i-g-h-t-=-"-4-0-"- -v-i-e-w-B-o-x-=-"-0- -0- -2-4- -2-4-"- -f-i-l-l-=-"-n-o-n-e-"->-
+- - - - - - - - -<-p-a-t-h- -d-=-"-M-1-2- -2-C-8- -2- -4- -6- -4- -1-0-c-0- -5- -5- -1-0- -8- -1-2- -3---2- -8---7- -8---1-2- -0---4---4---8---8---8-z-"- -s-t-r-o-k-e-=-"-#-0-0-2-1-4-7-"- -s-t-r-o-k-e-W-i-d-t-h-=-"-1-.-8-"- -f-i-l-l-=-"-#-e-8-f-5-e-9-"-/->-
+- - - - - - - - -<-p-a-t-h- -d-=-"-M-9- -1-3-c-1---2- -3---3- -3---3-s-2- -1- -3- -3-"- -s-t-r-o-k-e-=-"-#-0-0-2-1-4-7-"- -s-t-r-o-k-e-W-i-d-t-h-=-"-1-.-5-"- -s-t-r-o-k-e-L-i-n-e-c-a-p-=-"-r-o-u-n-d-"-/->-
+- - - - - - -<-/-s-v-g->-
+- - - - -)-,-
+- - - - -q-u-o-t-e-:- -'-S-p-a-c-e- -i-s- -t-h-e- -b-r-e-a-t-h- -o-f- -a-r-t-.-'-,-
+- - - - -q-u-o-t-e-B-y-:- -'-F-r-a-n-k- -L-l-o-y-d- -W-r-i-g-h-t-'-,-
+- - - - -a-c-c-e-n-t-:- -'-#-0-0-2-1-4-7-'-,-
+- - - - -i-m-a-g-e-:- -'-.-/-i-m-a-g-e-s-/-n-e-w-%-2-0-A-H-W-S-%-2-0-W-e-b-s-i-t-e-%-2-0-P-h-o-t-o-s-/-W-e-%-2-0-T-e-a-c-h-%-2-0-L-i-f-e-/-S-t-u-d-e-n-t-s-%-2-0-p-l-a-n-t-i-n-g-%-2-0-t-r-e-e-s-%-2-0-o-r-%-2-0-i-n-%-2-0-t-h-e-%-2-0-g-r-e-e-n-%-2-0-c-a-m-p-u-s-/-2-0-2-5-0-7-2-4-_-0-8-5-6-5-8-.-j-p-g-'-,-
+- - - - -f-a-l-l-b-a-c-k-:- -'-.-/-i-m-a-g-e-s-/-G-r-e-e-n- -c-a-m-p-u-s-.-p-n-g-'-,-
+- - - - -b-o-d-y-:- -`-C-h-i-l-d-r-e-n- -l-e-a-r-n- -b-e-s-t- -w-h-e-n- -t-h-e-y- -f-e-e-l- -s-a-f-e-,- -c-o-m-f-o-r-t-a-b-l-e- -a-n-d- -i-n-s-p-i-r-e-d- -b-y- -t-h-e- -s-p-a-c-e- -a-r-o-u-n-d- -t-h-e-m-.- -A-t- -A-c-a-d-e-m-i-c- -H-e-i-g-h-t-s- -W-o-r-l-d- -S-c-h-o-o-l-,- -o-u-r- -e-n-v-i-r-o-n-m-e-n-t- -i-s- -d-e-s-i-g-n-e-d- -t-o- -e-n-c-o-u-r-a-g-e- -c-u-r-i-o-s-i-t-y-,- -c-r-e-a-t-i-v-i-t-y- -a-n-d- -a- -s-e-n-s-e- -o-f- -d-i-s-c-o-v-e-r-y-.- -O-u-r- -c-l-a-s-s-r-o-o-m-s- -a-r-e- -a-i-r-y- -a-n-d- -w-e-l-c-o-m-i-n-g-,- -o-u-r- -g-r-e-e-n- -s-p-a-c-e-s- -g-i-v-e- -c-h-i-l-d-r-e-n- -r-o-o-m- -t-o- -b-r-e-a-t-h-e-,- -a-n-d- -e-v-e-r-y- -p-a-r-t- -o-f- -t-h-e- -c-a-m-p-u-s- -i-s- -p-l-a-n-n-e-d- -w-i-t-h- -t-h-e-i-r- -e-x-p-e-r-i-e-n-c-e- -i-n- -m-i-n-d-.-\-n-\-n-A- -t-h-o-u-g-h-t-f-u-l- -l-e-a-r-n-i-n-g- -e-n-v-i-r-o-n-m-e-n-t- -c-a-n- -h-e-l-p- -c-h-i-l-d-r-e-n- -f-e-e-l- -c-a-l-m-e-r-,- -s-t-a-y- -f-o-c-u-s-e-d- -a-n-d- -e-n-j-o-y- -t-h-e-i-r- -t-i-m-e- -a-t- -s-c-h-o-o-l-.- -W-e- -t-a-k-e- -p-r-i-d-e- -i-n- -k-e-e-p-i-n-g- -o-u-r- -s-p-a-c-e-s- -c-l-e-a-n-,- -c-o-m-f-o-r-t-a-b-l-e- -a-n-d- -w-e-l-l- -e-q-u-i-p-p-e-d- -f-o-r- -l-e-a-r-n-i-n-g-,- -w-h-i-l-e- -a-l-s-o- -g-i-v-i-n-g- -s-t-u-d-e-n-t-s- -o-p-p-o-r-t-u-n-i-t-i-e-s- -t-o- -s-p-e-n-d- -t-i-m-e- -o-u-t-d-o-o-r-s- -a-n-d- -c-o-n-n-e-c-t- -w-i-t-h- -n-a-t-u-r-e-.- -W-e- -w-a-n-t- -e-v-e-r-y- -c-h-i-l-d- -t-o- -w-a-l-k- -i-n-t-o- -s-c-h-o-o-l- -e-a-c-h- -d-a-y- -f-e-e-l-i-n-g- -t-h-a-t- -t-h-e-y- -a-r-e- -i-n- -a- -p-l-a-c-e- -w-h-e-r-e- -t-h-e-y- -c-a-n- -l-e-a-r-n- -a-n-d- -b-e-l-o-n-g-.-`-,-
+- - -}-,-
+- - -{-
+- - - - -i-d-:- -'-s-k-i-l-l-s-'-,-
+- - - - -l-a-b-e-l-:- -'-S-k-i-l-l-s-'-,-
+- - - - -i-c-o-n-:- -(-
+- - - - - - -<-s-v-g- -w-i-d-t-h-=-"-4-0-"- -h-e-i-g-h-t-=-"-4-0-"- -v-i-e-w-B-o-x-=-"-0- -0- -2-4- -2-4-"- -f-i-l-l-=-"-n-o-n-e-"->-
+- - - - - - - - -<-p-a-t-h- -d-=-"-M-1-2- -2-l-3- -7-h-7-l---5-.-5- -4- -2- -7-L-1-2- -1-6-l---6-.-5- -4- -2---7-L-2- -9-h-7-z-"- -s-t-r-o-k-e-=-"-#-F-F-C-7-0-0-"- -s-t-r-o-k-e-W-i-d-t-h-=-"-1-.-7-"- -f-i-l-l-=-"-#-f-f-f-5-c-c-"-/->-
+- - - - - - -<-/-s-v-g->-
+- - - - -)-,-
+- - - - -q-u-o-t-e-:- -'-S-k-i-l-l-s- -m-a-k-e- -y-o-u- -v-a-l-u-a-b-l-e-.-'-,-
+- - - - -q-u-o-t-e-B-y-:- -'-J-i-m- -R-o-h-n-'-,-
+- - - - -a-c-c-e-n-t-:- -'-#-F-F-C-7-0-0-'-,-
+- - - - -i-m-a-g-e-:- -'-.-/-i-m-a-g-e-s-/-n-e-w-%-2-0-A-H-W-S-%-2-0-W-e-b-s-i-t-e-%-2-0-P-h-o-t-o-s-/-H-o-m-e-/-S-t-u-d-e-n-t-s-%-2-0-w-o-r-k-i-n-g-%-2-0-i-n-%-2-0-R-o-b-o-t-i-c-s-%-2-0-&-%-2-0-A-I-%-2-0-L-a-b-/-A-I-.-j-p-e-g-'-,-
+- - - - -f-a-l-l-b-a-c-k-:- -'-.-/-W-E-B-S-I-T-E- -G-A-L-L-E-R-Y-/-o-t-h-e-r- -i-m-a-g-e-s-/-T-e-c-h-n-o-l-o-g-y-_-a-n-d-_-A-p-p-_-0-1-0-.-j-p-g-'-,-
+- - - - -b-o-d-y-:- -`-I-n- -a- -c-h-a-n-g-i-n-g- -w-o-r-l-d-,- -k-n-o-w-l-e-d-g-e- -a-l-o-n-e- -i-s- -n-o-t- -e-n-o-u-g-h-.- -A-t- -A-c-a-d-e-m-i-c- -H-e-i-g-h-t-s- -W-o-r-l-d- -S-c-h-o-o-l-,- -w-e- -a-l-s-o- -h-e-l-p- -s-t-u-d-e-n-t-s- -b-u-i-l-d- -p-r-a-c-t-i-c-a-l- -s-k-i-l-l-s- -t-h-e-y- -c-a-n- -c-a-r-r-y- -i-n-t-o- -e-v-e-r-y-d-a-y- -l-i-f-e-.- -T-h-e-s-e- -i-n-c-l-u-d-e- -c-r-i-t-i-c-a-l- -t-h-i-n-k-i-n-g-,- -p-r-o-b-l-e-m---s-o-l-v-i-n-g-,- -c-o-m-m-u-n-i-c-a-t-i-o-n-,- -c-o-l-l-a-b-o-r-a-t-i-o-n- -a-n-d- -t-h-e- -c-o-n-f-i-d-e-n-t- -u-s-e- -o-f- -t-e-c-h-n-o-l-o-g-y-.- -O-u-r- -l-e-a-r-n-i-n-g- -e-x-p-e-r-i-e-n-c-e-s- -a-r-e- -d-e-s-i-g-n-e-d- -t-o- -p-r-e-p-a-r-e- -c-h-i-l-d-r-e-n- -f-o-r- -r-e-a-l- -s-i-t-u-a-t-i-o-n-s-,- -n-o-t- -s-i-m-p-l-y- -f-o-r- -t-e-s-t-s-.-\-n-\-n-F-r-o-m- -l-e-a-r-n-i-n-g- -h-o-w- -t-o- -t-h-i-n-k- -d-e-e-p-l-y- -a-n-d- -s-p-e-a-k- -w-i-t-h- -c-o-n-f-i-d-e-n-c-e- -t-o- -c-r-e-a-t-i-n-g- -a-r-t- -a-n-d- -w-o-r-k-i-n-g- -a-s- -p-a-r-t- -o-f- -a- -t-e-a-m-,- -s-t-u-d-e-n-t-s- -a-r-e- -e-n-c-o-u-r-a-g-e-d- -t-o- -b-u-i-l-d- -a- -b-r-o-a-d- -r-a-n-g-e- -o-f- -a-b-i-l-i-t-i-e-s-.- -A-l-o-n-g- -t-h-e- -w-a-y-,- -t-h-e-y- -d-e-v-e-l-o-p- -c-o-n-f-i-d-e-n-c-e-,- -f-l-e-x-i-b-i-l-i-t-y- -a-n-d- -t-h-e- -b-e-l-i-e-f- -t-h-a-t- -t-h-e-y- -c-a-n- -k-e-e-p- -l-e-a-r-n-i-n-g- -a-n-d- -i-m-p-r-o-v-i-n-g-.- -T-h-e-s-e- -a-r-e- -q-u-a-l-i-t-i-e-s- -t-h-a-t- -c-a-n- -c-o-n-t-i-n-u-e- -t-o- -s-e-r-v-e- -t-h-e-m- -l-o-n-g- -a-f-t-e-r- -s-c-h-o-o-l-.-`-,-
+- - -}-,-
+- - -{-
+- - - - -i-d-:- -'-e-x-t-r-a---c-u-r-r-i-c-u-l-a-r-'-,-
+- - - - -l-a-b-e-l-:- -'-E-x-t-r-a- -C-u-r-r-i-c-u-l-a-r-'-,-
+- - - - -i-c-o-n-:- -(-
+- - - - - - -<-s-v-g- -w-i-d-t-h-=-"-4-0-"- -h-e-i-g-h-t-=-"-4-0-"- -v-i-e-w-B-o-x-=-"-0- -0- -2-4- -2-4-"- -f-i-l-l-=-"-n-o-n-e-"->-
+- - - - - - - - -<-c-i-r-c-l-e- -c-x-=-"-1-2-"- -c-y-=-"-1-2-"- -r-=-"-9-"- -s-t-r-o-k-e-=-"-#-0-0-2-1-4-7-"- -s-t-r-o-k-e-W-i-d-t-h-=-"-1-.-8-"-/->-
+- - - - - - - - -<-p-a-t-h- -d-=-"-M-1-2- -7-v-5-l-3- -3-"- -s-t-r-o-k-e-=-"-#-F-F-C-7-0-0-"- -s-t-r-o-k-e-W-i-d-t-h-=-"-1-.-8-"- -s-t-r-o-k-e-L-i-n-e-c-a-p-=-"-r-o-u-n-d-"-/->-
+- - - - - - -<-/-s-v-g->-
+- - - - -)-,-
+- - - - -q-u-o-t-e-:- -'-E-v-e-r-y- -c-h-i-l-d- -i-s- -a-n- -a-r-t-i-s-t-.- -T-h-e- -p-r-o-b-l-e-m- -i-s- -h-o-w- -t-o- -r-e-m-a-i-n- -a-n- -a-r-t-i-s-t- -o-n-c-e- -w-e- -g-r-o-w- -u-p-.-'-,-
+- - - - -q-u-o-t-e-B-y-:- -'-P-a-b-l-o- -P-i-c-a-s-s-o-'-,-
+- - - - -a-c-c-e-n-t-:- -'-#-0-0-2-1-4-7-'-,-
+- - - - -i-m-a-g-e-:- -'-.-/-i-m-a-g-e-s-/-n-e-w-%-2-0-A-H-W-S-%-2-0-W-e-b-s-i-t-e-%-2-0-P-h-o-t-o-s-/-H-o-m-e-/-S-t-u-d-e-n-t-s-%-2-0-i-n-%-2-0-A-r-t-%-2-0-&-%-2-0-M-u-s-i-c-%-2-0-S-t-u-d-i-o-s-/-C-A-M-%-2-0-%-2-0-1-%-2-0-1-9-3-5-T-0-1-.-J-P-G-'-,-
+- - - - -f-a-l-l-b-a-c-k-:- -'-.-/-W-E-B-S-I-T-E- -G-A-L-L-E-R-Y-/-o-t-h-e-r- -i-m-a-g-e-s-/-k-i-d- -m-a-k-i-n-g- -a-r-t- -0-2-.-p-n-g-'-,-
+- - - - -b-o-d-y-:- -`-W-e- -b-e-l-i-e-v-e- -s-c-h-o-o-l- -s-h-o-u-l-d- -g-i-v-e- -c-h-i-l-d-r-e-n- -o-p-p-o-r-t-u-n-i-t-i-e-s- -t-o- -d-i-s-c-o-v-e-r- -i-n-t-e-r-e-s-t-s- -b-e-y-o-n-d- -t-h-e- -r-e-g-u-l-a-r- -c-l-a-s-s-r-o-o-m-.- -A-t- -A-c-a-d-e-m-i-c- -H-e-i-g-h-t-s- -W-o-r-l-d- -S-c-h-o-o-l-,- -o-u-r- -c-o---c-u-r-r-i-c-u-l-a-r- -a-c-t-i-v-i-t-i-e-s- -g-i-v-e- -s-t-u-d-e-n-t-s- -s-p-a-c-e- -t-o- -t-r-y- -n-e-w- -t-h-i-n-g-s-,- -d-i-s-c-o-v-e-r- -w-h-a-t- -t-h-e-y- -e-n-j-o-y- -a-n-d- -l-e-a-r-n- -h-o-w- -t-o- -w-o-r-k- -w-i-t-h- -o-t-h-e-r-s-.- -T-h-e-s-e- -e-x-p-e-r-i-e-n-c-e-s- -a-r-e- -a-n- -i-m-p-o-r-t-a-n-t- -p-a-r-t- -o-f- -b-e-c-o-m-i-n-g- -a- -c-o-n-f-i-d-e-n-t-,- -w-e-l-l---r-o-u-n-d-e-d- -i-n-d-i-v-i-d-u-a-l-.-\-n-\-n-T-a-k-i-n-g- -p-a-r-t- -i-n- -a-c-t-i-v-i-t-i-e-s- -o-u-t-s-i-d-e- -t-h-e- -c-l-a-s-s-r-o-o-m- -t-e-a-c-h-e-s- -c-h-i-l-d-r-e-n- -h-o-w- -t-o- -c-o-o-p-e-r-a-t-e-,- -s-t-a-y- -c-o-m-m-i-t-t-e-d- -a-n-d- -k-e-e-p- -g-o-i-n-g- -w-h-e-n- -s-o-m-e-t-h-i-n-g- -i-s- -d-i-f-f-i-c-u-l-t-.- -I-t- -a-l-s-o- -g-i-v-e-s- -t-h-e-m- -c-h-a-n-c-e-s- -t-o- -b-u-i-l-d- -c-o-n-f-i-d-e-n-c-e-,- -f-r-i-e-n-d-s-h-i-p-s- -a-n-d- -m-e-m-o-r-i-e-s- -t-h-e-y- -w-i-l-l- -c-a-r-r-y- -w-i-t-h- -t-h-e-m-.- -W-i-t-h- -g-u-i-d-a-n-c-e- -f-r-o-m- -o-u-r- -s-t-a-f-f-,- -s-t-u-d-e-n-t-s- -c-a-n- -e-x-p-l-o-r-e- -n-e-w- -i-n-t-e-r-e-s-t-s- -a-t- -t-h-e-i-r- -o-w-n- -p-a-c-e- -a-n-d- -d-i-s-c-o-v-e-r- -n-e-w- -s-i-d-e-s- -o-f- -t-h-e-m-s-e-l-v-e-s-.-`-,-
+- - -}-,-
+- - -{-
+- - - - -i-d-:- -'-m-o-t-i-v-a-t-i-o-n-'-,-
+- - - - -l-a-b-e-l-:- -'-M-o-t-i-v-a-t-i-o-n- -&- -I-n-s-p-i-r-a-t-i-o-n-'-,-
+- - - - -i-c-o-n-:- -(-
+- - - - - - -<-s-v-g- -w-i-d-t-h-=-"-4-0-"- -h-e-i-g-h-t-=-"-4-0-"- -v-i-e-w-B-o-x-=-"-0- -0- -2-4- -2-4-"- -f-i-l-l-=-"-n-o-n-e-"->-
+- - - - - - - - -<-p-a-t-h- -d-=-"-M-1-2- -2-l-1-.-5- -4-.-5-H-1-8-l---3-.-7-5- -2-.-7-5- -1-.-5- -4-.-5-L-1-2- -1-1-l---3-.-7-5- -2-.-7-5- -1-.-5---4-.-5-L-6- -6-.-5-h-4-.-5-z-"- -s-t-r-o-k-e-=-"-#-F-F-C-7-0-0-"- -s-t-r-o-k-e-W-i-d-t-h-=-"-1-.-7-"- -f-i-l-l-=-"-#-f-f-f-5-c-c-"-/->-
+- - - - - - - - -<-p-a-t-h- -d-=-"-M-1-2- -1-4-v-6-M-9- -1-7-h-6-"- -s-t-r-o-k-e-=-"-#-0-0-2-1-4-7-"- -s-t-r-o-k-e-W-i-d-t-h-=-"-1-.-7-"- -s-t-r-o-k-e-L-i-n-e-c-a-p-=-"-r-o-u-n-d-"-/->-
+- - - - - - -<-/-s-v-g->-
+- - - - -)-,-
+- - - - -q-u-o-t-e-:- -'-N-o-t-h-i-n-g- -w-i-l-l- -w-o-r-k- -u-n-l-e-s-s- -y-o-u- -d-o-.-'-,-
+- - - - -q-u-o-t-e-B-y-:- -'-M-a-y-a- -A-n-g-e-l-o-u-'-,-
+- - - - -a-c-c-e-n-t-:- -'-#-F-F-C-7-0-0-'-,-
+- - - - -i-m-a-g-e-:- -'-.-/-W-E-B-S-I-T-E- -G-A-L-L-E-R-Y-/-D-e-n-t-a-l- -C-h-e-c-k---u-p- -D-r-i-v-e- -(-1-3---0-5---2-0-2-6-)-/-I-M-G-_-1-0-6-2-.-j-p-e-g-'-,-
+- - - - -b-o-d-y-:- -`-A- -c-h-i-l-d-'-s- -m-i-n-d-s-e-t- -c-a-n- -m-a-k-e- -a- -m-e-a-n-i-n-g-f-u-l- -d-i-f-f-e-r-e-n-c-e- -t-o- -h-o-w- -t-h-e-y- -a-p-p-r-o-a-c-h- -l-e-a-r-n-i-n-g- -a-n-d- -c-h-a-l-l-e-n-g-e-s-.- -A-t- -A-c-a-d-e-m-i-c- -H-e-i-g-h-t-s- -W-o-r-l-d- -S-c-h-o-o-l-,- -w-e- -w-a-n-t- -s-t-u-d-e-n-t-s- -t-o- -b-e-l-i-e-v-e- -i-n- -t-h-e-i-r- -a-b-i-l-i-t-y- -t-o- -g-r-o-w-,- -t-o- -k-e-e-p- -g-o-i-n-g- -w-h-e-n- -t-h-i-n-g-s- -a-r-e- -d-i-f-f-i-c-u-l-t- -a-n-d- -t-o- -h-a-v-e- -t-h-e- -c-o-u-r-a-g-e- -t-o- -t-r-y- -a-g-a-i-n-.- -W-e- -c-e-l-e-b-r-a-t-e- -e-f-f-o-r-t- -a-n-d- -r-e-s-i-l-i-e-n-c-e-,- -n-o-t- -j-u-s-t- -o-u-t-c-o-m-e-s-.-\-n-\-n-T-h-r-o-u-g-h- -a-s-s-e-m-b-l-i-e-s-,- -s-t-o-r-i-e-s-,- -e-n-c-o-u-r-a-g-e-m-e-n-t- -a-n-d- -p-e-r-s-o-n-a-l- -m-e-n-t-o-r-i-n-g-,- -w-e- -h-e-l-p- -s-t-u-d-e-n-t-s- -d-e-v-e-l-o-p- -t-h-e- -c-o-n-f-i-d-e-n-c-e- -t-o- -f-a-c-e- -c-h-a-l-l-e-n-g-e-s- -a-n-d- -p-u-r-s-u-e- -t-h-e-i-r- -g-o-a-l-s-.- -W-e- -t-e-a-c-h- -t-h-e-m- -t-h-a-t- -s-e-t-b-a-c-k-s- -a-r-e- -p-a-r-t- -o-f- -l-e-a-r-n-i-n-g- -a-n-d- -t-h-a-t- -m-i-s-t-a-k-e-s- -c-a-n- -b-e-c-o-m-e- -o-p-p-o-r-t-u-n-i-t-i-e-s- -t-o- -i-m-p-r-o-v-e-.- -W-e- -w-a-n-t- -e-v-e-r-y- -c-h-i-l-d- -t-o- -l-e-a-v-e- -A-c-a-d-e-m-i-c- -H-e-i-g-h-t-s- -W-o-r-l-d- -S-c-h-o-o-l- -w-i-t-h- -k-n-o-w-l-e-d-g-e-,- -b-u-t- -a-l-s-o- -w-i-t-h- -a- -s-t-r-o-n-g- -b-e-l-i-e-f- -i-n- -t-h-e-i-r- -o-w-n- -a-b-i-l-i-t-y- -t-o- -l-e-a-r-n- -a-n-d- -g-r-o-w-.-`-,-
+- - -}-,-
+- - -{-
+- - - - -i-d-:- -'-g-r-a-t-i-t-u-d-e-'-,-
+- - - - -l-a-b-e-l-:- -'-G-r-a-t-i-t-u-d-e-'-,-
+- - - - -i-c-o-n-:- -(-
+- - - - - - -<-s-v-g- -w-i-d-t-h-=-"-4-0-"- -h-e-i-g-h-t-=-"-4-0-"- -v-i-e-w-B-o-x-=-"-0- -0- -2-4- -2-4-"- -f-i-l-l-=-"-n-o-n-e-"->-
+- - - - - - - - -<-p-a-t-h- -d-=-"-M-1-2- -2-1-l---1-.-5---1-.-3-5-C-5-.-4- -1-5-.-3-6- -2- -1-2-.-2-8- -2- -8-.-5- -2- -5-.-4-2- -4-.-4-2- -3- -7-.-5- -3-c-1-.-7-4- -0- -3-.-4-1-.-8-1- -4-.-5- -2-.-0-9-C-1-3-.-0-9- -3-.-8-1- -1-4-.-7-6- -3- -1-6-.-5- -3- -1-9-.-5-8- -3- -2-2- -5-.-4-2- -2-2- -8-.-5-c-0- -3-.-7-8---3-.-4- -6-.-8-6---8-.-5- -1-1-.-1-5-L-1-2- -2-1-z-"- -s-t-r-o-k-e-=-"-#-0-0-2-1-4-7-"- -s-t-r-o-k-e-W-i-d-t-h-=-"-1-.-8-"- -f-i-l-l-=-"-#-f-f-f-0-f-0-"-/->-
+- - - - - - -<-/-s-v-g->-
+- - - - -)-,-
+- - - - -q-u-o-t-e-:- -'-I-n- -o-r-d-i-n-a-r-y- -l-i-f-e-,- -w-e- -h-a-r-d-l-y- -r-e-a-l-i-z-e- -t-h-a-t- -w-e- -r-e-c-e-i-v-e- -a- -g-r-e-a-t- -d-e-a-l- -m-o-r-e- -t-h-a-n- -w-e- -g-i-v-e-,- -a-n-d- -t-h-a-t- -i-t- -i-s- -o-n-l-y- -w-i-t-h- -g-r-a-t-i-t-u-d-e- -t-h-a-t- -l-i-f-e- -b-e-c-o-m-e-s- -r-i-c-h-.-'-,-
+- - - - -q-u-o-t-e-B-y-:- -'-D-i-e-t-r-i-c-h- -B-o-n-h-o-e-f-f-e-r-'-,-
+- - - - -a-c-c-e-n-t-:- -'-#-0-0-2-1-4-7-'-,-
+- - - - -i-m-a-g-e-:- -'-.-/-W-E-B-S-I-T-E- -G-A-L-L-E-R-Y-/-S-p-o-r-t-s- -D-a-y- -(-1-7---0-2---2-0-2-6-)-/-I-M-G-_-2-0-2-6-0-2-1-7-_-1-0-1-5-2-7-.-j-p-e-g-'-,-
+- - - - -b-o-d-y-:- -`-W-e- -b-e-l-i-e-v-e- -g-r-a-t-i-t-u-d-e- -c-a-n- -s-h-a-p-e- -t-h-e- -w-a-y- -c-h-i-l-d-r-e-n- -s-e-e- -t-h-e-m-s-e-l-v-e-s-,- -o-t-h-e-r- -p-e-o-p-l-e- -a-n-d- -t-h-e- -w-o-r-l-d- -a-r-o-u-n-d- -t-h-e-m-.- -A-t- -A-c-a-d-e-m-i-c- -H-e-i-g-h-t-s- -W-o-r-l-d- -S-c-h-o-o-l-,- -w-e- -e-n-c-o-u-r-a-g-e- -s-t-u-d-e-n-t-s- -t-o- -n-o-t-i-c-e- -a-n-d- -a-p-p-r-e-c-i-a-t-e- -t-h-e- -p-e-o-p-l-e-,- -o-p-p-o-r-t-u-n-i-t-i-e-s- -a-n-d- -e-x-p-e-r-i-e-n-c-e-s- -t-h-a-t- -e-n-r-i-c-h- -t-h-e-i-r- -l-i-v-e-s-.- -I-n- -d-o-i-n-g- -s-o-,- -w-e- -n-u-r-t-u-r-e- -k-i-n-d-n-e-s-s-,- -e-m-p-a-t-h-y- -a-n-d- -a- -g-e-n-e-r-o-u-s- -s-p-i-r-i-t-.-\-n-\-n-A-s- -c-h-i-l-d-r-e-n- -l-e-a-r-n- -t-o- -b-e- -g-r-a-t-e-f-u-l-,- -t-h-e-y- -c-a-n- -b-e-c-o-m-e- -m-o-r-e- -a-w-a-r-e- -o-f- -t-h-e- -p-e-o-p-l-e- -w-h-o- -s-u-p-p-o-r-t- -t-h-e-m- -a-n-d- -m-o-r-e- -t-h-o-u-g-h-t-f-u-l- -i-n- -t-h-e- -w-a-y- -t-h-e-y- -t-r-e-a-t- -o-t-h-e-r-s-.- -G-r-a-t-i-t-u-d-e- -c-a-n- -e-n-c-o-u-r-a-g-e- -e-m-p-a-t-h-y-,- -r-e-s-i-l-i-e-n-c-e- -a-n-d- -a- -p-o-s-i-t-i-v-e- -o-u-t-l-o-o-k- -t-h-r-o-u-g-h- -b-o-t-h- -g-o-o-d- -d-a-y-s- -a-n-d- -d-i-f-f-i-c-u-l-t- -o-n-e-s-.- -A-t- -A-c-a-d-e-m-i-c- -H-e-i-g-h-t-s- -W-o-r-l-d- -S-c-h-o-o-l-,- -w-e- -w-a-n-t- -a-c-a-d-e-m-i-c- -g-r-o-w-t-h- -t-o- -g-o- -h-a-n-d- -i-n- -h-a-n-d- -w-i-t-h- -b-e-c-o-m-i-n-g- -a- -t-h-o-u-g-h-t-f-u-l-,- -c-a-r-i-n-g- -h-u-m-a-n- -b-e-i-n-g- -w-h-o- -c-a-n- -m-a-k-e- -a- -p-o-s-i-t-i-v-e- -d-i-f-f-e-r-e-n-c-e- -i-n- -t-h-e- -w-o-r-l-d-.-`-,-
+- - -}-,-
+-]-
+-
+-/-*- -â-”-€-â-”-€-â-”-€- -S-i-n-g-l-e- -s-e-c-t-i-o-n- -c-o-m-p-o-n-e-n-t- -â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€- -*-/-
+-f-u-n-c-t-i-o-n- -L-i-f-e-S-e-c-t-i-o-n-(-{- -s-e-c-t-i-o-n-,- -i-n-d-e-x- -}-)- -{-
+- - -c-o-n-s-t- -{- -r-e-f-,- -i-n-V-i-e-w- -}- -=- -u-s-e-I-n-V-i-e-w-(-{- -t-r-i-g-g-e-r-O-n-c-e-:- -t-r-u-e-,- -t-h-r-e-s-h-o-l-d-:- -0-.-1-2- -}-)-
+- - -c-o-n-s-t- -i-s-E-v-e-n- -=- -i-n-d-e-x- -%- -2- -=-=-=- -0-
+-
+- - -r-e-t-u-r-n- -(-
+- - - - -<-s-e-c-t-i-o-n-
+- - - - - - -i-d-=-{-s-e-c-t-i-o-n-.-i-d-}-
+- - - - - - -r-e-f-=-{-r-e-f-}-
+- - - - - - -c-l-a-s-s-N-a-m-e-=-{-`-w-t-l---s-e-c-t-i-o-n- -$-{-i-s-E-v-e-n- -?- -'-w-t-l---s-e-c-t-i-o-n-----n-o-r-m-a-l-'- -:- -'-w-t-l---s-e-c-t-i-o-n-----r-e-v-e-r-s-e-'-}- -$-{-i-n-V-i-e-w- -?- -'-w-t-l---v-i-s-i-b-l-e-'- -:- -'-'-}-`-}-
+- - - - ->-
+- - - - - - -<-d-i-v- -c-l-a-s-s-N-a-m-e-=-"-c-o-n-t-a-i-n-e-r- -w-t-l---s-e-c-t-i-o-n---i-n-n-e-r-"->-
+- - - - - - - - -{-/-*- -T-e-x-t- -s-i-d-e- -*-/-}-
+- - - - - - - - -<-d-i-v- -c-l-a-s-s-N-a-m-e-=-"-w-t-l---t-e-x-t---s-i-d-e-"->-
+- - - - - - - - - - -<-h-2- -c-l-a-s-s-N-a-m-e-=-"-w-t-l---s-e-c-t-i-o-n---t-i-t-l-e-"->-{-s-e-c-t-i-o-n-.-l-a-b-e-l-}-<-/-h-2->-
+- - - - - - - - - - -<-d-i-v- -c-l-a-s-s-N-a-m-e-=-"-w-t-l---d-i-v-i-d-e-r-"- -s-t-y-l-e-=-{-{- -b-a-c-k-g-r-o-u-n-d-:- -`-l-i-n-e-a-r---g-r-a-d-i-e-n-t-(-9-0-d-e-g-,- -$-{-s-e-c-t-i-o-n-.-a-c-c-e-n-t-}-,- -$-{-s-e-c-t-i-o-n-.-a-c-c-e-n-t- -=-=-=- -'-#-0-0-2-1-4-7-'- -?- -'-#-F-F-C-7-0-0-'- -:- -'-#-0-0-2-1-4-7-'-}-)-`- -}-}- -/->-
+- - - - - - - - - - -<-b-l-o-c-k-q-u-o-t-e- -c-l-a-s-s-N-a-m-e-=-"-w-t-l---q-u-o-t-e-"->-
+- - - - - - - - - - - - -<-s-p-a-n- -c-l-a-s-s-N-a-m-e-=-"-w-t-l---q-u-o-t-e---m-a-r-k-"->-"-<-/-s-p-a-n->-
+- - - - - - - - - - - - -{-s-e-c-t-i-o-n-.-q-u-o-t-e-}-
+- - - - - - - - - - - - -<-c-i-t-e- -c-l-a-s-s-N-a-m-e-=-"-w-t-l---q-u-o-t-e---b-y-"->-â-€-”- -{-s-e-c-t-i-o-n-.-q-u-o-t-e-B-y-}-<-/-c-i-t-e->-
+- - - - - - - - - - -<-/-b-l-o-c-k-q-u-o-t-e->-
+- - - - - - - - - - -{-s-e-c-t-i-o-n-.-b-o-d-y-.-s-p-l-i-t-(-'-\-n-\-n-'-)-.-m-a-p-(-(-p-a-r-a-,- -i-)- -=->- -(-
+- - - - - - - - - - - - -<-p- -k-e-y-=-{-i-}- -c-l-a-s-s-N-a-m-e-=-"-w-t-l---b-o-d-y-"->-{-p-a-r-a-}-<-/-p->-
+- - - - - - - - - - -)-)-}-
+- - - - - - - - -<-/-d-i-v->-
+-
+- - - - - - - - -{-/-*- -I-m-a-g-e- -s-i-d-e- -*-/-}-
+- - - - - - - - -<-d-i-v- -c-l-a-s-s-N-a-m-e-=-"-w-t-l---i-m-a-g-e---s-i-d-e-"->-
+- - - - - - - - - - -<-d-i-v- -c-l-a-s-s-N-a-m-e-=-"-w-t-l---i-m-a-g-e---f-r-a-m-e-"->-
+- - - - - - - - - - - - -<-i-m-g-
+- - - - - - - - - - - - - - -s-r-c-=-{-s-e-c-t-i-o-n-.-i-m-a-g-e-}-
+- - - - - - - - - - - - - - -a-l-t-=-{-s-e-c-t-i-o-n-.-l-a-b-e-l-}-
+- - - - - - - - - - - - - - -l-o-a-d-i-n-g-=-"-l-a-z-y-"-
+- - - - - - - - - - - - - - -o-n-E-r-r-o-r-=-{-e- -=->- -{-
+- - - - - - - - - - - - - - - - -i-f- -(-s-e-c-t-i-o-n-.-f-a-l-l-b-a-c-k- -&-&- -e-.-c-u-r-r-e-n-t-T-a-r-g-e-t-.-s-r-c- -!-=-=- -s-e-c-t-i-o-n-.-f-a-l-l-b-a-c-k-)- -{-
+- - - - - - - - - - - - - - - - - - -e-.-c-u-r-r-e-n-t-T-a-r-g-e-t-.-o-n-e-r-r-o-r- -=- -n-u-l-l-
+- - - - - - - - - - - - - - - - - - -e-.-c-u-r-r-e-n-t-T-a-r-g-e-t-.-s-r-c- -=- -s-e-c-t-i-o-n-.-f-a-l-l-b-a-c-k-
+- - - - - - - - - - - - - - - - -}- -e-l-s-e- -{-
+- - - - - - - - - - - - - - - - - - -e-.-c-u-r-r-e-n-t-T-a-r-g-e-t-.-s-t-y-l-e-.-d-i-s-p-l-a-y- -=- -'-n-o-n-e-'-
+- - - - - - - - - - - - - - - - - - -e-.-c-u-r-r-e-n-t-T-a-r-g-e-t-.-p-a-r-e-n-t-E-l-e-m-e-n-t-.-c-l-a-s-s-L-i-s-t-.-a-d-d-(-'-w-t-l---i-m-a-g-e---p-l-a-c-e-h-o-l-d-e-r-'-)-
+- - - - - - - - - - - - - - - - -}-
+- - - - - - - - - - - - - - -}-}-
+- - - - - - - - - - - - -/->-
+- - - - - - - - - - - - -<-d-i-v- -c-l-a-s-s-N-a-m-e-=-"-w-t-l---i-m-a-g-e---b-a-d-g-e-"- -s-t-y-l-e-=-{-{- -b-a-c-k-g-r-o-u-n-d-:- -s-e-c-t-i-o-n-.-a-c-c-e-n-t- -}-}->-
+- - - - - - - - - - - - - - -{-s-e-c-t-i-o-n-.-l-a-b-e-l-}-
+- - - - - - - - - - - - -<-/-d-i-v->-
+- - - - - - - - - - -<-/-d-i-v->-
+- - - - - - - - -<-/-d-i-v->-
+- - - - - - -<-/-d-i-v->-
+- - - - -<-/-s-e-c-t-i-o-n->-
+- - -)-
+-}-
+-
+-/-*- -â-”-€-â-”-€-â-”-€- -P-a-g-e- -â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€-â-”-€- -*-/-
+-e-x-p-o-r-t- -d-e-f-a-u-l-t- -f-u-n-c-t-i-o-n- -W-e-T-e-a-c-h-L-i-f-e-(-)- -{-
+- - -c-o-n-s-t- -{- -r-e-f-:- -i-n-t-r-o-R-e-f-,- -i-n-V-i-e-w-:- -i-n-t-r-o-I-n-V-i-e-w- -}- -=- -u-s-e-I-n-V-i-e-w-(-{- -t-r-i-g-g-e-r-O-n-c-e-:- -t-r-u-e-,- -t-h-r-e-s-h-o-l-d-:- -0-.-1- -}-)-
+-
+- - -r-e-t-u-r-n- -(-
+- - - - -<->-
+- - - - - - -<-P-a-g-e-B-a-n-n-e-r-
+- - - - - - - - -t-i-t-l-e-=-"-W-e- -T-e-a-c-h- -L-i-f-e-"-
+- - - - - - -/->-
+-
+- - - - - - -{-/-*- -I-n-t-r-o- -h-e-r-o- -s-t-r-i-p- -*-/-}-
+- - - - - - -<-d-i-v- -r-e-f-=-{-i-n-t-r-o-R-e-f-}- -c-l-a-s-s-N-a-m-e-=-{-`-w-t-l---i-n-t-r-o- -$-{-i-n-t-r-o-I-n-V-i-e-w- -?- -'-w-t-l---v-i-s-i-b-l-e-'- -:- -'-'-}-`-}->-
+- - - - - - - - -<-d-i-v- -c-l-a-s-s-N-a-m-e-=-"-c-o-n-t-a-i-n-e-r- -w-t-l---i-n-t-r-o---i-n-n-e-r-"->-
+- - - - - - - - - - -<-d-i-v- -c-l-a-s-s-N-a-m-e-=-"-w-t-l---i-n-t-r-o---t-e-x-t-"->-
+- - - - - - - - - - - - -<-h-1- -c-l-a-s-s-N-a-m-e-=-"-w-t-l---i-n-t-r-o---h-e-a-d-i-n-g-"->-W-e- -T-e-a-c-h- -L-i-f-e-<-/-h-1->-
+- - - - - - - - - - - - -<-p->-
+- - - - - - - - - - - - - - -A-t- -A-c-a-d-e-m-i-c- -H-e-i-g-h-t-s- -W-o-r-l-d- -S-c-h-o-o-l-,- -w-e- -b-e-l-i-e-v-e- -e-d-u-c-a-t-i-o-n- -s-h-o-u-l-d- -p-r-e-p-a-r-e- -c-h-i-l-d-r-e-n- -f-o-r- -m-o-r-e- -t-h-a-n- -e-x-a-m-s-.-
+- - - - - - - - - - - - - - -I-t- -s-h-o-u-l-d- -p-r-e-p-a-r-e- -t-h-e-m- -f-o-r- -<-e-m->-l-i-f-e-<-/-e-m->-.- -O-u-r- -a-i-m- -i-s- -t-o- -h-e-l-p- -e-v-e-r-y- -c-h-i-l-d- -g-r-o-w- -i-n-t-o- -a- -k-i-n-d-,- -c-o-n-f-i-d-e-n-t-
+- - - - - - - - - - - - - - -a-n-d- -c-a-p-a-b-l-e- -p-e-r-s-o-n- -w-h-o- -c-a-n- -a-d-a-p-t- -t-o- -a- -w-o-r-l-d- -t-h-a-t- -i-s- -c-o-n-s-t-a-n-t-l-y- -c-h-a-n-g-i-n-g-.- -E-v-e-r-y- -l-e-s-s-o-n-,- -c-o-n-v-e-r-s-a-t-i-o-n-
+- - - - - - - - - - - - - - -a-n-d- -e-x-p-e-r-i-e-n-c-e- -i-s- -d-e-s-i-g-n-e-d- -t-o- -h-e-l-p- -t-h-e-m- -b-e-c-o-m-e- -r-e-a-d-y- -f-o-r- -w-h-a-t-e-v-e-r- -t-o-m-o-r-r-o-w- -b-r-i-n-g-s-.-
+- - - - - - - - - - - - -<-/-p->-
+- - - - - - - - - - - - -<-p->-
+- - - - - - - - - - - - - - -C-h-o-o-s-i-n-g- -A-c-a-d-e-m-i-c- -H-e-i-g-h-t-s- -W-o-r-l-d- -S-c-h-o-o-l- -m-e-a-n-s- -c-h-o-o-s-i-n-g- -m-o-r-e- -t-h-a-n- -s-t-r-o-n-g- -a-c-a-d-e-m-i-c-s-.- -I-t- -m-e-a-n-s- -c-h-o-o-s-i-n-g- -a-
+- - - - - - - - - - - - - - -s-c-h-o-o-l- -t-h-a-t- -w-i-l-l- -w-a-l-k- -a-l-o-n-g-s-i-d-e- -y-o-u-r- -c-h-i-l-d- -a-s- -t-h-e-y- -g-r-o-w-.- -W-e- -c-a-r-e- -a-b-o-u-t- -t-h-e-i-r- -m-i-n-d-s-,- -t-h-e-i-r- -c-h-a-r-a-c-t-e-r-
+- - - - - - - - - - - - - - -a-n-d- -t-h-e-i-r- -s-e-n-s-e- -o-f- -w-h-o- -t-h-e-y- -a-r-e-.- -A-t- -A-c-a-d-e-m-i-c- -H-e-i-g-h-t-s- -W-o-r-l-d- -S-c-h-o-o-l-,- -w-e- -d-o- -n-o-t- -s-i-m-p-l-y- -t-e-a-c-h- -s-u-b-j-e-c-t-s-;-
+- - - - - - - - - - - - - - -w-e- -h-e-l-p- -c-h-i-l-d-r-e-n- -l-e-a-r-n- -h-o-w- -t-o- -l-i-v-e- -w-e-l-l-.-
+- - - - - - - - - - - - -<-/-p->-
+- - - - - - - - - - -<-/-d-i-v->-
+- - - - - - - - -<-/-d-i-v->-
+- - - - - - -<-/-d-i-v->-
+-
+- - - - - - -{-/-*- -Q-u-i-c-k- -n-a-v- -p-i-l-l-s- -*-/-}-
+- - - - - - -<-n-a-v- -c-l-a-s-s-N-a-m-e-=-"-w-t-l---n-a-v-"- -a-r-i-a---l-a-b-e-l-=-"-P-a-g-e- -s-e-c-t-i-o-n-s-"->-
+- - - - - - - - -<-d-i-v- -c-l-a-s-s-N-a-m-e-=-"-c-o-n-t-a-i-n-e-r-"->-
+- - - - - - - - - - -<-u-l- -c-l-a-s-s-N-a-m-e-=-"-w-t-l---n-a-v---l-i-s-t-"->-
+- - - - - - - - - - - - -{-s-e-c-t-i-o-n-s-.-m-a-p-(-s- -=->- -(-
+- - - - - - - - - - - - - - -<-l-i- -k-e-y-=-{-s-.-i-d-}->-
+- - - - - - - - - - - - - - - - -<-b-u-t-t-o-n- -
+- - - - - - - - - - - - - - - - - - -o-n-C-l-i-c-k-=-{-(-)- -=->- -{-
+- - - - - - - - - - - - - - - - - - - - -c-o-n-s-t- -e-l- -=- -d-o-c-u-m-e-n-t-.-g-e-t-E-l-e-m-e-n-t-B-y-I-d-(-s-.-i-d-)-;-
+- - - - - - - - - - - - - - - - - - - - -i-f- -(-e-l-)- -{-
+- - - - - - - - - - - - - - - - - - - - - - -c-o-n-s-t- -y- -=- -e-l-.-g-e-t-B-o-u-n-d-i-n-g-C-l-i-e-n-t-R-e-c-t-(-)-.-t-o-p- -+- -w-i-n-d-o-w-.-s-c-r-o-l-l-Y- --- -8-0-;- -/-/- -O-f-f-s-e-t- -f-o-r- -s-t-i-c-k-y- -n-a-v-
+- - - - - - - - - - - - - - - - - - - - - - -w-i-n-d-o-w-.-s-c-r-o-l-l-T-o-(-{- -t-o-p-:- -y-,- -b-e-h-a-v-i-o-r-:- -'-s-m-o-o-t-h-'- -}-)-;-
+- - - - - - - - - - - - - - - - - - - - -}-
+- - - - - - - - - - - - - - - - - - -}-}- -
+- - - - - - - - - - - - - - - - - - -c-l-a-s-s-N-a-m-e-=-"-w-t-l---n-a-v---p-i-l-l-"-
+- - - - - - - - - - - - - - - - ->-
+- - - - - - - - - - - - - - - - - - -{-s-.-l-a-b-e-l-}-
+- - - - - - - - - - - - - - - - -<-/-b-u-t-t-o-n->-
+- - - - - - - - - - - - - - -<-/-l-i->-
+- - - - - - - - - - - - -)-)-}-
+- - - - - - - - - - -<-/-u-l->-
+- - - - - - - - -<-/-d-i-v->-
+- - - - - - -<-/-n-a-v->-
+-
+- - - - - - -{-/-*- -A-l-l- -s-e-c-t-i-o-n-s- -*-/-}-
+- - - - - - -<-m-a-i-n- -c-l-a-s-s-N-a-m-e-=-"-w-t-l---m-a-i-n-"->-
+- - - - - - - - -{-s-e-c-t-i-o-n-s-.-m-a-p-(-(-s-e-c-t-i-o-n-,- -i-)- -=->- -(-
+- - - - - - - - - - -<-L-i-f-e-S-e-c-t-i-o-n- -k-e-y-=-{-s-e-c-t-i-o-n-.-i-d-}- -s-e-c-t-i-o-n-=-{-s-e-c-t-i-o-n-}- -i-n-d-e-x-=-{-i-}- -/->-
+- - - - - - - - -)-)-}-
+- - - - - - -<-/-m-a-i-n->-
+-
+- - - - - - -{-/-*- -C-T-A- -s-t-r-i-p- -*-/-}-
+- - - - - - -<-d-i-v- -c-l-a-s-s-N-a-m-e-=-"-w-t-l---c-t-a-"->-
+- - - - - - - - -<-d-i-v- -c-l-a-s-s-N-a-m-e-=-"-c-o-n-t-a-i-n-e-r- -w-t-l---c-t-a---i-n-n-e-r-"->-
+- - - - - - - - - - -<-h-2- -c-l-a-s-s-N-a-m-e-=-"-w-t-l---c-t-a---t-i-t-l-e-"->-G-i-v-e- -Y-o-u-r- -C-h-i-l-d- -t-h-e- -G-i-f-t- -o-f- -a- -G-r-a-t-e-f-u-l- -H-e-a-r-t-<-/-h-2->-
+- - - - - - - - - - -<-p- -c-l-a-s-s-N-a-m-e-=-"-w-t-l---c-t-a---s-u-b-"->-
+- - - - - - - - - - - - -E-n-r-o-l- -a-t- -A-c-a-d-e-m-i-c- -H-e-i-g-h-t-s- -W-o-r-l-d- -S-c-h-o-o-l- -a-n-d- -h-e-l-p- -n-u-r-t-u-r-e- -a- -l-i-f-e-t-i-m-e- -o-f- -g-r-o-w-t-h-,- -h-a-p-p-i-n-e-s-s- -a-n-d- -p-u-r-p-o-s-e-.-
+- - - - - - - - - - -<-/-p->-
+- - - - - - - - - - -<-L-i-n-k- -t-o-=-"-/-a-d-m-i-s-s-i-o-n-"->-<-/-L-i-n-k->-
+- - - - - - - - -<-/-d-i-v->-
+- - - - - - -<-/-d-i-v->-
+- - - - -<-/->-
+- - -)-
+-}-
+--
+-
