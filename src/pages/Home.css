@@ -2364,6 +2364,16 @@ select.hf-input {
   display: block;
 }
 
+/* YouTube Shorts Modal Adjustments */
+.video-modal-box.is-shorts-modal {
+  max-width: 420px;
+}
+
+.video-modal-player-wrap.is-shorts-player {
+  aspect-ratio: 9 / 16;
+  max-height: 70vh;
+}
+
 
 
 

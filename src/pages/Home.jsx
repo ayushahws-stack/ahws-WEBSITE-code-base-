@@ -481,6 +481,7 @@ export default function Home() {
       category: 'Parent Experience',
       duration: '0:29',
       speaker: 'AHWS Parent Community',
+      youtubeId: 'l4U246_1EXg',
       src: './images/new%20AHWS%20Website%20Photos/Home/Testimonials/20260324_095112%20(1).mp4',
       highlight: 'Warm atmosphere, personalized care, and foundational excellence.'
     },
@@ -490,6 +491,7 @@ export default function Home() {
       category: 'Parent Testimonial',
       duration: '0:18',
       speaker: 'Primary Wing Parent',
+      youtubeId: 'bE4JHoZbJl0',
       src: './images/new%20AHWS%20Website%20Photos/Home/Testimonials/20260324_095326.mp4',
       highlight: 'Rapid improvement in spoken expression and social confidence.'
     },
@@ -499,6 +501,7 @@ export default function Home() {
       category: 'Parent Review',
       duration: '0:22',
       speaker: 'AHWS Parent Feedback',
+      youtubeId: 'Cl6OWcZ0phc',
       src: './images/new%20AHWS%20Website%20Photos/Home/Testimonials/20260324_095911.mp4',
       highlight: 'Equal focus on academic rigor, sports, and arts development.'
     },
@@ -508,6 +511,7 @@ export default function Home() {
       category: 'Parent Feedback',
       duration: '0:23',
       speaker: 'Early Childhood Parent',
+      youtubeId: 'vCmW2C53S8s',
       src: './images/new%20AHWS%20Website%20Photos/Home/Testimonials/20260324_111900.mp4',
       highlight: 'Safe campus environment, attentive teachers, and caring mentorship.'
     },
@@ -810,13 +814,22 @@ export default function Home() {
                   onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') setActiveVideoTestimonial(vt); }}
                 >
                   <div className="vt-video-thumb-wrap">
-                    <video
+                    {vt.youtubeId ? (
+                      <img
+                        src={`https://img.youtube.com/vi/${vt.youtubeId}/hqdefault.jpg`}
+                        alt={vt.title}
+                        className="vt-thumb-video"
+                        style={{ objectFit: 'cover' }}
+                      />
+                    ) : (
+                      <video
                       src={`${vt.src}#t=0.5`}
                       preload="metadata"
                       muted
                       playsInline
                       className="vt-thumb-video"
                     />
+                    )}
                     <div className="vt-thumb-overlay">
                       <div className="vt-play-icon-glow">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -979,7 +992,7 @@ export default function Home() {
       {activeVideoTestimonial && (
         <div className="video-modal-backdrop" onClick={() => setActiveVideoTestimonial(null)}>
           <div 
-            className="video-modal-box"
+            className={`video-modal-box ${activeVideoTestimonial.youtubeId ? 'is-shorts-modal' : ''}`}
             onClick={(e) => e.stopPropagation()}
             role="dialog"
             aria-modal="true"
@@ -998,8 +1011,18 @@ export default function Home() {
               <h3>{activeVideoTestimonial.title}</h3>
               <p>{activeVideoTestimonial.speaker} • {activeVideoTestimonial.duration}</p>
             </div>
-            <div className="video-modal-player-wrap">
-              <video 
+            <div className={`video-modal-player-wrap ${activeVideoTestimonial.youtubeId ? 'is-shorts-player' : ''}`}>
+              {activeVideoTestimonial.youtubeId ? (
+                <iframe
+                  src={`https://www.youtube.com/embed/${activeVideoTestimonial.youtubeId}?autoplay=1&rel=0`}
+                  title={activeVideoTestimonial.title}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="video-modal-player"
+                  style={{ border: 'none', width: '100%', height: '100%' }}
+                />
+              ) : (
+                <video 
                 src={activeVideoTestimonial.src} 
                 controls 
                 autoPlay 
@@ -1008,6 +1031,7 @@ export default function Home() {
               >
                 Your browser does not support HTML5 video.
               </video>
+              )}
             </div>
           </div>
         </div>
