@@ -372,55 +372,55 @@ export default function Home() {
 
   const uniquenessData = [
     {
-      image: './WEBSITE GALLERY/other images/Sprout infographic.png',
-      icon: './WEBSITE GALLERY/other images/Sprout logo.png',
+      image: './images/gallery/other images/Sprout infographic.png',
+      icon: './images/gallery/other images/Sprout logo.png',
       title: 'SPROUT Curriculum',
       tagline: 'Our exclusive in-house curriculum aligned with NEP-2020',
       desc: 'Our signature, in-house SPROUT curriculum integrates scholastic and co-scholastic pedagogies, life skills, value education, critical thinking, and future-ready abilities - aligned with NEP-2020, NCF-2023, and the NIPUN Bharat Mission.',
       hero: true,
     },
     {
-      image: './images/new%20AHWS%20Website%20Photos/Home/Students%20using%20Smart%20Classrooms/IMG_8540.jpg',
-      fallback: './WEBSITE GALLERY/other images/smart class room with 3D modes in the smart screen .jpeg',
-      icon: './WEBSITE GALLERY/other images/AHWS logo.png',
+      image: './images/pages/Home/Students using Smart Classrooms/IMG_8540.jpg',
+      fallback: './images/gallery/other images/smart class room with 3D modes in the smart screen .jpeg',
+      icon: './images/gallery/other images/AHWS logo.png',
       title: 'X-Wall & Speak-O-Pen',
       tagline: 'Immersive learning wall + smart pronunciation tools for language mastery.',
     },
     {
-      image: './images/new%20AHWS%20Website%20Photos/Home/Students%20using%20Smart%20Classrooms/IMG_8541.jpg',
-      fallback: './WEBSITE GALLERY/other images/smart class room with 3D modes in the smart screen .jpeg',
-      icon: './WEBSITE GALLERY/other images/AHWS logo.png',
+      image: './images/pages/Home/Students using Smart Classrooms/IMG_8541.jpg',
+      fallback: './images/gallery/other images/smart class room with 3D modes in the smart screen .jpeg',
+      icon: './images/gallery/other images/AHWS logo.png',
       title: 'AI-Powered Smart Classrooms',
       tagline: 'Interactive classrooms with immersive 3D learning experiences.',
     },
     {
-      image: './images/new%20AHWS%20Website%20Photos/Home/Students%20working%20in%20Robotics%20&%20AI%20Lab/AI.jpeg',
-      fallback: './WEBSITE GALLERY/other images/robotics lab.jpeg',
-      icon: './WEBSITE GALLERY/other images/AHWS logo.png',
+      image: './images/pages/Home/Students working in Robotics & AI Lab/AI.jpeg',
+      fallback: './images/gallery/other images/robotics lab.jpeg',
+      icon: './images/gallery/other images/AHWS logo.png',
       title: 'AI and Robotics Lab',
       tagline: 'Hands-on STEM learning with real robotic kits and programming.',
     },
     {
-      image: './images/new%20AHWS%20Website%20Photos/About/360%20Degree/Home.jpeg',
-      fallback: './WEBSITE GALLERY/other images/Technology_and_App_010.jpg',
-      icon: './WEBSITE GALLERY/other images/360 app logo .png',
+      image: './images/pages/About/360 Degree/Home.jpeg',
+      fallback: './images/gallery/other images/Technology_and_App_010.jpg',
+      icon: './images/gallery/other images/360 app logo .png',
       title: '360° Mobile App',
       tagline: 'Complete Parent & School Automation',
       desc: 'Fully encompassing automation solution with role-customized portals for parents, teachers, and students. Monitor daily progress, attendance, academic reports, and school communications in real-time.',
       hero: true,
     },
     {
-      image: './images/new%20AHWS%20Website%20Photos/Home/Students%20in%20Art%20&%20Music%20Studios/CAM%20%201%201935T01.JPG',
-      fallback: './WEBSITE GALLERY/other images/kids Dance .jpg',
-      icon: './WEBSITE GALLERY/other images/AHWS logo.png',
+      image: './images/pages/Home/Students in Art & Music Studios/CAM  1 1935T01.JPG',
+      fallback: './images/gallery/other images/kids Dance .jpg',
+      icon: './images/gallery/other images/AHWS logo.png',
       title: 'Performing Arts',
       tagline: 'Creative & Artistic Excellence',
       desc: 'Theatre, Dance, Music & Art with professional coaches and stage exposure.',
     },
     {
-      image: './images/new%20AHWS%20Website%20Photos/Home/Sports/CAM%20%201%201696T01.JPG',
-      fallback: './images/Basketball 1.jpeg',
-      icon: './WEBSITE GALLERY/other images/AHWS logo.png',
+      image: './images/pages/Home/Sports/CAM  1 1696T01.JPG',
+      fallback: './images/common/Basketball 1.jpeg',
+      icon: './images/gallery/other images/AHWS logo.png',
       title: '9-Sport Portfolio',
       tagline: 'Comprehensive Athletics Infrastructure',
       desc: 'Pickleball, Cricket, Football, Badminton, Tennis, Basketball, Volleyball, Taekwondo & Chess - dedicated coaching and professional athletic infrastructure for all-round physical excellence.',
@@ -434,43 +434,43 @@ export default function Home() {
       title: 'Smart Classrooms', 
       icon: '💻', 
       desc: 'Interactive digital boards, ergonomic seating, and 3D digital learning tools.',
-      image: './images/new%20AHWS%20Website%20Photos/Home/Students%20using%20Smart%20Classrooms/IMG_8540.jpg',
-      fallback: './WEBSITE GALLERY/other images/smart class room with 3D modes in the smart screen .jpeg'
+      image: './images/pages/Home/Students using Smart Classrooms/IMG_8540.jpg',
+      fallback: './images/gallery/other images/smart class room with 3D modes in the smart screen .jpeg'
     },
     { 
       title: 'Science Laboratories', 
       icon: '🔬', 
       desc: 'Fully equipped Physics, Chemistry, Composite, and Biology labs with advanced safety features.',
-      image: './images/new%20AHWS%20Website%20Photos/Home/Science%20Experiment/20251030_104810.jpg.jpeg',
-      fallback: './WEBSITE GALLERY/other images/science lab.jpeg'
+      image: './images/pages/Home/Science Experiment/20251030_104810.jpg.jpeg',
+      fallback: './images/gallery/other images/science lab.jpeg'
     },
     { 
       title: 'Robotics Lab', 
       icon: '🤖', 
       desc: 'An immersive setting equipped with distinct types of robotic kits, empowering students to harness the power of programming to design and build practical robots.',
-      image: './images/new%20AHWS%20Website%20Photos/Home/Students%20working%20in%20Robotics%20&%20AI%20Lab/AI.jpeg',
-      fallback: './WEBSITE GALLERY/other images/robotics lab.jpeg'
+      image: './images/pages/Home/Students working in Robotics & AI Lab/AI.jpeg',
+      fallback: './images/gallery/other images/robotics lab.jpeg'
     },
     { 
       title: 'Library', 
       icon: '📚', 
       desc: 'A vast collection of academic books, journals, fiction, and digital resources.',
-      image: './images/new%20AHWS%20Website%20Photos/Home/Students%20reading%20in%20the%20Library/IMG-20260712-WA0217.jpg',
-      fallback: './images/library 1.jpeg'
+      image: './images/pages/Home/Students reading in the Library/IMG-20260712-WA0217.jpg',
+      fallback: './images/common/library 1.jpeg'
     },
     { 
       title: 'Sports', 
       icon: '🏅', 
       desc: 'Pickleball court, outdoor basketball court, outdoor football field, and cricket nets.',
-      image: './images/new%20AHWS%20Website%20Photos/Home/Sports/CAM%20%201%201696T01.JPG',
-      fallback: './images/Basketball 1.jpeg'
+      image: './images/pages/Home/Sports/CAM  1 1696T01.JPG',
+      fallback: './images/common/Basketball 1.jpeg'
     },
     { 
       title: 'Art & Music Studios', 
       icon: '🎨', 
       desc: 'Dedicated spaces for painting, sculpture, classical music, and dance.',
-      image: './images/new%20AHWS%20Website%20Photos/Home/Students%20in%20Art%20&%20Music%20Studios/CAM%20%201%201935T01.JPG',
-      fallback: './WEBSITE GALLERY/other images/kid making art.jpeg'
+      image: './images/pages/Home/Students in Art & Music Studios/CAM  1 1935T01.JPG',
+      fallback: './images/gallery/other images/kid making art.jpeg'
     },
   ]
 
@@ -482,7 +482,7 @@ export default function Home() {
       duration: '0:29',
       speaker: 'AHWS Parent Community',
       youtubeId: 'l4U246_1EXg',
-      src: './images/new%20AHWS%20Website%20Photos/Home/Testimonials/20260324_095112%20(1).mp4',
+      src: './images/pages/Home/Testimonials/20260324_095112 (1).mp4',
       highlight: 'Warm atmosphere, personalized care, and foundational excellence.'
     },
     {
@@ -492,7 +492,7 @@ export default function Home() {
       duration: '0:18',
       speaker: 'Primary Wing Parent',
       youtubeId: 'bE4JHoZbJl0',
-      src: './images/new%20AHWS%20Website%20Photos/Home/Testimonials/20260324_095326.mp4',
+      src: './images/pages/Home/Testimonials/20260324_095326.mp4',
       highlight: 'Rapid improvement in spoken expression and social confidence.'
     },
     {
@@ -502,7 +502,7 @@ export default function Home() {
       duration: '0:22',
       speaker: 'AHWS Parent Feedback',
       youtubeId: 'Cl6OWcZ0phc',
-      src: './images/new%20AHWS%20Website%20Photos/Home/Testimonials/20260324_095911.mp4',
+      src: './images/pages/Home/Testimonials/20260324_095911.mp4',
       highlight: 'Equal focus on academic rigor, sports, and arts development.'
     },
     {
@@ -512,7 +512,7 @@ export default function Home() {
       duration: '0:23',
       speaker: 'Early Childhood Parent',
       youtubeId: 'vCmW2C53S8s',
-      src: './images/new%20AHWS%20Website%20Photos/Home/Testimonials/20260324_111900.mp4',
+      src: './images/pages/Home/Testimonials/20260324_111900.mp4',
       highlight: 'Safe campus environment, attentive teachers, and caring mentorship.'
     },
     {
@@ -521,7 +521,8 @@ export default function Home() {
       category: 'Parent Perspective',
       duration: '0:30',
       speaker: 'Middle Wing Parent',
-      src: './images/new%20AHWS%20Website%20Photos/Home/Testimonials/20260324_112138.mp4',
+      youtubeId: 'mqET9cpzXFo',
+      src: './images/pages/Home/Testimonials/20260324_112138.mp4',
       highlight: 'Hands-on practical projects that make children truly love school.'
     },
     {
@@ -530,7 +531,8 @@ export default function Home() {
       category: 'Parent Experience',
       duration: '0:44',
       speaker: 'AHWS Parent Community',
-      src: './images/new%20AHWS%20Website%20Photos/Home/Testimonials/20260324_112451.mp4',
+      youtubeId: 'RZt2xw9BJW0',
+      src: './images/pages/Home/Testimonials/20260324_112451.mp4',
       highlight: 'Inculcating core moral values, discipline, and compassionate outlook.'
     },
     {
@@ -539,18 +541,18 @@ export default function Home() {
       category: 'Parent Testimonial',
       duration: '0:51',
       speaker: 'Senior Wing Parent',
-      src: './images/new%20AHWS%20Website%20Photos/Home/Testimonials/20260324_113037.mp4',
+      src: './images/pages/Home/Testimonials/20260324_113037.mp4',
       highlight: '360° holistic growth shaping children into well-rounded leaders.'
     }
   ]
 
   const galleryImages = [
-    { src: './images/new%20AHWS%20Website%20Photos/Home/Science%20Experiment/20251030_105844.jpg.jpeg', fallback: './WEBSITE GALLERY/other images/science lab.jpeg', alt: 'Science Lab', title: 'Science Laboratory' },
-    { src: './images/new%20AHWS%20Website%20Photos/Beyond%20Curriculum/Robotics/IMG_8552.jpg', fallback: './images/Robotics 1.jpeg', alt: 'Robotics Lab', title: 'Robotics & AI Innovation Lab' },
-    { src: './images/new%20AHWS%20Website%20Photos/We%20Teach%20Life/Students%20planting%20trees%20or%20in%20the%20green%20campus/20250724_085455.jpg', fallback: './images/Green campus.png', alt: 'Green Campus', title: 'Lush Green Eco-Campus' },
-    { src: './images/new%20AHWS%20Website%20Photos/Home/Students%20reading%20in%20the%20Library/IMG-20260712-WA0218.jpg', fallback: './images/library 1.jpeg', alt: 'Library', title: 'Library & Resource Centre' },
-    { src: './images/new%20AHWS%20Website%20Photos/Home/Students%20using%20Smart%20Classrooms/IMG_8541.jpg', fallback: './WEBSITE GALLERY/other images/smart class room with 3D modes in the smart screen .jpeg', alt: 'Classroom', title: 'Smart Classrooms' },
-    { src: './images/new%20AHWS%20Website%20Photos/Home/Sports/CAM%20%201%201700T01.JPG', fallback: './images/Basketball 1.jpeg', alt: 'Sports Ground', title: 'Sports & Athletics Facilities' },
+    { src: './images/pages/Home/Science Experiment/20251030_105844.jpg.jpeg', fallback: './images/gallery/other images/science lab.jpeg', alt: 'Science Lab', title: 'Science Laboratory' },
+    { src: './images/pages/Home/Students working in Robotics & AI Lab/IMG_8552.jpg', fallback: './images/common/Robotics 1.jpeg', alt: 'Robotics Lab', title: 'Robotics & AI Innovation Lab' },
+    { src: './images/pages/We Teach Life/Students planting trees or in the green campus/20250724_085455.jpg', fallback: './images/common/Green campus.png', alt: 'Green Campus', title: 'Lush Green Eco-Campus' },
+    { src: './images/pages/Home/Students reading in the Library/IMG-20260712-WA0218.jpg', fallback: './images/common/library 1.jpeg', alt: 'Library', title: 'Library & Resource Centre' },
+    { src: './images/pages/Home/Students using Smart Classrooms/IMG_8541.jpg', fallback: './images/gallery/other images/smart class room with 3D modes in the smart screen .jpeg', alt: 'Classroom', title: 'Smart Classrooms' },
+    { src: './images/pages/Home/Sports/CAM  1 1700T01.JPG', fallback: './images/common/Basketball 1.jpeg', alt: 'Sports Ground', title: 'Sports & Athletics Facilities' },
   ]
 
   return (
@@ -571,7 +573,7 @@ export default function Home() {
                 muted={isMuted}
                 loop
                 playsInline
-                poster="./WEBSITE GALLERY/other images/AHWS.png"
+                poster="./images/gallery/other images/AHWS.png"
                 onPlay={() => setIsPlaying(true)}
                 onPause={() => setIsPlaying(false)}
               >
@@ -940,7 +942,8 @@ export default function Home() {
                 const msg = `Hello Academic Heights World School, I would like to inquire about admission for my child.\n\n*Enquiry Details:*\nParent Name: ${parentName}\nPhone: ${phone}\nClass: ${studentClass}`;
                 
                 const whatsappUrl = `https://wa.me/918860455000?text=${encodeURIComponent(msg)}`;
-                window.open(whatsappUrl, '_blank');
+                window.open(whatsappUrl, '_blank')
+    setIsSubmitting(false);
 
                 setShowEnquiryModal(false);
                 setShowPopup(true); 
