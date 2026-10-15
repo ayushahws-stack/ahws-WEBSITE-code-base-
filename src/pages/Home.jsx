@@ -541,6 +541,7 @@ export default function Home() {
       category: 'Parent Testimonial',
       duration: '0:51',
       speaker: 'Senior Wing Parent',
+      youtubeId: '38Sh-4oAPl8',
       src: './images/pages/Home/Testimonials/20260324_113037.mp4',
       highlight: '360° holistic growth shaping children into well-rounded leaders.'
     }
