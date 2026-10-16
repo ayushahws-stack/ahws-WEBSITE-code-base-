@@ -88,7 +88,9 @@ for (const file of cssFiles) {
 }
 
 fs.writeFileSync(path.join(outDir, 'WordPress-Standard-Guide.css'), standardCss);
+fs.writeFileSync(path.join(outDir, 'ahws-standard.css'), standardCss);
 fs.writeFileSync(path.join(outDir, 'WordPress-Elementor-Guide.css'), elementorCss);
+fs.writeFileSync(path.join(outDir, 'ahws-elementor.css'), elementorCss);
 
-console.log('CSS guides updated successfully in 02_WORDPRESS_DEVELOPER_PACKAGE/CSS_STYLESHEETS.');
+console.log('All 4 CSS stylesheets synchronized successfully in 02_WORDPRESS_DEVELOPER_PACKAGE/CSS_STYLESHEETS.');
 
