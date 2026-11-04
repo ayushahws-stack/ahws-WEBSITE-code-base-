@@ -1,4 +1,4 @@
-/* Home.css */
+﻿/* Home.css */
 
 .blurred-text {
   filter: blur(8px);
@@ -1471,12 +1471,13 @@ select.hf-input {
   }
   .bento-flip-card.bento-hero {
     grid-column: span 1;
-    height: 480px;
+    min-height: 520px;
+    height: auto;
   }
   .bento-flip-card.bento-hero .bento-flip-front {
     flex-direction: column;
     text-align: center;
-    padding: 28px 22px 96px 22px;
+    padding: 28px 22px 24px 22px;
   }
   .bento-flip-card.bento-hero .bento-icon-wrap {
     margin-right: 0;
@@ -1484,6 +1485,28 @@ select.hf-input {
     width: 96px;
     min-width: 96px;
     height: 96px;
+  }
+  /* Flip hint — detach from absolute positioning so it sits below content */
+  .bento-flip-card.bento-hero .bento-flip-hint {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+  }
+  .bento-flip-card.bento-hero .bento-flip-hint:hover {
+    transform: scale(1.05) !important;
+  }
+  .bento-flip-card.bento-hero .bento-flip-hint:active {
+    transform: scale(0.97) !important;
+  }
+  /* Video modal — prevent overflow on short phones */
+  .video-modal-box {
+    max-height: 90vh;
+    overflow-y: auto;
+    margin: 12px;
   }
 }
 

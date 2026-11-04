@@ -1,4 +1,4 @@
-/* ── Announcement Ticker Bar ── */
+﻿/* ── Announcement Ticker Bar ── */
 .ticker-bar {
   width: 100%;
   background: linear-gradient(135deg, var(--primary) 0%, #1a3a6b 100%);
@@ -117,10 +117,20 @@
 /* ── Mobile ── */
 @media (max-width: 640px) {
   .ticker-label {
-    padding: 8px 14px;
+    padding: 6px 10px;
     font-size: 0.7rem;
   }
-  
+
+  /* Hide the polygon chevron that overflows at narrow widths */
+  .ticker-label::after {
+    display: none;
+  }
+
+  /* Pull ticker text closer to label since chevron is gone */
+  .ticker-content {
+    padding-left: 10px;
+  }
+
   .ticker-label span:last-child {
     display: none;
   }

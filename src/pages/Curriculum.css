@@ -1,4 +1,4 @@
-@import './Academics.css';
+﻿@import './Academics.css';
 
 .curriculum-page {
   overflow: hidden;
@@ -322,5 +322,25 @@
   
   .sprout-flip-card {
     height: 230px;
+  }
+}
+
+/* ── Mobile SPROUT Flip Card Fix ── */
+@media (max-width: 480px) {
+  .sprout-flip-card {
+    min-height: 250px;
+    height: auto;
+  }
+
+  .sprout-flip-back {
+    padding: 16px 14px;
+  }
+
+  .sprout-flip-back h5 {
+    font-size: 0.95rem;
+  }
+
+  .sprout-flip-back p {
+    font-size: 0.82rem;
   }
 }

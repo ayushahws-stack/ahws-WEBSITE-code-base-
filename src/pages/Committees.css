@@ -1,4 +1,4 @@
-.committees-page {
+﻿.committees-page {
   background-color: var(--light-bg);
   min-height: 100vh;
   padding-bottom: 4rem;
@@ -188,5 +188,23 @@
   .member-list strong {
     width: 100%;
     margin-bottom: 0.25rem;
+  }
+}
+
+/* ── Mobile Table Overflow ── */
+.committee-card-body {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.committee-table {
+  min-width: 480px;
+}
+
+@media (max-width: 640px) {
+  .committee-table th,
+  .committee-table td {
+    font-size: 0.82rem;
+    padding: 8px 10px;
   }
 }
