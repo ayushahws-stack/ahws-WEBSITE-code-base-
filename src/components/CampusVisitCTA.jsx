@@ -1,4 +1,4 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 import './CampusVisitCTA.css';
 
 export default function CampusVisitCTA() {
@@ -11,11 +11,12 @@ export default function CampusVisitCTA() {
     
     const formData = new FormData(e.target);
     const parentName = formData.get('parentName');
+    const childName = formData.get('childName');
     const phone = formData.get('phone');
     const childGrade = formData.get('childGrade');
     const visitDate = formData.get('visitDate');
 
-    const msg = `Hello Academic Heights World School, I would like to book a campus visit.\n\n*Booking Details:*\nParent Name: ${parentName}\nPhone: ${phone}\nChild's Grade: ${childGrade}\nPreferred Date: ${visitDate}`;
+    const msg = `Hello Academic Heights World School, I would like to book a campus visit.\n\n*Booking Details:*\nParent Name: ${parentName}\nChild's Name: ${childName}\nPhone: ${phone}\nChild's Grade: ${childGrade}\nPreferred Date: ${visitDate}`;
     
     const whatsappUrl = `https://wa.me/918860455000?text=${encodeURIComponent(msg)}`;
     window.open(whatsappUrl, '_blank');
@@ -53,6 +54,10 @@ export default function CampusVisitCTA() {
               <div className="cv-form-field">
                 <label>Parent's Name <span className="req">*</span></label>
                 <input type="text" name="parentName" placeholder="Enter your name" required />
+              </div>
+              <div className="cv-form-field">
+                <label>Child's Name <span className="req">*</span></label>
+                <input type="text" name="childName" placeholder="Enter child's name" required />
               </div>
               <div className="cv-form-field">
                 <label>Phone Number <span className="req">*</span></label>
