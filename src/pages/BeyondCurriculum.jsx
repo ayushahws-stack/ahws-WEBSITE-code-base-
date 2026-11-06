@@ -4,10 +4,10 @@ import PageBanner from '../components/PageBanner'
 
 export default function BeyondCurriculum() {
   // Reveal animation hooks
-  const { ref: pillarsRef, inView: pillarsInView } = useInView({ triggerOnce: true, threshold: 0.15 })
-  const { ref: programsRef, inView: programsInView } = useInView({ triggerOnce: true, threshold: 0.15 })
-  const { ref: sportsRef, inView: sportsInView } = useInView({ triggerOnce: true, threshold: 0.15 })
-  const { ref: facultyRef, inView: facultyInView } = useInView({ triggerOnce: true, threshold: 0.15 })
+  const { ref: pillarsRef, inView: pillarsInView } = useInView({ triggerOnce: true, threshold: 0.01, rootMargin: '100px 0px' })
+  const { ref: programsRef, inView: programsInView } = useInView({ triggerOnce: true, threshold: 0.01, rootMargin: '100px 0px' })
+  const { ref: sportsRef, inView: sportsInView } = useInView({ triggerOnce: true, threshold: 0.01, rootMargin: '100px 0px' })
+  const { ref: facultyRef, inView: facultyInView } = useInView({ triggerOnce: true, threshold: 0.01, rootMargin: '100px 0px' })
 
   // Enrichment Pillars (From SPROUT PPT Slide 6)
   const enrichmentPillars = [

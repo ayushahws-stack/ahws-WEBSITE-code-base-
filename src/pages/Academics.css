@@ -36,7 +36,7 @@
   overflow: hidden;
   transition: var(--transition);
   box-shadow: var(--shadow);
-  opacity: 0;
+  opacity: 1;
 }
 
 .acad-curriculum-grid.in-view .acad-curriculum-card {
@@ -201,7 +201,7 @@
   gap: 14px;
   transition: var(--transition);
   box-shadow: var(--shadow);
-  opacity: 0;
+  opacity: 1;
 }
 
 .acad-pedagogy-grid-6.in-view .acad-pedagogy-card {
@@ -291,7 +291,7 @@
   text-align: center;
   backdrop-filter: blur(8px);
   transition: var(--transition);
-  opacity: 0;
+  opacity: 1;
 }
 
 .acad-faculty-stats.in-view .acad-stat-item {
@@ -723,7 +723,7 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  opacity: 0;
+  opacity: 1;
 }
 
 .programs-grid-2x2.in-view .program-card-v2 {
@@ -806,7 +806,7 @@
   align-items: center;
   justify-content: center;
   height: 100%;
-  opacity: 0;
+  opacity: 1;
 }
 
 .sports-grid.in-view .sport-card {

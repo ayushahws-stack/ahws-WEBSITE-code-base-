@@ -16,10 +16,10 @@ export default function Curriculum() {
   }
 
   // Reveal animation hooks
-  const { ref: curriculumRef, inView: curriculumInView } = useInView({ triggerOnce: true, threshold: 0.15 })
-  const { ref: pedagogyRef, inView: pedagogyInView } = useInView({ triggerOnce: true, threshold: 0.15 })
-  const { ref: sproutLayersRef } = useInView({ triggerOnce: true, threshold: 0.15 })
-  const { ref: hallmarkRef } = useInView({ triggerOnce: true, threshold: 0.15 })
+  const { ref: curriculumRef, inView: curriculumInView } = useInView({ triggerOnce: true, threshold: 0.01, rootMargin: '100px 0px' })
+  const { ref: pedagogyRef, inView: pedagogyInView } = useInView({ triggerOnce: true, threshold: 0.01, rootMargin: '100px 0px' })
+  const { ref: sproutLayersRef } = useInView({ triggerOnce: true, threshold: 0.01, rootMargin: '100px 0px' })
+  const { ref: hallmarkRef } = useInView({ triggerOnce: true, threshold: 0.01, rootMargin: '100px 0px' })
 
   // 5 Hallmark Items (Matching Bachpan / SPROUT exact infographic design)
   const hallmarkItems = [

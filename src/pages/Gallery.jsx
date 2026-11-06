@@ -555,6 +555,7 @@ export default function Gallery() {
                         src={imgUrl(event.folder, event.images[0])}
                         alt={event.title}
                         loading="lazy"
+                        decoding="async"
                         onError={e => {
                           e.currentTarget.style.display = 'none'
                           e.currentTarget.parentElement.style.backgroundColor = '#002147'

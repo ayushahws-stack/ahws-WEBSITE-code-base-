@@ -5,9 +5,9 @@
 /* ── Scroll-in base ── */
 .wtl-intro,
 .wtl-section {
-  opacity: 0;
-  transform: translateY(36px);
-  transition: opacity 0.75s ease, transform 0.75s ease;
+  opacity: 1;
+  transform: none;
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 .wtl-visible {
   opacity: 1 !important;

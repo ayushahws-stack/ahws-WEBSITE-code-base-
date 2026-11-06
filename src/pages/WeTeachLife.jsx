@@ -22,10 +22,10 @@ const sections = [
     fallback: './WEBSITE GALLERY/AHWS Baby Show (02-10-2024)/DSC_0200.jpeg',
     body: `A child's growth is closely connected to the strength of the community around them. At Academic Heights World School, we work to create an inclusive, caring community where every student, parent and teacher feels valued and genuinely part of something bigger. We believe children learn best when people respect one another, work together and share a sense of purpose.\n\nWhen you become part of the Academic Heights World School family, you become part of an active service community. Our students lead concrete ground initiatives, including:
 
-� Student-Led Book Drives with local library projects
-� Handmade Paper Bag Drives distributed across Pitampura markets to combat single-use plastics
-� Eco-Awareness & Swachh Bharat Cleanliness Campaigns
-� Intergenerational visits to local eldercare and RWA Health Check-up Camps We encourage parents, teachers and students to work closely together because children grow best when the people around them are connected. Here, your child will have people who know them, encourage them and stand by them.`,
+• Student-Led Book Drives with local library projects
+• Handmade Paper Bag Drives distributed across Pitampura markets to combat single-use plastics
+• Eco-Awareness & Swachh Bharat Cleanliness Campaigns
+• Intergenerational visits to local eldercare and RWA Health Check-up Camps We encourage parents, teachers and students to work closely together because children grow best when the people around them are connected. Here, your child will have people who know them, encourage them and stand by them.`,
   },
   {
     id: 'parents',
@@ -153,7 +153,7 @@ const sections = [
 
 /* ─── Single section component ─────────────────────────────────────── */
 function LifeSection({ section, index }) {
-  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.12 })
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.01, rootMargin: '100px 0px' })
   const isEven = index % 2 === 0
 
   return (
@@ -206,7 +206,7 @@ function LifeSection({ section, index }) {
 
 /* ─── Page ──────────────────────────────────────────────────────────── */
 export default function WeTeachLife() {
-  const { ref: introRef, inView: introInView } = useInView({ triggerOnce: true, threshold: 0.1 })
+  const { ref: introRef, inView: introInView } = useInView({ triggerOnce: true, threshold: 0.01, rootMargin: '100px 0px' })
 
   return (
     <>
@@ -279,4 +279,3 @@ export default function WeTeachLife() {
     </>
   )
 }
-

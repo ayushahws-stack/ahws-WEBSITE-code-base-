@@ -1382,6 +1382,15 @@ select.hf-input {
   object-fit: contain;
 }
 
+.bento-icon-glyph {
+  font-size: 2.8rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
 /* Hero specific icon tweaks */
 .bento-flip-card.bento-hero .bento-icon-wrap {
   width: 120px;

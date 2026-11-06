@@ -139,7 +139,11 @@ function FlippableBentoCard({ item }) {
         {/* Front Face: Info */}
         <div className="bento-flip-front">
           <div className="bento-icon-wrap">
-            <img src={item.icon} alt={item.title} loading="lazy" />
+            {typeof item.icon === 'string' && (item.icon.includes('/') || item.icon.includes('.')) ? (
+              <img src={item.icon} alt={item.title} loading="lazy" />
+            ) : (
+              <span className="bento-icon-glyph" role="img" aria-label={item.title}>{item.icon}</span>
+            )}
           </div>
           <div className="bento-content-wrap" style={{ display: 'flex', flexDirection: 'column', flex: 1 }}>
             <div className="bento-text">
@@ -384,21 +388,21 @@ export default function Home() {
     {
       image: './images/pages/Home/Students using Smart Classrooms/IMG_8540.jpg',
       fallback: './images/gallery/other images/smart class room with 3D modes in the smart screen .jpeg',
-      icon: './images/gallery/other images/AHWS logo.png',
+      icon: '🖊️',
       title: 'X-Wall & Speak-O-Pen',
       tagline: 'Immersive learning wall + smart pronunciation tools for language mastery.',
     },
     {
       image: './images/pages/Home/Students using Smart Classrooms/IMG_8541.jpg',
       fallback: './images/gallery/other images/smart class room with 3D modes in the smart screen .jpeg',
-      icon: './images/gallery/other images/AHWS logo.png',
+      icon: '🖥️',
       title: 'AI-Powered Smart Classrooms',
       tagline: 'Interactive classrooms with immersive 3D learning experiences.',
     },
     {
       image: './images/pages/Home/Students working in Robotics & AI Lab/AI.jpeg',
       fallback: './images/gallery/other images/robotics lab.jpeg',
-      icon: './images/gallery/other images/AHWS logo.png',
+      icon: '🤖',
       title: 'AI and Robotics Lab',
       tagline: 'Hands-on STEM learning with real robotic kits and programming.',
     },
@@ -414,7 +418,7 @@ export default function Home() {
     {
       image: './images/pages/Home/Students in Art & Music Studios/CAM  1 1935T01.JPG',
       fallback: './images/gallery/other images/kids Dance .jpg',
-      icon: './images/gallery/other images/AHWS logo.png',
+      icon: '🎭',
       title: 'Performing Arts',
       tagline: 'Creative & Artistic Excellence',
       desc: 'Theatre, Dance, Music & Art with professional coaches and stage exposure.',
@@ -422,7 +426,7 @@ export default function Home() {
     {
       image: './images/pages/Home/Sports/CAM  1 1696T01.JPG',
       fallback: './images/common/Basketball 1.jpeg',
-      icon: './images/gallery/other images/AHWS logo.png',
+      icon: '🏅',
       title: '9-Sport Portfolio',
       tagline: 'Comprehensive Athletics Infrastructure',
       desc: 'Pickleball, Cricket, Football, Badminton, Tennis, Basketball, Volleyball, Taekwondo & Chess - dedicated coaching and professional athletic infrastructure for all-round physical excellence.',
