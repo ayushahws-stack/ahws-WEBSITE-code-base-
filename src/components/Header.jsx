@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+﻿import { useState, useEffect } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import './Header.css'
 
@@ -228,7 +228,7 @@ export default function Header() {
               to="/admission"
               className="blink-badge"
             >
-              🔴 REGISTRATION OPEN 2027-28
+              🔴 REGISTRATION OPEN
             </Link>
           </div>
           <div className="topbar-right">

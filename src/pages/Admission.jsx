@@ -1,4 +1,4 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 import './Admission.css'
 import Popup from '../components/Popup'
 import PageBanner from '../components/PageBanner'
@@ -279,7 +279,7 @@ export default function Admission() {
             <h2 className="section-title">🎥 Age Criteria Explained by Principal Ma'am</h2>
             <div className="divider-line" />
             <p className="process-intro" style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto 36px' }}>
-              Watch <strong>Ms. Rachna Anand</strong> (Principal, AHWS) explain the age criteria, class eligibility guidelines, and admission rules for the 2027–28 academic session.
+              Watch <strong>Ms. Rachna Anand</strong> (Principal, AHWS) explain the age criteria, class eligibility guidelines, and admission rules for the academic session.
             </p>
 
             <div style={{ textAlign: 'center', marginBottom: '36px' }}>

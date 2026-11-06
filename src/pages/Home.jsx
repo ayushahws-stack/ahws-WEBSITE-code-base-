@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+﻿import { useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import CampusVisitCTA from '../components/CampusVisitCTA'
 import { Swiper, SwiperSlide } from 'swiper/react'
@@ -928,7 +928,7 @@ export default function Home() {
               ✕
             </button>
             <div className="enquiry-modal-header">
-              <span className="enquiry-modal-badge">ADMISSION ENQUIRY 2027-28</span>
+              <span className="enquiry-modal-badge">ADMISSION ENQUIRY</span>
               <h3 id="enquiry-modal-title">Quick Enquiry</h3>
               <p>Connect with our admissions team instantly. Fill in your details below.</p>
             </div>
@@ -937,10 +937,11 @@ export default function Home() {
                 const form = e.target;
                 
                 const parentName = form.elements['modal-parentname'].value;
+                const childName = form.elements['modal-childname'].value;
                 const phone = form.elements['modal-phone'].value;
                 const studentClass = form.elements['modal-class'].value;
 
-                const msg = `Hello Academic Heights World School, I would like to inquire about admission for my child.\n\n*Enquiry Details:*\nParent Name: ${parentName}\nPhone: ${phone}\nClass: ${studentClass}`;
+                const msg = `Hello Academic Heights World School, I would like to inquire about admission for my child.\n\n*Enquiry Details:*\nParent Name: ${parentName}\nChild's Name: ${childName}\nPhone: ${phone}\nClass: ${studentClass}`;
                 
                 const whatsappUrl = `https://wa.me/918860455000?text=${encodeURIComponent(msg)}`;
                 window.open(whatsappUrl, '_blank')
@@ -953,6 +954,11 @@ export default function Home() {
               <div className="enquiry-form-field">
                 <label htmlFor="modal-parentname">Parent's Name <span style={{ color: '#e53e3e' }}>*</span></label>
                 <input id="modal-parentname" type="text" placeholder="Enter parent / guardian name" className="hf-input" required />
+              </div>
+
+              <div className="enquiry-form-field">
+                <label htmlFor="modal-childname">Child's Name <span style={{ color: '#e53e3e' }}>*</span></label>
+                <input id="modal-childname" type="text" placeholder="Enter child's name" className="hf-input" required />
               </div>
               
               <div className="enquiry-form-field">

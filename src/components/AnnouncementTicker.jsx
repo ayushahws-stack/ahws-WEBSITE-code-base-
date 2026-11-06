@@ -1,9 +1,9 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import './AnnouncementTicker.css'
 
 const announcements = [
-  { text: '📢 Admissions Open for 2027-28! Apply Now', link: '/admission', isNew: true },
+  { text: '📢 Admissions Open! Apply Now', link: '/admission', isNew: true },
   { text: '🏆 AHWS ranked among Top Schools in Delhi NCR', link: '/about', isNew: true },
   { text: '📅 Summer Vacation: June 1 - July 5, 2026', link: '/events', isNew: false },
   { text: '📋 PTM scheduled for July 12, 2026 — All parents are requested to attend', link: '/events', isNew: false },

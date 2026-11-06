@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+﻿import { useState, useEffect } from 'react'
 import './FloatingEnquiry.css'
 
 export default function FloatingEnquiry() {
@@ -20,10 +20,11 @@ export default function FloatingEnquiry() {
     
     const formData = new FormData(e.target)
     const parentName = formData.get('parentName')
+    const childName = formData.get('childName')
     const phone = formData.get('phone')
     const studentClass = formData.get('studentClass')
 
-    let msg = `Hello Academic Heights World School, I would like to inquire about admission for my child.\n\n*Enquiry Details:*\nParent Name: ${parentName}\nPhone: ${phone}\nClass: ${studentClass}`
+    let msg = `Hello Academic Heights World School, I would like to inquire about admission for my child.\n\n*Enquiry Details:*\nParent Name: ${parentName}\nChild's Name: ${childName}\nPhone: ${phone}\nClass: ${studentClass}`
 
     const whatsappUrl = `https://wa.me/918860455000?text=${encodeURIComponent(msg)}`
     window.open(whatsappUrl, '_blank')
@@ -67,6 +68,7 @@ export default function FloatingEnquiry() {
         ) : (
                     <form onSubmit={handleSubmit} className="floating-form">
             <input type="text" name="parentName" placeholder="Parent's Name" aria-label="Parent's Name" required className="fl-input" />
+            <input type="text" name="childName" placeholder="Child's Name" aria-label="Child's Name" required className="fl-input" />
             <input type="tel" name="phone" placeholder="Phone Number" aria-label="Phone Number" required pattern="[0-9]{10}" maxLength={10} className="fl-input" />
             <select name="studentClass" required defaultValue="" className="fl-input" aria-label="Select Class">
               <option value="">Select Class</option>
