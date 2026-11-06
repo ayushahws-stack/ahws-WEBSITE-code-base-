@@ -680,7 +680,7 @@ select.hf-input {
 /* 3D Flip Card for Why Choose AHWS Feature Cards */
 .feature-flip-card {
   perspective: 1000px;
-  height: 500px;
+  height: 380px;
   user-select: none;
 }
 
@@ -719,7 +719,7 @@ select.hf-input {
   justify-content: flex-start;
   background: var(--white);
   border: 1px solid var(--border);
-  padding: 32px 24px 96px 24px;
+  padding: 28px 22px 20px 22px;
 }
 
 .feature-flip-card:hover .feature-flip-front {
@@ -729,12 +729,12 @@ select.hf-input {
 
 .flip-hint-feature {
   position: absolute;
-  bottom: 26px;
+  bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
   white-space: nowrap;
-  padding: 8px 16px;
-  font-size: 0.78rem;
+  padding: 7px 16px;
+  font-size: 0.75rem;
   font-weight: 700;
   color: var(--primary);
   text-transform: uppercase;
@@ -742,7 +742,7 @@ select.hf-input {
   opacity: 0.85;
   background: rgba(0, 33, 71, 0.08);
   border: 1px solid rgba(0, 33, 71, 0.15);
-  border-radius: 50px;
+  border-radius: 6px;
   transition: all 0.3s ease;
 }
 
@@ -764,7 +764,7 @@ select.hf-input {
 /* Back Face: Colorful Background with White Text */
 .feature-flip-back {
   transform: rotateY(180deg);
-  padding: 28px 22px 96px 22px;
+  padding: 24px 20px 20px 20px;
   color: #ffffff;
   display: flex;
   flex-direction: column;
@@ -813,11 +813,11 @@ select.hf-input {
 
 .flip-hint-back-feature {
   position: absolute;
-  bottom: 26px;
+  bottom: 18px;
   left: 50%;
   transform: translateX(-50%);
   white-space: nowrap;
-  font-size: 0.76rem;
+  font-size: 0.74rem;
   font-weight: 700;
   color: #ffffff;
   text-transform: uppercase;
@@ -825,7 +825,7 @@ select.hf-input {
   background: rgba(0, 0, 0, 0.35);
   border: 1px solid rgba(255, 255, 255, 0.4);
   padding: 6px 14px;
-  border-radius: 14px;
+  border-radius: 6px;
   backdrop-filter: blur(4px);
 }
 
@@ -838,7 +838,7 @@ select.hf-input {
 }
 
 .feature-icon-emoji {
-  font-size: 3rem;
+  font-size: 2.3rem;
 }
 
 .feature-card {
@@ -878,9 +878,9 @@ select.hf-input {
 }
 
 .feature-icon-wrap {
-  width: 100px;
-  height: 70px;
-  margin: 0 auto 24px;
+  width: 72px;
+  height: 50px;
+  margin: 0 auto 14px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -901,8 +901,8 @@ select.hf-input {
 
 .feature-desc {
   color: var(--text-muted);
-  font-size: 0.92rem;
-  line-height: 1.8;
+  font-size: 0.91rem;
+  line-height: 1.55;
 }
 
 /* ── Desk Section ── */
