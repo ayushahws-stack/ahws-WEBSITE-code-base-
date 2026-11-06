@@ -1,6 +1,7 @@
 import { useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
-import CampusVisitCTA from '../components/CampusVisitCTA'
+import { CampusVisitModal } from '../components/CampusVisitCTA'
+import '../components/CampusVisitCTA.css'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination, Autoplay } from 'swiper/modules'
 import 'swiper/css'
@@ -270,6 +271,7 @@ const dayTimeline = [
 export default function Home() {
   const [showPopup, setShowPopup] = useState(false)
   const [showEnquiryModal, setShowEnquiryModal] = useState(false)
+  const [showTourModal, setShowTourModal] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isMuted, setIsMuted] = useState(true)
   const [isPlaying, setIsPlaying] = useState(true)
@@ -672,43 +674,56 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Trust Strip (Key Metrics) ── */}
-      <section className="trust-strip">
+      {/* ── Unified Foundation & Experience Section (Trust Metrics + Campus Visit CTA + Mission, Vision & Values) ── */}
+      <section className="unified-foundation-section" id="foundation">
         <div className="container">
-          <div className="trust-strip-grid">
-            <div className="trust-item">
-              <span className="trust-number">CBSE</span>
-              <span className="trust-label">Affiliated #2730105</span>
-            </div>
-            <div className="trust-item">
-              <span className="trust-number">150+</span>
-              <span className="trust-label">CCTV Cameras</span>
-            </div>
-            <div className="trust-item">
-              <span className="trust-number">6,000+</span>
-              <span className="trust-label">Library Books</span>
-            </div>
-            <div className="trust-item">
-              <span className="trust-number">9</span>
-              <span className="trust-label">Sports Offered</span>
-            </div>
-            <div className="trust-item">
-              <span className="trust-number">100%</span>
-              <span className="trust-label">CBSE Pass Rate</span>
-            </div>
-            <div className="trust-item">
-              <span className="trust-number">50+</span>
-              <span className="trust-label">Awards Won</span>
+          {/* 1. Trust Metrics Strip */}
+          <div className="unified-trust-bar">
+            <div className="trust-strip-grid">
+              <div className="trust-item">
+                <span className="trust-number">CBSE</span>
+                <span className="trust-label">Affiliated #2730105</span>
+              </div>
+              <div className="trust-item">
+                <span className="trust-number">150+</span>
+                <span className="trust-label">CCTV Cameras</span>
+              </div>
+              <div className="trust-item">
+                <span className="trust-number">6,000+</span>
+                <span className="trust-label">Library Books</span>
+              </div>
+              <div className="trust-item">
+                <span className="trust-number">9</span>
+                <span className="trust-label">Sports Offered</span>
+              </div>
+              <div className="trust-item">
+                <span className="trust-number">100%</span>
+                <span className="trust-label">CBSE Pass Rate</span>
+              </div>
+              <div className="trust-item">
+                <span className="trust-number">50+</span>
+                <span className="trust-label">Awards Won</span>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* ── Mission, Vision & Values ── */}
-      <CampusVisitCTA />
+          {/* 2. Campus Visit Invitation */}
+          <div className="unified-visit-box">
+            <h2 className="unified-visit-title">Experience AHWS Firsthand</h2>
+            <p className="unified-visit-desc">
+              Walk through our smart classrooms, science labs, and world-class sports arena. See where your child will learn, explore, and thrive.
+            </p>
+            <button
+              type="button"
+              className="btn-primary-cv"
+              onClick={() => setShowTourModal(true)}
+              aria-label="Book a Campus Visit"
+            >
+              📅 Book a Campus Visit
+            </button>
+          </div>
 
-      <section className="mission-vision">
-        <div className="container">
+          {/* 3. Mission, Vision & Values */}
           <div className="mv-grid">
             <div className="mv-card">
               <div className="mv-icon">🎯</div>
@@ -1046,6 +1061,8 @@ export default function Home() {
           </div>
         </div>
       )}
+      {/* Tour Booking Modal */}
+      <CampusVisitModal isOpen={showTourModal} onClose={() => setShowTourModal(false)} />
     </main>
   )
 }

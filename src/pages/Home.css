@@ -2407,3 +2407,59 @@ select.hf-input {
 
 
 
+
+
+/* ── Unified Foundation & Experience Section (Trust Metrics + Campus Visit CTA + Mission, Vision & Values) ── */
+.unified-foundation-section {
+  background: linear-gradient(135deg, #001938 0%, #002855 50%, #093b6e 100%);
+  padding: 56px 0 76px;
+  border-top: 3px solid #FFC700;
+  border-bottom: 3px solid #FFC700;
+  position: relative;
+  overflow: hidden;
+}
+
+.unified-trust-bar {
+  padding-bottom: 36px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.unified-visit-box {
+  max-width: 820px;
+  margin: 44px auto 52px;
+  text-align: center;
+}
+
+.unified-visit-title {
+  color: #FFC700;
+  font-size: 2.3rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin-bottom: 14px;
+}
+
+.unified-visit-desc {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.08rem;
+  line-height: 1.7;
+  max-width: 680px;
+  margin: 0 auto 28px;
+}
+
+@media (max-width: 768px) {
+  .unified-foundation-section {
+    padding: 40px 0 60px;
+  }
+  .unified-trust-bar {
+    padding-bottom: 28px;
+  }
+  .unified-visit-box {
+    margin: 32px auto 40px;
+  }
+  .unified-visit-title {
+    font-size: 1.75rem;
+  }
+  .unified-visit-desc {
+    font-size: 0.96rem;
+  }
+}
