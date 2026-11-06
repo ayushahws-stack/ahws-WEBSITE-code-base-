@@ -72,7 +72,7 @@
 .trust-strip {
   background: linear-gradient(135deg, #002147 0%, #0d3b6e 100%);
   padding: 28px 0;
-  border-bottom: 3px solid #FFC700;
+  border-bottom: none;
 }
 
 .trust-strip-grid {
@@ -2440,8 +2440,8 @@ select.hf-input {
 .unified-foundation-section {
   background: linear-gradient(135deg, #001938 0%, #002855 50%, #093b6e 100%);
   padding: 56px 0 76px;
-  border-top: 3px solid #FFC700;
-  border-bottom: 3px solid #FFC700;
+  border-top: none;
+  border-bottom: none;
   position: relative;
   overflow: hidden;
 }

@@ -1,11 +1,11 @@
-﻿/* ── Campus Visit Section ── */
+/* ── Campus Visit Section ── */
 .campus-visit-section {
   background: linear-gradient(135deg, #002147 0%, #1a3a6b 100%);
   padding: 60px 0;
   text-align: center;
   color: #fff;
-  border-top: 4px solid #FFC700;
-  border-bottom: 4px solid #FFC700;
+  border-top: none;
+  border-bottom: none;
 }
 
 .cv-content h2 {
