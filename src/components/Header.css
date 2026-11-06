@@ -508,3 +508,85 @@ li:last-child > .dropdown-item {
   left: -20px;
   right: auto;
 }
+
+
+/* ── Book a Campus Visit Nav CTA ── */
+.nav-item-cta {
+  margin-left: 6px;
+  display: flex;
+  align-items: center;
+}
+
+.nav-book-visit-btn {
+  background: var(--secondary);
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 0.74rem;
+  letter-spacing: 0.3px;
+  padding: 7px 12px;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 33, 71, 0.15);
+  cursor: pointer;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.25s ease;
+  font-family: var(--font-main);
+  box-shadow: 0 2px 6px rgba(255, 199, 0, 0.3);
+}
+
+.nav-book-visit-btn:hover {
+  background: #e6b400;
+  color: var(--primary);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(255, 199, 0, 0.4);
+}
+
+.nav-book-visit-btn:active {
+  transform: translateY(0);
+}
+
+/* Adjust sub-menu overflow to account for CTA button */
+.nav-list > .nav-item:nth-last-child(-n+5) .sub-dropdown-menu {
+  left: auto;
+  right: 100%;
+}
+.nav-list > .nav-item:nth-last-child(-n+5) .has-sub-dropdown::before {
+  left: -20px;
+  right: auto;
+}
+
+/* Mobile Nav CTA */
+.mobile-cta-wrap {
+  padding: 14px 8px 10px;
+  border-bottom: 1px solid rgba(0, 33, 71, 0.08);
+  margin-bottom: 6px;
+}
+
+.mobile-book-visit-btn {
+  width: 100%;
+  background: var(--secondary);
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 0.92rem;
+  padding: 12px 18px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 33, 71, 0.15);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-main);
+  box-shadow: 0 3px 8px rgba(255, 199, 0, 0.25);
+  transition: all 0.2s ease;
+}
+
+.mobile-book-visit-btn:hover {
+  background: #e6b400;
+}
+
+.mobile-book-visit-btn:active {
+  transform: scale(0.98);
+}

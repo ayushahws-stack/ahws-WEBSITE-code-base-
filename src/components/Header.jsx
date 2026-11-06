@@ -1,5 +1,7 @@
-﻿import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
+import { CampusVisitModal } from './CampusVisitCTA'
+import './CampusVisitCTA.css'
 import './Header.css'
 
 const navItems = [
@@ -197,6 +199,7 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
   const [openDropdown, setOpenDropdown] = useState(null)
+  const [showVisitModal, setShowVisitModal] = useState(false)
   const location = useLocation()
 
   useEffect(() => {
@@ -342,6 +345,16 @@ export default function Header() {
                     )}
                 </li>
               ))}
+              <li className="nav-item nav-item-cta">
+                <button
+                  type="button"
+                  className="nav-book-visit-btn"
+                  onClick={() => setShowVisitModal(true)}
+                  aria-label="Book a Campus Visit"
+                >
+                  📅 Book a Campus Visit
+                </button>
+              </li>
             </ul>
           </nav>
 
@@ -362,6 +375,19 @@ export default function Header() {
       {/* Mobile Menu */}
       <div className={`mobile-menu ${mobileOpen ? 'open' : ''}`}>
         <div className="mobile-inner">
+          <div className="mobile-cta-wrap">
+            <button
+              type="button"
+              className="mobile-book-visit-btn"
+              onClick={() => {
+                setMobileOpen(false)
+                setShowVisitModal(true)
+              }}
+              aria-label="Book a Campus Visit"
+            >
+              📅 Book a Campus Visit
+            </button>
+          </div>
           {navItems.map((item) => (
             <div key={item.label} className="mobile-item">
               {item.children ? (
@@ -401,8 +427,8 @@ export default function Header() {
           </div>
         </div>
       </div>
+
+      <CampusVisitModal isOpen={showVisitModal} onClose={() => setShowVisitModal(false)} />
     </header>
   )
 }
-
-

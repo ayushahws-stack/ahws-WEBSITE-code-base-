@@ -1,9 +1,10 @@
-﻿import { useState } from 'react';
+import { useState } from 'react';
 import './CampusVisitCTA.css';
 
-export default function CampusVisitCTA() {
-  const [showModal, setShowModal] = useState(false);
+export function CampusVisitModal({ isOpen, onClose }) {
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  if (!isOpen) return null;
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -21,10 +22,60 @@ export default function CampusVisitCTA() {
     const whatsappUrl = `https://wa.me/918860455000?text=${encodeURIComponent(msg)}`;
     window.open(whatsappUrl, '_blank');
 
-    setShowModal(false);
+    onClose();
     setIsSubmitting(false);
     e.target.reset();
   };
+
+  return (
+    <div className="cv-modal-backdrop" onClick={onClose}>
+      <div className="cv-modal-content" onClick={(e) => e.stopPropagation()}>
+        <button className="cv-modal-close" onClick={onClose} aria-label="Close tour booking modal">✕</button>
+        <div className="cv-modal-header">
+          <h3>Schedule Your Tour</h3>
+          <p>Pick a date to explore our campus and meet our team.</p>
+        </div>
+        
+        <form onSubmit={handleSubmit} className="cv-form">
+          <div className="cv-form-field">
+            <label>Parent's Name <span className="req">*</span></label>
+            <input type="text" name="parentName" placeholder="Enter your name" required />
+          </div>
+          <div className="cv-form-field">
+            <label>Child's Name <span className="req">*</span></label>
+            <input type="text" name="childName" placeholder="Enter child's name" required />
+          </div>
+          <div className="cv-form-field">
+            <label>Phone Number <span className="req">*</span></label>
+            <input type="tel" name="phone" pattern="[0-9]{10}" maxLength={10} placeholder="10-digit mobile number" required />
+          </div>
+          <div className="cv-form-field">
+            <label>Child's Grade/Class <span className="req">*</span></label>
+            <select name="childGrade" required defaultValue="">
+              <option value="" disabled>Select Grade</option>
+              <option value="Nursery">Nursery</option>
+              <option value="KG">Kindergarten</option>
+              {[...Array(12)].map((_, i) => (
+                <option key={i + 1} value={`Class ${i + 1}`}>Class {i + 1}</option>
+              ))}
+            </select>
+          </div>
+          <div className="cv-form-field">
+            <label>Preferred Visit Date <span className="req">*</span></label>
+            <input type="date" name="visitDate" required min={new Date().toISOString().split('T')[0]} />
+          </div>
+          
+          <button type="submit" className="cv-submit-btn" disabled={isSubmitting}>
+            {isSubmitting ? 'Processing...' : 'Confirm via WhatsApp'}
+          </button>
+        </form>
+      </div>
+    </div>
+  );
+}
+
+export default function CampusVisitCTA() {
+  const [showModal, setShowModal] = useState(false);
 
   return (
     <>
@@ -40,52 +91,7 @@ export default function CampusVisitCTA() {
         </div>
       </section>
 
-      {/* Modal */}
-      {showModal && (
-        <div className="cv-modal-backdrop" onClick={() => setShowModal(false)}>
-          <div className="cv-modal-content" onClick={(e) => e.stopPropagation()}>
-            <button className="cv-modal-close" onClick={() => setShowModal(false)}>✕</button>
-            <div className="cv-modal-header">
-              <h3>Schedule Your Tour</h3>
-              <p>Pick a date to explore our campus and meet our team.</p>
-            </div>
-            
-            <form onSubmit={handleSubmit} className="cv-form">
-              <div className="cv-form-field">
-                <label>Parent's Name <span className="req">*</span></label>
-                <input type="text" name="parentName" placeholder="Enter your name" required />
-              </div>
-              <div className="cv-form-field">
-                <label>Child's Name <span className="req">*</span></label>
-                <input type="text" name="childName" placeholder="Enter child's name" required />
-              </div>
-              <div className="cv-form-field">
-                <label>Phone Number <span className="req">*</span></label>
-                <input type="tel" name="phone" pattern="[0-9]{10}" maxLength={10} placeholder="10-digit mobile number" required />
-              </div>
-              <div className="cv-form-field">
-                <label>Child's Grade/Class <span className="req">*</span></label>
-                <select name="childGrade" required defaultValue="">
-                  <option value="" disabled>Select Grade</option>
-                  <option value="Nursery">Nursery</option>
-                  <option value="KG">Kindergarten</option>
-                  {[...Array(12)].map((_, i) => (
-                    <option key={i + 1} value={`Class ${i + 1}`}>Class {i + 1}</option>
-                  ))}
-                </select>
-              </div>
-              <div className="cv-form-field">
-                <label>Preferred Visit Date <span className="req">*</span></label>
-                <input type="date" name="visitDate" required min={new Date().toISOString().split('T')[0]} />
-              </div>
-              
-              <button type="submit" className="cv-submit-btn" disabled={isSubmitting}>
-                {isSubmitting ? 'Processing...' : 'Confirm via WhatsApp'}
-              </button>
-            </form>
-          </div>
-        </div>
-      )}
+      <CampusVisitModal isOpen={showModal} onClose={() => setShowModal(false)} />
     </>
   );
 }
