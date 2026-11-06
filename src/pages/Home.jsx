@@ -453,7 +453,7 @@ export default function Home() {
     { 
       title: 'Robotics Lab', 
       icon: '🤖', 
-      desc: 'An immersive setting equipped with distinct types of robotic kits, empowering students to harness the power of programming to design and build practical robots.',
+      desc: 'Hands-on robotics kits and coding tools for designing, building, and programming practical robots.',
       image: './images/pages/Home/Students working in Robotics & AI Lab/AI.jpeg',
       fallback: './images/gallery/other images/robotics lab.jpeg'
     },
