@@ -728,12 +728,10 @@ select.hf-input {
 }
 
 .flip-hint-feature {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  position: static !important;
-  transform: none !important;
-  margin-top: 12px;
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
   white-space: nowrap;
   padding: 6px 14px;
   font-size: 0.74rem;
@@ -753,15 +751,15 @@ select.hf-input {
   color: var(--primary);
   background: rgba(255, 199, 0, 0.25);
   border-color: rgba(255, 199, 0, 0.6);
-  transform: scale(1.04) !important;
+  transform: translateX(-50%) scale(1.04) !important;
 }
 
 .flip-hint-feature:hover {
-  transform: scale(1.06) !important;
+  transform: translateX(-50%) scale(1.06) !important;
 }
 
 .flip-hint-feature:active {
-  transform: scale(0.97) !important;
+  transform: translateX(-50%) scale(0.97) !important;
 }
 
 /* Back Face: Colorful Background with White Text */
@@ -815,33 +813,30 @@ select.hf-input {
 }
 
 .flip-hint-back-feature {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  align-self: center;
-  position: static !important;
-  transform: none !important;
-  margin-top: auto;
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
   white-space: nowrap;
-  font-size: 0.72rem;
+  font-size: 0.74rem;
   font-weight: 700;
   color: #ffffff;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   background: rgba(0, 0, 0, 0.35);
   border: 1px solid rgba(255, 255, 255, 0.4);
-  padding: 5px 12px;
+  padding: 6px 14px;
   border-radius: 6px;
   backdrop-filter: blur(4px);
   transition: all 0.25s ease;
 }
 
 .flip-hint-back-feature:hover {
-  transform: scale(1.05) !important;
+  transform: translateX(-50%) scale(1.06) !important;
 }
 
 .flip-hint-back-feature:active {
-  transform: scale(0.97) !important;
+  transform: translateX(-50%) scale(0.97) !important;
 }
 
 .feature-icon-emoji {
