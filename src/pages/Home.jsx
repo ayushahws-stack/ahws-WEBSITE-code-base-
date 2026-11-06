@@ -1,4 +1,4 @@
-﻿import { useState, useRef } from 'react'
+import { useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import CampusVisitCTA from '../components/CampusVisitCTA'
 import { Swiper, SwiperSlide } from 'swiper/react'
@@ -644,7 +644,35 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Trust Strip ── */}
+      {/* ── Infrastructure / World-Class Facilities ── */}
+      <section className="infra-section" id="facilities">
+        <div className="container">
+          <h2 className="section-title">World-Class Facilities</h2>
+          <div className="divider-line" />
+          <div className="infra-vt-banner">
+            <div className="infra-vt-inner">
+              <div className="infra-vt-tag">
+                <span className="pulse-dot" />
+                <strong>360° Virtual Tour</strong> — Coming Soon!
+              </div>
+              <p>Experience an immersive digital walkthrough of our campus, smart classrooms, robotics labs, and athletic arena from home.</p>
+              <Link to="/facilities" className="infra-vt-link">Explore Facilities &amp; Virtual Tour →</Link>
+            </div>
+          </div>
+          <p className="infra-intro">
+            At Academic Heights World School, we believe that the right environment is crucial for effective learning.
+            Our campus is thoughtfully designed to provide students with state-of-the-art facilities that cater to
+            academic, athletic, and artistic pursuits.
+          </p>
+          <div className="infra-grid">
+            {infraItems.map((item, i) => (
+              <FlippableInfraCard key={i} item={item} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Trust Strip (Key Metrics) ── */}
       <section className="trust-strip">
         <div className="container">
           <div className="trust-strip-grid">
@@ -672,34 +700,6 @@ export default function Home() {
               <span className="trust-number">50+</span>
               <span className="trust-label">Awards Won</span>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Infrastructure / World-Class Facilities ── */}
-      <section className="infra-section" id="facilities">
-        <div className="container">
-          <h2 className="section-title">World-Class Facilities</h2>
-          <div className="divider-line" />
-          <div className="infra-vt-banner">
-            <div className="infra-vt-inner">
-              <div className="infra-vt-tag">
-                <span className="pulse-dot" />
-                <strong>360° Virtual Tour</strong> — Coming Soon!
-              </div>
-              <p>Experience an immersive digital walkthrough of our campus, smart classrooms, robotics labs, and athletic arena from home.</p>
-              <Link to="/facilities" className="infra-vt-link">Explore Facilities &amp; Virtual Tour →</Link>
-            </div>
-          </div>
-          <p className="infra-intro">
-            At Academic Heights World School, we believe that the right environment is crucial for effective learning.
-            Our campus is thoughtfully designed to provide students with state-of-the-art facilities that cater to
-            academic, athletic, and artistic pursuits.
-          </p>
-          <div className="infra-grid">
-            {infraItems.map((item, i) => (
-              <FlippableInfraCard key={i} item={item} />
-            ))}
           </div>
         </div>
       </section>
