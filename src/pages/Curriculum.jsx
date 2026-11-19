@@ -292,39 +292,32 @@ export default function Curriculum() {
         </div>
       </section>
 
-      {/* ── Section 2: 5+3+3+4 Academic Stages ── */}
-            {/* NEW: AHWS Learning Journey Section */}
-      <section className="learning-journey-section" style={{padding: '60px 0'}}>
+      {/* ── Section: AHWS Learning Journey (3x2 Grid) ── */}
+      <section className="learning-journey-section">
         <div className="container">
           <div className="section-header text-center">
             <h2 className="section-title">The AHWS Learning Journey</h2>
             <div className="divider-line" />
-            <p className="section-desc" style={{marginTop: '15px'}}>A continuous 6-step cycle empowering students from foundational concepts to future-ready success.</p>
+            <p className="section-desc" style={{ marginTop: '15px' }}>
+              A continuous 6-step cycle empowering students from foundational concepts to future-ready success.
+            </p>
           </div>
           
-          <div className="journey-grid" style={{
-            display: 'grid', 
-            gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', 
-            gap: '20px', 
-            marginTop: '40px'
-          }}>
+          <div className="learning-journey-grid">
             {[
-              { step: '1. LEARN', desc: 'Absorbing core concepts through engaging, developmentally appropriate foundational pedagogy.' },
-              { step: '2. EXPLORE', desc: 'Investigating ideas deeply through project-based discovery and curiosity-driven inquiry.' },
-              { step: '3. CREATE', desc: 'Applying integrated knowledge to construct original thoughts, prototypes, and real-world solutions.' },
-              { step: '4. COLLABORATE', desc: 'Working dynamically alongside peers to develop teamwork, empathy, and social intelligence.' },
-              { step: '5. LEAD', desc: 'Taking initiative, communicating confidently, and owning personal educational milestones.' },
-              { step: '6. THRIVE', desc: 'Achieving holistic academic success and building the resilience required for a dynamic future.' }
+              { num: '01', title: 'LEARN', desc: 'Absorbing core concepts through engaging, developmentally appropriate foundational pedagogy.' },
+              { num: '02', title: 'EXPLORE', desc: 'Investigating ideas deeply through project-based discovery and curiosity-driven inquiry.' },
+              { num: '03', title: 'CREATE', desc: 'Applying integrated knowledge to construct original thoughts, prototypes, and real-world solutions.' },
+              { num: '04', title: 'COLLABORATE', desc: 'Working dynamically alongside peers to develop teamwork, empathy, and social intelligence.' },
+              { num: '05', title: 'LEAD', desc: 'Taking initiative, communicating confidently, and owning personal educational milestones.' },
+              { num: '06', title: 'THRIVE', desc: 'Achieving holistic academic success and building the resilience required for a dynamic future.' }
             ].map((item, idx) => (
-              <div key={idx} className="journey-card" style={{
-                background: '#fff', 
-                padding: '30px', 
-                borderRadius: '12px', 
-                boxShadow: '0 4px 15px rgba(0,0,0,0.05)',
-                borderTop: '4px solid #1B2A4A'
-              }}>
-                <h3 style={{color: '#1B2A4A', marginBottom: '15px', fontSize: '1.2rem', fontWeight: '700'}}>{item.step}</h3>
-                <p style={{color: '#555', lineHeight: '1.6'}}>{item.desc}</p>
+              <div key={idx} className="learning-journey-card">
+                <div className="journey-card-header">
+                  <span className="journey-step-num">{item.num}</span>
+                  <h3 className="journey-card-title">{item.title}</h3>
+                </div>
+                <p className="journey-card-desc">{item.desc}</p>
               </div>
             ))}
           </div>

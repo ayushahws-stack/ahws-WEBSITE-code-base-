@@ -344,3 +344,94 @@
     font-size: 0.82rem;
   }
 }
+
+/* ── Learning Journey 3x2 Grid ── */
+.learning-journey-section {
+  padding: 70px 0;
+  background: #f8fafc;
+  border-top: 1px solid rgba(0, 33, 71, 0.08);
+}
+
+.learning-journey-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.learning-journey-card {
+  background: #ffffff;
+  padding: 32px 26px;
+  border-radius: 14px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 33, 71, 0.08);
+  border-top: 4px solid #002147;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-top-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.learning-journey-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 33, 71, 0.12);
+  border-top-color: #FFC700;
+}
+
+.journey-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.journey-step-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  background: rgba(0, 33, 71, 0.08);
+  color: #002147;
+  font-weight: 800;
+  font-size: 0.85rem;
+  border-radius: 8px;
+  flex-shrink: 0;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.learning-journey-card:hover .journey-step-num {
+  background: #002147;
+  color: #FFC700;
+}
+
+.journey-card-title {
+  color: #002147;
+  font-size: 1.2rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+.journey-card-desc {
+  color: #4A5568;
+  font-size: 0.92rem;
+  line-height: 1.62;
+  margin: 0;
+}
+
+@media (max-width: 992px) {
+  .learning-journey-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .learning-journey-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .learning-journey-card {
+    padding: 24px 20px;
+  }
+}
