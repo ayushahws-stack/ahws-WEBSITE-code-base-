@@ -26,6 +26,13 @@ export default [
         clearTimeout: 'readonly',
         setInterval: 'readonly',
         clearInterval: 'readonly',
+        FormData: 'readonly',
+        fetch: 'readonly',
+        Event: 'readonly',
+        CustomEvent: 'readonly',
+        Blob: 'readonly',
+        URL: 'readonly',
+        Image: 'readonly',
       },
     },
     settings: {

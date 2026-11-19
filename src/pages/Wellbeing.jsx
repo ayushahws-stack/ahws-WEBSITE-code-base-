@@ -90,7 +90,7 @@ export default function Wellbeing() {
       setRotatingIdx(prev => (prev + 1) % drRashmiStudentImages.length)
     }, 3500)
     return () => clearInterval(rotationRef.current)
-  }, [])
+  }, [drRashmiStudentImages.length])
 
   /* ── Wellbeing Feature Sections ── */
   const sections = [

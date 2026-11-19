@@ -15,8 +15,9 @@ export default function FloatingEnquiry() {
 
   // Auto-popup disabled - only opens when user clicks the floating button
 
-    const handleSubmit = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault()
+    setIsSubmitting(true)
     
     const formData = new FormData(e.target)
     const parentName = formData.get('parentName')
@@ -30,6 +31,7 @@ export default function FloatingEnquiry() {
     window.open(whatsappUrl, '_blank')
 
     setSubmitted(true)
+    setIsSubmitting(false)
     e.target.reset()
     setTimeout(() => {
       setSubmitted(false)
