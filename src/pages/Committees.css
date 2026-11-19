@@ -109,28 +109,6 @@
   border-bottom: none;
 }
 
-.member-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.member-list li {
-  padding: 1rem 0;
-  border-bottom: 1px solid var(--border);
-  color: var(--text-dark);
-}
-
-.member-list li:last-child {
-  border-bottom: none;
-}
-
-.member-list strong {
-  color: var(--primary);
-  display: inline-block;
-  width: 150px;
-}
-
 .grievance-info p {
   color: var(--text-dark);
   margin-bottom: 1.5rem;
@@ -183,11 +161,6 @@
   .notice-box {
     flex-direction: column;
     text-align: center;
-  }
-  
-  .member-list strong {
-    width: 100%;
-    margin-bottom: 0.25rem;
   }
 }
 

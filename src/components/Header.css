@@ -84,11 +84,6 @@
   color: var(--secondary);
 }
 
-.portal-divider {
-  color: rgba(255,255,255,0.3);
-  font-size: 0.8rem;
-}
-
 .topbar-social {
   display: flex;
   gap: 12px;

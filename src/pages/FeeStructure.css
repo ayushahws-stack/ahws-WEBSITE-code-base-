@@ -82,48 +82,6 @@
   border-bottom: 1px solid var(--border);
 }
 
-.total-highlight {
-  font-weight: 800;
-  color: var(--primary);
-  font-size: 1.1rem;
-}
-
-.fee-disclaimer {
-  max-width: 800px;
-  margin: 0 auto;
-  background: var(--white);
-  border-left: 4px solid var(--secondary);
-  padding: 24px 30px;
-  border-radius: 0 var(--radius) var(--radius) 0;
-  box-shadow: 0 4px 16px rgba(0,33,71,0.05);
-}
-
-.fee-notes-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.fee-notes-list li {
-  color: var(--text-dark);
-  font-size: 0.95rem;
-  line-height: 1.8;
-  font-weight: 500;
-}
-
-.fee-notes-list li:not(:last-child) {
-  margin-bottom: 10px;
-}
-
-.fee-notes-list strong {
-  color: var(--primary);
-  margin-right: 8px;
-}
-
-.fee-notes-list li {
-  margin-bottom: 8px;
-}
-
 .fee-actions {
   display: flex;
   gap: 20px;
@@ -174,10 +132,6 @@
     font-size: 0.85rem;
   }
   
-  .fee-disclaimer {
-    padding: 20px;
-  }
-
   .fee-actions {
     flex-direction: column;
     gap: 12px;

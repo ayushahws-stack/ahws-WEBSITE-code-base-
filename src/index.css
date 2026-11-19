@@ -127,16 +127,6 @@ img {
   text-transform: uppercase;
 }
 
-.section-divider {
-  display: flex;
-  justify-content: center;
-  margin: 12px auto 36px;
-}
-
-.section-divider img {
-  max-width: 180px;
-}
-
 .divider-line {
   width: 80px;
   height: 4px;
@@ -224,16 +214,6 @@ img {
   to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes fadeInLeft {
-  from { opacity: 0; transform: translateX(-30px); }
-  to { opacity: 1; transform: translateX(0); }
-}
-
-@keyframes fadeInRight {
-  from { opacity: 0; transform: translateX(30px); }
-  to { opacity: 1; transform: translateX(0); }
-}
-
 @keyframes pulse {
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.05); }
@@ -242,10 +222,6 @@ img {
 @keyframes blink {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.3; }
-}
-
-.animate-fade-up {
-  animation: fadeInUp 0.7s ease both;
 }
 
 /* Swiper customization */

@@ -1,9 +1,6 @@
 /* ===========================
    Academics Page Styles
    =========================== */
-.academics-page {
-  overflow: hidden;
-}
 
 /* ── Section 1: Curriculum Overview ── */
 .acad-curriculum {
@@ -146,11 +143,6 @@
 }
 
 /* ── Stages Sub-header ── */
-.curriculum-stages-header {
-  text-align: center;
-  margin-bottom: 36px;
-}
-
 .sub-section-title {
   font-size: 1.5rem;
   font-weight: 800;
@@ -165,30 +157,9 @@
   margin: 0;
 }
 
-
-
 .acad-pedagogy {
   padding: 80px 0;
   background: var(--white);
-}
-
-
-
-.acad-pedagogy-text p {
-  color: var(--text-muted);
-  font-size: 0.97rem;
-  line-height: 1.9;
-  margin-bottom: 20px;
-}
-
-.acad-pedagogy-text strong {
-  color: var(--primary);
-}
-
-.acad-pedagogy-features {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
 }
 
 .acad-pedagogy-card {
@@ -564,19 +535,6 @@
   box-shadow: 0 8px 24px rgba(255, 199, 0, 0.35);
 }
 
-.acad-download-btn-outline {
-  background: transparent;
-  color: var(--primary);
-  border: 2px solid var(--primary);
-}
-
-.acad-download-btn-outline:hover {
-  background: var(--primary);
-  color: var(--white);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow);
-}
-
 /* ===========================
    Responsive – Tablet (≤ 1024px)
    =========================== */
@@ -616,10 +574,6 @@
   }
 
   .acad-curriculum-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .acad-pedagogy-features {
     grid-template-columns: 1fr;
   }
 
@@ -848,131 +802,6 @@
   box-shadow: 0 2px 6px rgba(0,33,71,0.15);
 }
 
-/* ── Two-Part Segmented Navigation Switch ── */
-.acad-nav-tabs-wrapper {
-  background: var(--primary);
-  padding: 20px 0;
-  position: sticky;
-  top: 72px;
-  z-index: 900;
-  box-shadow: 0 4px 20px rgba(0, 33, 71, 0.25);
-  border-bottom: 3px solid var(--secondary);
-}
-
-.acad-nav-tabs {
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.acad-tab-btn {
-  flex: 1;
-  padding: 14px 28px;
-  border-radius: 50px;
-  border: 2px solid rgba(255, 255, 255, 0.25);
-  background: rgba(255, 255, 255, 0.05);
-  color: var(--white);
-  font-weight: 800;
-  font-size: 0.95rem;
-  letter-spacing: 0.5px;
-  cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-}
-
-.acad-tab-btn:hover {
-  border-color: var(--secondary);
-  color: var(--secondary);
-  background: rgba(255, 199, 0, 0.1);
-  transform: translateY(-2px);
-}
-
-.acad-tab-btn.active {
-  background: linear-gradient(135deg, var(--secondary), #ffb700);
-  color: var(--primary);
-  border-color: var(--secondary);
-  box-shadow: 0 6px 20px rgba(255, 199, 0, 0.45);
-}
-
-.fade-in {
-  animation: fadeIn 0.4s ease-in-out;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* ── 7 Layers of SPROUT Grid ── */
-.sprout-layers-header {
-  margin-top: 56px;
-  margin-bottom: 32px;
-  text-align: center;
-}
-
-.sprout-layers-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  margin-top: 24px;
-}
-
-.sprout-layer-card {
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: 24px 20px;
-  box-shadow: var(--shadow);
-  transition: var(--transition);
-  border-top: 4px solid var(--primary);
-}
-
-.sprout-layer-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-hover);
-  border-top-color: var(--secondary);
-}
-
-.layer-card-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 12px;
-}
-
-.layer-icon {
-  font-size: 1.8rem;
-}
-
-.layer-code {
-  background: rgba(0, 33, 71, 0.08);
-  color: var(--primary);
-  font-weight: 800;
-  font-size: 0.8rem;
-  padding: 4px 10px;
-  border-radius: 20px;
-  letter-spacing: 0.5px;
-}
-
-.sprout-layer-card h4 {
-  font-size: 1rem;
-  color: var(--primary);
-  margin-bottom: 8px;
-  font-weight: 800;
-}
-
-.sprout-layer-card p {
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  line-height: 1.6;
-  margin: 0;
-}
-
 /* ── SPROUT Enrichment Pillars ── */
 .enrichment-pillars-section {
   padding: 80px 0;
@@ -1022,20 +851,12 @@
 }
 
 @media (max-width: 992px) {
-  .sprout-layers-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
   .enrichment-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 600px) {
-  .acad-nav-tabs {
-    flex-direction: column;
-    gap: 10px;
-  }
-  .sprout-layers-grid,
   .enrichment-grid {
     grid-template-columns: 1fr;
   }
